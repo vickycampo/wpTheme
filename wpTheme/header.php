@@ -5,9 +5,11 @@
 @subpackage wpTheme
 @since wpTheme
 
-	===============
+	=========================
 		HEADER PAGE
-	===============
+	=========================
+* This page contains the header part ot the template. 	
+* Must be referenced with the get_header (); command. 
 */
 ?>
 <!DOCTYPE html>
