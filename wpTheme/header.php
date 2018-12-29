@@ -1,7 +1,9 @@
 <?php
 /*
 
-@package wpTheme
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
 
 	===============
 		HEADER PAGE
