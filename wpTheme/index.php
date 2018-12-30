@@ -1,11 +1,14 @@
 <?php
 /*
 
-@package wpTheme
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
 
-	===============
-		INDEX PAGE
-	===============
+	=========================
+		INDEX
+	=========================
+* The main template file. It is required in all themes.
 */
 ?>
 <?php
