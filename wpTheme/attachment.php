@@ -1,11 +1,15 @@
 <?php
 /*
 
-@package wpTheme
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
 
-	===============
-		ATTACHMENT PAGE
-	===============
+	===================================
+		ATTACHMENT
+	===================================
+* This page is commonly used to display images or media in content.
+*
 */
 ?>
 

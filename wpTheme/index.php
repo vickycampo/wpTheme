@@ -1,11 +1,14 @@
 <?php
 /*
 
-@package wpTheme
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
 
-	===============
-		INDEX PAGE
-	===============
+	=========================
+		INDEX
+	=========================
+* The main template file. It is required in all themes.
 */
 ?>
 <?php
@@ -18,6 +21,6 @@
      else :
         _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
      endif;
-     get_sidebar();
+     get_sidebar(  );
      get_footer();
 ?>

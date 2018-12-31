@@ -1,11 +1,15 @@
 <?php
 /*
 
-@package wpTheme
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
 
-	===============
-		FOOTER PAGE
-	===============
+	===================================
+		FOOTER
+	===================================
+* This page generating the footer.
+*
 */
 ?>
 
@@ -17,6 +21,8 @@
       </div><!-- .site-info -->
     </footer><!-- .site-footer -->
   </div><!-- .site -->
+  <?php
+  wp_nav_menu( 'footer_menu' ); ?>
   <?php wp_footer(); ?>
 </body>
 </html>
