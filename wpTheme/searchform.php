@@ -1,10 +1,13 @@
 <?php
 /*
 
-@package wpTheme
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
 
-	===============
-		SEARCH FORM 
-	===============
+	=========================
+		SEARCH FORM
+	=========================
+* Part that generates the search form.
 */
 ?>

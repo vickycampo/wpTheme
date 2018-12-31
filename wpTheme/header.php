@@ -6,10 +6,10 @@
 @since wpTheme
 
 	=========================
-		HEADER PAGE
+		HEADER
 	=========================
-* This page contains the header part ot the template. 	
-* Must be referenced with the get_header (); command. 
+* This page contains the header part ot the template.
+* Must be referenced with the get_header (); command.
 */
 ?>
 <!DOCTYPE html>
@@ -29,6 +29,22 @@
   	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyfifteen' ); ?></a>
  		<div id="sidebar" class="sidebar">
  			<header id="masthead" class="site-header" role="banner">
+      <?php if ( get_header_image() ) : ?>
+        <div id="site-header">
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+            <?php
+              $custom_logo_id = get_theme_mod( 'custom_logo' );
+              $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+              if ( has_custom_logo() ) {
+                      echo '<img src="'. esc_url( $logo[0] ) .'">';
+              } else {
+                      echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+              }
+            ?>
+            <img src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+          </a>
+        </div>
+      <?php endif; ?>
  				<div class="site-branding">
         	<?php if ( is_front_page() && is_home() ) : ?>
  						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

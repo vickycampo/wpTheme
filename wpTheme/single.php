@@ -1,11 +1,14 @@
 <?php
 /*
 
-@package wpTheme
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
 
-	===============
-		SINGLE PAGE
-	===============
+	=========================
+		SINGLE
+	=========================
+* The single post template is used when a visitor requests a single post.
 */
 ?>
 

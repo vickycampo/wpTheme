@@ -1,10 +1,13 @@
 <?php
 /*
 
-@package wpTheme
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
 
-	===============
-		SIDEBAR PAGE
-	===============
+	=========================
+		SIDE-BAR
+	=========================
+* Part that generates the side bar.
 */
 ?>
