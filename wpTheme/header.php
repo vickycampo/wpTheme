@@ -56,6 +56,9 @@
           <button class="secondary-toggle"><?php _e( 'Menu and widgets', 'twentyfifteen' ); ?></button>
         </div><!-- .site-branding -->
       </header><!-- .site-header -->
-      <?php get_sidebar(); ?>
-    </div><!-- .sidebar -->
+      <?php get_sidebar( 'sidebar_2' ); ?>
+    </div>
+    <?php wp_nav_menu( array( 'theme_location' => 'primary_menu' ) ); ?>
+    <!-- .sidebar -->
+    <?php echo ('-----------------------end of header------------------------------<br>'); ?>
 <div id="content" class="site-content">
