@@ -21,6 +21,8 @@
       </div><!-- .site-info -->
     </footer><!-- .site-footer -->
   </div><!-- .site -->
+  <?php
+  wp_nav_menu( 'footer_menu' ); ?>
   <?php wp_footer(); ?>
 </body>
 </html>
