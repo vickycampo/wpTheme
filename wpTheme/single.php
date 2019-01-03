@@ -28,7 +28,17 @@ get_header(); ?>
              * (where ___ is the post format) and that will be used instead.
              */
             get_template_part( 'content', get_post_format() );
-
+            $args = array(
+                'post_parent'    => get_the_ID(),
+                'post_type'      => 'attachment',
+                'post_mime_type' => 'image',
+            );
+            $attachments = get_posts( $args );
+            if ( $attachments ) {
+                foreach ( $attachments as $attachment ) {
+                    $meta_data = wp_get_attachment_metadata( $attachment->ID, false );
+                }
+            }
             // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) :
                 comments_template();
