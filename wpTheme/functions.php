@@ -358,6 +358,16 @@ if ( ! function_exists( 'wpTheme_enable_featured_image' ) )
     }
   }
   add_action( 'after_setup_theme', 'wpTheme_setup' );
+
+
+/*
+	==============================
+	  WP THEME CORE FUNCTIONS
+	==============================
+*
+* load the WP THEME CORE FUNCTIONS
+*/
+require_once get_parent_theme_file_path( '/inc/wpTheme_core_functions.php' );
 /*
 	==============================
 	  ENQUEUE-SCRIPTS.PHP
@@ -365,7 +375,7 @@ if ( ! function_exists( 'wpTheme_enable_featured_image' ) )
 *
 * load the enqueue file
 */
-require_once get_parent_theme_file_path( 'enqueue-scripts.php' );
+require_once get_parent_theme_file_path( '/inc/enqueue.php' );
 /*
 	==============================
 	  THEME_OPTIONS.PHP
