@@ -207,8 +207,9 @@ if ( ! function_exists( 'wpTheme_enqueue_fonts' ) )
 
     }
   }
+  add_action( 'wp_enqueue_scripts', 'wpTheme_enqueue_fonts' );
 }
-add_action( 'wp_enqueue_scripts', 'wpTheme_enqueue_fonts' );
+
 
 /*
 ==========================
