@@ -330,6 +330,8 @@ if ( ! function_exists( 'wpTheme_enable_featured_image' ) )
   function wpTheme_enable_featured_image()
   {
     add_theme_support( 'post-thumbnails' );
+    //set a size in pixels
+    set_post_thumbnail_size ( 150 , 150 );
   }
   add_action( 'after_setup_theme', 'wpTheme_enable_featured_image' );
 }
@@ -348,11 +350,15 @@ if ( ! function_exists( 'wpTheme_enable_featured_image' ) )
     {
        //First, let's set the maximum content width based on the theme's design and stylesheet. This will limit the width of all uploaded images and embeds.
        if ( ! isset( $content_width ) )
-            $content_width = 800; /* pixels */
-      //Add default posts and comments RSS feed links to <head>.
+       {
+         $content_width = 800; /* pixels */
+       }
+      //Add default posts RSS feed links to <head>.
       add_theme_support( 'automatic-feed-links' );
       //Make theme available for translation. Translations can be placed in the /languages/ directory.
       load_theme_textdomain( 'wpTheme', get_template_directory() . '/languages' );
+      //Custom Background
+      add_theme_support ( 'custom-background', array () );		
 
 
     }
@@ -384,4 +390,24 @@ require_once get_parent_theme_file_path( '/inc/enqueue.php' );
 * load the enqueue file
 */
 require_once get_parent_theme_file_path( '/inc/theme_options.php' );
+/*
+	==============================
+	  THE HOOK ALLIANCE
+	==============================
+*
+* include theme hook alliance hooks
+*/
+
+require_once( get_template_directory() . '/inc/hooks.php' );
+
+/*
+	==============================
+	  WP Bootstrap Navwalker
+	==============================
+*
+* include bootstrap nav walker class
+*/
+
+require_once( get_template_directory() . '/inc/class-bootstrap-nav-walker.php' );
+
 ?>
