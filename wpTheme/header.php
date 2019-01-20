@@ -72,4 +72,6 @@ HEADER
 <body <?php body_class(); ?>>
      <?php tha_body_top(); ?>
      <!-- Create a div that is going to wrap all the content -->
-	<div class="container" id="wrap">
+	<div class="container" id="wrap"> <!-- wrap div-->
+          <!-- Add the head part-->
+          <div class="row"> 
