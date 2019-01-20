@@ -19,44 +19,60 @@ $ap_options = get_option( 'ap_core_theme_options' );
 $ap_defaults = ap_core_get_theme_defaults();
 ?>
 
-</div> <!-- Close the row div that was opened in the header -->
+</div> <!-- /wrap div-->
 
 <?php tha_footer_before(); ?>
 <footer class="row">
      <?php tha_footer_top(); ?>
      <?php
      //ARRAY OF ALL POSSIBLE COMBINATIONS OF SIDEBARD FOR THE FOOTER
-     $id = 'leftbox';
-     $footer_sidebar[$id] = 'left-footer-box';
-     $id = 'middlebox';
-     $footer_sidebar[$id] = 'center-footer-box';
-     $id = 'rightbox';
-     $footer_sidebar[$id] = 'right-footer-box';
+     $id = 'footer-left-box';
+     $footer_sidebar[$id] = 'Footer - Left side box';
+     $id = 'footer-middle-box';
+     $footer_sidebar[$id] = 'Footer - Center box';
+     $id = 'footer-right-box';
+     $footer_sidebar[$id] = 'Footer - Right side box';
+     //we cound how many elements we are using
+     $num_sidebars = count ($footer_sidebar);
+     //we calculate how many cols we need per element
+     $cols = floor ( 12 / $num_sidebars );
+     $cols_class = "col-sm-" . $cols;
      ?>
      <!-- CREATE THE ELEMENT IF THE SIDE BAR IS ACTIVE -->
      <?php
+
      foreach ($footer_sidebar as $id => $name)
      {
-          if ( is_active_sidebar( $name ) )
+
+          if ( is_active_sidebar( $id ) )
           { ?>
-               <div class="col-sm-4" id="<?php echo ( $id );?>">
+               <div class="<?php echo ($cols_class);?>" id="<?php echo ( $id );?>">
                     <ul>
-                         <?php dynamic_sidebar( $name ); ?>
+                         <?php dynamic_sidebar( $id ); ?>
                     </ul>
                </div>
           <?php }
           else
           { ?>
-               <div class="col-sm-4" id="<?php echo ( $id );?>">
+               <div class="<?php echo ($cols_class);?>" id="<?php echo ( $id );?>">
                     <ul>
-
+                         empty
                     </ul>
                </div>
           <?php }
      }?>
      <div class="spacer-10"></div>
      <!-- Add the footer navigation menu-->
-     <?php wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'footernav', 'theme_location' => 'footer', 'fallback_cb' => false, 'depth' => 1 ) ); ?>
+     <?php
+     $args = array(
+               'container' => 'nav',
+               'container_class' => 'footernav',
+               'theme_location' => 'footer',
+               'fallback_cb' => false,
+               'depth' => 1
+          );
+     wp_nav_menu( $args );
+     ?>
      <!-- Add the credit part of the theme-->
      <div class="credit">
           <?php
