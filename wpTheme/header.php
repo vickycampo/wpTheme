@@ -70,3 +70,6 @@ HEADER
      <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+     <?php tha_body_top(); ?>
+     <!-- Create a div that is going to wrap all the content -->
+	<div class="container" id="wrap">
