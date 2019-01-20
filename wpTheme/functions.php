@@ -245,43 +245,7 @@ if ( ! ( function_exists ( 'wpTheme_register_custom_post_type' ) ) )
      }
      add_action( 'init', 'wpTheme_register_custom_post_type' );
 }
-/*
-=====================
-REGISTER SIDEBARS
-=====================
-*/
-if ( ! function_exists( 'wpTheme_widgets_init' ) )
-{
-     function wpTheme_widgets_init()
-     {
-          $args = array
-          (
-               'name'          => __( 'Primary Sidebar', 'wpTheme' ),
-               'id'            => 'sidebar_1',
-               'description'   => 'Primary Side Bar',
-               'class'         => 'sidebar-1_class',
-               'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-               'after_widget'  => '</aside>',
-               'before_title'  => '<h1 class="widget-title">',
-               'after_title'   => '</h1>'
-          );
-          register_sidebar( $args );
-          unset ( $args );
-          $args = array
-          (
-               'name'          => __( 'Secondary Sidebar', 'wpTheme' ),
-               'id'            => 'sidebar_2',
-               'description'   => 'Secondary Side Bar',
-               'class'         => 'sidebar-2_class',
-               'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-               'after_widget'  => '</aside>',
-               'before_title'  => '<h1 class="widget-title">',
-               'after_title'   => '</h1>'
-          );
-          register_sidebar( $args );
-     }
-     add_action( 'widgets_init', 'wpTheme_widgets_init' );
-}
+
 /*
 =====================
 REGISTER WIDGET
@@ -297,27 +261,7 @@ if ( ! function_exists( 'wpTheme_register_widget' ) )
      //if we are going to use the widget we load the file of the widget class
      require_once get_parent_theme_file_path( '/inc/class.my-widget.php' );
 }
-/*
-==============================
-REGISTER NAVIGATION MENUS
-==============================
-*
-* To create a navigation menu you’ll need to register it,
-* and then display the menu in the appropriate location in your theme.
-* locations are added to the “Manage Locations” tab
-*/
-if ( ! function_exists( 'wpTheme_register_nav_menu' ) )
-{
-     function wpTheme_register_nav_menu()
-     {
-          $locations = array (
-               'primary_menu' => __( 'Primary Menu', 'wpTheme' ),
-               'footer_menu'  => __( 'Footer Menu', 'wpTheme' )
-          );
-          register_nav_menus( $locations );
-     }
-     add_action( 'init', 'wpTheme_register_nav_menu' );
-}
+
 /*
 ==============================
 ENABLE FEATURED IMAGE
@@ -391,41 +335,6 @@ if ( ! function_exists( 'wpTheme_remove_version_scripts_styles' ) )
      add_filter('script_loader_src', 'wpTheme_remove_version_scripts_styles', 9999);
 
 }
-
-/*
-==============================
-WP THEME CORE FUNCTIONS
-==============================
-*
-* load the WP THEME CORE FUNCTIONS
-*/
-require_once get_parent_theme_file_path( '/inc/wpTheme_core_functions.php' );
-/*
-==============================
-ENQUEUE.PHP
-==============================
-*
-* load the enqueue file
-*/
-require_once get_parent_theme_file_path( '/inc/enqueue.php' );
-/*
-==============================
-THEME_OPTIONS.PHP
-==============================
-*
-* load the enqueue file
-*/
-require_once get_parent_theme_file_path( '/inc/theme_options.php' );
-/*
-==============================
-THE HOOK ALLIANCE
-==============================
-*
-* include theme hook alliance hooks
-*/
-
-require_once( get_template_directory() . '/inc/hooks.php' );
-
 /*
 ==============================
 WP Bootstrap Navwalker
@@ -436,4 +345,60 @@ WP Bootstrap Navwalker
 
 require_once( get_template_directory() . '/inc/class-bootstrap-nav-walker.php' );
 
+/*
+==============================
+CLASS MY WIDGET
+==============================
+*
+* include the custom widgets
+*/
+require_once( get_template_directory() . '/inc/class.my-widget.php' );
+/*
+==============================
+ENQUEUE.PHP
+==============================
+*
+* load the enqueue file
+*/
+require_once get_parent_theme_file_path( '/inc/enqueue.php' );
+/*
+==============================
+THE HOOK ALLIANCE
+==============================
+*
+* include theme hook alliance hooks
+*/
+require_once( get_template_directory() . '/inc/hooks.php' );
+/*
+==============================
+REGISTGER NAVBARS
+==============================
+*
+* where we register all the navitagion bars
+*/
+require_once( get_template_directory() . '/inc/register_navbars.php' );
+/*
+==============================
+REGISTGER SIDEBARS
+==============================
+*
+* where we register all the sidebars
+*/
+require_once( get_template_directory() . '/inc/register_sidebars.php' );
+/*
+==============================
+THEME_OPTIONS.PHP
+==============================
+*
+* load the enqueue file
+*/
+require_once get_parent_theme_file_path( '/inc/theme_options.php' );
+/*
+==============================
+WP THEME CORE FUNCTIONS
+==============================
+*
+* load the WP THEME CORE FUNCTIONS
+*/
+require_once get_parent_theme_file_path( '/inc/wpTheme_core_functions.php' );
 ?>
