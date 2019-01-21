@@ -74,4 +74,5 @@ HEADER
      <!-- Create a div that is going to wrap all the content -->
 	<div class="container" id="wrap"> <!-- wrap div-->
           <!-- Add the head part-->
-          <div class="row"> 
+          <div class="row">
+               <?php include(locate_template('template-parts/header/part-head.php', false, false)); ?>
