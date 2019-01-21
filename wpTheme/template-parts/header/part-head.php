@@ -1,7 +1,7 @@
 <?php tha_header_before(); ?>
 <header>
      <?php tha_header_top(); ?>
-     <div class="navbar-header"> <!-- navbar-header-->
+     <div class="navbar navbar-header navbar-expand-lg"> <!-- navbar-header-->
           <?php
           //CHECK WHICH NAVBAR HAS CONTENT, IF TOP OR MAIN
           $nav_1 = has_nav_menu( 'top' );
@@ -25,15 +25,32 @@
           <?php endif; ?>
      </div><!-- navbar-header-->
      <?php
-          $ap_core_navbar_default = array( 'container' => 'nav', 'container_class' => 'topnav ' . $ap_core_navbar_inverse . ' collapse navbar-collapse navbar-1-collapse', 'theme_location' => 'top', 'fallback_cb' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new AP_Core_WP_Bootstrap_Navwalker() );
-          $ap_core_navbar_fixed = array( 'container' => 'nav', 'container_class' => 'topnav ' . $ap_core_navbar_inverse . ' navbar navbar-collapse collapse navbar-1-collapse navbar-default navbar-fixed-top', 'theme_location' => 'top', 'fallback_cb' => false, 'menu_class' => 'nav navbar-nav', 'walker' => new AP_Core_WP_Bootstrap_Navwalker() );
+          $ap_core_navbar_default = array (
+               'container' => 'nav', 
+               'container_class' => 'topnav ' . $ap_core_navbar_inverse . ' collapse navbar-collapse navbar-1-collapse', 
+               'theme_location' => 'top', 
+               'fallback_cb' => false, 
+               'menu_class' => 'nav navbar-nav', 
+               'walker' => new AP_Core_WP_Bootstrap_Navwalker() 
+          );
+          $ap_core_navbar_fixed = array( 
+               'container' => 'nav', 
+               'container_class' => 'topnav ' . $ap_core_navbar_inverse . ' navbar navbar-collapse collapse navbar-1-collapse navbar-default navbar-fixed-top', 
+               'theme_location' => 'top', 
+               'fallback_cb' => false, 
+               'menu_class' => 'nav navbar-nav', 
+               'walker' => new AP_Core_WP_Bootstrap_Navwalker() 
+          );
+     //in the theme option we set which nav bar we want to display. 
      if ( $ap_core_fixed_nav ) {
           // if the nav menu is fixed
           wp_nav_menu( $ap_core_navbar_fixed );
      } else {
           wp_nav_menu( $ap_core_navbar_default );
      } ?>
+     <!-- set the header image -->
      <?php
+     //get the image size
      $ap_core_header_image_width = get_theme_support( 'custom-header', 'width' );
      // Check if this is a post or page, if it has a thumbnail, and if it's a big one
      if ( is_singular() && current_theme_supports( 'post-thumbnails' ) && has_post_thumbnail( $post->ID ) && ( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
