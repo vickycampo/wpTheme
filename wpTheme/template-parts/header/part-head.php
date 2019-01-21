@@ -18,9 +18,10 @@
           }
           //add the colapse option of the nav
           if ( !is_null( $data_target ) ) : ?>
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="<?php echo $data_target; ?>">
-                    <i class="fas fa-igloo" title="Menu"></i>
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="<?php echo $data_target; ?>"  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                </button>
+               
           <?php endif; ?>
      </div><!-- navbar-header-->
      <?php
