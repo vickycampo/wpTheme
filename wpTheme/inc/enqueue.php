@@ -201,7 +201,7 @@ if ( ! function_exists( 'wpTheme_enqueue_fonts' ) )
                $deps = false;
                $ver = $theme['version'];
                wp_register_style( $handle, $src, $deps, $ver );
-               echo ('<br>' . $src . '<br>');
+               //echo ('<br>' . $src . '<br>');
                wp_enqueue_style ('fontawesome');
                // wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', false, $theme['Version'] );
 

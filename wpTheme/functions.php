@@ -115,7 +115,7 @@ if ( ! ( function_exists ( 'wphead_cb' ) ) )
 {
      function wphead_cb()
      {
-          echo ('wphead_cb on file ' . __FILE__ . ' and line number: ' . __LINE__ . '<br>');
+          //echo ('wphead_cb on file ' . __FILE__ . ' and line number: ' . __LINE__ . '<br>');
      }
 }
 /*
