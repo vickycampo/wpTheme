@@ -27,9 +27,9 @@ if ( ! function_exists( 'wpTheme_register_nav_menu' ) )
      function wpTheme_register_nav_menu()
      {
           $locations = array(
-         	'top' => __( 'Top Header Navigation', 'museum-core' ),
-         	'main' => __( 'Main Navigation', 'museum-core' ),
-         	'footer' => __( 'Footer Navigation', 'museum-core' )
+         	'top' => __( 'Top Header Navigation', 'wpTheme' ),
+         	'main' => __( 'Main Navigation', 'wpTheme' ),
+         	'footer' => __( 'Footer Navigation', 'wpTheme' )
           );
           register_nav_menus( $locations );
      }
