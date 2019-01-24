@@ -50,28 +50,24 @@ $ap_defaults = ap_core_get_theme_defaults();
                     <ul>
                          <?php dynamic_sidebar( $id ); ?>
                     </ul>
-               </div>
+               </div><!-- /<?php echo ( $id );?>-->
           <?php }
           else
           { ?>
                <div class="<?php echo ($cols_class);?>" id="<?php echo ( $id );?>">
-                    <ul>
-                         empty
-                    </ul>
-               </div>
+
+               </div><!-- /<?php echo ( $id );?>-->
           <?php }
      }?>
-     <div class="spacer-10"></div>
+     <div class="spacer-10"></div><!-- /spacer div-->
      <!-- Add the footer navigation menu-->
+
      <?php
-     $args = array(
-               'container' => 'nav',
-               'container_class' => 'footernav',
-               'theme_location' => 'footer',
-               'fallback_cb' => false,
-               'depth' => 1
-          );
-     wp_nav_menu( $args );
+     echo ('missing widgets / sidebars part');
+     //Top Navitagion bar part
+     get_template_part( '\template-parts\footer\part', 'navbar-footer' )
+     echo ('missing credit part');
+
      ?>
      <!-- Add the credit part of the theme-->
      <div class="credit">
@@ -84,13 +80,10 @@ $ap_defaults = ap_core_get_theme_defaults();
           {
                echo wp_kses_post( $ap_defaults['footer'] );
           } ?>
-     </div>
+     </div><!-- /credit -->
      <?php tha_footer_bottom(); ?>
 </footer>
 <?php tha_footer_after(); ?>
-
-</div><!-- closes .container -->
-
 <?php tha_body_bottom(); ?>
 <?php wp_footer(); ?>
 </body>
