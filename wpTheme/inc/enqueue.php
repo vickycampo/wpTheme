@@ -69,7 +69,7 @@ if ( ! function_exists( 'wpTheme_scripts' ) )
                          //we are going to use the file name as a handle so we need to remove extension
                          $file_short_name = str_replace(".js","",$file_name);
                          $handle = $file_short_name; //is the name for the script.
-                         $src = get_template_directory_uri() . '/assets/js/header' . $file_name; //defines where the script is located.
+                         $src = get_template_directory_uri() . '/assets/js/header/' . $file_name; //defines where the script is located.
                          $deps = array ( 'jquery' ); //is an array that can handle any script that your new script depends on, such as jQuery.
                          $ver = '1.1'; //sets the version number.
                          $in_footer = false; //allows you to place your scripts in the footer
@@ -88,7 +88,7 @@ if ( ! function_exists( 'wpTheme_scripts' ) )
                          //we are going to use the file name as a handle so we need to remove extension
                          $file_short_name = str_replace(".js","",$file_name);
                          $handle = $file_short_name; //is the name for the script.
-                         $src = get_template_directory_uri() . '/assets/js/footer' . $file_name; //defines where the script is located.
+                         $src = get_template_directory_uri() . '/assets/js/footer/' . $file_name; //defines where the script is located.
                          $deps = array ( 'jquery' ); //is an array that can handle any script that your new script depends on, such as jQuery.
                          $ver = '1.1'; //sets the version number.
                          $in_footer = true; //allows you to place your scripts in the footer
