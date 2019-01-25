@@ -40,39 +40,36 @@ HEADER
      } ?>" />
      <?php $options = get_option( 'ap_core_theme_options' ); ?>
      <?php
-          //we prepare the header,
-          //if the header title is not being displayed
-          //we prepare a funciotn so the heather will have a link for the homepage
-          $ap_core_headerimg = null;
-          if ( !isset( $options['site-title'] ) || $options['site-title'] == false ) {
-               $ap_core_headerimg_before = '<a href="' . esc_url( home_url() ) . '" title="' . get_bloginfo('title') . '">';
-               $ap_core_headerimg_after = '</a>';
-          } else {
-               $ap_core_headerimg_before = null;
-               $ap_core_headerimg_after = null;
-          }
-          //Checks if there is a Nav-Menu to set the class of the body based on this
+          //Check $options['nav-menu']
           $ap_core_fixed_nav = null;
-     	if ( isset( $options['nav-menu'] ) && ( true == $options['nav-menu'] ) ) {
+     	if ( isset( $options['nav-menu'] ) && ( true == $options['nav-menu'] ) )
+          {
      		$ap_core_fixed_nav = 'bs-fixed-nav';
      	}
-          //Check the option of the nav bar to see which we are going to use
-          $ap_core_navbar_inverse = null;
-     	if ( isset( $options['navbar-inverse'] ) && ( true == $options['navbar-inverse'] ) ) {
-     		$ap_core_navbar_inverse = 'navbar-inverse';
-     	} else {
-     		$ap_core_navbar_inverse = 'navbar-default';
-     	}
+
      ?>
      <!-- Set the page title -->
      <title><?php wp_title ();?></title>
      <?php tha_head_bottom(); ?>
      <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class( $ap_core_fixed_nav ); ?>>
      <?php tha_body_top(); ?>
      <!-- Create a div that is going to wrap all the content -->
 	<div class="container" id="wrap"> <!-- wrap div-->
           <!-- Add the head part-->
           <div class="row">
-               <?php include(locate_template('template-parts/header/part-head.php', false, false)); ?>
+              	<?php tha_header_before(); ?>
+			<header>
+				<?php tha_header_top(); ?>
+					<!-- this is where the header content should go -->
+					<!-- Top Navitagion bar part -->
+					<?php get_template_part( '\template-parts\header\part', 'navbar-top' ); ?>
+					<!-- Header Image part -->
+					<?php get_template_part( '\template-parts\header\part', 'header-image' ); ?>
+					<!-- Main Navigation bar part -->
+					<?php get_template_part( '\template-parts\header\part', 'navbar-main' ); ?>
+				<?php tha_header_bottom(); ?>
+		  	</header>
+     		<?php tha_header_after(); ?>
+     	</div> <!-- /div-row -->
