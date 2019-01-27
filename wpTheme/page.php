@@ -12,3 +12,10 @@
 * which are a built-in template.
 */
 ?>
+<div>page.php</div>
+<?php
+     global $wp_query;
+     echo ('<pre>');
+     print_r ($wp_query);
+     echo ('</pre>');
+?>

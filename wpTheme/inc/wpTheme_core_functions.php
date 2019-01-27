@@ -66,56 +66,32 @@ if (!function_exists('wpTheme_get_theme_defaults')) {
 <?php
 /*
 	==============================
-	  WPTHEME_GET_CONTENT_SIDE
+	  WPTHEME_GET_CONTENT_COLUMNS
 	==============================
 *
 * We determine which side we need to place the content
 * Return the content class
 */
-if ( ! function_exists ( 'wpTheme_get_content_side' ) )
+if ( ! function_exists ( 'wpTheme_get_content_columns' ) )
 {
-     function wpTheme_get_content_side ()
+     function wpTheme_get_content_columns ($location)
      {
-          $content = '';
-          $sidebar = wpTheme_get_which_sidebar();
-
-          if ( 'left' == $sidebar ) {
-               $content = 'the_right last';
+          $columns = 12;
+          foreach ( $GLOBALS['wp_registered_sidebars'] as $sidebar )
+          {
+               if (strpos ( $sidebar['id'] , $location ) > -1)
+               {
+                    if ( is_active_sidebar( $sidebar['id'] ) )
+                    {
+                         $columns = $columns -3;
+                    }
+                    print_r ( $sidebar);
+               }
           }
-
-          return $content;
+          return ('col-md-' . $columns);
      }
 }
 ?>
 <?php
-/*
-	==============================
-	  WPTHEME_GET_WHICH_SIDEBAR
-	==============================
-*
-* We get the side of the sidebar
-* Returns the side of the sidebar
-*/
-if ( ! function_exists ( 'wpTheme_get_which_sidebar' ))
-{
-     function wpTheme_get_which_sidebar ()
-     {
-          $defaults = wpTheme_get_theme_defaults();
-          $options = get_option( 'ap_core_theme_options' );
-          if ( isset( $options['sidebar'] ) )
-          {
-               $sidebar = $options['sidebar'];
-               if ( 'right' == $sidebar )
-               {
-                    $sidebar .= ' last';
-               }
-          }
-          else
-          {
-               $sidebar = $defaults['sidebar'];
-          }
 
-          return $sidebar;
-     }
-}
 ?>

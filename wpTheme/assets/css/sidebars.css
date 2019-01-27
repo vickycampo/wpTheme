@@ -1,0 +1,22 @@
+/*
+
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
+
+	===================================
+		SIDEBAR CSS
+	===================================
+* Style Sheet for all devices.
+*
+*/
+/* SIDEBAR FORMATING*/
+.body-right-sidebar
+{
+     background-color: red;
+}
+.body-left-sidebar
+{
+     background-color: red;
+     float: left;
+}
