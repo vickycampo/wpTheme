@@ -85,7 +85,6 @@ if ( ! function_exists ( 'wpTheme_get_content_columns' ) )
                     {
                          $columns = $columns -3;
                     }
-                    print_r ( $sidebar);
                }
           }
           return ('col-md-' . $columns);
