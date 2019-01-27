@@ -28,13 +28,13 @@
                <?php if (have_posts()) :
                          while (have_posts()) : the_post();
                          //get template part depending on the template format we are displaying
-                         if (locate_template( 'template-parts/post/part', get_post_format()))
+                         if (locate_template( 'template-parts/post/post', get_post_format()))
                          {
-                              get_template_part('template-parts/post/part', get_post_format());
+                              get_template_part('template-parts/post/post', get_post_format());
                          }
                          else
                          {
-                              get_template_part('template-parts/post/part', 'post');
+                              get_template_part('template-parts/post/post', 'post');
                          }
 
                     endwhile; ?>

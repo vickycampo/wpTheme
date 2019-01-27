@@ -28,7 +28,7 @@
 
           if ( is_active_sidebar( $id ) )
           { ?>
-               <div class="<?php echo ($cols_class);?>" id="<?php echo ( $id );?>">
+               <div class="<?php echo ($cols_class);?> <?php echo ($id);?>" id="<?php echo ( $id );?>">
                     <ul>
                          <?php dynamic_sidebar( $id ); ?>
                     </ul>
