@@ -11,7 +11,7 @@
 ?>
 <?php
 //Collapse target name
-$data_target = 'theme_location_top';
+$data_target = 'theme_location_main';
 //we create an array of arguments for the main navigation bar
 
 $args = array(
@@ -20,13 +20,13 @@ $args = array(
      'theme_location' => 'main',
      'fallback_cb' => false,
      'add_li_class'  => 'nav-item',
-     'walker' => new AP_Core_WP_Bootstrap_Navwalker()
+     'walker' => new bs4navwalker()
      );
 
 ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="navbar navbar-expand-lg navbar-light bg-light">
+     <div class="collapse navbar-collapse"  id="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target">
           <?php wp_nav_menu( $args ); ?>
-          
+
      </div><!-- navbarSupportedContent -->
 </nav>

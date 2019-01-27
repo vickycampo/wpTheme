@@ -343,7 +343,7 @@ WP Bootstrap Navwalker
 * include bootstrap nav walker class
 */
 
-require_once( get_template_directory() . '/inc/class-bootstrap-nav-walker.php' );
+require_once( get_template_directory() . '/inc/bs4navwalker.php' );
 
 /*
 ==============================
