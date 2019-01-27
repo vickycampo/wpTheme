@@ -6,9 +6,9 @@
 @since wpTheme
 
 	========================================
-		POST PART FOR A STANDARD POSTTYPE
+		POST PART FOR A ASIDE POSTTYPE
 	========================================
 * The main template file. It is required in all themes.
 */
 ?>
-POST PART
+ASIDE TYPE

@@ -1,0 +1,31 @@
+/*
+
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
+
+	===================================
+		ALL BODY CSS
+	===================================
+* Style Sheet for all classes used in the body part.
+*
+*/
+
+/*The container of all the body elements*/
+body
+{
+     line-height: 1.5em;
+}
+/* The bs-fixed-nav class is set when there is options['nav-menu'] is set and is true*/
+
+body.bs-fixed-nav
+{
+  padding-top: 70px;
+}
+
+
+/* The wrap div contains all the header and contant part */
+#wrap
+{
+
+}

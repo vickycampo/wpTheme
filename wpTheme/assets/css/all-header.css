@@ -1,0 +1,17 @@
+/*
+
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
+
+	===================================
+		ALL HEADER CSS
+	===================================
+* Style Sheet for all classes used in the header.
+*
+*/
+/* The container of all the header elements */
+header
+{
+  margin: 10px 0 20px;
+}
