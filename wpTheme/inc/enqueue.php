@@ -196,14 +196,17 @@ if ( ! function_exists( 'wpTheme_enqueue_fonts' ) )
                }
 
                //this loads the icon set
-               $handle = 'fontawesome';
-               $src = get_template_directory_uri() . '/assets/fontawesome/css/fontawesome.min.css';
+               $handle = 'font-awesome-min';
+               $src = get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css';
                $deps = false;
                $ver = $theme['version'];
-               wp_register_style( $handle, $src, $deps, $ver );
-               //echo ('<br>' . $src . '<br>');
-               wp_enqueue_style ('fontawesome');
-               // wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', false, $theme['Version'] );
+               wp_register_style( $handle, $src, $deps );
+               wp_enqueue_style ($handle);
+               echo ($src . '<br>');
+
+
+
+
 
 
 
