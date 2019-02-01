@@ -6,7 +6,7 @@
 @since wpTheme
 
 	========================================
-		ASIDE POST FORMATING
+		STATUS POST FORMATING
 	========================================
 * The main template file. It is required in all themes.
 */
@@ -18,7 +18,7 @@
 		<?php get_template_part( 'template-parts/part', 'section' ); ?>
 	<?php tha_entry_after(); ?>
 
-	<div class="icon icon-lightbulb pull-left" title="<?php esc_attr_e( 'Aside', 'wpTheme' ); ?>">
+	<div class="icon icon-bullhorn pull-left" title="<?php esc_attr_e( 'Aside', 'wpTheme' ); ?>">
 	</div>
 	<?php get_template_part( 'template-parts/part', 'micropostmeta' ); ?>
 

@@ -43,7 +43,7 @@ if (!function_exists('wpTheme_get_theme_defaults')) {
                // use alt for h1?
                'alth1' => 0,
                // footer text
-               'footer' => sprintf( _x( '%1$s %2$s %3$s', '1: copyright, 2: year, 3: blog title', 'museum-core' ), '&copy;',  date('Y'), get_bloginfo('title') ) . ' . ' . sprintf( __( 'Museum Core is proudly powered by %1$sWordPress%2$s.', 'museum-core' ), '<a href="http://wordpress.org" target="_blank">', '</a>' ),
+               'footer' => sprintf( _x( '%1$s %2$s %3$s', '1: copyright, 2: year, 3: blog title', 'wpTheme' ), '&copy;',  date('Y'), get_bloginfo('title') ) . ' . ' . sprintf( __( 'Museum Core is proudly powered by %1$sWordPress%2$s.', 'wpTheme' ), '<a href="http://wordpress.org" target="_blank">', '</a>' ),
                // advanced settings
                'author' => 0,
                'generator' => 0,

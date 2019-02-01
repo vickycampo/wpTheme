@@ -6,20 +6,19 @@
 @since wpTheme
 
 	========================================
-		ASIDE POST FORMATING
+		GALLERY POST FORMATING
 	========================================
 * The main template file. It is required in all themes.
 */
 ?>
 <!--  -->
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-	<time datetime=<?php the_time('Y-m-d'); ?>></time>
+	<?php get_template_part( 'template-parts/part', 'title' ); ?>
 	<?php tha_entry_before(); ?>
 		<?php get_template_part( 'template-parts/part', 'section' ); ?>
 	<?php tha_entry_after(); ?>
 
-	<div class="icon icon-lightbulb pull-left" title="<?php esc_attr_e( 'Aside', 'wpTheme' ); ?>">
-	</div>
-	<?php get_template_part( 'template-parts/part', 'micropostmeta' ); ?>
+	<div class="icon icon-picture pull-left" title="<?php esc_attr_e( 'Audio', 'wpTheme' ); ?>"></div>
+	<?php get_template_part( 'template-parts/part', 'postmetadata' ); ?>
 
 </article>
