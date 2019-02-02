@@ -202,7 +202,6 @@ if ( ! function_exists( 'wpTheme_enqueue_fonts' ) )
                $ver = $theme['version'];
                wp_register_style( $handle, $src, $deps );
                wp_enqueue_style ($handle);
-               echo ($src . '<br>');
 
 
 

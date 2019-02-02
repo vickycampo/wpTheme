@@ -13,8 +13,12 @@
 /* Is the class of the div that wraps all the content of the loop*/
 .the_content
 {
-     background-color: red;
+
 }
+     .the_content > article
+     {
+          
+     }
 /*
      ===================================
           CONTENT SIDEBARS CSS
