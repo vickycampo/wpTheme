@@ -24,21 +24,21 @@ FOOTER
      <div class="row footer-widgets">
           <?php
                //add the widget part of the template
-               get_template_part( '\template-parts\footer\part', 'widgets' );
+               get_template_part( 'template-parts/footer/part', 'widgets' );
           ?>
      </div>
      <div class="spacer-10"></div><!-- /spacer div-->
      <div class="row footer-navigation">
           <?php
                //add the footer navigation bar
-               get_template_part( '\template-parts\footer\part', 'navbar-footer' );
+               get_template_part( 'template-parts/footer/part', 'navbar-footer' );
           ?>
      </div>
      <div class="spacer-10"></div><!-- /spacer div-->
      <div class="row footer-credits">
           <?php
                //add the footer credits
-               get_template_part( '\template-parts\footer\part', 'credit' );
+               get_template_part( 'template-parts/footer/part', 'credit' );
           ?>
      </div>
      <?php tha_footer_bottom(); ?>

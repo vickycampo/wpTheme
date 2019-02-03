@@ -21,8 +21,8 @@
           <?php get_template_part( 'template-parts/part', 'section' ); ?>
           <?php tha_entry_after(); ?>
 
-          <?php get_template_part( 'parts/part', 'postmetadata' ); ?>
-          <?php get_template_part( 'parts/part', 'navigation' ); ?>
+          <?php get_template_part('template-parts/part', 'postmetadata' ); ?>
+          <?php get_template_part('template-parts/part', 'navigation' ); ?>
           <!-- Comments Section -->
           <?php get_template_part( 'template-parts/part', 'comments' ); ?>
 

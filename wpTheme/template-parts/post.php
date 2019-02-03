@@ -50,6 +50,6 @@
 	<?php tha_entry_after(); ?>
 
 	<div class="icon icon-post pull-left"></div>
-	<?php get_template_part( 'parts/part', 'postmetadata' ); ?>
+	<?php get_template_part('template-parts/part', 'postmetadata' ); ?>
 
 </article>

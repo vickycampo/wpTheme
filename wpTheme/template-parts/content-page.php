@@ -23,7 +23,7 @@
           <?php get_template_part( 'template-parts/part', 'section' ); ?>
           <?php tha_entry_after(); ?>
 
-          <?php get_template_part( 'parts/part', 'postmetadata' ); ?>
+          <?php get_template_part('template-parts/part', 'postmetadata' ); ?>
           <!-- Comments Section -->
           <?php get_template_part( 'template-parts/part', 'comments' ); ?>
           

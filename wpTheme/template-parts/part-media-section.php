@@ -22,21 +22,20 @@
      {
           if ( has_post_thumbnail() )
           {
-          ?>
-
+               ?>
                <div class="pull-left">
                     <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
                          <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-thumbnail media-object' ) ); ?>
                     </a>
                </div>
 
-          <?php
+               <?php
           } ?>
           <div class="media-body">
                <?php the_excerpt(); ?>
           </div>
 
-     <?php
+          <?php
      } ?>
      <?php tha_entry_bottom(); ?>
 </section>
