@@ -18,12 +18,15 @@
 		<?php tha_entry_top(); ?>
 
 		<?php
-		if ( function_exists( 'ap_core_blog_excerpts' ) && ap_core_blog_excerpts() == false )
+		//check if the blog excerpts function exists
+
+		if ( function_exists( 'ap_core_blog_excerpts' ) &&  ap_core_blog_excerpts() == false )
           {
 			the_content(__('Read more &raquo;','wpTheme'));
 		}
           else
           {
+			//put post thumbnail
 			if(has_post_thumbnail())
                { ?>
 				<div class="pull-left">
@@ -32,7 +35,9 @@
                          </a>
                     </div>
 			<?php
-               } ?>
+               }
+			//Put the excerpt
+			?>
 			<div class="media-body">
 				<?php the_excerpt(); ?>
 			</div>
@@ -44,6 +49,7 @@
 	</section>
 	<?php tha_entry_after(); ?>
 
-	<div class="icon icon-post pull-left"></div><?php get_template_part( 'parts/part', 'postmetadata' ); ?>
+	<div class="icon icon-post pull-left"></div>
+	<?php get_template_part('template-parts/part', 'postmetadata' ); ?>
 
 </article>
