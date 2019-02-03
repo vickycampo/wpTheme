@@ -57,7 +57,7 @@ get_header(); ?>
         // End the loop.
         endwhile;
         ?>
-
+        <?php get_template_part('template-parts/part', 'postmetadata' ); ?>
         </main><!-- .site-main -->
     </div><!-- .content-area -->
 
