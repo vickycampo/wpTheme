@@ -12,15 +12,17 @@
 */
 ?>
 <?php
-     //We get the header.php at the moment we are not using a special header, just the standard one.
+     //Get the standard header
      get_header();
-     //Add hook
-     tha_content_before();
-     //We determine which side we need to place the content
-     //based on which side the sidebar is located at
+
+     //we determine how many columns the content will ocuppy
      $wpTheme_content_columns = wpTheme_get_content_columns('body'); ?>
      <!-- add the class to the content div-->
      <div class="row" >
+          <?php
+          //Add hook
+          tha_content_before();
+          ?>
           <div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
                <!-- Add hook -->
                <?php tha_content_top(); ?>
