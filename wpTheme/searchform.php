@@ -18,6 +18,7 @@
 ?>
 <!-- The Search form -->
 <form method="get" role="form" class="form-inline" id="searchform" action="<?php echo esc_url( home_url() ); ?>/">
+	<!-- Div to contain all the fields -->
 	<div class="form-group">
 		<label class="sr-only" for="search">
 			<?php echo esc_attr( $ap_core_searchtext ); ?>
