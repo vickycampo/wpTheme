@@ -12,9 +12,11 @@
 */
 ?>
 <?php
+//Get the standard header
 get_header();
 
-$ap_core_content = ap_core_get_which_content(); ?>
+//we determine how many columns the content will ocuppy
+$wpTheme_content_columns = wpTheme_get_content_columns('body'); ?>
 <div class="row" >
 	<?php
 	//Add hook
@@ -23,7 +25,7 @@ $ap_core_content = ap_core_get_which_content(); ?>
 	<div class="content col-md-9 <?php echo esc_attr( $ap_core_content ) ?>">
 		<?php tha_content_top(); ?>
 
-		<?php get_template_part('parts/content','search'); ?>
+		<?php get_template_part('template-parts/content','search'); ?>
 
 		<?php tha_content_bottom(); ?>
 	</div>
@@ -31,5 +33,4 @@ $ap_core_content = ap_core_get_which_content(); ?>
      <?php get_sidebar('left'); ?>
      <?php get_sidebar('right'); ?>
 </div><!--sidebar and content row-->
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
