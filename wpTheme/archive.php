@@ -16,17 +16,26 @@
 <?php
      //Calls the header.php
      get_header();
+     //we determine how many columns the content will ocuppy
+     $wpTheme_content_columns = wpTheme_get_content_columns('body');
      //Add Hook
-     tha_content_before();
-     $ap_core_content = ap_core_get_which_content(); ?>
-     <div class="content col-md-9 <?php echo esc_attr( $ap_core_content ) ?>">
+
+
+?>
+<div class="row" >
+     <?php tha_content_before(); ?>
+     <!-- The Content Div -->
+     <div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
      	<?php tha_content_top(); ?>
 
-     	<?php get_template_part('template-parts/content','archive'); ?>
+     	<?php
+          //Get the Template part
+          get_template_part('template-parts/content','archive'); ?>
 
      	<?php tha_content_bottom(); ?>
-     </div>
+     </div> <!-- /content -->
      <?php tha_content_after(); ?>
-     <?php get_sidebar(); ?>
-     <?php get_footer(); ?>
-?>
+     <?php get_sidebar('left'); ?>
+     <?php get_sidebar('right'); ?>
+</div><!--row-->
+<?php get_footer(); ?>

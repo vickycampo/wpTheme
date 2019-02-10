@@ -5,13 +5,13 @@
 @subpackage wpTheme
 @since wpTheme
 
-	===================================
-		404 - PAGE NOT FOUND
-	===================================
-* This page contains is called when the URI is not found
-*
+	=========================
+		AUTHOR
+	=========================
+* This is the author page template
 */
 ?>
+
 
 <?php
      //Calls the header.php
@@ -30,7 +30,7 @@
 
      	<?php
           //Get the Template part
-          get_template_part('template-parts/content','404'); ?>
+          get_template_part('template-parts/content','author'); ?>
 
      	<?php tha_content_bottom(); ?>
      </div> <!-- /content -->

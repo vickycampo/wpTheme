@@ -32,9 +32,7 @@ $author_link = '<a href="' . get_author_posts_url($author_ID) . '">' . $author_n
 $author = sprintf( __( 'by %s', 'wpTheme' ), $author_link );
 //If we have set options for the author, we use them
 
-// echo ('<pre>is_singular<br>');
-// var_dump (is_singular());
-// echo ('</pre>');
+
 if ( isset( $options['post-author'] ) && $options['post-author'] )
 {
      if ( is_singular() )

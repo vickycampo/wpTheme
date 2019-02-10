@@ -50,5 +50,5 @@
           <?php tha_content_after(); ?>
           <?php get_sidebar('left'); ?>
           <?php get_sidebar('right'); ?>
-     </div><!--sidebar and content row-->
+     </div><!-- /Row -->
      <?php get_footer(); ?>
