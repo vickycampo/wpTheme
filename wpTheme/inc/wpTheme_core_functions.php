@@ -14,9 +14,9 @@
 ?>
 <?php
 /*
-	==============================
-	  WPTHEME_GET_THEME_DEFAULTS
-	==============================
+	================================
+	    WPTHEME_GET_THEME_DEFAULTS
+	================================
 *
 * The first specific theme helper, load the theme options and defaults
 */
@@ -65,9 +65,9 @@ if (!function_exists('wpTheme_get_theme_defaults')) {
 ?>
 <?php
 /*
-	==============================
-	  WPTHEME_GET_CONTENT_COLUMNS
-	==============================
+	==================================
+	    WPTHEME_GET_CONTENT_COLUMNS
+	==================================
 *
 * We determine which side we need to place the content
 * Return the content class
@@ -92,5 +92,59 @@ if ( ! function_exists ( 'wpTheme_get_content_columns' ) )
 }
 ?>
 <?php
-
+/*
+	==================================
+	    WPTHEME_CORE_COMMENTS
+	==================================
+*
+* This function styles the way comments are display
+*/
+?>
+<?php
+if (!function_exists('wpTheme_comments'))
+{
+     function wpTheme_comments($comment, $args, $depth)
+     {
+          /* Create a globar variable for the comments */
+          $GLOBALS['comment'] = $comment; ?>
+          <!--Create list Item -->
+          <li <?php comment_class( 'media' ); ?> id="li-comment-<?php comment_ID() ?>">
+               <div id="comment-<?php comment_ID(); ?>" class="the_comment">
+                    <div class="comment-author vcard">
+                         <?php
+                         if ( get_avatar($comment) ) : ?>
+                              <div class="thumbnail media-object"><?php echo get_avatar($comment,$size='64',$default='' ); ?>
+                              </div>
+                         <?php endif; ?>
+                    </div>
+                    <div class="media-body">
+                         <label><?php echo sprintf(_x('On %1$s at %2$s, %3$s said:', '1: date, 2: time, 3:author', 'wpTheme'),
+                              esc_html( get_comment_date() ),
+                              esc_html( get_comment_time() ),
+                              wp_kses_post( get_comment_author_link() )
+                         ); ?>
+                         </label>
+                         <?php
+                         if ($comment->comment_approved == '0') : ?>
+                              <em><?php _e('Your comment is awaiting moderation.', 'wpTheme') ?></em>
+                              <br />
+                         <?php endif; ?>
+                         <?php comment_text() ?>
+                         <?php if ( comments_open() ) {
+                              if ( $depth < $args['max_depth'] ) { ?>
+                                   <div class="reply"><button class="btn btn-default btn-sm">
+                                        <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'reply_text' => __('Respond to this','wpTheme'), 'max_depth' => $args['max_depth']))) ?>
+                                   </button></div>
+                              <?php }
+                         } ?>
+                         <small>
+                              <div class="comment-meta commentmetadata"><?php edit_comment_link( '<span class="text-danger">' . __('(Edit)', 'wpTheme') . '</span>','','') ?></div>
+                              <a href="<?php comment_link(); ?>"><?php _e( 'Permalink', 'wpTheme' ); ?></a>
+                         </small>
+                    </div>
+               </div>
+          </li>
+          <?php
+     }
+}
 ?>
