@@ -8,20 +8,34 @@
 	===================================
 		ARCHIVE
 	===================================
-* This page is to display the archives of posts
+* This is the archives template
 *
 */
 ?>
+
 <?php
+     //Calls the header.php
      get_header();
-     if ( have_posts() ) :
-      while ( have_posts() ) :
-        the_post();
-        the_content();
-      endwhile;
-     else :
-        _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
-     endif;
-     get_sidebar();
-     get_footer();
+     //we determine how many columns the content will ocuppy
+     $wpTheme_content_columns = wpTheme_get_content_columns('body');
+     //Add Hook
+
+
 ?>
+<div class="row" >
+     <?php tha_content_before(); ?>
+     <!-- The Content Div -->
+     <div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
+     	<?php tha_content_top(); ?>
+
+     	<?php
+          //Get the Template part
+          get_template_part('template-parts/content','archive'); ?>
+
+     	<?php tha_content_bottom(); ?>
+     </div> <!-- /content -->
+     <?php tha_content_after(); ?>
+     <?php get_sidebar('left'); ?>
+     <?php get_sidebar('right'); ?>
+</div><!--row-->
+<?php get_footer(); ?>
