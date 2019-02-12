@@ -118,7 +118,7 @@ if ( ! function_exists( 'wpTheme_enqueue_fonts' ) )
                //The first specific theme helper, load the theme options and defaults
                $defaults = wpTheme_get_theme_defaults ();
                //Fetch options from the database table
-               $options = get_option ('ap_core_theme_options');
+               $options = get_option ('wpTheme_options');
                if ( isset( $options['font_subset'] ) ) {
                     $font_subset = $options['font_subset'];
                } else {

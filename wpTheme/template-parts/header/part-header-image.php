@@ -12,7 +12,9 @@
 <?php
      //we prepare the header,
      //get the theme options
-     $options = get_option( 'ap_core_theme_options' );
+     $options = get_option( 'wpTheme_options' );
+
+
      //if the header title is not being displayed
      //we prepare a funciotn so the heather will have a link for the homepage
      $ap_core_headerimg = null;
@@ -35,6 +37,7 @@
      {
           // there's a header image
           $ap_core_headerimg = true;
+          
           ?>
 
           <div class="headerimg"> <!-- Header-img -->

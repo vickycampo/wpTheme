@@ -11,7 +11,7 @@
 ?>
 <?php
 //get the theme options and defaults
-$ap_options = get_option( 'ap_core_theme_options' );
+$ap_options = get_option( 'wpTheme_options' );
 $ap_defaults = wpTheme_get_theme_defaults();
 ?>
 

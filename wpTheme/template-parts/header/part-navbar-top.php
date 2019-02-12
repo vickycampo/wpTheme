@@ -10,7 +10,7 @@
 */
 ?>
 
-<?php $options = get_option( 'ap_core_theme_options' ); ?>
+<?php $options = get_option( 'wpTheme_options' ); ?>
 
 <?php
      //we create a variable that contains the container class depending on which settings are set in the options

@@ -148,3 +148,26 @@ if (!function_exists('wpTheme_comments'))
      }
 }
 ?>
+<?php
+/*
+	==================================
+	    WPTHEME_CORE_COMMENTS
+	==================================
+*
+* Generic yes/no function used for true/false options
+*/
+?>
+<?php
+
+if (!function_exists('wpTheme_true_false'))
+{
+     function wpTheme_true_false()
+     {
+          $ap_core_true_false = array(
+               true => __('Yes','wpTheme'),
+               false => __('No','wpTheme')
+          );
+          return $ap_core_true_false;
+     }
+}
+?>

@@ -38,7 +38,7 @@ HEADER
           echo " - ";
           bloginfo('description');
      } ?>" />
-     <?php $options = get_option( 'ap_core_theme_options' ); ?>
+     <?php $options = get_option( 'wpTheme_options' ); ?>
      <?php
           //Check $options['nav-menu']
           $ap_core_fixed_nav = null;

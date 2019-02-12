@@ -394,6 +394,15 @@ require_once( get_template_directory() . '/inc/register_sidebars.php' );
 */
 require_once get_parent_theme_file_path( '/inc/theme_options.php' );
 /*
+
+	===================================
+		VALIDATE FUNCTIONS
+	===================================
+*
+* All the functions that are used to validate the information in the theme_options.php
+*/
+require_once get_parent_theme_file_path( '/inc/theme_options_validations.php' );
+/*
      ==============================
           WP THEME CORE FUNCTIONS
      ==============================

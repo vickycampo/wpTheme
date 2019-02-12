@@ -16,7 +16,7 @@
 if ( is_active_sidebar( 'body-right-sidebar' ) )
 {
 ?>
-     <div class="sidebar body-right-sidebar col-sm-3 order-1">
+     <div class="sidebar body-right-sidebar col-sm-3 order-3">
       	<?php tha_sidebar_top(); ?>
           <?php
 
