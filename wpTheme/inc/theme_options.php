@@ -38,36 +38,51 @@ if (!function_exists('wpTheme_options_init'))
 		WPTHEME ADD SECTIONS
 	===================================
 *
-* Register the settings
+* Add Sections
 */
 if ( ! function_exists( 'wpTheme_add_sections' ) )
 {
      function wpTheme_add_sections( $wp_customize )
      {
+          //Starting priority
+          $priority = 35;
           /* LAYOUT SECTION - Add options for the layout of the theme */
           $id = 'layout_options';
           $args = array
           (
               'title'      => __('Layout Options','wpTheme'),
-              'priority'   => 35
+              'priority'   => $priority
           );
           $wp_customize -> add_section( $id , $args );
+          //increment priority
 
           /* TYPOGRAPHY SECTION - Add options for the fonts of the theme */
+          $priority ++;
           $id = 'typography_options';
           $args = array
           (
               'title'      => __('Typography Options','wpTheme'),
-              'priority'   => 36
+              'priority'   => $priority
           );
           $wp_customize -> add_section( $id , $args );
 
           /* ADVANCED SECTION - Add advanced options */
+          $priority ++;
           $id = 'advanced_options';
           $args = array
           (
               'title'      => __('Advanced Options','wpTheme'),
-              'priority'   => 36
+              'priority'   => $priority
+          );
+          $wp_customize -> add_section( $id , $args );
+
+          /* Skins Section */
+          $priority ++;
+          $id = 'skins_options';
+          $args = array
+          (
+              'title'      => __('Skins Options','wpTheme'),
+              'priority'   => $priority
           );
           $wp_customize -> add_section( $id , $args );
      }
@@ -82,7 +97,10 @@ if ( ! function_exists( 'wpTheme_add_sections' ) )
 *
 * load the files with the customization functions
 */
-
+/* Choices File */
+require_once get_parent_theme_file_path( '/inc/theme_options_choices.php' );
+/* Validations */
+require_once get_parent_theme_file_path( '/inc/theme_options_validations.php' );
 /* Title Tag Line */
 require_once get_parent_theme_file_path( '/inc/theme_options_title_tagline.php' );
 /* Layout */
@@ -93,4 +111,6 @@ require_once get_parent_theme_file_path( '/inc/theme_options_typography.php' );
 require_once get_parent_theme_file_path( '/inc/theme_options_colors.php' );
 /* Advanced */
 require_once get_parent_theme_file_path( '/inc/theme_options_advanced.php' );
+/* Skins */
+require_once get_parent_theme_file_path( '/inc/theme_options_skins.php' );
 ?>

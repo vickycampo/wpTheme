@@ -41,8 +41,8 @@ if ( ! function_exists( 'wpTheme_author_customization' ) )
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Use author meta tags?', 'museum-core' ),
-			'section' => 'wpTheme_advanced',
+			'label' => __( 'Use author meta tags?', 'wpTheme' ),
+			'section' => 'advanced_options',
 			'settings' => 'wpTheme_options[author]',
 			'type' => 'select',
 			'choices' => wpTheme_true_false(),
@@ -76,15 +76,15 @@ if ( ! function_exists( 'wpTheme_footer_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_kses'
+			'sanitize_callback' => 'wpTheme_kses'
 
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
-          $footer_text = new AP_Core_Textarea_Control( $wp_customize, 'wpTheme_options[footer]', array(
+          $footer_text = new wpTheme_Textarea_Control( $wp_customize, 'wpTheme_options[footer]', array(
 
-			'label' => __( 'Footer Text', 'museum-core' ),
-			'section' => 'wpTheme_advanced',
+			'label' => __( 'Footer Text', 'wpTheme' ),
+			'section' => 'advanced_options',
 			'settings' => 'wpTheme_options[footer]',
 			'type' => 'textarea',
 			'sanitize_callback' => 'esc_textarea'
@@ -124,8 +124,8 @@ if ( ! function_exists( 'wpTheme_favicon_customization' ) )
           /* Add the control */
           $favicon = new WP_Customize_Image_Control( $wp_customize, 'wpTheme_options[favicon]', array(
 
-			'label' => __( 'Custom Favicon', 'museum-core' ),
-			'section' => 'wpTheme_advanced',
+			'label' => __( 'Custom Favicon', 'wpTheme' ),
+			'section' => 'advanced_options',
 			'settings' => 'wpTheme_options[favicon]',
 			'sanitize_callback' => 'wpTheme_validate_favicon'
 
@@ -164,8 +164,8 @@ if ( ! function_exists( 'wpTheme_generator_customization' ) )
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Debug Mode Active', 'museum-core' ),
-			'section' => 'wpTheme_advanced',
+			'label' => __( 'Debug Mode Active', 'wpTheme' ),
+			'section' => 'advanced_options',
 			'settings' => 'wpTheme_options[generator]',
 			'type' => 'select',
 			'choices' => wpTheme_true_false(),

@@ -46,7 +46,7 @@ if ( ! function_exists( 'wpTheme_validate_fonts' ) )
 	function wpTheme_validate_fonts( $value )
 	{
 		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
-		if ( ! array_key_exists( $value, ap_core_fonts() ) )
+		if ( ! array_key_exists( $value, wpTheme_fonts() ) )
 		{
 			//FALSE - NOT VALID
 			$value = null;
@@ -71,7 +71,7 @@ if ( ! function_exists( 'wpTheme_validate_excerpts' ) )
 	function wpTheme_validate_excerpts( $value )
 	{
 		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
-		if ( !array_key_exists( $value, ap_core_show_excerpts() ) )
+		if ( !array_key_exists( $value, wpTheme_show_excerpts() ) )
 		{
 			//FALSE - NOT VALID
 			$value = null;
@@ -81,29 +81,7 @@ if ( ! function_exists( 'wpTheme_validate_excerpts' ) )
 	}
 }
 ?>
-<?php
-/*
-	==============================
-		VALIDATE - SIDEBAR
-	==============================
-*
-* Validate SIDEBAR options
-*/
-if ( ! function_exists( 'wpTheme_validate_sidebar' ) )
-{
-	function wpTheme_validate_sidebar( $value )
-	{
-		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
-		if ( !array_key_exists( $value, ap_core_sidebar() ) )
-		{
-			//FALSE - NOT VALID
-			$value = null;
-		}
-		//TRUE - VALID
-		return $value;
-	}
-}
-?>
+
 <?php
 /*
 	==============================
@@ -117,7 +95,7 @@ if ( ! function_exists( 'wpTheme_validate_subset' ) )
 	function wpTheme_validate_subset( $value )
 	{
 		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
-		if ( !array_key_exists( $value, ap_core_font_subset() ) )
+			if ( !array_key_exists( $value, wpTheme_font_subset() ) )
 		{
 			//FALSE - NOT VALID
 			$value = null;
@@ -165,6 +143,45 @@ if ( ! function_exists( 'wpTheme_validate_favicon' ) )
 				$value['favicon'] = null;
 			}
 		}
+		return $value;
+	}
+}
+?>
+<?php
+/*
+	==============================
+		VALIDATE - FAVICON
+	==============================
+*
+* Runs the value through wp_kses_post for html validation.
+*/
+if ( ! function_exists( 'wpTheme_kses' ) )
+{
+	function wpTheme_kses( $value )
+	{
+		return wp_kses_post( $value ); //Sanitize content for allowed HTML tags for post content.
+	}
+}
+?>
+<?php
+/*
+	==============================
+		VALIDATE - SKINS
+	==============================
+*
+* Validate SKINS options
+*/
+if ( ! function_exists( 'wpTheme_validate_skins' ) )
+{
+	function wpTheme_validate_skins( $value )
+	{
+		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
+			if ( !array_key_exists( $value, wpTheme_skins() ) )
+		{
+			//FALSE - NOT VALID
+			$value = null;
+		}
+		//TRUE - VALID
 		return $value;
 	}
 }

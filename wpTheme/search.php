@@ -22,7 +22,7 @@ $wpTheme_content_columns = wpTheme_get_content_columns('body'); ?>
 	//Add hook
 	tha_content_before();
 	?>
-	<div class="content col-md-9 <?php echo esc_attr( $ap_core_content ) ?>">
+	<div class="content col-md-9 <<?php echo esc_attr( $wpTheme_content_columns ) ?>">
 		<?php tha_content_top(); ?>
 
 		<?php get_template_part('template-parts/content','search'); ?>

@@ -41,7 +41,7 @@ if ( ! function_exists( 'wpTheme_font_color_customization' ) )
           /* Add the control */
           $font_color = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[font-color]', array(
 
-			'label' => __( 'Font Color', 'museum-core' ),
+			'label' => __( 'Font Color', 'wpTheme' ),
 			'section' => 'colors',
 			'settings' => 'wpTheme_options[font-color]',
 			'sanitize_callback' => 'sanitize_hex_color'
@@ -81,7 +81,7 @@ if ( ! function_exists( 'wpTheme_link_customization' ) )
           /* Add the control */
           $link_color = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[link]', array(
 
-			'label' => __( 'Link Color', 'museum-core' ),
+			'label' => __( 'Link Color', 'wpTheme' ),
 			'section' => 'colors',
 			'settings' => 'wpTheme_options[link]',
 			'sanitize_callback' => 'sanitize_hex_color'
@@ -121,7 +121,7 @@ if ( ! function_exists( 'wpTheme_hover_customization' ) )
           /* Add the control */
           $hover_color = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[hover]', array(
 
-			'label' => __( 'Hover Color', 'museum-core' ),
+			'label' => __( 'Hover Color', 'wpTheme' ),
 			'section' => 'colors',
 			'settings' => 'wpTheme_options[hover]',
 			'sanitize_callback' => 'sanitize_hex_color'
@@ -161,7 +161,7 @@ if ( ! function_exists( 'wpTheme_content_color_customization' ) )
           /* Add the control */
           $content_color = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[content-color]', array(
 
-			'label' => __( 'Content Background color', 'museum-core' ),
+			'label' => __( 'Content Background color', 'wpTheme' ),
 			'section' => 'colors',
 			'settings' => 'wpTheme_options[content-color]',
 			'sanitize_callback' => 'sanitize_hex_color'
@@ -201,7 +201,7 @@ if ( ! function_exists( 'wpTheme_navbar_color_customization' ) )
           /* Add the control */
           $navbar_color = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[navbar-color]', array(
 
-			'label' => __( 'Navbar (top) Background Color', 'museum-core' ),
+			'label' => __( 'Navbar (top) Background Color', 'wpTheme' ),
 			'section' => 'colors',
 			'settings' => 'wpTheme_options[navbar-color]',
 			'sanitize_callback' => 'sanitize_hex_color'
@@ -241,7 +241,7 @@ if ( ! function_exists( 'wpTheme_navbar_inverse_customization' ) )
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Inverted navbar?', 'museum-core' ),
+			'label' => __( 'Inverted navbar?', 'wpTheme' ),
 			'section' => 'colors',
 			'settings' => 'wpTheme_options[navbar-inverse]',
 			'type' => 'select',
@@ -283,7 +283,7 @@ if ( ! function_exists( 'wpTheme_navbar_link_customization' ) )
           /* Add the control */
           $navbar_link = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[navbar-link]', array(
 
-			'label' => __( 'Navbar Link Color', 'museum-core' ),
+			'label' => __( 'Navbar Link Color', 'wpTheme' ),
 			'section' => 'colors',
 			'settings' => 'wpTheme_options[navbar-link]',
 			'sanitize_callback' => 'sanitize_hex_color'

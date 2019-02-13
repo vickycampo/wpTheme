@@ -20,7 +20,7 @@
 		<?php
 		//check if the blog excerpts function exists
 
-		if ( function_exists( 'ap_core_blog_excerpts' ) &&  ap_core_blog_excerpts() == false )
+		if ( function_exists( 'wpTheme_blog_excerpts' ) &&  wpTheme_blog_excerpts() == false )
           {
 			the_content(__('Read more &raquo;','wpTheme'));
 		}

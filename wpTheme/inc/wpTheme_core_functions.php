@@ -57,7 +57,8 @@ if (!function_exists('wpTheme_get_theme_defaults')) {
                'navbar-inverse' => 0,
                'navbar-color' => '',
                'navbar-link' => '',
-               'breadcrumbs' => 0
+               'breadcrumbs' => 0,
+               'skins' => 0
           );
           return $defaults;
      }

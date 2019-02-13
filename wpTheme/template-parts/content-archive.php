@@ -24,11 +24,11 @@ if ( have_posts() ) : ?>
      <?php
      //The Loop
      while ( have_posts() ) : the_post();
-          $ap_core_post_format = get_post_format();
+          $wpTheme_post_format = get_post_format();
           //We check if there is a format
-          if ( $ap_core_post_format )
+          if ( $wpTheme_post_format )
           {
-               get_template_part('template-parts/post', $ap_core_post_format);
+               get_template_part('template-parts/post', $wpTheme_post_format);
           }
           //there is no format, we do a standard layout
           else

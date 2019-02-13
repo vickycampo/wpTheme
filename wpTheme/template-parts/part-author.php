@@ -33,7 +33,7 @@
 
 			<?php
                /* If the post has no excerpts, we display the content */
-			if ( ap_core_blog_excerpts() == false )
+			if ( wpTheme_blog_excerpts() == false )
                {
 				the_content(__('Read more &raquo;','wpTheme'));
 			}

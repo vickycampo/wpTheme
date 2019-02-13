@@ -12,48 +12,7 @@
 * The layout custominzation functions
 */
 ?>
-<?php
-/*
-	========================================
-		WPTHEME SIDEBAR CUSTOMIZATION
-	========================================
-*
-* Function that will customize the sidebar
-*/
-if ( ! function_exists( 'wpTheme_sidebar_customization' ) )
-{
-     function wpTheme_sidebar_customization( $wp_customize )
-     {
-          /* We get the defaults */
-          $defaults = wpTheme_get_theme_defaults();
-          /* Add the settings */
-          $id = 'wpTheme_options[sidebar]';
-          $args = array(
 
-			'default' => $defaults['sidebar'],
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
-			'type' => 'option',
-			'sanitize_callback' => 'wpTheme_validate_sidebar'
-
-		);
-          $wp_customize->add_setting( $id , $args );
-          /* Add the control */
-          $args = array(
-
-			'label' => __( 'Sidebar', 'wpTheme' ),
-			'section' => 'layout_options',
-			'settings' => $id,
-			'type' => 'select',
-			'choices' => wpTheme_choices_sidebar(),
-			'sanitize_callback' => 'wpTheme_validate_sidebar'
-
-		);
-          $wp_customize->add_control( $id , $args );
-     }
-     add_action('customize_register','wpTheme_sidebar_customization');
-}
-?>
 <?php
 /*
 	========================================
@@ -171,7 +130,7 @@ if ( ! function_exists( 'wpTheme_excerpts_customization' ) )
 			'section' => 'layout_options',
 			'settings' => 'wpTheme_options[excerpts]',
 			'type' => 'select',
-			'choices' => ap_core_show_excerpts(),
+			'choices' => wpTheme_show_excerpts(),
 			'sanitize_callback' => 'wpTheme_validate_excerpts'
 
 		);
@@ -213,7 +172,7 @@ if ( ! function_exists( 'wpTheme_archive_excerpt_customization' ) )
 			'section' => 'layout_options',
 			'settings' => 'wpTheme_options[archive-excerpt]',
 			'type' => 'select',
-			'choices' => ap_core_show_excerpts(),
+			'choices' => wpTheme_show_excerpts(),
 			'sanitize_callback' => 'wpTheme_validate_excerpts'
 
 		);

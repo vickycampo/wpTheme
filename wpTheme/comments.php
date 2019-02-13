@@ -42,7 +42,7 @@ if ( have_comments() )
      <!-- Display the comments -->
      <ol class="commentlist">
           <?php
-          /* Use the ap_core_comment function */
+          /* Use the wpTheme_comments function */
           wp_list_comments('callback=wpTheme_comments');
           ?>
      </ol>

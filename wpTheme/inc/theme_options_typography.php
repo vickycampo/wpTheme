@@ -41,11 +41,11 @@ if ( ! function_exists( 'wpTheme_heading_customization' ) )
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Heading Font', 'museum-core' ),
-			'section' => 'wpTheme_typography',
+			'label' => __( 'Heading Font', 'wpTheme' ),
+			'section' => 'typography_options',
 			'settings' => 'wpTheme_options[heading]',
 			'type' => 'select',
-			'choices' => ap_core_fonts(),
+			'choices' => wpTheme_fonts(),
 			'sanitize_callback' => 'wpTheme_validate_fonts'
 
 		);
@@ -83,11 +83,11 @@ if ( ! function_exists( 'wpTheme_body_customization' ) )
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Body Font', 'museum-core' ),
-			'section' => 'wpTheme_typography',
+			'label' => __( 'Body Font', 'wpTheme' ),
+			'section' => 'typography_options',
 			'settings' => 'wpTheme_options[body]',
 			'type' => 'select',
-			'choices' => ap_core_fonts(),
+			'choices' => wpTheme_fonts(),
 			'sanitize_callback' => 'wpTheme_validate_fonts'
 
 		);
@@ -125,11 +125,11 @@ if ( ! function_exists( 'wpTheme_alt_customization' ) )
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Alternate Font', 'museum-core' ),
-			'section' => 'wpTheme_typography',
+			'label' => __( 'Alternate Font', 'wpTheme' ),
+			'section' => 'typography_options',
 			'settings' => 'wpTheme_options[alt]',
 			'type' => 'select',
-			'choices' => ap_core_fonts(),
+			'choices' => wpTheme_fonts(),
 			'sanitize_callback' => 'wpTheme_validate_fonts'
 
 		);
@@ -167,8 +167,8 @@ if ( ! function_exists( 'wpTheme_alth1_customization' ) )
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Use alternate font for site title?', 'museum-core' ),
-			'section' => 'wpTheme_typography',
+			'label' => __( 'Use alternate font for site title?', 'wpTheme' ),
+			'section' => 'typography_options',
 			'settings' => 'wpTheme_options[alth1]',
 			'type' => 'select',
 			'choices' => wpTheme_true_false(),
@@ -209,11 +209,11 @@ if ( ! function_exists( 'wpTheme_font_subset_customization' ) )
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Font Subset', 'museum-core' ),
-			'section' => 'wpTheme_typography',
+			'label' => __( 'Font Subset', 'wpTheme' ),
+			'section' => 'typography_options',
 			'settings' => 'wpTheme_options[font_subset]',
 			'type' => 'select',
-			'choices' => ap_core_font_subset(),
+			'choices' => wpTheme_font_subset(),
 			'sanitize_callback' => 'wpTheme_validate_subset'
 
 		);
