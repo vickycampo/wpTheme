@@ -34,7 +34,7 @@ if ( ! function_exists( 'wpTheme_heading_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_fonts'
+			'sanitize_callback' => 'wpTheme_validate_fonts'
 
 		);
           $wp_customize->add_setting( $id , $args );
@@ -42,11 +42,11 @@ if ( ! function_exists( 'wpTheme_heading_customization' ) )
           $args = array(
 
 			'label' => __( 'Heading Font', 'museum-core' ),
-			'section' => 'ap_core_typography',
-			'settings' => 'ap_core_theme_options[heading]',
+			'section' => 'wpTheme_typography',
+			'settings' => 'wpTheme_options[heading]',
 			'type' => 'select',
 			'choices' => ap_core_fonts(),
-			'sanitize_callback' => 'ap_core_validate_fonts'
+			'sanitize_callback' => 'wpTheme_validate_fonts'
 
 		);
           $wp_customize->add_control( $id , $args );
@@ -76,7 +76,7 @@ if ( ! function_exists( 'wpTheme_body_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_fonts'
+			'sanitize_callback' => 'wpTheme_validate_fonts'
 
 		);
           $wp_customize->add_setting( $id , $args );
@@ -84,11 +84,11 @@ if ( ! function_exists( 'wpTheme_body_customization' ) )
           $args = array(
 
 			'label' => __( 'Body Font', 'museum-core' ),
-			'section' => 'ap_core_typography',
-			'settings' => 'ap_core_theme_options[body]',
+			'section' => 'wpTheme_typography',
+			'settings' => 'wpTheme_options[body]',
 			'type' => 'select',
 			'choices' => ap_core_fonts(),
-			'sanitize_callback' => 'ap_core_validate_fonts'
+			'sanitize_callback' => 'wpTheme_validate_fonts'
 
 		);
           $wp_customize->add_control( $id , $args );
@@ -118,7 +118,7 @@ if ( ! function_exists( 'wpTheme_alt_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_fonts'
+			'sanitize_callback' => 'wpTheme_validate_fonts'
 
 		);
           $wp_customize->add_setting( $id , $args );
@@ -126,11 +126,11 @@ if ( ! function_exists( 'wpTheme_alt_customization' ) )
           $args = array(
 
 			'label' => __( 'Alternate Font', 'museum-core' ),
-			'section' => 'ap_core_typography',
-			'settings' => 'ap_core_theme_options[alt]',
+			'section' => 'wpTheme_typography',
+			'settings' => 'wpTheme_options[alt]',
 			'type' => 'select',
 			'choices' => ap_core_fonts(),
-			'sanitize_callback' => 'ap_core_validate_fonts'
+			'sanitize_callback' => 'wpTheme_validate_fonts'
 
 		);
           $wp_customize->add_control( $id , $args );
@@ -160,7 +160,7 @@ if ( ! function_exists( 'wpTheme_alth1_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_setting( $id , $args );
@@ -168,11 +168,11 @@ if ( ! function_exists( 'wpTheme_alth1_customization' ) )
           $args = array(
 
 			'label' => __( 'Use alternate font for site title?', 'museum-core' ),
-			'section' => 'ap_core_typography',
-			'settings' => 'ap_core_theme_options[alth1]',
+			'section' => 'wpTheme_typography',
+			'settings' => 'wpTheme_options[alth1]',
 			'type' => 'select',
-			'choices' => ap_core_true_false(),
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'choices' => wpTheme_true_false(),
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_control( $id , $args );
@@ -202,7 +202,7 @@ if ( ! function_exists( 'wpTheme_font_subset_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_subset'
+			'sanitize_callback' => 'wpTheme_validate_subset'
 
 		);
           $wp_customize->add_setting( $id , $args );
@@ -210,11 +210,11 @@ if ( ! function_exists( 'wpTheme_font_subset_customization' ) )
           $args = array(
 
 			'label' => __( 'Font Subset', 'museum-core' ),
-			'section' => 'ap_core_typography',
-			'settings' => 'ap_core_theme_options[font_subset]',
+			'section' => 'wpTheme_typography',
+			'settings' => 'wpTheme_options[font_subset]',
 			'type' => 'select',
 			'choices' => ap_core_font_subset(),
-			'sanitize_callback' => 'ap_core_validate_subset'
+			'sanitize_callback' => 'wpTheme_validate_subset'
 
 		);
           $wp_customize->add_control( $id , $args );

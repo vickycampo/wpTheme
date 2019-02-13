@@ -39,11 +39,11 @@ if ( ! function_exists( 'wpTheme_font_color_customization' ) )
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
-          $font_color = new WP_Customize_Color_Control( $wp_customize, 'ap_core_theme_options[font-color]', array(
+          $font_color = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[font-color]', array(
 
 			'label' => __( 'Font Color', 'museum-core' ),
 			'section' => 'colors',
-			'settings' => 'ap_core_theme_options[font-color]',
+			'settings' => 'wpTheme_options[font-color]',
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );
@@ -79,11 +79,11 @@ if ( ! function_exists( 'wpTheme_link_customization' ) )
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
-          $link_color = new WP_Customize_Color_Control( $wp_customize, 'ap_core_theme_options[link]', array(
+          $link_color = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[link]', array(
 
 			'label' => __( 'Link Color', 'museum-core' ),
 			'section' => 'colors',
-			'settings' => 'ap_core_theme_options[link]',
+			'settings' => 'wpTheme_options[link]',
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );
@@ -119,11 +119,11 @@ if ( ! function_exists( 'wpTheme_hover_customization' ) )
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
-          $hover_color = new WP_Customize_Color_Control( $wp_customize, 'ap_core_theme_options[hover]', array(
+          $hover_color = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[hover]', array(
 
 			'label' => __( 'Hover Color', 'museum-core' ),
 			'section' => 'colors',
-			'settings' => 'ap_core_theme_options[hover]',
+			'settings' => 'wpTheme_options[hover]',
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );
@@ -159,11 +159,11 @@ if ( ! function_exists( 'wpTheme_content_color_customization' ) )
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
-          $content_color = new WP_Customize_Color_Control( $wp_customize, 'ap_core_theme_options[content-color]', array(
+          $content_color = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[content-color]', array(
 
 			'label' => __( 'Content Background color', 'museum-core' ),
 			'section' => 'colors',
-			'settings' => 'ap_core_theme_options[content-color]',
+			'settings' => 'wpTheme_options[content-color]',
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );
@@ -199,11 +199,11 @@ if ( ! function_exists( 'wpTheme_navbar_color_customization' ) )
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
-          $navbar_color = new WP_Customize_Color_Control( $wp_customize, 'ap_core_theme_options[navbar-color]', array(
+          $navbar_color = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[navbar-color]', array(
 
 			'label' => __( 'Navbar (top) Background Color', 'museum-core' ),
 			'section' => 'colors',
-			'settings' => 'ap_core_theme_options[navbar-color]',
+			'settings' => 'wpTheme_options[navbar-color]',
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );
@@ -234,7 +234,7 @@ if ( ! function_exists( 'wpTheme_navbar_inverse_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_setting( $id , $args );
@@ -243,10 +243,10 @@ if ( ! function_exists( 'wpTheme_navbar_inverse_customization' ) )
 
 			'label' => __( 'Inverted navbar?', 'museum-core' ),
 			'section' => 'colors',
-			'settings' => 'ap_core_theme_options[navbar-inverse]',
+			'settings' => 'wpTheme_options[navbar-inverse]',
 			'type' => 'select',
-			'choices' => ap_core_true_false(),
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'choices' => wpTheme_true_false(),
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_control( $id , $args );
@@ -281,11 +281,11 @@ if ( ! function_exists( 'wpTheme_navbar_link_customization' ) )
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
-          $navbar_link = new WP_Customize_Color_Control( $wp_customize, 'ap_core_theme_options[navbar-link]', array(
+          $navbar_link = new WP_Customize_Color_Control( $wp_customize, 'wpTheme_options[navbar-link]', array(
 
 			'label' => __( 'Navbar Link Color', 'museum-core' ),
 			'section' => 'colors',
-			'settings' => 'ap_core_theme_options[navbar-link]',
+			'settings' => 'wpTheme_options[navbar-link]',
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );

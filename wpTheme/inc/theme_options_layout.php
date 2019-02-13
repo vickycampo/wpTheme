@@ -34,7 +34,7 @@ if ( ! function_exists( 'wpTheme_sidebar_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_sidebar'
+			'sanitize_callback' => 'wpTheme_validate_sidebar'
 
 		);
           $wp_customize->add_setting( $id , $args );
@@ -42,11 +42,11 @@ if ( ! function_exists( 'wpTheme_sidebar_customization' ) )
           $args = array(
 
 			'label' => __( 'Sidebar', 'wpTheme' ),
-			'section' => 'ap_core_layout',
+			'section' => 'layout_options',
 			'settings' => $id,
 			'type' => 'select',
-			'choices' => ap_core_sidebar(),
-			'sanitize_callback' => 'ap_core_validate_sidebar'
+			'choices' => wpTheme_choices_sidebar(),
+			'sanitize_callback' => 'wpTheme_validate_sidebar'
 
 		);
           $wp_customize->add_control( $id , $args );
@@ -76,19 +76,19 @@ if ( ! function_exists( 'wpTheme_nav_menu_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Fixed nav menu?', 'museum-core' ),
-			'section' => 'ap_core_layout',
-			'settings' => 'ap_core_theme_options[nav-menu]',
+			'label' => __( 'Fixed nav menu?', 'wpTheme' ),
+			'section' => 'layout_options',
+			'settings' => 'wpTheme_options[nav-menu]',
 			'type' => 'select',
-			'choices' => ap_core_true_false(),
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'choices' => wpTheme_true_false(),
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_control( $id , $args );
@@ -118,19 +118,19 @@ if ( ! function_exists( 'wpTheme_breadcrumbs_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Enable breadcrumbs?', 'museum-core' ),
-			'section' => 'ap_core_layout',
-			'settings' => 'ap_core_theme_options[breadcrumbs]',
+			'label' => __( 'Enable breadcrumbs?', 'wpTheme' ),
+			'section' => 'layout_options',
+			'settings' => 'wpTheme_options[breadcrumbs]',
 			'type' => 'select',
-			'choices' => ap_core_true_false(),
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'choices' => wpTheme_true_false(),
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_control( $id , $args );
@@ -160,19 +160,19 @@ if ( ! function_exists( 'wpTheme_excerpts_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_excerpts'
+			'sanitize_callback' => 'wpTheme_validate_excerpts'
 
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Full posts or excerpts on blog home?', 'museum-core' ),
-			'section' => 'ap_core_layout',
-			'settings' => 'ap_core_theme_options[excerpts]',
+			'label' => __( 'Full posts or excerpts on blog home?', 'wpTheme' ),
+			'section' => 'layout_options',
+			'settings' => 'wpTheme_options[excerpts]',
 			'type' => 'select',
 			'choices' => ap_core_show_excerpts(),
-			'sanitize_callback' => 'ap_core_validate_excerpts'
+			'sanitize_callback' => 'wpTheme_validate_excerpts'
 
 		);
           $wp_customize->add_control( $id , $args );
@@ -202,19 +202,19 @@ if ( ! function_exists( 'wpTheme_archive_excerpt_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_excerpts'
+			'sanitize_callback' => 'wpTheme_validate_excerpts'
 
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Full posts or excerpts on archive pages?', 'museum-core' ),
-			'section' => 'ap_core_layout',
-			'settings' => 'ap_core_theme_options[archive-excerpt]',
+			'label' => __( 'Full posts or excerpts on archive pages?', 'wpTheme' ),
+			'section' => 'layout_options',
+			'settings' => 'wpTheme_options[archive-excerpt]',
 			'type' => 'select',
 			'choices' => ap_core_show_excerpts(),
-			'sanitize_callback' => 'ap_core_validate_excerpts'
+			'sanitize_callback' => 'wpTheme_validate_excerpts'
 
 		);
           $wp_customize->add_control( $id , $args );
@@ -244,19 +244,19 @@ if ( ! function_exists( 'wpTheme_post_author_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Display post author?', 'museum-core' ),
-			'section' => 'ap_core_layout',
-			'settings' => 'ap_core_theme_options[post-author]',
+			'label' => __( 'Display post author?', 'wpTheme' ),
+			'section' => 'layout_options',
+			'settings' => 'wpTheme_options[post-author]',
 			'type' => 'select',
-			'choices' => ap_core_true_false(),
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'choices' => wpTheme_true_false(),
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_control( $id , $args );

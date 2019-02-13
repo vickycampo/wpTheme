@@ -34,7 +34,7 @@ if ( ! function_exists( 'wpTheme_author_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_setting( $id , $args );
@@ -42,11 +42,11 @@ if ( ! function_exists( 'wpTheme_author_customization' ) )
           $args = array(
 
 			'label' => __( 'Use author meta tags?', 'museum-core' ),
-			'section' => 'ap_core_advanced',
-			'settings' => 'ap_core_theme_options[author]',
+			'section' => 'wpTheme_advanced',
+			'settings' => 'wpTheme_options[author]',
 			'type' => 'select',
-			'choices' => ap_core_true_false(),
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'choices' => wpTheme_true_false(),
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_control( $id , $args );
@@ -69,7 +69,7 @@ if ( ! function_exists( 'wpTheme_footer_customization' ) )
           /* We get the defaults */
           $defaults = wpTheme_get_theme_defaults();
           /* Add the settings */
-          $id = 'wpTheme_options[*********]';
+          $id = 'wpTheme_options[footer]';
           $args = array(
 
 			'default' => $defaults['footer'],
@@ -81,11 +81,11 @@ if ( ! function_exists( 'wpTheme_footer_customization' ) )
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
-          $footer_text = new AP_Core_Textarea_Control( $wp_customize, 'ap_core_theme_options[footer]', array(
+          $footer_text = new AP_Core_Textarea_Control( $wp_customize, 'wpTheme_options[footer]', array(
 
 			'label' => __( 'Footer Text', 'museum-core' ),
-			'section' => 'ap_core_advanced',
-			'settings' => 'ap_core_theme_options[footer]',
+			'section' => 'wpTheme_advanced',
+			'settings' => 'wpTheme_options[footer]',
 			'type' => 'textarea',
 			'sanitize_callback' => 'esc_textarea'
 
@@ -117,17 +117,17 @@ if ( ! function_exists( 'wpTheme_favicon_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_favicon'
+			'sanitize_callback' => 'wpTheme_validate_favicon'
 
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
-          $favicon = new WP_Customize_Image_Control( $wp_customize, 'ap_core_theme_options[favicon]', array(
+          $favicon = new WP_Customize_Image_Control( $wp_customize, 'wpTheme_options[favicon]', array(
 
 			'label' => __( 'Custom Favicon', 'museum-core' ),
-			'section' => 'ap_core_advanced',
-			'settings' => 'ap_core_theme_options[favicon]',
-			'sanitize_callback' => 'ap_core_validate_favicon'
+			'section' => 'wpTheme_advanced',
+			'settings' => 'wpTheme_options[favicon]',
+			'sanitize_callback' => 'wpTheme_validate_favicon'
 
 		) );
 		$wp_customize->add_control( $favicon );
@@ -157,7 +157,7 @@ if ( ! function_exists( 'wpTheme_generator_customization' ) )
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_setting( $id , $args );
@@ -165,11 +165,11 @@ if ( ! function_exists( 'wpTheme_generator_customization' ) )
           $args = array(
 
 			'label' => __( 'Debug Mode Active', 'museum-core' ),
-			'section' => 'ap_core_advanced',
-			'settings' => 'ap_core_theme_options[generator]',
+			'section' => 'wpTheme_advanced',
+			'settings' => 'wpTheme_options[generator]',
 			'type' => 'select',
-			'choices' => ap_core_true_false(),
-			'sanitize_callback' => 'ap_core_validate_true_false'
+			'choices' => wpTheme_true_false(),
+			'sanitize_callback' => 'wpTheme_validate_true_false'
 
 		);
           $wp_customize->add_control( $id , $args );
