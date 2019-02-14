@@ -41,7 +41,7 @@ if ( ! function_exists( 'wpTheme_skins_customization' ) )
           /* Add the control */
           $args = array(
 
-			'label' => __( 'Fixed nav menu?', 'wpTheme' ),
+			'label' => __( 'Choose a skin?', 'wpTheme' ),
 			'section' => 'skins_options',
 			'settings' => $id,
 			'type' => 'select',

@@ -10,7 +10,25 @@
 */
 ?>
 
-<?php $options = get_option( 'wpTheme_options' ); ?>
+<?php
+//The first specific theme helper, load the theme options and defaults
+$defaults = wpTheme_get_theme_defaults ();
+//Fetch options from the database table
+$options = get_option ('wpTheme_options');
+/* We determine which screen size we are using*/
+if ( isset ( $options['bs-screen-size'] ) )
+{
+     $screen_size = str_replace ( "-" , "" , $options['bs-screen-size'] );
+}
+else
+{
+     $screen_size = str_replace ( "-" , "" , $defaults['bs-screen-size'] );
+}
+if ($screen_size == '')
+{
+     $screen_size = 'sm';
+}
+?>
 
 <?php
      //we create a variable that contains the container class depending on which settings are set in the options
@@ -33,7 +51,7 @@
 <!--navbar - Defines that is a navbar -->
 <!--navbar-expand-lg - The breakpoint for collapsing -->
 <!--navbar-light - Without it the button won't show -->
-<nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav"class="navbar navbar-expand-lg navbar-light  <?php esc_html_e( $data_target , 'wpTheme' ); ?>" >
+<nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav"class="navbar navbar-expand-<?php echo ( $screen_size ); ?> navbar-light  <?php esc_html_e( $data_target , 'wpTheme' ); ?>" >
      <!-- Toggler -->
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'wpTheme' ); ?>">
           <span class="navbar-toggler-icon"></span>

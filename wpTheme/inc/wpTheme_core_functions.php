@@ -20,8 +20,10 @@
 *
 * The first specific theme helper, load the theme options and defaults
 */
-if (!function_exists('wpTheme_get_theme_defaults')) {
-     function wpTheme_get_theme_defaults(){
+if (!function_exists('wpTheme_get_theme_defaults'))
+{
+     function wpTheme_get_theme_defaults()
+     {
           // default options settings
           $defaults = array(
                // sidebar
@@ -58,7 +60,8 @@ if (!function_exists('wpTheme_get_theme_defaults')) {
                'navbar-color' => '',
                'navbar-link' => '',
                'breadcrumbs' => 0,
-               'skins' => 0
+               'skins' => 0,
+               'bs-screen-size' => '-'
           );
           return $defaults;
      }
@@ -77,6 +80,11 @@ if ( ! function_exists ( 'wpTheme_get_content_columns' ) )
 {
      function wpTheme_get_content_columns ($location)
      {
+          //The first specific theme helper, load the theme options and defaults
+          $defaults = wpTheme_get_theme_defaults ();
+          //Fetch options from the database table
+          $options = get_option ('wpTheme_options');
+
           $columns = 12;
           foreach ( $GLOBALS['wp_registered_sidebars'] as $sidebar )
           {
@@ -88,7 +96,16 @@ if ( ! function_exists ( 'wpTheme_get_content_columns' ) )
                     }
                }
           }
-          return ('col-md-' . $columns);
+          /* We determine which screen size we are using*/
+          if ( isset ( $options['bs-screen-size'] ) )
+          {
+               return ('col'. $options['bs-screen-size'] . $columns);
+          }
+          else
+          {
+               return ('col'. $defaults['bs-screen-size'] . $columns);
+          }
+
      }
 }
 ?>

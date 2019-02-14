@@ -122,11 +122,54 @@ if ( !function_exists( 'wpTheme_skins' ) )
      function wpTheme_skins()
      {
           $skins = array(
-               'cerulean.css' => __( 'Cerulean', 'wpTheme' ),
-               'darkly.css' => __( 'Darkly', 'wpTheme' ),
-               'litera.css' => __( 'Litera', 'wpTheme' )
+               ' '            => __( '', 'wpTheme' ),
+               'cerulean'     => __( 'Cerulean', 'wpTheme' ),
+               'cosmo'        => __( 'Cosmo', 'wpTheme' ),
+               'cyborg'       => __( 'Cyborg', 'wpTheme' ),
+               'darkly'       => __( 'Darkly', 'wpTheme' ),
+               'flatly'       => __( 'Flatly', 'wpTheme' ),
+               'journal'      => __( 'Journal', 'wpTheme' ),
+               'litera'       => __( 'Litera', 'wpTheme' ),
+               'lumen'        => __( 'Lumen', 'wpTheme' ),
+               'lux'          => __( 'Lux', 'wpTheme' ),
+               'materia'      => __( 'Materia', 'wpTheme' ),
+               'minty'        => __( 'Minty', 'wpTheme' ),
+               'pulse'        => __( 'Pulse', 'wpTheme' ),
+               'sandstone'    => __( 'Sandstone', 'wpTheme' ),
+               'simplex'      => __( 'Simplex', 'wpTheme' ),
+               'sketchy'      => __( 'Sketchy', 'wpTheme' ),
+               'slate'        => __( 'Slate', 'wpTheme' ),
+               'solar'        => __( 'Solar', 'wpTheme' ),
+               'spacelab'     => __( 'Spacelab', 'wpTheme' ),
+               'superhero'    => __( 'Superhero', 'wpTheme' ),
+               'united'       => __( 'United', 'wpTheme' ),
+               'yeti'         => __( 'Yeti', 'wpTheme' ),
           );
           return $skins;
+     }
+}
+?>
+<?php
+/*
+	======================================
+		CHOICES - SCREEN SIZE
+	======================================
+*
+* Validate SCREEN SIZE options
+*/
+if ( !function_exists( 'wpTheme_screen_size' ) )
+{
+     function wpTheme_screen_size()
+     {
+          $screen_sizes = array(
+               '-'            => __( 'Extra small (<576px)', 'wpTheme' ),
+               '-sm-'         => __( 'Small (≥576px)', 'wpTheme' ),
+               '-md-'         => __( 'Medium (≥768px)', 'wpTheme' ),
+               '-lg-'         => __( 'Large (≥992px)', 'wpTheme' ),
+               '-xl-'         => __( 'Extra large (≥1200px)', 'wpTheme' )
+
+          );
+          return $screen_sizes;
      }
 }
 ?>

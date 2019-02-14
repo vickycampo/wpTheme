@@ -5,18 +5,18 @@
 @subpackage wpTheme
 @since wpTheme
 
-===================================
-REGISTER NAVBARS
-===================================
+     ===================================
+          REGISTER NAVBARS
+     ===================================
 * This page generating the footer.
 *
 */
 ?>
 <?php
 /*
-==============================
-REGISTER NAVIGATION MENUS
-==============================
+     ==============================
+          REGISTER NAVIGATION MENUS
+     ==============================
 *
 * To create a navigation menu you’ll need to register it,
 * and then display the menu in the appropriate location in your theme.

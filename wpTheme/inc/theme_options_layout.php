@@ -223,3 +223,45 @@ if ( ! function_exists( 'wpTheme_post_author_customization' ) )
      add_action('customize_register','wpTheme_post_author_customization');
 }
 ?>
+<?php
+/*
+	========================================
+		WPTHEME SCREEN SIZE CUSTOMIZATION
+	========================================
+*
+* Function that will customize the screen size for the columns in bootstrap
+*/
+if ( ! function_exists( 'wpTheme_screen_size_customization' ) )
+{
+     function wpTheme_screen_size_customization( $wp_customize )
+     {
+          /* We get the defaults */
+          $defaults = wpTheme_get_theme_defaults();
+          /* Add the settings */
+          $id = 'wpTheme_options[bs-screen-size]';
+          $args = array(
+
+               'default' => $defaults['bs-screen-size'],
+               'capability' => 'edit_theme_options',
+               'transport' => 'refresh',
+               'type' => 'option',
+               'sanitize_callback' => 'wpTheme_validate_screen_size'
+
+          );
+          $wp_customize->add_setting( $id , $args );
+          /* Add the control */
+          $args = array(
+
+               'label' => __( 'Select the screen size?', 'wpTheme' ),
+               'section' => 'layout_options',
+               'settings' => 'wpTheme_options[bs-screen-size]',
+               'type' => 'select',
+               'choices' => wpTheme_screen_size(),
+               'sanitize_callback' => 'wpTheme_validate_screen_size'
+
+          );
+          $wp_customize->add_control( $id , $args );
+     }
+     add_action('customize_register','wpTheme_screen_size_customization');
+}
+?>

@@ -186,3 +186,26 @@ if ( ! function_exists( 'wpTheme_validate_skins' ) )
 	}
 }
 ?>
+<?php
+/*
+	==============================
+		VALIDATE - SCREEN SIZE
+	==============================
+*
+* Validate SKINS options
+*/
+if ( ! function_exists( 'wpTheme_validate_screen_size' ) )
+{
+	function wpTheme_validate_screen_size( $value )
+	{
+		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
+			if ( !array_key_exists( $value, wpTheme_screen_size() ) )
+		{
+			//FALSE - NOT VALID
+			$value = null;
+		}
+		//TRUE - VALID
+		return $value;
+	}
+}
+?>
