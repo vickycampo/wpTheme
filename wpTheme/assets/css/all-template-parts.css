@@ -13,10 +13,15 @@
 /* The h2 tag for the date */
 .the_date
 {
-     
+
 }
 /* The h1 tag for the post title */
 .the_title
 {
 
+}
+/* The breadcrumbs */
+.breadcrumb-item::before {
+    font-family: 'FontAwesome';
+    content: "\f105";
 }
