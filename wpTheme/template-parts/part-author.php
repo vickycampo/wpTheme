@@ -30,35 +30,42 @@
 			<?php
                /* Add the hook */
                tha_entry_top(); ?>
-
-			<?php
-               /* If the post has no excerpts, we display the content */
-			if ( wpTheme_blog_excerpts() == false )
-               {
-				the_content(__('Read more &raquo;','wpTheme'));
-			}
-               else
-               {
-                    /* We Display the thumnail */
-				if(has_post_thumbnail())
-                    { ?>
-					<div class="pull-left">
-                              <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
-                                   <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-thumbnail media-object' ) ); ?>
-                              </a>
-                         </div>
+			<div class="container">
+				<div class="row">
 				<?php
-                    }
-                    ?>
-                    <!-- Display the Excerpt -->
-				<div class="media-body">
-					<?php the_excerpt(); ?>
+		               /* If the post has no excerpts, we display the content */
+					if ( wpTheme_blog_excerpts() == false )
+		               {
+						the_content(__('Read more &raquo;','wpTheme'));
+					}
+		               else
+		               {
+		                    /* We Display the thumnail */
+						if(has_post_thumbnail())
+		                    { ?>
+							<div class="pull-left">
+		                              <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+		                                   <?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-thumbnail media-object' ) ); ?>
+		                              </a>
+		                         </div>
+						<?php
+		                    }
+		                    ?>
+		                    <!-- Display the Excerpt -->
+						<div class="media-body">
+							<?php the_excerpt(); ?>
+						</div>
+					<?php
+					}
+				?>
 				</div>
-			<?php } ?>
-               <!-- Display the Icon and postmetadata-->
-			<div class="icon icon-user pull-left" title="<?php esc_attr_e( 'Author', 'wpTheme' ); ?>">
-               </div><?php get_template_part( 'template-parts/part', 'postmetadata' ); ?>
-
+	               <!-- Display the Icon and postmetadata-->
+				<div class="row">
+					<div class="icon icon-user pull-left" title="<?php esc_attr_e( 'Author', 'wpTheme' ); ?>">
+		               </div>
+					<?php get_template_part( 'template-parts/part', 'postmetadata' ); ?>
+				</div>
+			</div>
 			<?php
                /* Add the hook */
                tha_entry_bottom();

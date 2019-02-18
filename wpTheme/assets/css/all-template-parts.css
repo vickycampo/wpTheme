@@ -13,15 +13,41 @@
 /* The h2 tag for the date */
 .the_date
 {
-
+     font-size: 15px;
 }
 /* The h1 tag for the post title */
 .the_title
 {
+     font-size: 20px;
+}
+/*
+
+     ===================================
+          TEMPLATE PARTS - AUTHOR
+     ===================================
+*/
+.author-heading
+{
 
 }
-/* The breadcrumbs */
-.breadcrumb-item::before {
-    font-family: 'FontAwesome';
-    content: "\f105";
+.author-avatar
+{
+     min-width: 96px;
+     max-width: 96px;
+}
+.author-info
+{
+
+}
+.author-title
+{
+     padding-left: 10px;
+}
+.author-posts-div
+{
+
+}
+.author-h3
+{
+     font-size: 15px;
 }

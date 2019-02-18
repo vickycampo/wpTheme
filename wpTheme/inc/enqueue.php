@@ -14,6 +14,42 @@
 ?>
 <?php
 /*
+     ===============================
+          ENQUEUE BOOTSTRAP FILES
+     ===============================
+*
+*/
+if ( ! function_exists( 'wpTheme_enqueue_bootstrap' ) )
+{
+     function wpTheme_enqueue_bootstrap()
+     {
+          if (! is_admin()) //Instruction to only load if it is not the admin area
+          {
+               //add scripts so bootstrap can work
+               $handle= 'bootstrap-4.2.1-css'; //is simply the name of the stylesheet.
+               $src = get_template_directory_uri() . '/assets/bootstrap-4.2.1/js/bootstrap.js';
+               $deps = array('jquery');
+               $ver = '4.2.1'; //sets the version number.
+               $in_footer = true;
+               wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
+
+               //add style sheet so bootstrap can work
+               $handle = 'bootstrap-4.2.1-css'; //is simply the name of the stylesheet.
+               $src = get_template_directory_uri() . '/assets/bootstrap-4.2.1/css/bootstrap.css'; //is where it is located. The rest of the parameters are optional.
+               $deps = false; //this stylesheet is dependent on another stylesheet.
+               $ver = '4.2.1'; //sets the version number.
+               $media = 'all';
+               wp_enqueue_style( $handle , $src , $deps , $ver , $media );
+
+
+          }
+
+     }
+     add_action(  'wp_enqueue_scripts', 'wpTheme_enqueue_bootstrap' );
+}
+?>
+<?php
+/*
      ==============================
           SCRIPTS AND TYLESHEETS
      ==============================
@@ -246,40 +282,7 @@ if ( ! function_exists( 'wpTheme_enqueue_comments_reply' ) )
      }
      add_action(  'wp_enqueue_scripts', 'wpTheme_enqueue_comments_reply' );
 }
-/*
-     ===============================
-          ENQUEUE BOOTSTRAP FILES
-     ===============================
-*
-*/
-if ( ! function_exists( 'wpTheme_enqueue_bootstrap' ) )
-{
-     function wpTheme_enqueue_bootstrap()
-     {
-          if (! is_admin()) //Instruction to only load if it is not the admin area
-          {
-               //add scripts so bootstrap can work
-               $handle= 'bootstrap-4.2.1-css'; //is simply the name of the stylesheet.
-               $src = get_template_directory_uri() . '/assets/bootstrap-4.2.1/js/bootstrap.js';
-               $deps = array('jquery');
-               $ver = '4.2.1'; //sets the version number.
-               $in_footer = true;
-               wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
 
-               //add style sheet so bootstrap can work
-               $handle = 'bootstrap-4.2.1-css'; //is simply the name of the stylesheet.
-               $src = get_template_directory_uri() . '/assets/bootstrap-4.2.1/css/bootstrap.css'; //is where it is located. The rest of the parameters are optional.
-               $deps = false; //this stylesheet is dependent on another stylesheet.
-               $ver = '4.2.1'; //sets the version number.
-               $media = 'all';
-               wp_enqueue_style( $handle , $src , $deps , $ver , $media );
-
-
-          }
-
-     }
-     add_action(  'wp_enqueue_scripts', 'wpTheme_enqueue_bootstrap' );
-}
 /*
      ===============================
           ENQUEUE SKINS

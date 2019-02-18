@@ -303,9 +303,13 @@ if ( !function_exists( 'wpTheme_breadcrumbs' ) )
 
           global $post, $paged;
           ?>
-          <nav aria-label="breadcrumb">
+          <nav class="my-breadcrumbs" aria-label="breadcrumb">
                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?php echo (home_url()); ?>">Home</a></li>
+                    <li class="breadcrumb-item">
+                         <a href="<?php echo (home_url()); ?>">
+                              Home
+                         </a>
+                    </li>
 
           <?php
           /**/
@@ -400,4 +404,96 @@ if ( !function_exists( 'wpTheme_breadcrumbs' ) )
      }
 }
 
+?>
+<?php
+/*
+	================================
+	    WPTHEME_TITLE
+	================================
+*
+* Replaces default wp_title with a modified version
+*/
+if (!function_exists('wpTheme_title'))
+{
+     function wpTheme_title( $title )
+     {
+          /* NOT A 404 PAGE */
+          if ( !is_404() )
+          {
+               $category = get_the_category(); // get the category only if we aren't looking at a 404 page
+          }
+          $name = get_bloginfo('name');
+          $description = get_bloginfo('description');
+
+          // if we're on the home page...
+          if ( is_home() )
+          {
+               $title_string = $name;
+          }
+
+          // if we're on a category archive page...
+          elseif ( is_category() )
+          {
+               $title_string = single_cat_title( '', false ) . ' | ' . $name;
+          }
+
+          // if we're on a single post...
+          elseif ( is_single() ) {
+               if ( !is_attachment() ) {
+                    $title_string = single_post_title( '', false ) . ' | ' . $category[0]->cat_name;
+               } else {
+                    global $post;
+                    $parent = get_post( $post->post_parent );
+                    $title_string = single_post_title( '', false ) . ' : ' . get_the_title( $parent );
+               }
+          }
+
+          // if we're on a page...
+          elseif ( is_page() ) {
+               $title_string = single_post_title( '', false );
+          }
+
+          // if we're on a 404...
+          elseif ( is_404() ) {
+               $title_string = 'Page not found | ' . $name;
+          }
+          // for everything else...
+          else {
+               $title_string = $name;
+          }
+
+          $title_string .= ' | ' . $description;
+
+          // return new title
+          return $title_string;
+     }
+     add_filter( 'wp_title', 'wpTheme_title' );
+}
+?>
+<?php
+/*
+	================================
+	    WPTHEME_BLOG_EXCERPTS
+	================================
+*
+* Returns the blog excerpt option
+*/
+if ( !function_exists( 'wpTheme_blog_excerpts' ) )
+{
+   function wpTheme_blog_excerpts()
+   {
+       $options = get_option( 'wpTheme_options' );
+       $defaults = wpTheme_get_theme_defaults();
+       if ( !isset( $options['excerpts'] ) )
+       {
+          $excerpt = $defaults['excerpts'];
+       }
+       else
+       {
+          $excerpt = $options['excerpts'];
+       }
+
+       return $excerpt;
+   }
+}
 ?>
