@@ -497,3 +497,146 @@ if ( !function_exists( 'wpTheme_blog_excerpts' ) )
    }
 }
 ?>
+<?php
+/*
+	================================
+	    WPTHEME_ARCHIVE_EXCERPTS
+	================================
+*
+* returns the archive excerpt option
+*/
+if ( !function_exists( 'wpTheme_archive_excerpts()' ) )
+{
+     function wpTheme_archive_excerpts()
+     {
+          $options = get_option( 'wpTheme_options' );
+          $defaults = wpTheme_get_theme_defaults();
+          if ( !isset( $options['archive-excerpt'] ) )
+          {
+               $excerpt = $defaults['archive-excerpt'];
+          }
+          else
+          {
+               $excerpt = $options['archive-excerpt'];
+          }
+
+          return $excerpt;
+     }
+}
+
+?>
+<?php
+/*
+	================================
+	    WPTHEME_LINK_PAGES
+	================================
+*
+* Modification of wp_link_pages() with an extra element to highlight the current page.
+*/
+if ( !function_exists( 'wpTheme_link_pages()' ) )
+{
+     function wpTheme_link_pages( $args = array () )
+     {
+          $defaults = array(
+               'before'      => '<p>' . __('Pages:', 'wpTheme'),
+               'after'       => '</p>',
+               'before_link' => '',
+               'after_link'  => '',
+               'current_before' => '',
+               'current_after' => '',
+               'link_before' => '',
+               'link_after'  => '',
+               'pagelink'    => '%',
+               'echo'        => 1
+          );
+
+          $r = wp_parse_args( $args, $defaults );
+          $r = apply_filters( 'wp_link_pages_args', $r );
+          extract( $r, EXTR_SKIP );
+
+          global $page, $numpages, $multipage, $more, $pagenow;
+
+          if ( ! $multipage )
+          {
+               return;
+          }
+
+          $output = $before;
+
+          for ( $i = 1; $i < ( $numpages + 1 ); $i++ )
+          {
+               $j       = str_replace( '%', $i, $pagelink );
+               $output .= ' ';
+
+               if ( $i != $page || ( ! $more && 1 == $page ) )
+               {
+                    $output .= "{$before_link}" . _wp_link_page( $i ) . "{$link_before}{$j}{$link_after}</a>{$after_link}";
+               }
+               else
+               {
+                    $output .= "{$current_before}{$link_before}<a>{$j}</a>{$link_after}{$current_after}";
+               }
+          }
+
+          print wp_kses_post( $output ) . $after;
+     }
+}
+?>
+<?php
+/*
+	================================
+	    WPTHEME_NEW_EXCERPT_MORE
+	================================
+*
+* this changes the default [...] to be a read more hyperlink
+*/
+if (!function_exists('wpTheme_new_excerpt_more'))
+{
+     function wpTheme_new_excerpt_more($more)
+     {
+          global $post;
+          return '...&nbsp;(<a href="'. get_permalink($post->ID) . '">' . __('read more','wpTheme') . '</a>)';
+     }
+     add_filter('excerpt_more', 'wpTheme_new_excerpt_more');
+}
+?>
+<?php
+/*
+	================================
+	    WPTHEME_HEADER_META
+	================================
+*
+* serves up meta data if enabled
+*/
+if (!function_exists('wpTheme_header_meta'))
+{
+     function wpTheme_header_meta()
+     {
+          global $post;
+          $options = get_option( 'wpTheme_options' );
+          $author_id = null;
+          $author = null;
+
+          /* author meta */
+          if ( isset( $options['author'] ) && $options['author'] == true )
+          {
+               if (!is_404())
+               {
+                    // if there is no post author, this stuff doesn't exist
+                    if ( $post->post_author )
+                    {
+                         $author_id = $post->post_author;
+                         $author = get_userdata($author_id);
+                    }
+                    if ( $author )
+                    {
+                         ?>
+                              <meta name="author" content="<?php echo sanitize_text_field($author->display_name); ?>">
+                         <?php
+                    } // ends author check
+               } // ends 404 check
+          } // ends author option check
+     }
+     add_action( 'wp_head', 'wpTheme_header_meta' );
+}
+?>

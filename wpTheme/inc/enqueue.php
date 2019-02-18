@@ -340,10 +340,14 @@ if ( ! function_exists( 'wpTheme_enqueue_skins' ) )
           // echo ('</pre>');
           foreach ($skins as $handle => $value)
           {
-               if ( $handle === $options['skins'] )
+               if (isset ($options['skins']))
                {
-                    wp_enqueue_style( $handle );
+                    if ( $handle === $options['skins'] )
+                    {
+                         wp_enqueue_style( $handle );
+                    }
                }
+
           }
 
      }

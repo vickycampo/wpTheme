@@ -11,19 +11,22 @@
 *
 */
 
-/*The container of all the body elements*/
-body
-{
-     line-height: 1.5em;
-     font-size: 15px;
+/* The container of all the body elements */
+body {
+	background: #f5f5f5;
+	font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
+	color: #111;
 }
 /* The bs-fixed-nav class is set when there is options['nav-menu'] is set and is true*/
-
-body.bs-fixed-nav
-{
-     padding-top: 70px;
+body.bs-fixed-nav {
+  padding-top: 70px;
 }
 
+
+body.bs-fixed-nav.theme_location_main_nav {
+  margin-top: 28px;
+  background-color: red;
+}
 
 /* The wrap div contains all the header and contant part */
 #wrap

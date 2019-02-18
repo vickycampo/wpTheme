@@ -22,9 +22,12 @@ $args = array(
      'previouspagelink' => '&laquo;',
      'nextpagelink' => '&raquo;'
 );
-if ( function_exists( 'wpTheme_link_pages' ) ) {
+if ( function_exists( 'wpTheme_link_pages' ) )
+{
      wpTheme_link_pages( $args );
-} else {
+}
+else
+{
      // fall back to default wp functionality if, for some reason, wpTheme_link_pages is missing
      wp_link_pages( $args );
 }

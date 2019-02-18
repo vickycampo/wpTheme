@@ -253,13 +253,15 @@ if ( ! ( function_exists ( 'wpTheme_register_custom_post_type' ) ) )
 */
 if ( ! function_exists( 'wpTheme_register_widget' ) )
 {
+     //if we are going to use the widget we load the file of the widget class
+     require_once get_parent_theme_file_path( '/inc/class.my-widget.php' );
+     
      function wpTheme_register_widget()
      {
           register_widget( 'my_widget' );
      }
      add_action( 'widgets_init', 'wpTheme_register_widget' );
-     //if we are going to use the widget we load the file of the widget class
-     require_once get_parent_theme_file_path( '/inc/class.my-widget.php' );
+
 }
 
 /*
@@ -303,6 +305,10 @@ if ( ! function_exists( 'wpTheme_setup' ) )
           load_theme_textdomain( 'wpTheme', get_template_directory() . '/languages' );
           //Custom Background
           add_theme_support ( 'custom-background', array () );
+          // Add title tag support.
+          add_theme_support( 'title-tag' );
+          // html5 theme support
+          add_theme_support( 'html5' );
 
 
      }
@@ -361,6 +367,14 @@ require_once( get_template_directory() . '/inc/class.my-widget.php' );
 * load the enqueue file
 */
 require_once get_parent_theme_file_path( '/inc/enqueue.php' );
+/*
+     ===================================
+          HEAD_CALLBACK_FUNCTIONS.PHP
+     ===================================
+*
+* load the enqueue file
+*/
+require_once get_parent_theme_file_path( '/inc/head_callback_functions.php' );
 /*
      ==============================
           THE HOOK ALLIANCE
