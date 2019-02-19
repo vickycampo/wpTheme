@@ -51,7 +51,7 @@ if ($screen_size == '')
 <!--navbar - Defines that is a navbar -->
 <!--navbar-expand-lg - The breakpoint for collapsing -->
 <!--navbar-light - Without it the button won't show -->
-<nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav"class="navbar navbar-expand-<?php echo ( $screen_size ); ?> navbar-light  <?php esc_html_e( $data_target , 'wpTheme' ); ?>" >
+<nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="navbar navbar-expand-<?php echo ( $screen_size ); ?> fixed-top navbar-light bg-light  <?php esc_html_e( $data_target , 'wpTheme' ); ?>" >
      <!-- Toggler -->
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'wpTheme' ); ?>">
           <span class="navbar-toggler-icon"></span>
@@ -59,6 +59,30 @@ if ($screen_size == '')
      <!-- /Toggler -->
      <!-- grouping and hiding navbar contents by a parent breakpoint -->
      <div class="collapse navbar-collapse" id="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target">
+          <?php
+          /* DISPLAY A CUSTOM LOGO */
+          if ( function_exists( 'the_custom_logo' ) )
+          {
+               $custom_logo_id = get_theme_mod( 'custom_logo' );
+               $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+               if ( has_custom_logo() )
+               {
+                    echo '';
+                    ?>
+                    <li class=" navbar-logo menu-item menu-item-type-post_type menu-item-object-page menu-item-102 nav-item">
+                         <a href="<?php echo esc_url( home_url() );?>" class="nav-link">
+                              <img src=" <?php echo (esc_url( $logo[0] )); ?>">
+                         </a>
+                    </li>
+                    <?php
+               }
+               else
+               {
+                    echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+               }
+          }
+          ?>
           <?php
           //Displays a navigation menu.
           wp_nav_menu( $navbar );

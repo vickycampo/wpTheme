@@ -13,23 +13,78 @@
 
 /* The container of all the body elements */
 body {
-	background: #f5f5f5;
-	font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
-	color: #111;
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.6em;
+}
+div
+{
+
+}
+article
+{
+	background-color: red;
+}
+section
+{
+	background-color: blue;
+}
+.entry
+{
+	background-color: yellow;
+}
+p
+{
+	background-color: orange;
+}
+a, a:hover, a:active
+{
+	text-decoration: none;
+}
+img
+{
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
 }
 /* The bs-fixed-nav class is set when there is options['nav-menu'] is set and is true*/
-body.bs-fixed-nav {
-  padding-top: 70px;
+body.bs-fixed-nav
+{
+     margin: 0px;
+     padding: 0px;
 }
 
 
-body.bs-fixed-nav.theme_location_main_nav {
-  margin-top: 28px;
-  background-color: red;
-}
+body.bs-fixed-nav nav.theme_location_top
+{
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	width: 100%;
+     margin: 0px;
+     padding: 10px;
+     border: 0px;
+     background-color: grey;
 
+}
 /* The wrap div contains all the header and contant part */
 #wrap
 {
-
+	max-width: 100%;
+}
+.entry
+{
+	content: "";
+	display: table;
+	max-width: 100% !important;
+}
+.entry img
+{
+	max-width: 100% !important;
+	height: auto;
+}
+.wp-caption[style]
+{
+	max-width: 100% !important;
 }

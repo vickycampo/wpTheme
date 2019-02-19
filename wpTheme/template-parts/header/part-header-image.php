@@ -18,6 +18,9 @@
      //if the header title is not being displayed
      //we prepare a funciotn so the heather will have a link for the homepage
      $wpTheme_headerimg = null;
+     // echo ('<pre>');
+     // print_r ($options);
+     // echo ('</pre>');
      if ( !isset( $options['site-title'] ) || $options['site-title'] == false ) {
           $wpTheme_headerimg_before = '<a href="' . esc_url( home_url() ) . '" title="' . get_bloginfo('title') . '">';
           $wpTheme_headerimg_after = '</a>';
@@ -29,15 +32,15 @@
 <!-- set the header image -->
 <?php
      //get the image size
-     $wpTheme_header_image_width = get_theme_support( 'custom-header', 'width' );
+     $width = get_theme_support( 'custom-header', 'width' );
 
      // Check if we display the thumbnail
      if ( is_singular() && current_theme_supports( 'post-thumbnails' ) && has_post_thumbnail( $post->ID ) && ( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-                    $image[1] >= $wpTheme_header_image_width )
+                    $image[1] >= $width )
      {
           // there's a header image
           $wpTheme_headerimg = true;
-          
+
           ?>
 
           <div class="headerimg"> <!-- Header-img -->
@@ -52,13 +55,13 @@
      else if ( get_header_image() )
      {
           $wpTheme_headerimg = true;
-          $wpTheme_header_image_width = get_custom_header()->width;
-          $wpTheme_header_image_height = get_custom_header()->height;
+          $width = get_custom_header()->width;
+          $height = get_custom_header()->height;
           ?>
 
-          <div class="headerimg"> <!-- Header-img -->
+          <div class="header-img"> <!-- Header-img -->
                <?php echo wp_kses_post( $wpTheme_headerimg_before ); ?>
-               <img src="<?php header_image(); ?>" width="<?php echo esc_attr( $wpTheme_header_image_width ); ?>" height="<?php echo esc_attr( $wpTheme_header_image_height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+               <img src="<?php header_image(); ?>" width="<?php echo esc_attr( $width ); ?>" height="<?php echo esc_attr( $height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
                <?php echo wp_kses_post( $wpTheme_headerimg_after ); ?>
                <?php
      }

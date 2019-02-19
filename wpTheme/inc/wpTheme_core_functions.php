@@ -639,4 +639,15 @@ if (!function_exists('wpTheme_header_meta'))
      }
      add_action( 'wp_head', 'wpTheme_header_meta' );
 }
+add_filter( 'image_resize_dimensions', 'custom_image_resize_dimensions', 10, 6 );
+if (!function_exists('custom_image_resize_dimensions'))
+{
+     function custom_image_resize_dimensions( $payload, $orig_w, $orig_h, $dest_w, $dest_h, $crop )
+     {
+          echo ('payload - <pre>');
+          print_r ($payload);
+          echo ('</pre>');
+     }
+}
+
 ?>

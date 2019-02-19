@@ -13,9 +13,9 @@
 /* SIDEBAR FORMATING*/
 .body-right-sidebar
 {
-
+     display: block;
 }
 .body-left-sidebar
 {
-     
+     display: block;
 }
