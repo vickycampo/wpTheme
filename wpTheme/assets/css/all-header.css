@@ -51,7 +51,12 @@ h3
 {
 
 }
-     /* The logo Item */
+     /* The logo Menu item */
+     .navbar-logo
+     {
+          list-style-type:none;
+     }
+     /* The logo Image */
      .navbar-logo img
      {
           width: 200px;
@@ -64,6 +69,10 @@ h3
      #theme_location_top_target > ul > li
      {
 
+     }
+     #theme_location_top_target > ul > li:hover
+     {
+          background-color: red;
      }
 
 /* The id of the tag that contains the main navigation bar */
