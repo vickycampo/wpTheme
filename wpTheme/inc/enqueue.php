@@ -5,18 +5,54 @@
 @subpackage wpTheme
 @since wpTheme
 
-===================================
-ENQUEUE SCRIPTS AND STYLES
-===================================
+     ===================================
+          ENQUEUE SCRIPTS AND STYLES
+     ===================================
 * .
 *
 */
 ?>
 <?php
 /*
-==========================
-SCRIPTS AND TYLESHEETS
-==========================
+     ===============================
+          ENQUEUE BOOTSTRAP FILES
+     ===============================
+*
+*/
+if ( ! function_exists( 'wpTheme_enqueue_bootstrap' ) )
+{
+     function wpTheme_enqueue_bootstrap()
+     {
+          if (! is_admin()) //Instruction to only load if it is not the admin area
+          {
+               //add scripts so bootstrap can work
+               $handle= 'bootstrap-4.2.1-css'; //is simply the name of the stylesheet.
+               $src = get_template_directory_uri() . '/assets/bootstrap-4.2.1/js/bootstrap.js';
+               $deps = array('jquery');
+               $ver = '4.2.1'; //sets the version number.
+               $in_footer = true;
+               wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
+
+               //add style sheet so bootstrap can work
+               $handle = 'bootstrap-4.2.1-css'; //is simply the name of the stylesheet.
+               $src = get_template_directory_uri() . '/assets/bootstrap-4.2.1/css/bootstrap.css'; //is where it is located. The rest of the parameters are optional.
+               $deps = false; //this stylesheet is dependent on another stylesheet.
+               $ver = '4.2.1'; //sets the version number.
+               $media = 'all';
+               wp_enqueue_style( $handle , $src , $deps , $ver , $media );
+
+
+          }
+
+     }
+     add_action(  'wp_enqueue_scripts', 'wpTheme_enqueue_bootstrap' );
+}
+?>
+<?php
+/*
+     ==============================
+          SCRIPTS AND TYLESHEETS
+     ==============================
 
 * Sets up theme style sheets and scripts
 * * Note that this function is hooked into the wp_enqueue_scripts hook.
@@ -118,10 +154,13 @@ if ( ! function_exists( 'wpTheme_enqueue_fonts' ) )
                //The first specific theme helper, load the theme options and defaults
                $defaults = wpTheme_get_theme_defaults ();
                //Fetch options from the database table
-               $options = get_option ('ap_core_theme_options');
-               if ( isset( $options['font_subset'] ) ) {
+               $options = get_option ('wpTheme_options');
+               if ( isset( $options['font_subset'] ) )
+               {
                     $font_subset = $options['font_subset'];
-               } else {
+               }
+               else
+               {
                     $font_subset = $defaults['font_subset'];
                }
                // register fonts
@@ -216,9 +255,9 @@ if ( ! function_exists( 'wpTheme_enqueue_fonts' ) )
 
 
 /*
-==========================
-ENQUEUE COMMENTS REPLY
-==========================
+     ==============================
+          ENQUEUE COMMENTS REPLY
+     ==============================
 
 * Add .js script if "Enable threaded comments" is activated in Admin
 * Codex: {@link https://developer.wordpress.org/reference/functions/wp_enqueue_script/}
@@ -243,40 +282,75 @@ if ( ! function_exists( 'wpTheme_enqueue_comments_reply' ) )
      }
      add_action(  'wp_enqueue_scripts', 'wpTheme_enqueue_comments_reply' );
 }
-/*
-==========================
-ENQUEUE BOOTSTRAP FILES
-==========================
 
+/*
+     ===============================
+          ENQUEUE SKINS
+     ===============================
 *
 */
-if ( ! function_exists( 'wpTheme_enqueue_bootstrap' ) )
+if ( ! function_exists( 'wpTheme_enqueue_skins' ) )
 {
-     function wpTheme_enqueue_bootstrap()
+     function wpTheme_enqueue_skins()
      {
-          if (! is_admin()) //Instruction to only load if it is not the admin area
+          //The first specific theme helper, load the theme options and defaults
+          $defaults = wpTheme_get_theme_defaults ();
+          //Fetch options from the database table
+          $options = get_option ('wpTheme_options');
+          //Information of the current active theme
+          $theme = wp_get_theme ();
+          /* CREATE AN ARRAY WITH ALL THE SKINS TO REGISTER */
+          $skins = array(
+               'cerulean'     => __( 'Cerulean', 'wpTheme' ),
+               'cosmo'        => __( 'Cosmo', 'wpTheme' ),
+               'cyborg'       => __( 'Cyborg', 'wpTheme' ),
+               'darkly'       => __( 'Darkly', 'wpTheme' ),
+               'flatly'       => __( 'Flatly', 'wpTheme' ),
+               'journal'      => __( 'Journal', 'wpTheme' ),
+               'litera'       => __( 'Litera', 'wpTheme' ),
+               'lumen'        => __( 'Lumen', 'wpTheme' ),
+               'lux'          => __( 'Lux', 'wpTheme' ),
+               'materia'      => __( 'Materia', 'wpTheme' ),
+               'minty'        => __( 'Minty', 'wpTheme' ),
+               'pulse'        => __( 'Pulse', 'wpTheme' ),
+               'sandstone'    => __( 'Sandstone', 'wpTheme' ),
+               'simplex'      => __( 'Simplex', 'wpTheme' ),
+               'sketchy'      => __( 'Sketchy', 'wpTheme' ),
+               'slate'        => __( 'Slate', 'wpTheme' ),
+               'solar'        => __( 'Solar', 'wpTheme' ),
+               'spacelab'     => __( 'Spacelab', 'wpTheme' ),
+               'superhero'    => __( 'Superhero', 'wpTheme' ),
+               'united'       => __( 'United', 'wpTheme' ),
+               'yeti'         => __( 'Yeti', 'wpTheme' ),
+          );
+
+
+          /* Register each style */
+          foreach ($skins as $handle => $value)
           {
-               //add scripts so bootstrap can work
-               $handle= 'bootstrap-4.2.1-css'; //is simply the name of the stylesheet.
-               $src = get_template_directory_uri() . '/assets/bootstrap-4.2.1/js/bootstrap.js';
-               $deps = array('jquery');
-               $ver = '4.2.1'; //sets the version number.
-               $in_footer = true;
-               wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
 
-               //add style sheet so bootstrap can work
-               $handle = 'bootstrap-4.2.1-css'; //is simply the name of the stylesheet.
-               $src = get_template_directory_uri() . '/assets/bootstrap-4.2.1/css/bootstrap.css'; //is where it is located. The rest of the parameters are optional.
-               $deps = false; //this stylesheet is dependent on another stylesheet.
-               $ver = '4.2.1'; //sets the version number.
+               $src = get_template_directory_uri() . '/assets/bootswatch/'. $handle .'.css';
+               $deps = false;
+               $ver = $theme['version'];
                $media = 'all';
-               wp_enqueue_style( $handle , $src , $deps , $ver , $media );
-
+               wp_register_style( $handle, $src, $deps, $ver, $media );
+          }
+          // echo ('<pre>');
+          // print_r ($skins);
+          // echo ('</pre>');
+          foreach ($skins as $handle => $value)
+          {
+               if (isset ($options['skins']))
+               {
+                    if ( $handle === $options['skins'] )
+                    {
+                         wp_enqueue_style( $handle );
+                    }
+               }
 
           }
 
      }
-     add_action(  'wp_enqueue_scripts', 'wpTheme_enqueue_bootstrap' );
+     add_action(  'wp_enqueue_scripts', 'wpTheme_enqueue_skins' );
 }
-
 ?>

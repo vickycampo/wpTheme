@@ -22,10 +22,13 @@ $args = array(
      'previouspagelink' => '&laquo;',
      'nextpagelink' => '&raquo;'
 );
-if ( function_exists( 'ap_core_link_pages' ) ) {
-     ap_core_link_pages( $args );
-} else {
-     // fall back to default wp functionality if, for some reason, ap_core_link_pages is missing
+if ( function_exists( 'wpTheme_link_pages' ) )
+{
+     wpTheme_link_pages( $args );
+}
+else
+{
+     // fall back to default wp functionality if, for some reason, wpTheme_link_pages is missing
      wp_link_pages( $args );
 }
 ?>

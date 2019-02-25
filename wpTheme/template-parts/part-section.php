@@ -10,6 +10,14 @@
 	========================================
 * This section works for all post formats
 */
+$attachments = get_children( array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image') );
+
+if ( $attachments )
+{
+     // echo ('<pre>');
+     // print_r ($attachments);
+     // echo ('</pre>');
+}
 ?>
 <section class="entry">
      <?php tha_entry_top(); ?>

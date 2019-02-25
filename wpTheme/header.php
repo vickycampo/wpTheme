@@ -38,13 +38,13 @@ HEADER
           echo " - ";
           bloginfo('description');
      } ?>" />
-     <?php $options = get_option( 'ap_core_theme_options' ); ?>
+     <?php $options = get_option( 'wpTheme_options' ); ?>
      <?php
           //Check $options['nav-menu']
-          $ap_core_fixed_nav = null;
+          $fixed_nav = null;
      	if ( isset( $options['nav-menu'] ) && ( true == $options['nav-menu'] ) )
           {
-     		$ap_core_fixed_nav = 'bs-fixed-nav';
+     		$fixed_nav = 'bs-fixed-nav';
      	}
 
      ?>
@@ -53,7 +53,7 @@ HEADER
      <?php tha_head_bottom(); ?>
      <?php wp_head(); ?>
 </head>
-<body <?php body_class( $ap_core_fixed_nav ); ?>>
+<body <?php body_class( $fixed_nav ); ?>>
      <?php tha_body_top(); ?>
      <!-- Create a div that is going to wrap all the content -->
 	<div class="container" id="wrap"> <!-- wrap div-->

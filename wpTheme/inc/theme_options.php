@@ -9,68 +9,108 @@
 		THEME OPTIONS
 	===================================
 *
-*
+* All the theme custominzations
 */
 ?>
+
 <?php
-if ( ! function_exists( 'wpTheme_register' ) )
+/*
+	===================================
+		WPTHEME OPTIONS INIT
+	===================================
+*
+* Register the settings
+*/
+if (!function_exists('wpTheme_options_init'))
 {
-  function wpTheme_register( $wp_customize )
-  {
-    
-    // Section Options
-    $args	= array
-    (
-      'title' => __( 'wpThemeSection' ),
-      'description' => __( 'Add wpThemeSection here' ),
-      'panel' => '', // Not typically needed.
-      'priority' => 160,
-      'capability' => 'edit_theme_options',
-      'theme_supports' => '' // Rarely needed.
-    );
-
-    $wp_customize->add_section( 'wpThemeSection_id' , $args );
-    // $wp_customize->get_section();
-    // $wp_customize->remove_section();
-
-    // Settings Options
-    unset ($args);
-    $args	= array
-    (
-      'type' => 'theme_mod', // or 'option'
-      'capability' => 'edit_theme_options',
-      'theme_supports' => '', // Rarely needed.
-      'default' => '',
-      'transport' => 'refresh', // or postMessage
-      'sanitize_callback' => '',
-      'sanitize_js_callback' => '', // Basically to_json.
-    );
-    $wp_customize->add_setting( 'setting_id' , $args );
-    // $wp_customize->get_setting();
-    // $wp_customize->remove_setting();
-
-    // Control Options
-    unset ($args);
-    $args	= array
-    (
-      'type' => 'date',
-      'priority' => 10, // Within the section.
-      'section' => 'wpThemeSection_id', // Required, core or custom.
-      'label' => __( 'Date' ),
-      'description' => __( 'This is a date control with a red border.' ),
-      'input_attrs' => array(
-      'class' => 'my-custom-class-for-js',
-      'style' => 'border: 1px solid #900',
-      'placeholder' => __( 'mm/dd/yyyy' ),
-      ),
-      'active_callback' => 'is_front_page',
-    );
-    $wp_customize->add_control( 'setting_id', $args);
-    // $wp_customize->get_control();
-    // $wp_customize->remove_control();
-  }
-  add_action('customize_register','wpTheme_register');
+     function wpTheme_options_init()
+     {
+          $option_group = 'WPTHEME_OPTIONS';
+          $option_name = 'wpTheme_options';
+          register_setting( $option_group , $option_name );
+     }
+     add_action ( 'admin_init', 'wpTheme_options_init' );
 }
+?>
+<?php
+/*
+	===================================
+		WPTHEME ADD SECTIONS
+	===================================
+*
+* Add Sections
+*/
+if ( ! function_exists( 'wpTheme_add_sections' ) )
+{
+     function wpTheme_add_sections( $wp_customize )
+     {
+          //Starting priority
+          $priority = 35;
+          /* LAYOUT SECTION - Add options for the layout of the theme */
+          $id = 'layout_options';
+          $args = array
+          (
+              'title'      => __('Layout Options','wpTheme'),
+              'priority'   => $priority
+          );
+          $wp_customize -> add_section( $id , $args );
+          //increment priority
 
+          /* TYPOGRAPHY SECTION - Add options for the fonts of the theme */
+          $priority ++;
+          $id = 'typography_options';
+          $args = array
+          (
+              'title'      => __('Typography Options','wpTheme'),
+              'priority'   => $priority
+          );
+          $wp_customize -> add_section( $id , $args );
 
+          /* ADVANCED SECTION - Add advanced options */
+          $priority ++;
+          $id = 'advanced_options';
+          $args = array
+          (
+              'title'      => __('Advanced Options','wpTheme'),
+              'priority'   => $priority
+          );
+          $wp_customize -> add_section( $id , $args );
+
+          /* Skins Section */
+          $priority ++;
+          $id = 'skins_options';
+          $args = array
+          (
+              'title'      => __('Skins Options','wpTheme'),
+              'priority'   => $priority
+          );
+          $wp_customize -> add_section( $id , $args );
+     }
+     add_action( 'customize_register', 'wpTheme_add_sections' );
+}
+?>
+<?php
+/*
+     ==============================
+          FUNCTION FILES
+     ==============================
+*
+* load the files with the customization functions
+*/
+/* Choices File */
+require_once get_parent_theme_file_path( '/inc/theme_options_choices.php' );
+/* Validations */
+require_once get_parent_theme_file_path( '/inc/theme_options_validations.php' );
+/* Title Tag Line */
+require_once get_parent_theme_file_path( '/inc/theme_options_title_tagline.php' );
+/* Layout */
+require_once get_parent_theme_file_path( '/inc/theme_options_layout.php' );
+/* Typography */
+require_once get_parent_theme_file_path( '/inc/theme_options_typography.php' );
+/* Colors */
+require_once get_parent_theme_file_path( '/inc/theme_options_colors.php' );
+/* Advanced */
+require_once get_parent_theme_file_path( '/inc/theme_options_advanced.php' );
+/* Skins */
+require_once get_parent_theme_file_path( '/inc/theme_options_skins.php' );
 ?>

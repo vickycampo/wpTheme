@@ -14,7 +14,7 @@
 <section class="entry media">
      <?php tha_entry_top(); ?>
      <?php
-     if ( ap_core_archive_excerpts() == false )
+     if ( wpTheme_archive_excerpts() == false )
      {
           the_content(__('Read more &raquo;','wpTheme'));
      }

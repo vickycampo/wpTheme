@@ -13,10 +13,9 @@
 /* SIDEBAR FORMATING*/
 .body-right-sidebar
 {
-     background-color: red;
+     display: block;
 }
 .body-left-sidebar
 {
-     background-color: red;
-     float: left;
+     display: block;
 }

@@ -13,8 +13,34 @@
 /* The container of all the header elements */
 header
 {
-  margin: 10px 0 20px;
+
 }
+h1
+{
+     font-size: 30px;
+}
+h2
+{
+     font-size: 20px;
+}
+h3
+{
+     font-size: 15px;
+}
+/* the div that contains the header image */
+.header-img
+{
+     padding: 0px;
+     border: 0px;
+}
+.header-img img
+{
+     display: block;
+     max-width:100%;
+     width: auto;
+     height: auto;
+}
+
 /* The id of the nav tag that contains the top navigation bar */
 #theme_location_top_nav
 {
@@ -25,14 +51,30 @@ header
 {
 
 }
+     /* The logo Menu item */
+     .navbar-logo
+     {
+          list-style-type:none;
+     }
+     /* The logo Image */
+     .navbar-logo img
+     {
+          width: 200px;
+          height: auto;
+     }
      #theme_location_top_target > ul
      {
 
      }
      #theme_location_top_target > ul > li
      {
-          
+
      }
+     #theme_location_top_target > ul > li:hover
+     {
+          background-color: red;
+     }
+
 /* The id of the tag that contains the main navigation bar */
 #theme_location_main
 {
@@ -45,4 +87,20 @@ header
      #theme_location_main > ul > li
      {
 
+     }
+
+/* The breadcrumbs */
+     .my-breadcrumbs
+     {
+
+     }
+     .breadcrumb
+     {
+          font-size: 10px;
+     }
+     .breadcrumb-item::before
+     {
+         font-family: 'FontAwesome';
+         color: grey !important;
+         content: "\f101" !important;
      }

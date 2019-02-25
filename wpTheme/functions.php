@@ -5,9 +5,9 @@
 @subpackage wpTheme
 @since wpTheme
 
-===================================
-FUNCTIONS
-===================================
+     ===================================
+          FUNCTIONS
+     ===================================
 * This page is always used as the site front page if it exists,
 * regardless of what settings on Admin > Settings > Reading..
 *
@@ -15,15 +15,15 @@ FUNCTIONS
 ?>
 <?php
 /*
-=====================
-wpTheme_setup
-=====================
+     =====================
+          wpTheme_setup
+     =====================
 */
 
 /*
-=====================
-CUSTOM HEADER
-=====================
+     =====================
+          CUSTOM HEADER
+     =====================
 */
 if ( ! function_exists( 'wpTheme_custom_header_setup' ) )
 {
@@ -129,9 +129,9 @@ if ( ! ( function_exists ( 'adminpreview_cb' ) ) )
      }
 }
 /*
-=====================
-CUSTOM LOGO
-=====================
+     =====================
+          CUSTOM LOGO
+     =====================
 */
 if ( ! ( function_exists ( 'wpTheme_custom_logo_setup' ) ) )
 {
@@ -149,9 +149,9 @@ if ( ! ( function_exists ( 'wpTheme_custom_logo_setup' ) ) )
 }
 
 /*
-=====================
-POST FORMAT
-=====================
+     =====================
+          POST FORMAT
+     =====================
 */
 if ( ! ( function_exists ( 'wpTheme_post_formats_setup' ) ) )
 {
@@ -174,9 +174,9 @@ if ( ! ( function_exists ( 'wpTheme_post_formats_setup' ) ) )
      add_action( 'after_setup_theme', 'wpTheme_post_formats_setup' );
 }
 /*
-=====================
-POST SUPPORT
-=====================
+     =====================
+          POST SUPPORT
+     =====================
 */
 if ( ! ( function_exists ( 'wpTheme_custom_post_formats_setup' ) ) )
 {
@@ -192,9 +192,9 @@ if ( ! ( function_exists ( 'wpTheme_custom_post_formats_setup' ) ) )
      add_action( 'init', 'wpTheme_custom_post_formats_setup' );
 }
 /*
-=====================
-REGISTER POST TYPE
-=====================
+     =====================
+          REGISTER POST TYPE
+     =====================
 */
 if ( ! ( function_exists ( 'wpTheme_register_custom_post_type' ) ) )
 {
@@ -247,25 +247,27 @@ if ( ! ( function_exists ( 'wpTheme_register_custom_post_type' ) ) )
 }
 
 /*
-=====================
-REGISTER WIDGET
-=====================
+     =====================
+          REGISTER WIDGET
+     =====================
 */
 if ( ! function_exists( 'wpTheme_register_widget' ) )
 {
+     //if we are going to use the widget we load the file of the widget class
+     require_once get_parent_theme_file_path( '/inc/class.my-widget.php' );
+     
      function wpTheme_register_widget()
      {
           register_widget( 'my_widget' );
      }
      add_action( 'widgets_init', 'wpTheme_register_widget' );
-     //if we are going to use the widget we load the file of the widget class
-     require_once get_parent_theme_file_path( '/inc/class.my-widget.php' );
+
 }
 
 /*
-==============================
-ENABLE FEATURED IMAGE
-==============================
+     ==============================
+          ENABLE FEATURED IMAGE
+     ==============================
 *
 * Enable support for post thumbnails and featured images.
 */
@@ -303,15 +305,19 @@ if ( ! function_exists( 'wpTheme_setup' ) )
           load_theme_textdomain( 'wpTheme', get_template_directory() . '/languages' );
           //Custom Background
           add_theme_support ( 'custom-background', array () );
+          // Add title tag support.
+          add_theme_support( 'title-tag' );
+          // html5 theme support
+          add_theme_support( 'html5' );
 
 
      }
 }
 add_action( 'after_setup_theme', 'wpTheme_setup' );
 /*
-==============================
-REMOVE VERSION INFORMATION
-==============================
+     ==============================
+          REMOVE VERSION INFORMATION
+     ==============================
 *
 * load the WP THEME CORE FUNCTIONS
 */
@@ -336,9 +342,9 @@ if ( ! function_exists( 'wpTheme_remove_version_scripts_styles' ) )
 
 }
 /*
-==============================
-WP Bootstrap Navwalker
-==============================
+     ==============================
+          WP Bootstrap Navwalker
+     ==============================
 *
 * include bootstrap nav walker class
 */
@@ -346,57 +352,74 @@ WP Bootstrap Navwalker
 require_once( get_template_directory() . '/inc/bs4navwalker.php' );
 
 /*
-==============================
-CLASS MY WIDGET
-==============================
+     ==============================
+          CLASS MY WIDGET
+     ==============================
 *
 * include the custom widgets
 */
 require_once( get_template_directory() . '/inc/class.my-widget.php' );
 /*
-==============================
-ENQUEUE.PHP
-==============================
+     ==============================
+          ENQUEUE.PHP
+     ==============================
 *
 * load the enqueue file
 */
 require_once get_parent_theme_file_path( '/inc/enqueue.php' );
 /*
-==============================
-THE HOOK ALLIANCE
-==============================
+     ===================================
+          HEAD_CALLBACK_FUNCTIONS.PHP
+     ===================================
+*
+* load the enqueue file
+*/
+require_once get_parent_theme_file_path( '/inc/head_callback_functions.php' );
+/*
+     ==============================
+          THE HOOK ALLIANCE
+     ==============================
 *
 * include theme hook alliance hooks
 */
 require_once( get_template_directory() . '/inc/hooks.php' );
 /*
-==============================
-REGISTGER NAVBARS
-==============================
+     ==============================
+          REGISTGER NAVBARS
+     ==============================
 *
 * where we register all the navitagion bars
 */
 require_once( get_template_directory() . '/inc/register_navbars.php' );
 /*
-==============================
-REGISTGER SIDEBARS
-==============================
+     ==============================
+          REGISTGER SIDEBARS
+     ==============================
 *
 * where we register all the sidebars
 */
 require_once( get_template_directory() . '/inc/register_sidebars.php' );
 /*
-==============================
-THEME_OPTIONS.PHP
-==============================
+     ==============================
+          THEME_OPTIONS.PHP
+     ==============================
 *
 * load the enqueue file
 */
 require_once get_parent_theme_file_path( '/inc/theme_options.php' );
 /*
-==============================
-WP THEME CORE FUNCTIONS
-==============================
+
+	===================================
+		VALIDATE FUNCTIONS
+	===================================
+*
+* All the functions that are used to validate the information in the theme_options.php
+*/
+require_once get_parent_theme_file_path( '/inc/theme_options_validations.php' );
+/*
+     ==============================
+          WP THEME CORE FUNCTIONS
+     ==============================
 *
 * load the WP THEME CORE FUNCTIONS
 */

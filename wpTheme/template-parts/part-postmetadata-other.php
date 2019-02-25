@@ -15,7 +15,7 @@
 <?php
 //create variables that will be needed after
 //Get the options
-$options = get_option( 'ap_core_theme_options' );
+$options = get_option( 'wpTheme_options' );
 //Set the time string
 $time = '<time datetime=' . get_the_time('Y-m-d') . '>' . get_the_time('j F Y') . '</time>';
 //Get a string with the categories of the post

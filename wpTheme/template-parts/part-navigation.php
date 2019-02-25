@@ -29,8 +29,8 @@
 			else
 			{
 				?>
-				<li class="previous"><?php next_posts_link(__('&larr; Older Entries','museum-core')); ?></li>
-				<li class="next"><?php previous_posts_link(__('Newer Entries &rarr;','museum-core')); ?></li>
+				<li class="previous"><?php next_posts_link(__('&larr; Older Entries','wpTheme')); ?></li>
+				<li class="next"><?php previous_posts_link(__('Newer Entries &rarr;','wpTheme')); ?></li>
 			<?php
 			}
 		}

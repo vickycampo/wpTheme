@@ -29,7 +29,10 @@ if ( empty( $is_title_set ) )
                <?php _e('(no title)', 'wpTheme'); ?>
           </a>
      </h1>
-<?php } else { ?>
+<?php
+}
+else
+{ ?>
 	<h1 class="the_title">
           <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php echo esc_attr( sprintf( __('Permanent Link to %s','wpTheme'), the_title_attribute( 'echo=0' ) ) ); ?>">
                <?php the_title(); ?>

@@ -5,18 +5,18 @@
 @subpackage wpTheme
 @since wpTheme
 
-===================================
-REGISTER SIDEBARS
-===================================
+     ===================================
+          REGISTER SIDEBARS
+     ===================================
 * This page is where we have different functions to register different sidebars
 * Grouped by the section where they are going to be displayed.
 *
 */
 ?><?php
 /*
-=====================
-GENERIC SIDEBARS
-=====================
+     =====================
+          GENERIC SIDEBARS
+     =====================
 */
 if ( ! function_exists( 'wpTheme_generic_sidebars' ) )
 {
@@ -53,9 +53,9 @@ if ( ! function_exists( 'wpTheme_generic_sidebars' ) )
      add_action( 'widgets_init', 'wpTheme_generic_sidebars' );
 }
 /*
-=====================
-FOOTER SIDEBARS
-=====================
+     =====================
+          FOOTER SIDEBARS
+     =====================
 */
 if ( ! function_exists ( 'wpTheme_footer_sidebars' ) )
 {
