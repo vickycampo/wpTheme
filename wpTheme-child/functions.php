@@ -22,6 +22,7 @@
 * Imports the enqueue file fromt the partent so we can overide the styles for the child
 */
 include_once (get_parent_theme_file_path() . '/inc/enqueue.php');
+
 ?>
 <?php
 /*
