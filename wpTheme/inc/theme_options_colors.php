@@ -209,7 +209,7 @@ if ( ! function_exists( 'wpTheme_navbar_color_customization' ) )
 		) );
 		$wp_customize->add_control( $navbar_color );
      }
-     add_action('customize_register','wpTheme_navbar_color_customization');
+     //add_action('customize_register','wpTheme_navbar_color_customization');
 }
 ?>
 <?php
@@ -251,7 +251,7 @@ if ( ! function_exists( 'wpTheme_navbar_inverse_customization' ) )
 		);
           $wp_customize->add_control( $id , $args );
      }
-     add_action('customize_register','wpTheme_navbar_inverse_customization');
+     //add_action('customize_register','wpTheme_navbar_inverse_customization');
 }
 ?>
 <?php
@@ -291,6 +291,6 @@ if ( ! function_exists( 'wpTheme_navbar_link_customization' ) )
 		) );
 		$wp_customize->add_control( $navbar_link );
      }
-     add_action('customize_register','wpTheme_navbar_link_customization');
+     //add_action('customize_register','wpTheme_navbar_link_customization');
 }
 ?>

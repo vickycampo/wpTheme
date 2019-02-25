@@ -199,7 +199,29 @@ if ( ! function_exists( 'wpTheme_validate_screen_size' ) )
 	function wpTheme_validate_screen_size( $value )
 	{
 		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
-			if ( !array_key_exists( $value, wpTheme_screen_size() ) )
+		if ( !array_key_exists( $value, wpTheme_screen_size() ) )
+		{
+			//FALSE - NOT VALID
+			$value = null;
+		}
+		//TRUE - VALID
+		return $value;
+	}
+}
+?>
+<?php
+/*
+	=================================================
+		VALIDATE - NAVIGATION BAR BACKGROUND COLOR
+	=================================================
+*
+* Validate Navigation Bar - Background color options
+*/
+if ( ! function_exists( 'wpTheme_validate_nav_menu_color' ) )
+{
+	function wpTheme_validate_nav_menu_color( $value )
+	{
+		if ( !array_key_exists( $value, wpTheme_nav_menu_color() ) )
 		{
 			//FALSE - NOT VALID
 			$value = null;

@@ -1,0 +1,25 @@
+/*
+
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
+
+	==========================
+		TOP NAVIGATION BAR
+	==========================
+*
+* Set the styles for the top navigation bar
+*
+*/
+
+#theme_location_top_nav
+{
+     @extend .navbar-dark;
+     @extend .bg-dark;
+
+}
+#theme_location_top_nav button
+{
+     background-color: blue;
+     margin-left: 10px;
+}

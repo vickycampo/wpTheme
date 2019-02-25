@@ -85,6 +85,16 @@ if ( ! function_exists( 'wpTheme_add_sections' ) )
               'priority'   => $priority
           );
           $wp_customize -> add_section( $id , $args );
+
+          /* Top Navigation Bar */
+          $priority ++;
+          $id = 'nav_bar_options';
+          $args = array
+          (
+              'title'      => __('Navigation Options','wpTheme'),
+              'priority'   => $priority
+          );
+          $wp_customize -> add_section( $id , $args );
      }
      add_action( 'customize_register', 'wpTheme_add_sections' );
 }
@@ -113,4 +123,6 @@ require_once get_parent_theme_file_path( '/inc/theme_options_colors.php' );
 require_once get_parent_theme_file_path( '/inc/theme_options_advanced.php' );
 /* Skins */
 require_once get_parent_theme_file_path( '/inc/theme_options_skins.php' );
+/* Navigation Menus */
+require_once get_parent_theme_file_path( '/inc/theme_options_nav_menus.php' );
 ?>

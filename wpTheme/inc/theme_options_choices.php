@@ -175,6 +175,28 @@ if ( !function_exists( 'wpTheme_screen_size' ) )
 ?>
 <?php
 /*
+	=================================================
+		CHOICES - NAVIGATION BAR BACKGROUND COLOR
+	=================================================
+*
+* Validate CUSTOM FIELDS options
+*/
+if ( !function_exists( 'wpTheme_nav_menu_color' ) )
+{
+     function wpTheme_nav_menu_color()
+     {
+          $color = array (
+               '' => __( 'None', 'wpTheme' ),
+               'navbar-dark bg-dark' => __( 'Dark', 'wpTheme' ),
+               'navbar-dark bg-primary' => __( 'Primary', 'wpTheme' )
+
+          );
+          return ($color);
+     }
+}
+?>
+<?php
+/*
 	======================================
 		CHOICES - CUSTOM FIELDS
 	======================================

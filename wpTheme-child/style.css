@@ -1,13 +1,15 @@
 /*
- Theme Name:   wpTheme Child
- Theme URI:    https://github.com/vickycampo/wpTheme
- Description:  wpTheme
- Author:       John Doe
- Author URI:   http://example.com
- Template:     wpTheme
- Version:      1.0.0
- License:      GNU General Public License v2 or later
- License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
- Text Domain:  twenty-fifteen-child
-*/
+  Theme Name:   wpTheme Child Theme
+  Theme URI:    https://github.com/vickycampo/wpTheme
+  Description:  wpTheme
+  Author:       Virginia Campo
+  Author URI:   http://www.virginiacampo.com
+  Template:     wpTheme
+  Version:      1.0.0
+  License:      GNU General Public License v2 or later
+  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+  Text Domain:  twenty-fifteen-child
+
+/* Import Parent theme Styles*/
+@import url (" ../wpTheme/style.css"); 
