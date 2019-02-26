@@ -231,3 +231,25 @@ if ( ! function_exists( 'wpTheme_validate_nav_menu_color' ) )
 	}
 }
 ?>
+<?php
+/*
+	=================================================
+		VALIDATE - NAVIGATION BAR PUSH ITEMS
+	=================================================
+*
+* Validate Navigation Bar - Push Items color options
+*/
+if ( ! function_exists( 'wpTheme_validate_nav_menu_auto_margins' ) )
+{
+	function wpTheme_validate_nav_menu_auto_margins( $value )
+	{
+		if ( !array_key_exists( $value, wpTheme_nav_menu_auto_margins() ) )
+		{
+			//FALSE - NOT VALID
+			$value = null;
+		}
+		//TRUE - VALID
+		return $value;
+	}
+}
+?>

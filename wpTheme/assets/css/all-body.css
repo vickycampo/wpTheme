@@ -57,7 +57,7 @@ body.bs-fixed-nav
 
 body.bs-fixed-nav nav.theme_location_top
 {
-	overflow: hidden;
+	/* overflow: hidden;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -65,7 +65,30 @@ body.bs-fixed-nav nav.theme_location_top
      margin: 0px;
      padding: 10px;
      border: 0px;
-     background-color: grey;
+	z-index: 1020; */
+
+	position: -webkit-sticky;
+     position: sticky;
+     top: 0;
+     z-index: 1020;
+
+}
+body.bs-fixed-nav nav.theme_location_main
+{
+	/* overflow: hidden;
+	position: fixed;
+	top: 100;
+	width: 100%;
+	width: 100%;
+     margin: 0px;
+     padding: 10px;
+     border: 0px;
+	z-index: 1020; */
+
+	position: -webkit-sticky;
+	position: sticky;
+	top: 54px;
+	z-index: 1019;
 
 }
 /* The wrap div contains all the header and contant part */

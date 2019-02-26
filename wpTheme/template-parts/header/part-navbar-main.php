@@ -10,43 +10,33 @@
 */
 ?>
 <?php
-//The first specific theme helper, load the theme options and defaults
-$defaults = wpTheme_get_theme_defaults ();
-//Fetch options from the database table
-$options = get_option ('wpTheme_options');
-/* We determine which screen size we are using*/
-if ( isset ( $options['bs-screen-size'] ) )
+/* Check if the top navigation bar is active */
+/* This nav Bar Location  */
+$location = 'main';
+if ( has_nav_menu( $location ) )
 {
-     $screen_size = str_replace ( "-" , "" , $options['bs-screen-size'] );
-}
-else
-{
-     $screen_size = str_replace ( "-" , "" , $defaults['bs-screen-size'] );
-}
-if ($screen_size == '')
-{
-     $screen_size = 'sm';
-}
-?>
+     include('part-nav-options.php' );
+     //Collapse target name
+     $data_target = 'theme_location_main';
+     //we create an array of arguments for the main navigation bar
+
+     $args = array(
+          'menu_class' => 'navbar-nav mr-auto',
+          'container' => 'false',
+          'theme_location' => 'main',
+          'fallback_cb' => false,
+          'add_li_class'  => 'nav-item',
+          'walker' => new bs4navwalker()
+          );
+
+     ?>
+     <nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="navbar navbar-expand-<?php echo ( $screen_size ); ?> <?php esc_html_e( $bar_background_color , 'wpTheme' ); ?>  <?php esc_html_e( $data_target , 'wpTheme' ); ?>">
+          <div class="collapse navbar-collapse"  id="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target">
+               <?php wp_nav_menu( $args ); ?>
+
+          </div><!-- navbarSupportedContent -->
+     </nav>
 
 <?php
-//Collapse target name
-$data_target = 'theme_location_main';
-//we create an array of arguments for the main navigation bar
-
-$args = array(
-     'menu_class' => 'navbar-nav mr-auto',
-     'container' => 'false',
-     'theme_location' => 'main',
-     'fallback_cb' => false,
-     'add_li_class'  => 'nav-item',
-     'walker' => new bs4navwalker()
-     );
-
+}
 ?>
-<nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="navbar navbar-expand-<?php echo ( $screen_size ); ?> navbar-light bg-light">
-     <div class="collapse navbar-collapse"  id="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target">
-          <?php wp_nav_menu( $args ); ?>
-
-     </div><!-- navbarSupportedContent -->
-</nav>

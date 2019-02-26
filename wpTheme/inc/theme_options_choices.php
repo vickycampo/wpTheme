@@ -188,7 +188,36 @@ if ( !function_exists( 'wpTheme_nav_menu_color' ) )
           $color = array (
                '' => __( 'None', 'wpTheme' ),
                'navbar-dark bg-dark' => __( 'Dark', 'wpTheme' ),
-               'navbar-dark bg-primary' => __( 'Primary', 'wpTheme' )
+               'navbar-dark bg-primary' => __( 'Dark-Primary', 'wpTheme' ),
+               'navbar-dark bg-secondary' => __( 'Dark-Secondary', 'wpTheme' ),
+               'navbar-dark bg-success' => __( 'Dark-Success', 'wpTheme' ),
+               'navbar-dark bg-danger' => __( 'Dark-Danger', 'wpTheme' ),
+               'navbar-dark bg-warning' => __( 'Dark-Warning', 'wpTheme' ),
+               'navbar-dark bg-info' => __( 'Dark-Info', 'wpTheme' ),
+               'navbar-light bg-light' => __( 'Ligh-light', 'wpTheme' ),
+               'navbar-light bg-white' => __( 'Ligh-White', 'wpTheme' )
+
+          );
+          return ($color);
+     }
+}
+?>
+<?php
+/*
+	=================================================
+		CHOICES - AUTO MARGINS
+	=================================================
+*
+* Validate CUSTOM FIELDS options
+*/
+if ( !function_exists( 'wpTheme_nav_menu_auto_margins' ) )
+{
+     function wpTheme_nav_menu_auto_margins()
+     {
+          $color = array (
+               '' => __( "Don't Push Items", 'wpTheme' ),
+               'mr-auto' => __( 'To the Right', 'wpTheme' ),
+               'ml-auto' => __( 'To the Left', 'wpTheme' )
 
           );
           return ($color);

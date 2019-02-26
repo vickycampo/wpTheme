@@ -13,11 +13,11 @@
 /* The container of all the header elements */
 header
 {
-
+     
 }
 h1
 {
-     font-size: 30px;
+     font-size: 25px;
 }
 h2
 {
@@ -44,23 +44,28 @@ h3
 /* The id of the nav tag that contains the top navigation bar */
 #theme_location_top_nav
 {
-
+     margin: 0px;
+     padding: 0px;
+     border: 0px;
 }
+
 /* The part of the navigation bar that contains the elements */
 #theme_location_top_target
 {
-
+     margin: 0px;
+     padding: 0px;
+     border: 0px;
 }
-     /* The logo Menu item */
-     .navbar-logo
+
+     #theme_location_top_target li
      {
-          list-style-type:none;
      }
-     /* The logo Image */
-     .navbar-logo img
+     #theme_location_top_target a
      {
-          width: 200px;
-          height: auto;
+     }
+     #theme_location_top_target h1
+     {
+          font-size: 25px;
      }
      #theme_location_top_target > ul
      {
@@ -72,7 +77,6 @@ h3
      }
      #theme_location_top_target > ul > li:hover
      {
-          background-color: red;
      }
 
 /* The id of the tag that contains the main navigation bar */

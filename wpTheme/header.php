@@ -56,20 +56,16 @@ HEADER
 <body <?php body_class( $fixed_nav ); ?>>
      <?php tha_body_top(); ?>
      <!-- Create a div that is going to wrap all the content -->
-	<div class="container" id="wrap"> <!-- wrap div-->
-          <!-- Add the head part-->
-          <div class="row">
-              	<?php tha_header_before(); ?>
-			<header>
-				<?php tha_header_top(); ?>
-					<!-- this is where the header content should go -->
-					<!-- Top Navitagion bar part -->
-					<?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
-					<!-- Header Image part -->
-					<?php get_template_part( 'template-parts/header/part', 'header-image' ); ?>
-					<!-- Main Navigation bar part -->
-					<?php get_template_part( 'template-parts/header/part', 'navbar-main' ); ?>
-				<?php tha_header_bottom(); ?>
-		  	</header>
-     		<?php tha_header_after(); ?>
-     	</div> <!-- /div-row -->
+     <!-- Add the head part-->
+     <?php tha_header_before(); ?>
+     <?php tha_header_top(); ?>
+     <!-- this is where the header content should go -->
+     <!-- Top Navitagion bar part -->
+     <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
+     <!-- Header Image part -->
+     <?php get_template_part( 'template-parts/header/part', 'header-image' ); ?>
+     <!-- Main Navigation bar part -->
+     <?php get_template_part( 'template-parts/header/part', 'navbar-main' ); ?>
+     <?php tha_header_bottom(); ?>
+     <?php tha_header_after(); ?>
+     <div class="container" id="wrap"> <!-- wrap div-->

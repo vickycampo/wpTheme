@@ -27,14 +27,16 @@ if (!function_exists('wpTheme_get_theme_defaults'))
           //create the values for the navigation menus
           $menu_opt = array (
                'background_color' => '',
-               'inverse' => false
+               'inverse' => false,
+               'margin' => ''
 
           );
           $nav_menus = array (
                'top' => $menu_opt,
                'main' => $menu_opt,
-               'bottom' => $menu_opt
+               'footer' => $menu_opt
           );
+
           // default options settings
           $defaults = array(
                // sidebar
@@ -73,7 +75,7 @@ if (!function_exists('wpTheme_get_theme_defaults'))
                'breadcrumbs' => 0,
                'skins' => 0,
                'bs-screen-size' => '-',
-               'nav_menu' => $nav_menus
+               'nav_menu_css' => $nav_menus
           );
           return $defaults;
      }
