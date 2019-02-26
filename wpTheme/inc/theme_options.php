@@ -125,4 +125,6 @@ require_once get_parent_theme_file_path( '/inc/theme_options_advanced.php' );
 require_once get_parent_theme_file_path( '/inc/theme_options_skins.php' );
 /* Navigation Menus */
 require_once get_parent_theme_file_path( '/inc/theme_options_nav_menus.php' );
+/* Header */
+require_once get_parent_theme_file_path( '/inc/theme_options_header.php' );
 ?>

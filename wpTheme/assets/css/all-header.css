@@ -13,7 +13,7 @@
 /* The container of all the header elements */
 header
 {
-     
+
 }
 h1
 {
@@ -40,13 +40,24 @@ h3
      width: auto;
      height: auto;
 }
-
+.as_background
+{
+     /* The image used */
+     background-image: url("img_girl.jpg");
+     /* Full height */
+     height: 50%;
+     /* Center and scale the image nicely */
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
 /* The id of the nav tag that contains the top navigation bar */
-#theme_location_top_nav
+#theme_location_top_nav 
 {
      margin: 0px;
      padding: 0px;
      border: 0px;
+     background-color: black;
 }
 
 /* The part of the navigation bar that contains the elements */

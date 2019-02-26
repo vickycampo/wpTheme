@@ -9,9 +9,28 @@
 * Template part in charge of placing and styling the header image if ther is one.
 */
 ?>
-
 <?php
-     include('part-header-image-options.php' );
+     /* we prepare the header */
+     //get the theme options
+          $options = get_option( 'wpTheme_options' );
+          /* We get the defaults */
+          $defaults = wpTheme_get_theme_defaults();
+
+     //if the header title is not being displayed
+     //we prepare a funciotn so the heather will have a link for the homepage
+          $wpTheme_headerimg = null;
+          if ( !isset( $options['site-title'] ) || $options['site-title'] == false ) {
+               $wpTheme_headerimg_before = '<a href="' . esc_url( home_url() ) . '" title="' . get_bloginfo('title') . '">';
+               $wpTheme_headerimg_after = '</a>';
+          } else {
+               $wpTheme_headerimg_before = null;
+               $wpTheme_headerimg_after = null;
+          }
+?>
+<!-- set the header image -->
+<?php
+     //get the image size
+          $width = get_theme_support( 'custom-header', 'width' );
 
      // Check if we display the thumbnail
      if ( is_singular() && current_theme_supports( 'post-thumbnails' ) && has_post_thumbnail( $post->ID ) && ( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
@@ -30,7 +49,8 @@
      <?php
      }
      // We don't have a thumbnail to display so we display the header image, if there is one
-     else if ( $as_a_background )
+     // We check the options if we display the image as a background
+     else if (( isset ( $options['big-header-image']['as_background'] ) && ( $options['big-header-image']['as_background'] ) ) || ( ( ! isset ( $options['big-header-image']['as_background'] )) && $defaults['big-header-image']['as_background'] ))
      {
           // there's a header image
           $wpTheme_headerimg = true;
@@ -53,69 +73,39 @@
                <?php
      }
      /* Do we have to display the site title in the header image? */
-
-     ?>
-          <hgroup class="siteinfo">
-               <?php
-               //add site logo
-               if ( $show_site_logo )
-               {
-                    echo ('intentando mostrar el logo y trabajando en el header.');
-               }
-               if ( isset( $options['alth1'] ) && $options['alth1'] == true)
-               {
-                    if ( $site_name )
-                    {
-                         ?>
+     if (( isset ( $options['big-header-image']['site_name'] ) && ( $options['big-header-image']['site_name'] ) ) || ( ( ! isset ( $options['big-header-image']['site_name'] )) && $defaults['big-header-image']['site_name'] ))
+     {
+          ?>
+               <hgroup class="siteinfo">
+                    <?php
+                    if ( isset( $options['alth1'] ) && $options['alth1'] == true)
+                    { ?>
                          <h2 class="alt">
                               <a href="<?php echo esc_url( home_url() ) ?>" title="<?php bloginfo('title'); ?>">
                                    <?php bloginfo('title'); ?>
                               </a>
                          </h2>
-                         <?php
-                    }
-                    if ( $site_description )
-                    {
-                         ?>
-
-                         <h3 class="alt">
+                         <h3>
                               <?php bloginfo('description'); ?>
                          </h3>
-                         <?php
+                    <?php
                     }
-                    ?>
-
-               <?php
-               }
-               else
-               {
-                    if ( $site_name )
-                    {
-                         ?>
+                    else
+                    { ?>
                          <h2>
                               <a href="<?php echo esc_url( home_url() ) ?>" title="<?php bloginfo('title'); ?>">
                                    <?php bloginfo('title'); ?>
                               </a>
                          </h2>
-                         <?php
-                    }
-                    ?>
-                    <?php
-                    if ( $site_description )
-                    {
-                         ?>
-                         <h3>
+                         <h3 class="alt">
                               <?php bloginfo('description'); ?>
                          </h3>
-                         <?php
+                    <?php
                     }
                     ?>
-               <?php
-               }
-               ?>
-          </hgroup>
-     <?php
-
+               </hgroup>
+          <?php
+     }
 
      if ( $wpTheme_headerimg )
      { ?>

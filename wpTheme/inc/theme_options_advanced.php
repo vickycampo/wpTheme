@@ -43,7 +43,7 @@ if ( ! function_exists( 'wpTheme_author_customization' ) )
 
 			'label' => __( 'Use author meta tags?', 'wpTheme' ),
 			'section' => 'advanced_options',
-			'settings' => 'wpTheme_options[author]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'
@@ -85,7 +85,7 @@ if ( ! function_exists( 'wpTheme_footer_customization' ) )
 
 			'label' => __( 'Footer Text', 'wpTheme' ),
 			'section' => 'advanced_options',
-			'settings' => 'wpTheme_options[footer]',
+			'settings' => $id,
 			'type' => 'textarea',
 			'sanitize_callback' => 'esc_textarea'
 
@@ -126,7 +126,7 @@ if ( ! function_exists( 'wpTheme_favicon_customization' ) )
 
 			'label' => __( 'Custom Favicon', 'wpTheme' ),
 			'section' => 'advanced_options',
-			'settings' => 'wpTheme_options[favicon]',
+			'settings' => $id,
 			'sanitize_callback' => 'wpTheme_validate_favicon'
 
 		) );
@@ -166,7 +166,7 @@ if ( ! function_exists( 'wpTheme_generator_customization' ) )
 
 			'label' => __( 'Debug Mode Active', 'wpTheme' ),
 			'section' => 'advanced_options',
-			'settings' => 'wpTheme_options[generator]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'

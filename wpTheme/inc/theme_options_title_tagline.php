@@ -40,7 +40,7 @@ if ( ! function_exists( 'wpTheme_site_title_customization' ) )
           $args = array(
 			'label' => __( 'Show site title?', 'wpTheme' ),
 			'section' => 'title_tagline',
-			'settings' => 'wpTheme_options[site-title]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false' );

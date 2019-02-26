@@ -43,7 +43,7 @@ if ( ! function_exists( 'wpTheme_font_color_customization' ) )
 
 			'label' => __( 'Font Color', 'wpTheme' ),
 			'section' => 'colors',
-			'settings' => 'wpTheme_options[font-color]',
+			'settings' => $id,
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );
@@ -83,7 +83,7 @@ if ( ! function_exists( 'wpTheme_link_customization' ) )
 
 			'label' => __( 'Link Color', 'wpTheme' ),
 			'section' => 'colors',
-			'settings' => 'wpTheme_options[link]',
+			'settings' => $id,
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );
@@ -123,7 +123,7 @@ if ( ! function_exists( 'wpTheme_hover_customization' ) )
 
 			'label' => __( 'Hover Color', 'wpTheme' ),
 			'section' => 'colors',
-			'settings' => 'wpTheme_options[hover]',
+			'settings' => $id,
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );
@@ -163,7 +163,7 @@ if ( ! function_exists( 'wpTheme_content_color_customization' ) )
 
 			'label' => __( 'Content Background color', 'wpTheme' ),
 			'section' => 'colors',
-			'settings' => 'wpTheme_options[content-color]',
+			'settings' => $id,
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );
@@ -203,7 +203,7 @@ if ( ! function_exists( 'wpTheme_navbar_color_customization' ) )
 
 			'label' => __( 'Navbar (top) Background Color', 'wpTheme' ),
 			'section' => 'colors',
-			'settings' => 'wpTheme_options[navbar-color]',
+			'settings' => $id,
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );
@@ -243,7 +243,7 @@ if ( ! function_exists( 'wpTheme_navbar_inverse_customization' ) )
 
 			'label' => __( 'Inverted navbar?', 'wpTheme' ),
 			'section' => 'colors',
-			'settings' => 'wpTheme_options[navbar-inverse]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'
@@ -285,7 +285,7 @@ if ( ! function_exists( 'wpTheme_navbar_link_customization' ) )
 
 			'label' => __( 'Navbar Link Color', 'wpTheme' ),
 			'section' => 'colors',
-			'settings' => 'wpTheme_options[navbar-link]',
+			'settings' => $id,
 			'sanitize_callback' => 'sanitize_hex_color'
 
 		) );

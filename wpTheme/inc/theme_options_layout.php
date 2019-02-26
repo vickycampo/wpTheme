@@ -44,7 +44,7 @@ if ( ! function_exists( 'wpTheme_nav_menu_customization' ) )
 
 			'label' => __( 'Fixed nav menu?', 'wpTheme' ),
 			'section' => 'layout_options',
-			'settings' => 'wpTheme_options[nav-menu]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'
@@ -86,7 +86,7 @@ if ( ! function_exists( 'wpTheme_breadcrumbs_customization' ) )
 
 			'label' => __( 'Enable breadcrumbs?', 'wpTheme' ),
 			'section' => 'layout_options',
-			'settings' => 'wpTheme_options[breadcrumbs]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'
@@ -128,7 +128,7 @@ if ( ! function_exists( 'wpTheme_excerpts_customization' ) )
 
 			'label' => __( 'Full posts or excerpts on blog home?', 'wpTheme' ),
 			'section' => 'layout_options',
-			'settings' => 'wpTheme_options[excerpts]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_show_excerpts(),
 			'sanitize_callback' => 'wpTheme_validate_excerpts'
@@ -170,7 +170,7 @@ if ( ! function_exists( 'wpTheme_archive_excerpt_customization' ) )
 
 			'label' => __( 'Full posts or excerpts on archive pages?', 'wpTheme' ),
 			'section' => 'layout_options',
-			'settings' => 'wpTheme_options[archive-excerpt]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_show_excerpts(),
 			'sanitize_callback' => 'wpTheme_validate_excerpts'
@@ -212,7 +212,7 @@ if ( ! function_exists( 'wpTheme_post_author_customization' ) )
 
 			'label' => __( 'Display post author?', 'wpTheme' ),
 			'section' => 'layout_options',
-			'settings' => 'wpTheme_options[post-author]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'
@@ -254,7 +254,7 @@ if ( ! function_exists( 'wpTheme_screen_size_customization' ) )
 
                'label' => __( 'Select the screen size?', 'wpTheme' ),
                'section' => 'layout_options',
-               'settings' => 'wpTheme_options[bs-screen-size]',
+               'settings' => $id,
                'type' => 'select',
                'choices' => wpTheme_screen_size(),
                'sanitize_callback' => 'wpTheme_validate_screen_size'

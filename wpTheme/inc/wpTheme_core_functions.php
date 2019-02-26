@@ -24,7 +24,7 @@ if (!function_exists('wpTheme_get_theme_defaults'))
 {
      function wpTheme_get_theme_defaults()
      {
-          //create the values for the navigation menus
+          /* create the values for the navigation menus */
           $menu_opt = array (
                'background_color' => '',
                'inverse' => false,
@@ -36,7 +36,14 @@ if (!function_exists('wpTheme_get_theme_defaults'))
                'main' => $menu_opt,
                'footer' => $menu_opt
           );
-
+          /* Set the options for the big image of the header */
+          $big_header_image = array (
+               /* Use the header image as a background */
+               'as_background' => false,
+               'show_site_logo' => false,
+               'site_name' => false,
+               'site_description' => false
+          );
           // default options settings
           $defaults = array(
                // sidebar
@@ -75,7 +82,8 @@ if (!function_exists('wpTheme_get_theme_defaults'))
                'breadcrumbs' => 0,
                'skins' => 0,
                'bs-screen-size' => '-',
-               'nav_menu_css' => $nav_menus
+               'nav_menu_css' => $nav_menus,
+               'big-header-image' => $big_header_image,
           );
           return $defaults;
      }

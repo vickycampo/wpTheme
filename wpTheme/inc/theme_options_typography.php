@@ -43,7 +43,7 @@ if ( ! function_exists( 'wpTheme_heading_customization' ) )
 
 			'label' => __( 'Heading Font', 'wpTheme' ),
 			'section' => 'typography_options',
-			'settings' => 'wpTheme_options[heading]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_fonts(),
 			'sanitize_callback' => 'wpTheme_validate_fonts'
@@ -85,7 +85,7 @@ if ( ! function_exists( 'wpTheme_body_customization' ) )
 
 			'label' => __( 'Body Font', 'wpTheme' ),
 			'section' => 'typography_options',
-			'settings' => 'wpTheme_options[body]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_fonts(),
 			'sanitize_callback' => 'wpTheme_validate_fonts'
@@ -127,7 +127,7 @@ if ( ! function_exists( 'wpTheme_alt_customization' ) )
 
 			'label' => __( 'Alternate Font', 'wpTheme' ),
 			'section' => 'typography_options',
-			'settings' => 'wpTheme_options[alt]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_fonts(),
 			'sanitize_callback' => 'wpTheme_validate_fonts'
@@ -169,7 +169,7 @@ if ( ! function_exists( 'wpTheme_alth1_customization' ) )
 
 			'label' => __( 'Use alternate font for site title?', 'wpTheme' ),
 			'section' => 'typography_options',
-			'settings' => 'wpTheme_options[alth1]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'
@@ -211,7 +211,7 @@ if ( ! function_exists( 'wpTheme_font_subset_customization' ) )
 
 			'label' => __( 'Font Subset', 'wpTheme' ),
 			'section' => 'typography_options',
-			'settings' => 'wpTheme_options[font_subset]',
+			'settings' => $id,
 			'type' => 'select',
 			'choices' => wpTheme_font_subset(),
 			'sanitize_callback' => 'wpTheme_validate_subset'
