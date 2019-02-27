@@ -27,8 +27,9 @@ if (!function_exists('wpTheme_get_theme_defaults'))
           /* create the values for the navigation menus */
           $menu_opt = array (
                'background_color' => '',
-               'inverse' => false,
-               'margin' => ''
+               'inverse' => 0,
+               'margin' => '',
+               'custom_logo' => ''
 
           );
           $nav_menus = array (
@@ -39,10 +40,11 @@ if (!function_exists('wpTheme_get_theme_defaults'))
           /* Set the options for the big image of the header */
           $big_header_image = array (
                /* Use the header image as a background */
-               'as_background' => false,
-               'show_site_logo' => false,
-               'site_name' => false,
-               'site_description' => false
+               'as_background' => 0,
+               'show_site_logo' => 0,
+               'site_name' => 0,
+               'site_description' => 0,
+               'percentage' => '100'
           );
           // default options settings
           $defaults = array(
@@ -80,7 +82,7 @@ if (!function_exists('wpTheme_get_theme_defaults'))
                'navbar-color' => '',
                'navbar-link' => '',
                'breadcrumbs' => 0,
-               'skins' => 0,
+               'skins' => '',
                'bs-screen-size' => '-',
                'nav_menu_css' => $nav_menus,
                'big-header-image' => $big_header_image,

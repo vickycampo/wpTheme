@@ -20,7 +20,13 @@
      //if the header title is not being displayed
      //we prepare a funciotn so the heather will have a link for the homepage
           $wpTheme_headerimg = null;
-          if ( !isset( $options['site-title'] ) || $options['site-title'] == false ) {
+          /* Do we add a link to the header image */
+          $isOptionsSet = ( isset ( $options['big-header-image']['site_name'] ) && ( $options['big-header-image']['site_name'] == false ) );
+          $isDefaultsSet = (! ( isset ( $options['big-header-image']['site_name'] ) )
+          && ( $defaults['big-header-image']['site_name'] == false ) );
+          $isSiteTitleSet = ( ( ! ( isset ( $options['site-title'] ) ) ) || ( ! ( $options['site-title'] ) ) );
+          if ( $isOptionsSet || $isDefaultsSet || $isSiteTitleSet)
+          {
                $wpTheme_headerimg_before = '<a href="' . esc_url( home_url() ) . '" title="' . get_bloginfo('title') . '">';
                $wpTheme_headerimg_after = '</a>';
           } else {
@@ -53,5 +59,17 @@
           {
                $site_description = true;
           }
+     //Height
+          // echo ('<pre>');
+          // var_dump ($options['big-header-image']);
+          // echo ('</pre>');
+          $height = $defaults['big-header-image']['percentage'] . '%';
+          if ( isset ($options['big-header-image']['percentage']) )
+          {
+               $height = $options['big-header-image']['percentage'] . '%';
+          }
+
+
+
 
 ?>

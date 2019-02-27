@@ -33,7 +33,9 @@ if ( ! function_exists( 'wpTheme_site_title_customization' ) )
                'capability' => 'edit_theme_options',
                'transport' => 'refresh',
                'type' => 'option',
-               'sanitize_callback' => 'wpTheme_validate_true_false' );
+               'sanitize_callback' => 'wpTheme_validate_true_false'
+
+		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
           $id = 'wpTheme_options[site-title]';
@@ -41,9 +43,11 @@ if ( ! function_exists( 'wpTheme_site_title_customization' ) )
 			'label' => __( 'Show site title?', 'wpTheme' ),
 			'section' => 'title_tagline',
 			'settings' => $id,
-			'type' => 'select',
+			'type' => 'checkbox',
 			'choices' => wpTheme_true_false(),
-			'sanitize_callback' => 'wpTheme_validate_true_false' );
+               'sanitize_callback' => 'wpTheme_validate_true_false'
+
+		);
           $wp_customize->add_control( $id , $args );
      }
      add_action('customize_register','wpTheme_site_title_customization');

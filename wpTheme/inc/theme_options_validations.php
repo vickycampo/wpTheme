@@ -24,6 +24,14 @@ if ( ! function_exists( 'wpTheme_validate_true_false' ) )
 {
 	function wpTheme_validate_true_false( $value )
 	{
+		if ($value == false)
+		{
+			$value = 0;
+		}
+		else if ($value == true)
+		{
+			$value = 1;
+		}
 		if ( ! array_key_exists( $value, wpTheme_true_false() ) )
 			$value = null;
 
@@ -244,6 +252,28 @@ if ( ! function_exists( 'wpTheme_validate_nav_menu_auto_margins' ) )
 	function wpTheme_validate_nav_menu_auto_margins( $value )
 	{
 		if ( !array_key_exists( $value, wpTheme_nav_menu_auto_margins() ) )
+		{
+			//FALSE - NOT VALID
+			$value = null;
+		}
+		//TRUE - VALID
+		return $value;
+	}
+}
+?>
+<?php
+/*
+	=================================================
+		VALIDATE - PERCETNAGE
+	=================================================
+*
+* Validate PERCETNAGE
+*/
+if ( ! function_exists( 'wpTheme_validate_percentages' ) )
+{
+	function wpTheme_validate_percentages( $value )
+	{
+		if ( !array_key_exists( $value, wpTheme_percentages() ) )
 		{
 			//FALSE - NOT VALID
 			$value = null;

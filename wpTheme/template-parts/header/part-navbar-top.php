@@ -49,17 +49,33 @@ if ( has_nav_menu( $location ) )
                /* DISPLAY A CUSTOM LOGO */
                if ( function_exists( 'the_custom_logo' ) )
                {
-                    $custom_logo_id = get_theme_mod( 'custom_logo' );
-                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+
                     ?>
                     <ul class="navbar-nav ">
                     <?php
                     if ( has_custom_logo() )
                     {
+                         /* if we show the site logo in the header image here we only show the favicon */
+                         /* check if there is a logo for this navbar*/
+                         // echo ('<pre>');
+                         // print_r ($options);
+                         // echo ('</pre>');
+                         if ( isset ( $options['nav_menu_css']['top']['custom_logo'] ) &&  $options['nav_menu_css']['top']['custom_logo'] != '' )
+                         {
+                              $logo[0] = $options['nav_menu_css']['top']['custom_logo'];
+                         }
+                         else
+                         {
+                              $custom_logo_id = get_theme_mod( 'custom_logo' );
+                              $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                         }
+
+
                          ?>
                          <li class=" navbar-logo nav-item">
                               <a class="nav-link" href="<?php echo esc_url( home_url() );?>" >
-                                   <img src=" <?php echo (esc_url( $logo[0] )); ?>">
+                                   <img class="rounded top_navbar_logo" src=" <?php echo (esc_url( $logo[0] )); ?>">
                               </a>
                          </li>
                          <?php

@@ -226,6 +226,35 @@ if ( !function_exists( 'wpTheme_nav_menu_auto_margins' ) )
 ?>
 <?php
 /*
+	=================================================
+		CHOICES - PERCENTAGES
+	=================================================
+*
+* Validate custom percentages
+*/
+if ( !function_exists( 'wpTheme_percentages' ) )
+{
+     function wpTheme_percentages()
+     {
+          $percentage = array (
+               '' => __( " ", 'wpTheme' ),
+               '10' => __( '10%', 'wpTheme' ),
+               '20' => __( '20%', 'wpTheme' ),
+               '30' => __( '30%', 'wpTheme' ),
+               '40' => __( '40%', 'wpTheme' ),
+               '50' => __( '50%', 'wpTheme' ),
+               '60' => __( '60%', 'wpTheme' ),
+               '70' => __( '70%', 'wpTheme' ),
+               '80' => __( '80%', 'wpTheme' ),
+               '90' => __( '90%', 'wpTheme' ),
+               '100' => __( '100%', 'wpTheme' )
+          );
+          return ($percentage);
+     }
+}
+?>
+<?php
+/*
 	======================================
 		CHOICES - CUSTOM FIELDS
 	======================================

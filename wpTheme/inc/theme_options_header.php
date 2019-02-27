@@ -44,7 +44,7 @@ if ( ! function_exists( 'wpTheme_header_image' ) )
 			'label' => __( 'Show as a background?', 'wpTheme' ),
 			'section' => 'header_image',
 			'settings' => $id,
-			'type' => 'select',
+			'type' => 'checkbox',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'
 
@@ -68,6 +68,9 @@ if ( ! function_exists( 'wpTheme_header_site_logo' ) )
      {
           /* We get the defaults */
           $defaults = wpTheme_get_theme_defaults();
+          // echo ('<pre>');
+          // var_dump ($defaults['big-header-image']['show_site_logo']);
+          // echo ('</pre>');
           /* Add the settings */
           $id = 'wpTheme_options[big-header-image][show_site_logo]';
           $args = array(
@@ -86,7 +89,7 @@ if ( ! function_exists( 'wpTheme_header_site_logo' ) )
 			'label' => __( 'Show the site logo?', 'wpTheme' ),
 			'section' => 'header_image',
 			'settings' => $id,
-			'type' => 'select',
+			'type' => 'checkbox',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'
 
@@ -128,7 +131,7 @@ if ( ! function_exists( 'wpTheme_header_site_name' ) )
 			'label' => __( 'Show the site name?', 'wpTheme' ),
 			'section' => 'header_image',
 			'settings' => $id,
-			'type' => 'select',
+			'type' => 'checkbox',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'
 
@@ -170,7 +173,7 @@ if ( ! function_exists( 'wpTheme_header_site_description' ) )
 			'label' => __( 'Show the site description?', 'wpTheme' ),
 			'section' => 'header_image',
 			'settings' => $id,
-			'type' => 'select',
+			'type' => 'checkbox',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'
 
@@ -178,5 +181,47 @@ if ( ! function_exists( 'wpTheme_header_site_description' ) )
           $wp_customize->add_control( $id , $args );
      }
      add_action('customize_register','wpTheme_header_site_description');
+}
+?>
+<?php
+/*
+	=======================================
+		WPTHEME HEADER PERCENTAGE
+	=======================================
+*
+* Function percentage
+*/
+if ( ! function_exists( 'wpTheme_header_percentage' ) )
+{
+     function wpTheme_header_percentage( $wp_customize )
+     {
+          /* We get the defaults */
+          $defaults = wpTheme_get_theme_defaults();
+          /* Add the settings */
+          $id = 'wpTheme_options[big-header-image][percentage]';
+          $args = array(
+
+			'default' => $defaults['big-header-image']['percentage'],
+			'capability' => 'edit_theme_options',
+			'transport' => 'refresh',
+			'type' => 'option',
+			'sanitize_callback' => 'wpTheme_validate_percentages'
+
+		);
+          $wp_customize->add_setting( $id , $args );
+          /* Add the control */
+          $args = array(
+
+			'label' => __( 'Set the height of the image?', 'wpTheme' ),
+			'section' => 'header_image',
+			'settings' => $id,
+			'type' => 'select',
+			'choices' => wpTheme_percentages(),
+			'sanitize_callback' => 'wpTheme_validate_percentages'
+
+		);
+          $wp_customize->add_control( $id , $args );
+     }
+     add_action('customize_register','wpTheme_header_percentage');
 }
 ?>

@@ -21,7 +21,7 @@
           $wpTheme_headerimg = true;
           ?>
 
-          <div class="headerimg"> <!-- Header-img -->
+          <div class="header-img"> <!-- Header-img -->
                <!-- Display the thumbnail image-- >
                <?php echo wp_kses_post( $wpTheme_headerimg_before ); ?>
                <?php echo get_the_post_thumbnail( $post->ID ); ?>
@@ -35,7 +35,7 @@
           // there's a header image
           $wpTheme_headerimg = true;
           ?>
-          <div class="as_background" style="background-image:url(<?php header_image(); ?>)"> <!-- Header-img -->
+          <div class="header-img as_background" style="background-image:url(<?php header_image(); ?>); height:<?php echo esc_attr( $height ); ?>"> <!-- Header-img -->
           <?php
      }
      else if ( get_header_image() )
@@ -55,15 +55,29 @@
      /* Do we have to display the site title in the header image? */
 
      ?>
-          <hgroup class="siteinfo">
+          <hgroup class="header_siteinfo">
                <?php
                //add site logo
-               if ( $show_site_logo )
+
+               if ( ( $show_site_logo ) && ( function_exists( 'the_custom_logo' ) ) )
                {
-                    echo ('intentando mostrar el logo y trabajando en el header.');
+                    echo wp_kses_post( $wpTheme_headerimg_before );
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+                    ?>
+                         <!-- Show Logo -->
+                          <img src="<?php echo esc_url( $logo[0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
+
+
+                    <?php
+                    echo wp_kses_post( $wpTheme_headerimg_after );
+
                }
+
                if ( isset( $options['alth1'] ) && $options['alth1'] == true)
                {
+                    /* Show the site name */
                     if ( $site_name )
                     {
                          ?>
@@ -74,6 +88,7 @@
                          </h2>
                          <?php
                     }
+                    /* Show the site description */
                     if ( $site_description )
                     {
                          ?>
@@ -89,6 +104,7 @@
                }
                else
                {
+                    /* Show the site name */
                     if ( $site_name )
                     {
                          ?>
@@ -101,6 +117,7 @@
                     }
                     ?>
                     <?php
+                    /* Show the site description */
                     if ( $site_description )
                     {
                          ?>
