@@ -52,8 +52,8 @@ h3
      height: 100%;
      width: 100%;
      background-position: center;
-     background-repeat: no-repeat;
-     background-size: cover;
+     background-repeat:no-repeat;
+     background-size:cover;
      display: table;
      padding: 0px;
      margin: 0px;
@@ -75,7 +75,8 @@ h3
 
 }
 .header_siteinfo img {
-     max-width: 75%;
+     height: 75%;
+     width: auto;
 }
 /* The id of the nav tag that contains the top navigation bar */
 #theme_location_top_nav
@@ -85,6 +86,7 @@ h3
      border: 0px;
      background-color: black;
 }
+
 
 /* The part of the navigation bar that contains the elements */
 #theme_location_top_target
@@ -120,6 +122,10 @@ h3
           object-fit: cover;
           width: 25px;
           height: 25px;
+     }
+     .navbar-logo
+     {
+          margin-left: 14px;
      }
 
 /* The id of the tag that contains the main navigation bar */

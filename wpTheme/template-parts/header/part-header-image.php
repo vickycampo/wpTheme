@@ -33,10 +33,8 @@
      else if ( $as_a_background )
      {
           // there's a header image
-          $wpTheme_headerimg = true;
-          ?>
-          <div class="header-img as_background" style="background-image:url(<?php header_image(); ?>); height:<?php echo esc_attr( $height ); ?>"> <!-- Header-img -->
-          <?php
+          $wpTheme_headerimg = false;
+          
      }
      else if ( get_header_image() )
      {
@@ -61,16 +59,21 @@
 
                if ( ( $show_site_logo ) && ( function_exists( 'the_custom_logo' ) ) )
                {
+
                     echo wp_kses_post( $wpTheme_headerimg_before );
                     $custom_logo_id = get_theme_mod( 'custom_logo' );
                     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    /* we check if there is a logo file */
+                    if ( $logo )
+                    {
+                         ?>
+                              <!-- Show Logo -->
+                               <img src="<?php echo esc_url( $logo[0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
 
-                    ?>
-                         <!-- Show Logo -->
-                          <img src="<?php echo esc_url( $logo[0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
 
+                         <?php
+                    }
 
-                    <?php
                     echo wp_kses_post( $wpTheme_headerimg_after );
 
                }
@@ -81,11 +84,11 @@
                     if ( $site_name )
                     {
                          ?>
-                         <h2 class="alt">
+                         <h1 class="alt header-site-title">
                               <a href="<?php echo esc_url( home_url() ) ?>" title="<?php bloginfo('title'); ?>">
                                    <?php bloginfo('title'); ?>
                               </a>
-                         </h2>
+                         </h1>
                          <?php
                     }
                     /* Show the site description */
@@ -93,9 +96,9 @@
                     {
                          ?>
 
-                         <h3 class="alt">
+                         <h2 class="alt header-site-description">
                               <?php bloginfo('description'); ?>
-                         </h3>
+                         </h2>
                          <?php
                     }
                     ?>
@@ -108,11 +111,11 @@
                     if ( $site_name )
                     {
                          ?>
-                         <h2>
+                         <h1 class="header-site-title">
                               <a href="<?php echo esc_url( home_url() ) ?>" title="<?php bloginfo('title'); ?>">
                                    <?php bloginfo('title'); ?>
                               </a>
-                         </h2>
+                         </h1>
                          <?php
                     }
                     ?>
@@ -121,9 +124,9 @@
                     if ( $site_description )
                     {
                          ?>
-                         <h3>
+                         <h2 class="header-site-description">
                               <?php bloginfo('description'); ?>
-                         </h3>
+                         </h2>
                          <?php
                     }
                     ?>

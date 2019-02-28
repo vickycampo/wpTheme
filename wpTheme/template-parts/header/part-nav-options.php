@@ -59,4 +59,10 @@ else
 {
      $inverse_class = '';
 }
+/* fixed nav menu? */
+$fixed_nav = null;
+if ( isset( $options['nav-menu'] ) && ( true == $options['nav-menu'] ) )
+{
+     $fixed_nav = 'fixed-top';
+}
 ?>

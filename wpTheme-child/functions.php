@@ -53,6 +53,15 @@ if ( ! function_exists( 'wpChild_scripts' ) )
           $media = '';
 
           wp_enqueue_style( $handle , $src , $deps , $ver , $media );
+
+          /* Header */
+          $handle = 'header_css';
+          $src = get_stylesheet_directory_uri() . '/assets/css/header.css';
+          $deps = '';
+          $ver = wp_get_theme()->get('Version');
+          $media = '';
+
+          wp_enqueue_style( $handle , $src , $deps , $ver , $media );
      }
      add_action( 'wp_enqueue_scripts', 'wpChild_scripts' );
 }

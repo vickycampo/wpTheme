@@ -36,7 +36,7 @@ if ( has_nav_menu( $location ) )
      <!--navbar - Defines that is a navbar -->
      <!--navbar-expand-lg - The breakpoint for collapsing -->
      <!--navbar-light - Without it the button won't show -->
-     <nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="navbar navbar-expand-<?php echo ( $screen_size ); ?> <?php esc_html_e( $bar_background_color , 'wpTheme' ); ?> <?php esc_html_e( $data_target , 'wpTheme' ); ?> <?php esc_html_e( $inverse_class , 'wpTheme' ); ?>" >
+     <nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="navbar <?php echo ( $fixed_nav ); ?> navbar-expand-<?php echo ( $screen_size ); ?> <?php esc_html_e( $bar_background_color , 'wpTheme' ); ?> <?php esc_html_e( $data_target , 'wpTheme' ); ?> <?php esc_html_e( $inverse_class , 'wpTheme' ); ?>" >
           <!-- Toggler -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'wpTheme' ); ?>">
                <span class="navbar-toggler-icon"></span>
@@ -52,48 +52,43 @@ if ( has_nav_menu( $location ) )
 
 
                     ?>
-                    <ul class="navbar-nav ">
                     <?php
-                    if ( has_custom_logo() )
+                    /* We choose which logo will be displayed */
+                    if ( isset ( $options['nav_menu_css']['top']['custom_logo'] ) &&  $options['nav_menu_css']['top']['custom_logo'] != '' )
                     {
-                         /* if we show the site logo in the header image here we only show the favicon */
-                         /* check if there is a logo for this navbar*/
-                         // echo ('<pre>');
-                         // print_r ($options);
-                         // echo ('</pre>');
-                         if ( isset ( $options['nav_menu_css']['top']['custom_logo'] ) &&  $options['nav_menu_css']['top']['custom_logo'] != '' )
-                         {
-                              $logo[0] = $options['nav_menu_css']['top']['custom_logo'];
-                         }
-                         else
-                         {
-                              $custom_logo_id = get_theme_mod( 'custom_logo' );
-                              $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                         }
+                         $logo[0] = $options['nav_menu_css']['top']['custom_logo'];
+                    }
+                    else if ( has_custom_logo() && ( ! $options['big-header-image']['show_site_logo'] )  && ( ! $defaults['big-header-image']['show_site_logo'] ))
+                    {
+                         $custom_logo_id = get_theme_mod( 'custom_logo' );
+                         $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    }
+                    else
+                    {
 
 
+                    }
+
+                    /* do we have a logot text */
+                    if ( isset ( $logo ) )
+                    {
                          ?>
-                         <li class=" navbar-logo nav-item">
-                              <a class="nav-link" href="<?php echo esc_url( home_url() );?>" >
+                         <a class="navbar-brand navbar-logo" href="<?php echo esc_url( home_url() );?>">
                                    <img class="rounded top_navbar_logo" src=" <?php echo (esc_url( $logo[0] )); ?>">
-                              </a>
-                         </li>
+                         </a>
                          <?php
                     }
                     else
                     {
                          ?>
-                         <li class=" navbar-logo nav-item">
-                              <a  class="nav-link" href="<?php echo esc_url( home_url() );?>">
-                                   <?php echo '<h1 class="top-nav-site-name">'. get_bloginfo( 'name' ) .'</h1>'; ?>
-                              </a>
-                         </li>
+                         <a class="navbar-brand navbar-logo" href="<?php echo esc_url( home_url() );?>">
+                              <?php echo '<h1 class="top-nav-site-name">'. get_bloginfo( 'name' ) .'</h1>'; ?>
+                         </a>
+
                          <?php
 
                     }
-                    ?>
-                    </ul>
-                    <?php
+
                }
                ?>
                <?php

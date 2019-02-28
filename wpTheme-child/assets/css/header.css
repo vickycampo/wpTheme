@@ -1,0 +1,30 @@
+/*
+
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
+
+	===================================
+		HEADER STYLES CSS
+	===================================
+*
+*/
+/* Start from the top to the bottom */
+.header-img
+{
+     background-color: black;
+}
+.header-img img
+{
+     max-height: 50%;
+}
+.header-site-title a
+{
+     font-size: 75px;
+     color: white;
+}
+.header-site-description
+{
+     font-size: 45px;
+     color: white;
+}

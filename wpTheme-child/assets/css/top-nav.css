@@ -14,12 +14,72 @@
 
 #theme_location_top_nav
 {
-     @extend .navbar-dark;
-     @extend .bg-dark;
+     background-color: #080808;
+     height: 50px;
 
 }
-#theme_location_top_nav button
-{
-     background-color: blue;
-     margin-left: 10px;
 }
+     #theme_location_top_nav button
+     {
+          margin-left: 10px;
+     }
+     #theme_location_top_nav a
+     {
+          color: #808080;
+
+     }
+
+
+/* The part of the navigation bar that contains the elements */
+#theme_location_top_target
+{
+     margin: 0px;
+     padding: 0px;
+     border: 0px;
+
+}
+
+     #theme_location_top_target li
+     {
+     }
+     #theme_location_top_target a
+     {
+          color: #F5F5F5;
+     }
+     #theme_location_top_target h1
+     {
+          font-size: 25px;
+     }
+     #theme_location_top_target > ul
+     {
+
+     }
+     #theme_location_top_target > ul > li
+     {
+
+     }
+     #theme_location_top_target > ul > li:hover
+     {
+     }
+     .top_navbar_logo
+     {
+          object-fit: cover;
+          width: 25px;
+          height: 25px;
+     }
+     .navbar-logo
+     {
+          margin-left: 14px;
+     }
+
+/* The id of the tag that contains the main navigation bar */
+#theme_location_main
+{
+
+}
+     #theme_location_main > ul
+     {
+
+     }
+     #theme_location_main > ul > li
+     {
