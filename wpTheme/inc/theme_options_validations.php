@@ -38,9 +38,7 @@ if ( ! function_exists( 'wpTheme_validate_true_false' ) )
 		return $value;
 	}
 }
-
 ?>
-
 <?php
 /*
 	==============================
@@ -89,7 +87,6 @@ if ( ! function_exists( 'wpTheme_validate_excerpts' ) )
 	}
 }
 ?>
-
 <?php
 /*
 	==============================

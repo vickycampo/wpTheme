@@ -12,7 +12,6 @@
 * The layout custominzation functions
 */
 ?>
-
 <?php
 /*
 	========================================

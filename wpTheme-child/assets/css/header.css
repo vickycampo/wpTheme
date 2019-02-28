@@ -18,6 +18,10 @@
 {
      max-height: 50%;
 }
+.header-site-logo
+{
+     border-radius: 50% !important;
+}
 .header-site-title a
 {
      font-size: 75px;
@@ -26,5 +30,5 @@
 .header-site-description
 {
      font-size: 45px;
-     color: white;
+     color: #d6d963;
 }

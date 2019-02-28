@@ -35,7 +35,6 @@ if (!function_exists('wpTheme_true_false'))
      }
 }
 ?>
-
 <?php
 /*
 	==============================

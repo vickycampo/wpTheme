@@ -34,7 +34,7 @@
      {
           // there's a header image
           $wpTheme_headerimg = false;
-          
+
      }
      else if ( get_header_image() )
      {
@@ -68,7 +68,7 @@
                     {
                          ?>
                               <!-- Show Logo -->
-                               <img src="<?php echo esc_url( $logo[0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
+                               <img class="header-site-logo" src="<?php echo esc_url( $logo[0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
 
 
                          <?php
