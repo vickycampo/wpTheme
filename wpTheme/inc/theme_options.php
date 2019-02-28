@@ -12,7 +12,6 @@
 * All the theme custominzations
 */
 ?>
-
 <?php
 /*
 	===================================
