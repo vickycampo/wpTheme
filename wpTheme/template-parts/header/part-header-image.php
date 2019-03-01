@@ -33,7 +33,10 @@
      else if ( $as_a_background )
      {
           // there's a header image
-          $wpTheme_headerimg = false;
+          $wpTheme_headerimg = true;
+	  ?>
+     		<div class="header-img as_background" style="background-image:url(<?php header_image(); ?>); max-height:<?php echo esc_attr( $height ); ?> !important"> <!-- Header-img -->
+     	  <?php
 
      }
      else if ( get_header_image() )
