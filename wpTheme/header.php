@@ -12,25 +12,6 @@ HEADER
 * Must be referenced with the get_header (); command.
 */
 ?>
-<?php
-/* We prepare some values that we need */
-     /* get the theme options */
-     $options = get_option( 'wpTheme_options' );
-     /* We get the defaults */
-     $defaults = wpTheme_get_theme_defaults();
-/* We check if the header image3 is set as a background */
-     $as_a_background = false;
-     if (( isset ( $options['big-header-image']['as_background'] ) && ( $options['big-header-image']['as_background'] ) ) || ( ( ! isset ( $options['big-header-image']['as_background'] )) && $defaults['big-header-image']['as_background'] ))
-     {
-          $as_a_background = true;
-     }
-/* We check if the height of the div */
-     $height = $defaults['big-header-image']['percentage'] . '%';
-     if ( isset ($options['big-header-image']['percentage']) )
-     {
-          $height = $options['big-header-image']['percentage'] . '%';
-     }
-?>
 
 <!DOCTYPE html>
 <?php tha_html_before (); ?>
@@ -80,32 +61,12 @@ HEADER
      <?php tha_header_before(); ?>
      <?php tha_header_top(); ?>
      <!-- this is where the header content should go -->
-     <?php
-
-     /* if the image will be used as a background we need to create a div that contains it all */
-     if ( $as_a_background )
-     {
-     ?>
-     <div class="header-img as_background" style="background-image:url(<?php header_image(); ?>); max-height:<?php echo esc_attr( $height ); ?> !important"> <!-- Header-img -->
-     <?php
-     } ?>
      <!-- Top Navitagion bar part -->
      <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
      <!-- Header Image part -->
      <?php get_template_part( 'template-parts/header/part', 'header-image' ); ?>
-
-     <?php
-     /* if the image will be used as a background we need to create a div that contains it all */
-     if ( $as_a_background )
-     {
-     ?>
-     </div> <!-- Header-img -->
-     <?php
-     } ?>
-
      <!-- Main Navigation bar part -->
      <?php get_template_part( 'template-parts/header/part', 'navbar-main' ); ?>
-
      <?php tha_header_bottom(); ?>
      <?php tha_header_after(); ?>
      <div class="container" id="wrap"> <!-- wrap div-->
