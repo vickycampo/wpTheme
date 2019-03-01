@@ -86,7 +86,7 @@ HEADER
      if ( $as_a_background )
      {
      ?>
-     <div class="header-img as_background" style="background-image:url(<?php header_image(); ?>); height:<?php echo esc_attr( $height ); ?>"> <!-- Header-img -->
+     <div class="header-img as_background" style="background-image:url(<?php header_image(); ?>); max-height:<?php echo esc_attr( $height ); ?> !important"> <!-- Header-img -->
      <?php
      } ?>
      <!-- Top Navitagion bar part -->
@@ -105,7 +105,7 @@ HEADER
 
      <!-- Main Navigation bar part -->
      <?php get_template_part( 'template-parts/header/part', 'navbar-main' ); ?>
-     
+
      <?php tha_header_bottom(); ?>
      <?php tha_header_after(); ?>
      <div class="container" id="wrap"> <!-- wrap div-->
