@@ -14,11 +14,12 @@
 
 #theme_location_top_nav
 {
-     background-color: #080808;
+
      height: 50px;
+     background-color: black;
 
 }
-}
+
      #theme_location_top_nav button
      {
           margin-left: 10px;
@@ -36,6 +37,7 @@
      margin: 0px;
      padding: 0px;
      border: 0px;
+     background-color: black;
 
 }
 
@@ -64,8 +66,8 @@
      .top_navbar_logo
      {
           object-fit: cover;
-          width: 25px;
-          height: 25px;
+          width: 35px;
+          height: auto;
      }
      .navbar-logo
      {
@@ -83,3 +85,13 @@
      }
      #theme_location_main > ul > li
      {
+     }
+     .navbar-toggler
+     {
+          border-color: grey;
+     }
+     .navbar-toggler-icon
+     {
+
+          background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+     }

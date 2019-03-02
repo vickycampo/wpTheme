@@ -98,7 +98,6 @@
                     if ( $site_description )
                     {
                          ?>
-
                          <h2 class="alt header-site-description">
                               <?php bloginfo('description'); ?>
                          </h2>

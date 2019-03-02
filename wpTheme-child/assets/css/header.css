@@ -19,30 +19,41 @@
 {
      background-color: black;
      overflow: hidden;
-     display: block;
+     display: table;
 }
 .header_siteinfo
 {
-     background-color: orange;
      max-height: 100%;
 }
 .header-img img
 {
-     max-height: 75%;
 }
 
 .header-site-logo
 {
-     border-radius: 50% !important;
+     -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+     border-radius: 50%;
+     max-height: 75%;
+     max-width: 75%;
+
+
 }
 .header-site-title a
 {
      font-size: 75px;
      color: white;
 }
+.div-header-site-description
+{
+     
+}
 .header-site-description
 {
+
+     font-family: 'Rock Salt', cursive;
+     font-weight: bold;
      font-size: 45px;
-     color: #d6d963;
-     font-size: 25px;
+     color: #white;
+
 }

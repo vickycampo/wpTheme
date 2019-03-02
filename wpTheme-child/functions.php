@@ -13,6 +13,7 @@
 *
 */
 ?>
+
 <?php
 /*
      ========================================
@@ -65,5 +66,30 @@ if ( ! function_exists( 'wpChild_scripts' ) )
      }
      add_action( 'wp_enqueue_scripts', 'wpChild_scripts' );
 }
-
+?>
+<?php
+/*
+     ===============================
+          ENQUEUE MORE FONTS
+     ===============================
+* Enqueue fonts needed directly for the child theme
+*/
+if ( ! function_exists( 'wpTheme_enqueue_more_fonts' ) )
+{
+     function wpTheme_enqueue_more_fonts ()
+     {
+          if (! is_admin()) //Instruction to only load if it is not the admin area
+          {
+               //Information of the current active theme
+               $theme = wp_get_theme ();
+               $handle = 'google-fonts-Walter';
+               $src = "https://fonts.googleapis.com/css?family=Rock+Salt|Walter+Turncoat";
+               $deps = false;
+               $ver = $theme['version'];
+               wp_register_style( $handle, $src, $deps );
+               wp_enqueue_style ($handle);
+          }
+     }
+     add_action( 'wp_enqueue_scripts', 'wpTheme_enqueue_more_fonts' );
+}
 ?>
