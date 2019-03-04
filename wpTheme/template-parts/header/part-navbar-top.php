@@ -54,11 +54,15 @@ if ( has_nav_menu( $location ) )
                     $custom_logo_id = get_theme_mod( 'custom_logo' );
                     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
                }
-               else
-               {
-
+               /* Chose the wrap for the name of the site in the nav bar*/
+	       $site_name_wrap_before = '';
+               if ( ( isset ($options['big-header-image']['show_site_name']) && ( $options['big-header-image']['show_site_logo'] == true ) ) || ( | isset ($options['big-header-image']['show_site_name']) && ( $defaults['big-header-image']['show_site_logo'] == true ) )
+	       {
+			$site_name_wrap_before = '<h1>';
+		       $site_name_wrap_aftere = '</h1>';
 
                }
+	   	$site_name_wrap_aftere = '';
 
                /* do we have a logot text */
                if ( isset ( $logo ) )
