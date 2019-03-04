@@ -8,9 +8,31 @@
      ===================================
           ENQUEUE SCRIPTS AND STYLES
      ===================================
-* .
+* 
 *
 */
+?>
+<?php
+/*
+     ===============================
+          ENQUEUE NORMALIZE FILESº
+     ===============================
+*
+*/
+if ( ! function_exists( 'wpTheme_enqueue_normalize' ) )
+{
+     function wpTheme_enqueue_normalize()
+     {
+          //add style sheet so bootstrap can work
+          $handle = 'normalize-8.0.1-css'; //is simply the name of the stylesheet.
+          $src = get_template_directory_uri() . '/assets/normalize-8.0.1/normalize.css'; //is where it is located. The rest of the parameters are optional.
+          $deps = false; //this stylesheet is dependent on another stylesheet.
+          $ver = '8.0.1'; //sets the version number.
+          $media = 'all';
+          wp_enqueue_style( $handle , $src , $deps , $ver , $media );
+     }
+      add_action(  'wp_enqueue_scripts', 'wpTheme_enqueue_normalizeº' );
+}
 ?>
 <?php
 /*
