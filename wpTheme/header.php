@@ -71,4 +71,4 @@ HEADER
           <?php tha_header_bottom(); ?>
      </header>
      <?php tha_header_after(); ?>
-     <div class="container" id="wrap"> <!-- wrap div-->
+     <main class="container" id="wrap"> <!-- wrap div-->
