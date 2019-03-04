@@ -14,7 +14,7 @@ FOOTER
 ?>
 
 
-</div> <!-- /wrap div-->
+</main> <!-- /wrap div-->
 
 
 <?php tha_footer_before(); ?>
