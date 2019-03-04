@@ -30,7 +30,7 @@ else
 if ( is_active_sidebar( 'body-left-sidebar' ) )
 {
 ?>
-     <div class="sidebar body-left-sidebar col<?php echo ( $screen_size );?>3 order-1">
+     <aside class="sidebar body-left-sidebar col<?php echo ( $screen_size );?>3 order-1">
       	<?php tha_sidebar_top(); ?>
           <?php
 
@@ -41,7 +41,7 @@ if ( is_active_sidebar( 'body-left-sidebar' ) )
 
 
           <?php tha_sidebar_bottom(); ?>
-     </div>
+     </aside>
 <?php
 }
 ?>
