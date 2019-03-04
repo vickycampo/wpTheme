@@ -56,13 +56,14 @@ if ( has_nav_menu( $location ) )
                }
                /* Chose the wrap for the name of the site in the nav bar*/
 	       $site_name_wrap_before = '';
-               if ( ( isset ($options['big-header-image']['show_site_name']) && ( $options['big-header-image']['show_site_logo'] == true ) ) || ( | isset ($options['big-header-image']['show_site_name']) && ( $defaults['big-header-image']['show_site_logo'] == true ) )
+		$site_name_wrap_after = '';
+               if ( ( isset ($options['big-header-image']['show_site_name']) && ( $options['big-header-image']['show_site_logo'] == false ) ) || ( | isset ($options['big-header-image']['show_site_name']) && ( $defaults['big-header-image']['show_site_logo'] == false ) )
 	       {
 			$site_name_wrap_before = '<h1>';
-		       $site_name_wrap_aftere = '</h1>';
+		       $site_name_wrap_after = '</h1>';
 
                }
-	   	$site_name_wrap_aftere = '';
+	   	
 
                /* do we have a logot text */
                if ( isset ( $logo ) )
@@ -77,7 +78,7 @@ if ( has_nav_menu( $location ) )
                {
                     ?>
                     <a class="navbar-brand navbar-logo" href="<?php echo esc_url( home_url() );?>">
-                         <?php echo get_bloginfo( 'name' ); ?>
+                         <?php echo get_bloginfo( $site_name_wrap_before .  'name' . $site_name_wrap_after ) ; ?>
                     </a>
 
                     <?php
