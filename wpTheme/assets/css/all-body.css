@@ -13,7 +13,6 @@
 
 /* The container of all the body elements */
 body, html {
-	height: 100%;
      margin: 0;
 	font-size: 14px;
 	line-height: 1.6em;
@@ -53,7 +52,7 @@ body.bs-fixed-nav
 {
      margin: 0px;
      padding: 0px;
-	padding-top: 50px; 
+	padding-top: 50px;
 }
 
 

@@ -55,6 +55,15 @@ if ( ! function_exists( 'wpChild_scripts' ) )
 
           wp_enqueue_style( $handle , $src , $deps , $ver , $media );
 
+          /* Body */
+          $handle = 'body_css';
+          $src = get_stylesheet_directory_uri() . '/assets/css/body.css';
+          $deps = '';
+          $ver = wp_get_theme()->get('Version');
+          $media = '';
+
+          wp_enqueue_style( $handle , $src , $deps , $ver , $media );
+
           /* Header */
           $handle = 'header_css';
           $src = get_stylesheet_directory_uri() . '/assets/css/header.css';

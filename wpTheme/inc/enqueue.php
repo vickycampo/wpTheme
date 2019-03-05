@@ -8,7 +8,7 @@
      ===================================
           ENQUEUE SCRIPTS AND STYLES
      ===================================
-* 
+*
 *
 */
 ?>
@@ -31,7 +31,7 @@ if ( ! function_exists( 'wpTheme_enqueue_normalize' ) )
           $media = 'all';
           wp_enqueue_style( $handle , $src , $deps , $ver , $media );
      }
-      add_action(  'wp_enqueue_scripts', 'wpTheme_enqueue_normalizeº' );
+      add_action(  'wp_enqueue_scripts', 'wpTheme_enqueue_normalize' );
 }
 ?>
 <?php

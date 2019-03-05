@@ -63,10 +63,10 @@
           // echo ('<pre>');
           // var_dump ($options['big-header-image']);
           // echo ('</pre>');
-          $height = $defaults['big-header-image']['percentage'] . '%';
+          $height = 'fixed-height-' . $defaults['big-header-image']['percentage'];
           if ( isset ($options['big-header-image']['percentage']) )
           {
-               $height = $options['big-header-image']['percentage'] . '%';
+               $height = 'fixed-height-' . $options['big-header-image']['percentage'];
           }
 
 

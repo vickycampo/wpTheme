@@ -1,0 +1,15 @@
+/*
+
+@package WordPress
+@subpackage wpTheme
+@since wpTheme
+
+	===================================
+		BODY STYLES CSS
+	===================================
+*
+*/
+.custom-background
+{
+     background-image:none !important;
+}

@@ -55,22 +55,22 @@ if ( has_nav_menu( $location ) )
                     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
                }
                /* Chose the wrap for the name of the site in the nav bar*/
-	       $site_name_wrap_before = '';
-		$site_name_wrap_after = '';
-               if ( ( isset ($options['big-header-image']['show_site_name']) && ( $options['big-header-image']['show_site_logo'] == false ) ) || ( | isset ($options['big-header-image']['show_site_name']) && ( $defaults['big-header-image']['show_site_logo'] == false ) )
-	       {
-			$site_name_wrap_before = '<h1>';
-		       $site_name_wrap_after = '</h1>';
+               $site_name_wrap_before = '';
+               $site_name_wrap_after = '';
+               if ( ( isset ($options['big-header-image']['show_site_name']) && ( $options['big-header-image']['show_site_logo'] == false ) ) || ( ! isset ($options['big-header-image']['show_site_name']) && ( $defaults['big-header-image']['show_site_logo'] == false ) ) )
+               {
+                    $site_name_wrap_before = '<h1>';
+                    $site_name_wrap_after = '</h1>';
 
                }
-	   	
+
 
                /* do we have a logot text */
                if ( isset ( $logo ) )
                {
                     ?>
                     <a class="navbar-brand navbar-logo" href="<?php echo esc_url( home_url() );?>">
-                              <img class="rounded top_navbar_logo" src=" <?php echo (esc_url( $logo[0] )); ?>">
+                         <img class="rounded top_navbar_logo" src=" <?php echo (esc_url( $logo[0] )); ?>">
                     </a>
                     <?php
                }
@@ -103,5 +103,5 @@ if ( has_nav_menu( $location ) )
 
      </nav>
      <?php
-     }
-     ?>
+}
+?>

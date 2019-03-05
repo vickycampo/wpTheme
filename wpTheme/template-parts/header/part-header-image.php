@@ -35,7 +35,7 @@
           // there's a header image
           $wpTheme_headerimg = true;
 	  ?>
-     		<div class="header-img as_background" style="background-image:url(<?php header_image(); ?>); max-height:<?php echo esc_attr( $height ); ?> !important"> <!-- Header-img -->
+     		<div class="header-img as_background <?php echo esc_attr( $height ); ?>" style="background-image:url(<?php header_image(); ?>); "> <!-- Header-img -->
      	  <?php
 
      }
@@ -56,7 +56,7 @@
      /* Do we have to display the site title in the header image? */
 
      ?>
-          <hgroup class="header_siteinfo">
+
                <?php
                //add site logo
 
@@ -70,9 +70,10 @@
                     if ( $logo )
                     {
                          ?>
-                              <!-- Show Logo -->
-                               <img class="header-site-logo" src="<?php echo esc_url( $logo[0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
-
+                              <div class="header-site-logo-div">
+                                   <!-- Show Logo -->
+                                   <img class="header-site-logo" src="<?php echo esc_url( $logo[0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
+                              </div>
 
                          <?php
                     }
@@ -80,7 +81,13 @@
                     echo wp_kses_post( $wpTheme_headerimg_after );
 
                }
-
+               /* Add a div for the site-name & site-description */
+               if ( $site_name || $site_description )
+               {
+                    ?>
+                    <hgroup class="header_siteinfo">
+                    <?php
+               }
                if ( isset( $options['alth1'] ) && $options['alth1'] == true)
                {
                     /* Show the site name */
@@ -122,6 +129,7 @@
                     }
                     ?>
                     <?php
+
                     /* Show the site description */
                     if ( $site_description )
                     {
@@ -134,9 +142,17 @@
                     ?>
                <?php
                }
+               /* Add a div for the site-name & site-description */
+               if ( $site_name || $site_description )
+               {
+                    ?>
+                    </hgroup>
+                    <?php
+               }
                ?>
-          </hgroup>
-     <?php
+
+
+          <?php
 
 
      if ( $wpTheme_headerimg )

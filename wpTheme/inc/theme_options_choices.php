@@ -237,9 +237,6 @@ if ( !function_exists( 'wpTheme_percentages' ) )
      {
           $percentage = array (
                '' => __( " ", 'wpTheme' ),
-               '10' => __( '10%', 'wpTheme' ),
-               '20' => __( '20%', 'wpTheme' ),
-               '30' => __( '30%', 'wpTheme' ),
                '40' => __( '40%', 'wpTheme' ),
                '50' => __( '50%', 'wpTheme' ),
                '60' => __( '60%', 'wpTheme' ),
