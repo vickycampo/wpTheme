@@ -215,8 +215,9 @@ if ( !function_exists( 'wpTheme_nav_menu_auto_margins' ) )
      {
           $color = array (
                '' => __( "Don't Push Items", 'wpTheme' ),
-               'mr-auto' => __( 'To the Right', 'wpTheme' ),
-               'ml-auto' => __( 'To the Left', 'wpTheme' )
+               'mr-auto' => __( 'To the Left', 'wpTheme' ),
+               'mx-auto' =>  __( 'Center', 'wpTheme' ),
+               'ml-auto' => __( 'To the Rigth', 'wpTheme' )
 
           );
           return ($color);

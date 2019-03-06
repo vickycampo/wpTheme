@@ -2,7 +2,7 @@
 /*
 
 @package WordPress
-@subpackage wpTheme
+@subpackage wpChildTheme
 @since wpTheme
 
      =========================
@@ -12,7 +12,6 @@
 * Must be referenced with the get_header (); command.
 */
 ?>
-
 <!DOCTYPE html>
 <?php tha_html_before (); ?>
 <html <?php language_attributes(); ?> class="no-js">
@@ -39,7 +38,12 @@
           echo " - ";
           bloginfo('description');
      } ?>" />
-     <?php $options = get_option( 'wpTheme_options' ); ?>
+     <?php
+     //get the theme options
+          $options = get_option( 'wpTheme_options' );
+     /* We get the defaults */
+          $defaults = wpTheme_get_theme_defaults();
+     ?>
      <?php
           //Check $options['nav-menu']
           $fixed_nav = null;
@@ -60,13 +64,22 @@
      <!-- Add the head part-->
      <?php tha_header_before(); ?>
      <header>
-          <?php tha_header_top(); ?>
-          <!-- Top Navitagion bar part -->
-          <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
-          <!-- Header Image part -->
-          <?php get_template_part( 'template-parts/header/part', 'child-header-image' ); ?>
-          <!-- Main Navigation bar part -->
-          <?php get_template_part( 'template-parts/header/part', 'child-subcategory-bar' ); ?>
+          <?php
+          tha_header_top();
+          $height = 'fixed-height-' . $defaults['big-header-image']['percentage'];
+          if ( isset ($options['big-header-image']['percentage']) )
+          {
+               $height = 'fixed-height-' . $options['big-header-image']['percentage'];
+          }
+          ?>
+          <div class="header-img as_background <?php echo esc_attr( $height ); ?>" style="background-image:url(<?php echo ( get_background_image () ); ?>); "> <!-- Header-img -->
+               <!-- Top Navitagion bar part -->
+               <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
+               <!-- Header Image part -->
+               <?php get_template_part( 'template-parts/header/part', 'child-header-image' ); ?>
+               <!-- Main Navigation bar part -->
+               <?php get_template_part( 'template-parts/header/part', 'child-subcategory-bar' ); ?>
+          </div> <!-- Header-img -->
           <?php tha_header_bottom(); ?>
      </header>
      <?php tha_header_after(); ?>

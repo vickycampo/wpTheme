@@ -1,7 +1,7 @@
 /*
 
 @package WordPress
-@subpackage wpTheme
+@subpackage wpChildTheme
 @since wpTheme
 
 	===================================
@@ -12,4 +12,8 @@
 .custom-background
 {
      background-image:none !important;
+}
+body.bs-fixed-nav
+{
+     padding-top: 0px !important;
 }

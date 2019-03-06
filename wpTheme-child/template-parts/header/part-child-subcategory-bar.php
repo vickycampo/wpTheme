@@ -1,7 +1,7 @@
 <?php
 /*
 @package WordPress
-@subpackage wpTheme
+@subpackage wpChildTheme
 @since wpTheme
 	================================================
 		TEMPLATE PART: CHILD MAIN NAVIGATION BAR
@@ -13,7 +13,7 @@
 wp_reset_query();
 include('subcategories-functions.php' );
 //firstly, load data for your child category
-$categories_values = wpTheme_get_catValues ();
+$categories_values = wpChildTheme_get_catValues ();
 // echo ('<pre>');
 // print_r ($categories_values);
 // echo ('</pre>');

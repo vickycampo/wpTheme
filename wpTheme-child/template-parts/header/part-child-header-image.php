@@ -1,7 +1,7 @@
 <?php
 /*
 @package WordPress
-@subpackage wpTheme
+@subpackage wpChildTheme
 @since wpTheme
 	========================================
 		TEMPLATE PART: CHILD HEADER IMAGE
@@ -20,36 +20,10 @@
      {
           include(get_parent_theme_file_path()  . '/template-parts/header/part-header-image-options.php' );
      }
-     $wpTheme_headerimg = false;
-     /* Do we use the header image as a bacground */
-     if ( $as_a_background )
-     {
-          /* We establish that we have opened a header image */
-          $wpTheme_headerimg = true;
-          ?>
-          <div class="header-img as_background <?php echo esc_attr( $height ); ?>" style="background-image:url(<?php echo ( get_background_image () ); ?>); "> <!-- Header-img -->
-              <?php
-     }
-     else if ( get_header_image() )
-     {
-          // there's a header image
-          $wpTheme_headerimg = true;
-          $width = get_custom_header()->width;
-          $height = get_custom_header()->height;
-          ?>
-
-          <div class="header-img"> <!-- Header-img -->
-
-               <?php echo wp_kses_post( $wpTheme_headerimg_before ); ?>
-               <img src="<?php header_image(); ?>" width="<?php echo esc_attr( $width ); ?>" height="<?php echo esc_attr( $height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-               <?php echo wp_kses_post( $wpTheme_headerimg_after ); ?>
-               <?php
-     }
      /* Do we have to display the site title in the header image? */
      /* add site logo */
      if ( ( $show_site_logo ) && ( function_exists( 'the_custom_logo' ) ) )
      {
-
           $custom_logo_id = get_theme_mod( 'custom_logo' );
           $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
           /* we check if there is a logo file */
@@ -152,15 +126,5 @@
                     </div>
                <?php
           }
-     }
-
-
-     /* We close the div tghat contains the */
-     if ( $wpTheme_headerimg )
-     {
-          /* We close the div that contains the image */
-          ?>
-          </div> <!-- Header-img -->
-          <?php
      }
      ?>

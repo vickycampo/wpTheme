@@ -1,3 +1,4 @@
+<?php
 /*
 
 @package WordPress
@@ -5,13 +6,9 @@
 @since wpTheme
 
 	===================================
-		CHILD STYLES CSS
+		THEME OPTIONS
 	===================================
 *
+* All the theme custominzations
 */
-/* Start from the top to the bottom */
-body, html
-{
-     width: 100%;
-     height: 100%;
-}
+?>

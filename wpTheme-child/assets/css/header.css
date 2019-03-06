@@ -1,7 +1,7 @@
 /*
 
 @package WordPress
-@subpackage wpTheme
+@subpackage wpChildTheme
 @since wpTheme
 
 	===================================
@@ -13,8 +13,10 @@
 .as_background
 {
      background-position: center;
+     background-size: cover;
      display: grid;
      justify-content: center;
+     background-color: black;
 
      padding: 0px;
      margin: 0px;

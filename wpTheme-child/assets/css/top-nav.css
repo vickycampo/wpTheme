@@ -1,7 +1,7 @@
 /*
 
 @package WordPress
-@subpackage wpTheme
+@subpackage wpChildTheme
 @since wpTheme
 
 	==========================
@@ -16,7 +16,7 @@
 {
 
      height: 50px;
-     background-color: black;
+     background-color: transparent;
 
 }
 
@@ -37,7 +37,7 @@
      margin: 0px;
      padding: 0px;
      border: 0px;
-     background-color: black;
+     background-color: transparent;
 
 }
 

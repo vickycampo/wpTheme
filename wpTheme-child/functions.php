@@ -2,7 +2,7 @@
 /*
 
 @package WordPress
-@subpackage wpTheme Child Them
+@subpackage wpChildTheme  Child Them
 @since wpTheme
 
      ===================================
@@ -24,6 +24,19 @@
 */
 include_once (get_parent_theme_file_path() . '/inc/enqueue.php');
 ?>
+<?php
+/*
+     ===================================
+          CHILD THEME OPTIONS
+     ===================================
+*
+* Adds customizations controls to the chilc theme
+*/
+if ( ! function_exists( 'wpChild_scripts' ) )
+{
+}
+?>
+
 <?php
 /*
      ===================================

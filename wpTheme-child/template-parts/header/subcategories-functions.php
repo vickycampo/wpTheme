@@ -1,8 +1,8 @@
 <?php
 /*
 @package WordPress
-@subpackage wpTheme
-@since wpTheme
+@subpackage wpChildTheme
+@since wpChildTheme
 	================================================
 		TEMPLATE PART: SUBCATEGORY FUNCTIONS
 	================================================
@@ -11,7 +11,7 @@
 ?>
 <?php
 /*** Get the values for the main menu ***/
-function wpTheme_get_catValues ()
+function wpChildTheme_get_catValues ()
 {
      if ( is_category() || is_single() )
      {
@@ -22,10 +22,10 @@ function wpTheme_get_catValues ()
                foreach ($this_categories as $i => $cat_details)
                {
                     /* We get the Top Category */
-                    $main_category = wpTheme_get_topcategory ($cat_details);
+                    $main_category = wpChildTheme_get_topcategory ($cat_details);
                     $ID = $main_category->term_id;
                     /* We get the sub categories of the top category */
-                    $sub_categories = wpTheme_get_subcategories ($ID);
+                    $sub_categories = wpChildTheme_get_subcategories ($ID);
                }
 
           }
@@ -33,9 +33,9 @@ function wpTheme_get_catValues ()
           {
                $this_categories = get_queried_object();
                /* We get the Top Category */
-               $main_category = wpTheme_get_topcategory ($this_categories);
+               $main_category = wpChildTheme_get_topcategory ($this_categories);
                $ID = $main_category->term_id;
-               $sub_categories = wpTheme_get_subcategories ($ID);
+               $sub_categories = wpChildTheme_get_subcategories ($ID);
           }
 
           $return_values['this_categories'] = $this_categories;
@@ -45,7 +45,7 @@ function wpTheme_get_catValues ()
      }
 }
 /*** GET ALL THE SUB-CATEGORIES ***/
-function wpTheme_get_subcategories ( $ID )
+function wpChildTheme_get_subcategories ( $ID )
 {
 
      $args = array('child_of' => $ID );
@@ -118,7 +118,7 @@ function wpTheme_get_subcategories ( $ID )
 ?>
 <?php
 /*** GET THE TOP LEVEL CATEGORY ***/
-function wpTheme_get_topcategory ($cat_details)
+function wpChildTheme_get_topcategory ($cat_details)
 {
 
      while ($cat_details -> parent != 0)
