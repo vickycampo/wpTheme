@@ -75,6 +75,7 @@
 {
      .header-site-logo-div
      {
+          margin-top: 50px;
           grid-column-start: 1;
           grid-column-end: 2;
 

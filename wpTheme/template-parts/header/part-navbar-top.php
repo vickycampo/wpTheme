@@ -66,6 +66,7 @@ if ( has_nav_menu( $location ) )
 
 
                /* do we have a logot text */
+
                if ( isset ( $logo ) )
                {
                     ?>
@@ -74,7 +75,7 @@ if ( has_nav_menu( $location ) )
                     </a>
                     <?php
                }
-               else
+               else if ( $show_hide_brand )
                {
                     ?>
                     <a class="navbar-brand navbar-logo" href="<?php echo esc_url( home_url() );?>">

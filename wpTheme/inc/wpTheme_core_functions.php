@@ -26,6 +26,7 @@ if (!function_exists('wpTheme_get_theme_defaults'))
      {
           /* create the values for the navigation menus */
           $menu_opt = array (
+               'show_hide_brand' => 1,
                'background_color' => '',
                'inverse' => 0,
                'margin' => '',

@@ -28,6 +28,15 @@ if ($screen_size == '')
 {
      $screen_size = 'sm';
 }
+/* Show the brand? */
+if ( isset ( $options['nav_menu_css'][$location]['show_hide_brand'] ) )
+{
+     $show_hide_brand = $options['nav_menu_css'][$location]['show_hide_brand'];
+}
+else
+{
+     $show_hide_brand = $defaults['nav_menu_css'][$location]['show_hide_brand'];
+}
 /* Get the color of the bar */
 if ( isset ( $options['nav_menu_css'][$location]['background_color'] ) )
 {
