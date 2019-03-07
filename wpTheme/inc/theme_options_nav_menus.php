@@ -38,6 +38,32 @@ if ( ! function_exists( 'wpTheme_nav_menu_css' ) )
           //we set the settings for alla the navigation menus
           foreach ($nav_menus as $i => $nav_menu)
           {
+               /* Show / Hide Brand in the navbar */
+               $id = 'wpTheme_options[nav_menu_css]['. $nav_menu .'][show_hide_brand]';
+               $args = array(
+
+     			'default' => $defaults['nav_menu_css'][$nav_menu]['show_hide_brand'],
+     			'capability' => 'edit_theme_options',
+     			'transport' => 'refresh',
+     			'type' => 'option',
+     			'sanitize_callback' => 'wpTheme_validate_true_false'
+
+     		);
+               $wp_customize->add_setting( $id , $args );
+               /* Add the control */
+               $args = array(
+
+     			'label' => __( $nav_menu . ' Show brand in the navbar ', 'wpTheme' ),
+     			'section' => 'nav_bar_options',
+     			'settings' => $id,
+     			'type' => 'select',
+     			'choices' => wpTheme_true_false(),
+     			'sanitize_callback' => 'wpTheme_validate_true_false'
+
+     		);
+               $wp_customize->add_control( $id , $args );
+
+
 
                /* Add the settings */
                /* Background color */

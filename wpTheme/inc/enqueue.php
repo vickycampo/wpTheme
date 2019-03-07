@@ -257,8 +257,8 @@ if ( ! function_exists( 'wpTheme_enqueue_fonts' ) )
                }
 
                //this loads the icon set
-               $handle = 'font-awesome-min';
-               $src = get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css';
+               $handle = 'font-awesome-5.7.2-all';
+               $src = get_template_directory_uri() . '/assets/font-awesome-5.7.2/css/all.css';
                $deps = false;
                $ver = $theme['version'];
                wp_register_style( $handle, $src, $deps );

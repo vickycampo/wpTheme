@@ -13,7 +13,6 @@
 *
 */
 ?>
-
 <?php
 /*
      ========================================
@@ -36,7 +35,6 @@ if ( ! function_exists( 'wpChild_scripts' ) )
 {
 }
 ?>
-
 <?php
 /*
      ===================================
@@ -85,6 +83,22 @@ if ( ! function_exists( 'wpChild_scripts' ) )
           $media = '';
 
           wp_enqueue_style( $handle , $src , $deps , $ver , $media );
+
+          /* Add Javascript files */
+          $handle= 'wpChildTheme_js'; //is simply the name of the stylesheet.
+          $src = get_stylesheet_directory_uri() . '/assets/js/wpChildTheme.js';
+          $deps = '';
+          $ver = '4.2.1'; //sets the version number.
+          $in_footer = true;
+          wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
+
+          /* Add Top navbar functions javascript file */
+          $handle= 'topNavBar_js'; //is simply the name of the stylesheet.
+          $src = get_stylesheet_directory_uri() . '/assets/js/topNavBar.js';
+          $deps = '';
+          $ver = '4.2.1'; //sets the version number.
+          $in_footer = true;
+          wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
      }
      add_action( 'wp_enqueue_scripts', 'wpChild_scripts' );
 }
