@@ -154,36 +154,77 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
      {
           /* We set the previous and post button text */
           $return_string = '';
+
           foreach ($sub_categories as $main_id => $grandparent_cat)
           {
-               foreach ($grandparent_cat as $grandparent_id => $parent_cat)
+               foreach ($grandparent_cat as $parent_id => $parent_cat)
                {
-                    $return_string .= '<div class="btn-group">';
-                    foreach ($parent_cat as $parent_id => $child_cat)
-                    {
 
-                         if ($parent_id == 0)
+                    $return_string .= '<div class="btn-group">';
+                         $return_string .= '<button type="button" ';
+                         $return_string .= 'class="btn dropdown-toggle sub-cat-button" ';
+                         $return_string .= 'data-toggle="dropdown" ';
+                         $return_string .= 'aria-haspopup="true" ';
+                         $return_string .= 'aria-expanded="false"><span> ';
+                         $return_string .= $parent_cat[0]->name;
+                         $return_string .= '</span></button> ';
+                         $return_string .= '<div class="dropdown-menu sub-cat-menu"> ';
+                         foreach ($parent_cat as $child_id => $child_cat)
                          {
 
 
-                                $return_string .= '<button type="button" ';
-                                $return_string .= 'class="btn btn-danger dropdown-toggle" ';
-                                $return_string .= 'data-toggle="dropdown" ';
-                                $return_string .= 'aria-haspopup="true" ';
-                                $return_string .= 'aria-expanded="false"> ';
-                                $return_string .= 'Action ';
-                                $return_string .= '</button> ';
+                              if ($child_id != 0)
+                              {
+                                   if ( isset ( $child_cat->term_id ) )
+                                   {
 
-                                $return_string .= '<div class="dropdown-menu"> ';
-                                $return_string .= '<a class="dropdown-item" href="#">Action</a> ';
-                                $return_string .= '<a class="dropdown-item" href="#">Another action</a> ';
-                                $return_string .= '<a class="dropdown-item" href="#">Something else here</a> ';
-                                $return_string .= '<div class="dropdown-divider"></div> ';
-                                $return_string .= '<a class="dropdown-item" href="#">Separated link</a> ';
+                                        $return_string .= '<a ';
+                                        $return_string .= 'class="dropdown-item" ';
+                                        $return_string .= 'onclick="ChanceCategory('."'".$main_id.'-'.$parent_id.'-'.$child_id."'".')" ';
+                                        // $return_string .= 'href="' . get_category_link( $child_id ) . '">';
+                                        $return_string .= 'href="#">';
+                                        $return_string .= $child_cat->name;
+                                        $return_string .= '</a> ';
+                                        // $return_string .= '<a class="dropdown-item" href="#">Separated link</a> ';
+                                   }
+                                   else
+                                   {
+                                        // echo ('<pre>');
+                                        // print_r ($child_cat);
+                                        // echo ('</pre>');
+                                        foreach ($child_cat as $grandkid_id => $grandkid)
+                                        {
+                                             if ($grandkid_id == 0)
+                                             {
+                                                  $return_string .= '<a ';
+                                                  $return_string .= 'id="child_id-'.$child_id.'" ';
+                                                  $return_string .= 'class="dropdown-item" ';
+                                                  $return_string .= 'onclick="ChanceCategory('."'".$main_id.'-'.$parent_id.'-'.$child_id.'-'.$grandkid_id."'".')" ';
+                                                  // $return_string .= 'href="' . get_category_link( $child_id ) . '">';
+                                                  $return_string .= 'href="#">';
+                                                  $return_string .= $grandkid->name ;
+                                                  $return_string .= '</a> ';
+                                                  $return_string .= '<div class="dropdown-divider"></div> ';
+                                             }
+                                             else
+                                             {
+                                                  $return_string .= '<a  ';
+                                                  $return_string .= 'class="dropdown-item"  ';
+                                                  $return_string .= 'onclick="ChanceCategory('."'".$main_id.'-'.$parent_id.'-'.$child_id.'-'.$grandkid_id."'".')" ';
+                                                  // $return_string .= 'href="' . get_category_link( $grandkid_id ) . '">';
+                                                  $return_string .= 'href="#">';
+                                                  $return_string .= $grandkid->name;
+                                                  $return_string .= '</a> ';
+                                             }
+
+                                        }
+                                        /* has another level of categories */
+                                   }
+
+                              }
+
                          }
-
-                    }
-                    $return_string .= '</div>';
+                         $return_string .= '</div><!-- dropdown-menu -->';
                     $return_string .= '</div> <!-- btn-group -->';
                }
           }

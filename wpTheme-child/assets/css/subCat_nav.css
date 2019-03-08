@@ -24,3 +24,47 @@
           margin-top: 15px;
           margin-bottom: 15px;
      }
+     .sub-cat-button
+     {
+          background-color: #101010;
+          color: #F5F5F5;
+          margin:10px;
+          text-transform: capitalize;
+     }
+     .sub-cat-button span
+     {
+          font-weight: bold;
+          font-size: 12px;
+          padding-right: 5px;
+          border-right: 1px solid orange;
+     }
+     .sub-cat-button::after
+     {
+          color:orange;
+     }
+     .sub-cat-button:hover
+     {
+          color:orange;
+     }
+     .sub-cat-button:focus
+     {
+          box-shadow: 0 0 0 0rem;
+     }
+     .sub-cat-menu
+     {
+          padding: 0px;
+     }
+     .sub-cat-menu .dropdown-item
+     {
+          color: #101010;
+          background-color: red;
+          font-size: 12px;
+          padding-left: 5px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+     }
+     .sub-cat-menu .dropdown-divider
+     {
+          margin: 0px;
+          line-height:auto;
+     }

@@ -138,3 +138,37 @@ if ( ! function_exists( 'wpTheme_enqueue_more_fonts' ) )
      add_action( 'wp_enqueue_scripts', 'wpTheme_enqueue_more_fonts' );
 }
 ?>
+<?php
+/*
+     ===============================
+          UNREGISTER SIDEARS
+     ===============================
+* We don't use that many side bars on the theme so we can remove them
+*/
+function remove_some_widgets(){
+
+	// Unregister some of the TwentyTen sidebars
+	unregister_sidebar( 'body-left-sidebar' );
+	unregister_sidebar( 'body-right-sidebar' );
+}
+add_action( 'widgets_init', 'remove_some_widgets', 11 );
+?>
+<?php
+/*
+     ===============================
+          BREADCRUMBS
+     ===============================
+* Create a special BREADCRUMBS function for the child theme
+*/
+if ( !function_exists( 'wpTheme_breadcrumbs' ) )
+{
+     $options = get_option( 'wpTheme_options' );
+     function wpTheme_breadcrumbs()
+     {
+          echo ('breadcrumbs - Functions line 167');
+     }
+     if ( isset( $options['breadcrumbs'] )  && ( true == $options['breadcrumbs'] ) )
+     {
+          add_action( 'tha_content_top', 'wpTheme_breadcrumbs' );
+     }
+}

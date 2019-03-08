@@ -12,7 +12,7 @@
 *
 */
 
-
+/*** Changes the background of the topnavbar ***/
 function scrollFunction()
 {
      /* We get the elements that we need */
@@ -51,4 +51,9 @@ function scrollFunction()
      if ( scrollTop >= subcat_navBar.offsetTop - topBar_obj.offsetHeight - 10 )
      {
      }
+}
+/*** Adds events to the category bar dropdowns ***/
+function ChanceCategory(target)
+{
+     console.log ('target - ' , target);
 }

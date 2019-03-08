@@ -59,9 +59,7 @@
      <?php wp_head(); ?>
 </head>
 <body <?php body_class( $fixed_nav ); ?>>
-     <script>
-          window.onscroll = function() {scrollFunction()};
-     </script>
+
      <?php tha_body_top(); ?>
      <!-- Create a div that is going to wrap all the content -->
      <!-- Add the head part-->
@@ -88,3 +86,6 @@
      </header>
      <?php tha_header_after(); ?>
      <main class="container" id="wrap"> <!-- wrap div-->
+          <script>
+               window.onscroll = function() {scrollFunction()};
+          </script>
