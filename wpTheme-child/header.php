@@ -75,14 +75,15 @@
                $height = 'fixed-height-' . $options['big-header-image']['percentage'];
           }
           ?>
-          <div class="header-img as_background <?php echo esc_attr( $height ); ?> parallax_effect" style="background-image:url(<?php echo ( get_background_image () ); ?>); "> <!-- Header-img -->
+          <div id="header-img" class="header-img as_background <?php echo esc_attr( $height ); ?> parallax_effect" style="background-image:url(<?php echo ( get_background_image () ); ?>); "> <!-- Header-img -->
                <!-- Top Navitagion bar part -->
                <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
                <!-- Header Image part -->
                <?php get_template_part( 'template-parts/header/part', 'child-header-image' ); ?>
-               <!-- Main Navigation bar part -->
-               <?php get_template_part( 'template-parts/header/part', 'child-subcategory-bar' ); ?>
+
           </div> <!-- Header-img -->
+          <!-- Main Navigation bar part -->
+          <?php get_template_part( 'template-parts/header/part', 'child-subcategory-bar' ); ?>
           <?php tha_header_bottom(); ?>
      </header>
      <?php tha_header_after(); ?>

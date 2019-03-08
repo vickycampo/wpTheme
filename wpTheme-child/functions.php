@@ -66,6 +66,15 @@ if ( ! function_exists( 'wpChild_scripts' ) )
 
           wp_enqueue_style( $handle , $src , $deps , $ver , $media );
 
+          /* SubCat Navibation Menu */
+          $handle = 'SubCat-nav';
+          $src = get_stylesheet_directory_uri() . '/assets/css/subCat_nav.css';
+          $deps = '';
+          $ver = wp_get_theme()->get('Version');
+          $media = '';
+
+          wp_enqueue_style( $handle , $src , $deps , $ver , $media );
+
           /* Body */
           $handle = 'body_css';
           $src = get_stylesheet_directory_uri() . '/assets/css/body.css';

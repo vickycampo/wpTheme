@@ -13,9 +13,10 @@
 /*** Get the values for the main menu ***/
 function wpChildTheme_get_catValues ()
 {
+     /* We add the category menu if is a category or a single page */
      if ( is_category() || is_single() )
      {
-
+          /* If is a single page we get the categories of that page */
           if ( is_single() )
           {
                $this_categories = get_the_category();
@@ -29,18 +30,23 @@ function wpChildTheme_get_catValues ()
                }
 
           }
+          /* If is category, we get all the sub categores */
           if ( is_category() )
           {
+               /* We get the current category */
                $this_categories = get_queried_object();
                /* We get the Top Category */
                $main_category = wpChildTheme_get_topcategory ($this_categories);
                $ID = $main_category->term_id;
                $sub_categories = wpChildTheme_get_subcategories ($ID);
           }
-
+          /* We prepare the values to send back */
           $return_values['this_categories'] = $this_categories;
           $return_values['main_category'] = $main_category;
-          $return_values['sub_categories'] = $sub_categories;
+          /* Once we have the sub_Categories, we prepare the buttons for the menu */
+          $subcategories_buttons = wpChildTheme_subcat_buttons ( $sub_categories );
+          $return_values['buttons'] = $subcategories_buttons;
+
           return ( $return_values );
      }
 }
@@ -107,7 +113,15 @@ function wpChildTheme_get_subcategories ( $ID )
                }
           }
      }
-     return ( $mainArray );
+     if ( isset ( $mainArray ) )
+     {
+          return ( $mainArray );
+     }
+     else
+     {
+          return ( '' );
+     }
+
 
 
      // echo ('<pre>');
@@ -130,5 +144,74 @@ function wpChildTheme_get_topcategory ($cat_details)
 
      }
      return ($cat_details);
+}
+?>
+<?php
+/*** Get the subcat buttons ***/
+function wpChildTheme_subcat_buttons ( $sub_categories )
+{
+     if ($sub_categories != "")
+     {
+          /* We set the previous and post button text */
+          $return_string = '';
+          foreach ($sub_categories as $main_id => $grandparent_cat)
+          {
+               foreach ($grandparent_cat as $grandparent_id => $parent_cat)
+               {
+                    $return_string .= '<div>';
+                    foreach ($parent_cat as $parent_id => $child_cat)
+                    {
+
+                         if ($parent_id == 0)
+                         {
+
+                              $return_string .= '<div class="dropdown-header" ';
+                              $return_string .= 'data-toggle="collapse" ';
+                              $return_string .= 'href="#category_dropdown_' . $grandparent_id . '" ';
+                              $return_string .= 'role="button" ';
+                              $return_string .= 'aria-expanded="false" ';
+                              $return_string .= 'aria-controls="collapseExample">';
+                              $return_string .= '';
+                                   $return_string .= '<span class="dropdown-title">';
+                                        $return_string .= $child_cat->name;
+                                   $return_string .= '</span>';
+                                   /* add drop down button */
+                                   $return_string .= '<span class="dropdown-button fas fa-caret-down"></span>';
+                              $return_string .= '</div>';
+                              /* Start the div where we put the sub categories */
+                              $return_string .= '<div class="collapse dropdown-content" id="category_dropdown_' . $grandparent_id . '">';
+                         }
+                         else
+                         {
+                              if ( isset ( $child_cat->term_id ) )
+                              {
+                                   $return_string .= '<div class="dropdown-subcat">';
+                                        $return_string .= $child_cat->name;
+                                   $return_string .= '</div>';
+                              }
+                              else
+                              {
+                                   // echo ('<pre>');
+                                   // print_r ($child_cat);
+                                   // echo ('</pre>');
+                              }
+
+
+                         }
+
+                    }
+                    $return_string .= '</div>';
+                    $return_string .= '</div>';
+               }
+          }
+          /* We do the first levet of sub-categories */
+
+          return ($return_string);
+     }
+     else
+     {
+          /* We return nothing because they are not categories to generate the buttons for */
+          return ("");
+     }
 }
 ?>

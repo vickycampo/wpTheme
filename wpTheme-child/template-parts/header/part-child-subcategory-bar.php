@@ -14,19 +14,13 @@ wp_reset_query();
 include('subcategories-functions.php' );
 //firstly, load data for your child category
 $categories_values = wpChildTheme_get_catValues ();
-// echo ('<pre>');
-// print_r ($categories_values);
-// echo ('</pre>');
-?>
-<nav class="">
-     <div class="dropdown m-1">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Dropdown button
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-               <a class="dropdown-item" href="#">Action</a>
-               <a class="dropdown-item" href="#">Another action</a>
-               <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+$buttons = $categories_values ['buttons'];
+$this_categories = $categories_values ['this_categories'];
+if ($buttons != '')
+{
+     ?>
+     <div class="sub-cat-div">
+          <?php echo ( $buttons ); ?>
      </div>
-</nav>
+     <?php
+}?>
