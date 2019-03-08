@@ -158,33 +158,50 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
           {
                foreach ($grandparent_cat as $grandparent_id => $parent_cat)
                {
-                    $return_string .= '<div class="btn-group">';
+                    $return_string .= '<div class="dropdown-div">';
                     foreach ($parent_cat as $parent_id => $child_cat)
                     {
 
                          if ($parent_id == 0)
                          {
 
+                              $return_string .= '<div class="dropdown-header" ';
+                              $return_string .= 'data-toggle="collapse" ';
+                              $return_string .= 'href="#category_dropdown_' . $grandparent_id . '" ';
+                              $return_string .= 'role="button" ';
+                              $return_string .= 'aria-expanded="false" ';
+                              $return_string .= 'aria-controls="collapseExample">';
+                              $return_string .= '';
+                                   $return_string .= '<span class="dropdown-title">';
+                                        $return_string .= $child_cat->name;
+                                   $return_string .= '</span>';
+                                   /* add drop down button */
+                                   $return_string .= '<span class="dropdown-button fas fa-caret-down"></span>';
+                              $return_string .= '</div>';
+                              /* Start the div where we put the sub categories */
+                              $return_string .= '<div class="collapse dropdown-content" id="category_dropdown_' . $grandparent_id . '">';
+                         }
+                         else
+                         {
+                              if ( isset ( $child_cat->term_id ) )
+                              {
+                                   $return_string .= '<div class="dropdown-subcat">';
+                                        $return_string .= $child_cat->name;
+                                   $return_string .= '</div>';
+                              }
+                              else
+                              {
+                                   // echo ('<pre>');
+                                   // print_r ($child_cat);
+                                   // echo ('</pre>');
+                              }
 
-                                $return_string .= '<button type="button" ';
-                                $return_string .= 'class="btn btn-danger dropdown-toggle" ';
-                                $return_string .= 'data-toggle="dropdown" ';
-                                $return_string .= 'aria-haspopup="true" ';
-                                $return_string .= 'aria-expanded="false"> ';
-                                $return_string .= 'Action ';
-                                $return_string .= '</button> ';
 
-                                $return_string .= '<div class="dropdown-menu"> ';
-                                $return_string .= '<a class="dropdown-item" href="#">Action</a> ';
-                                $return_string .= '<a class="dropdown-item" href="#">Another action</a> ';
-                                $return_string .= '<a class="dropdown-item" href="#">Something else here</a> ';
-                                $return_string .= '<div class="dropdown-divider"></div> ';
-                                $return_string .= '<a class="dropdown-item" href="#">Separated link</a> ';
                          }
 
                     }
                     $return_string .= '</div>';
-                    $return_string .= '</div> <!-- btn-group -->';
+                    $return_string .= '</div> <!-- dropdown -->';
                }
           }
           /* We do the first levet of sub-categories */

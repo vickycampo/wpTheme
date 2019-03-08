@@ -45,11 +45,13 @@
           width: 100px;
           text-align: center;
           font-weight: 500;
+          text-shadow: 2px 2px 4px #000000;
 
      }
      #theme_location_top_target a:hover
      {
           color: orange;
+          text-shadow: 1px 1px 1px #000000;
 
      }
      #theme_location_top_target h1

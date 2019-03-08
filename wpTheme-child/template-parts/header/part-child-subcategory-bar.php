@@ -19,7 +19,7 @@ $this_categories = $categories_values ['this_categories'];
 if ($buttons != '')
 {
      ?>
-     <div class="sub-cat-div">
+     <div class="sub-cat-div" id="sub-cat-div">
           <?php echo ( $buttons ); ?>
      </div>
      <?php
