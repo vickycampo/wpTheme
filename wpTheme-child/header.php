@@ -59,6 +59,9 @@
      <?php wp_head(); ?>
 </head>
 <body <?php body_class( $fixed_nav ); ?>>
+     <script>
+          window.onscroll = function() {scrollFunction()};
+     </script>
      <?php tha_body_top(); ?>
      <!-- Create a div that is going to wrap all the content -->
      <!-- Add the head part-->
@@ -72,7 +75,7 @@
                $height = 'fixed-height-' . $options['big-header-image']['percentage'];
           }
           ?>
-          <div class="header-img as_background <?php echo esc_attr( $height ); ?>" style="background-image:url(<?php echo ( get_background_image () ); ?>); "> <!-- Header-img -->
+          <div class="header-img as_background <?php echo esc_attr( $height ); ?> parallax_effect" style="background-image:url(<?php echo ( get_background_image () ); ?>); "> <!-- Header-img -->
                <!-- Top Navitagion bar part -->
                <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
                <!-- Header Image part -->

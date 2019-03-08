@@ -27,6 +27,31 @@ h3
 {
      font-size: 15px;
 }
+/* Navigation bar hamburger icon */
+     .hamburger
+     {
+         position: relative;
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         margin-right: 1px;
+         border-top: 0.2em solid #fff;
+         border-bottom: 0.2em solid #fff;
+     }
+
+     .hamburger:before
+     {
+         content: "";
+         position: absolute;
+         top: 0.3em;
+         left: 0px;
+         width: 100%;
+         border-top: 0.2em solid #fff;
+     }
+     .navbar-toggler .collapsed
+     {
+          /* height: 40px; */
+     }
 /* the div that contains the header image */
 .header-img
 {
