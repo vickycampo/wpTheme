@@ -154,54 +154,81 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
      {
           /* We set the previous and post button text */
           $return_string = '';
+
           foreach ($sub_categories as $main_id => $grandparent_cat)
           {
-               foreach ($grandparent_cat as $grandparent_id => $parent_cat)
+               foreach ($grandparent_cat as $parent_id => $parent_cat)
                {
-                    $return_string .= '<div class="dropdown-div">';
-                    foreach ($parent_cat as $parent_id => $child_cat)
-                    {
 
-                         if ($parent_id == 0)
+                    $return_string .= '<div class="btn-group">';
+                         $return_string .= '<button type="button" ';
+                         $return_string .= 'class="btn dropdown-toggle sub-cat-button" ';
+                         $return_string .= 'data-toggle="dropdown" ';
+                         $return_string .= 'aria-haspopup="true" ';
+                         $return_string .= 'aria-expanded="false"><span> ';
+                         $return_string .= $parent_cat[0]->name;
+                         $return_string .= '</span></button> ';
+                         $return_string .= '<div class="dropdown-menu sub-cat-menu"> ';
+                         foreach ($parent_cat as $child_id => $child_cat)
                          {
 
-                              $return_string .= '<div class="dropdown-header" ';
-                              $return_string .= 'data-toggle="collapse" ';
-                              $return_string .= 'href="#category_dropdown_' . $grandparent_id . '" ';
-                              $return_string .= 'role="button" ';
-                              $return_string .= 'aria-expanded="false" ';
-                              $return_string .= 'aria-controls="collapseExample">';
-                              $return_string .= '';
-                                   $return_string .= '<span class="dropdown-title">';
-                                        $return_string .= $child_cat->name;
-                                   $return_string .= '</span>';
-                                   /* add drop down button */
-                                   $return_string .= '<span class="dropdown-button fas fa-caret-down"></span>';
-                              $return_string .= '</div>';
-                              /* Start the div where we put the sub categories */
-                              $return_string .= '<div class="collapse dropdown-content" id="category_dropdown_' . $grandparent_id . '">';
-                         }
-                         else
-                         {
-                              if ( isset ( $child_cat->term_id ) )
+
+                              if ($child_id != 0)
                               {
-                                   $return_string .= '<div class="dropdown-subcat">';
+                                   if ( isset ( $child_cat->term_id ) )
+                                   {
+                                        $ThisElementId = "'".$main_id.'-'.$parent_id.'-'.$child_id."'";
+                                        $return_string .= '<a ';
+                                        $return_string .= 'class="dropdown-item" ';
+                                        $return_string .= 'onclick="ChanceCategory('. $ThisElementId .')" ';
+                                        // $return_string .= 'href="' . get_category_link( $child_id ) . '">';
+                                        $return_string .= 'href="javascript: void(0)" >';
                                         $return_string .= $child_cat->name;
-                                   $return_string .= '</div>';
-                              }
-                              else
-                              {
-                                   // echo ('<pre>');
-                                   // print_r ($child_cat);
-                                   // echo ('</pre>');
-                              }
+                                        $return_string .= '</a> ';
+                                        // $return_string .= '<a class="dropdown-item" href="#">Separated link</a> ';
+                                   }
+                                   else
+                                   {
+                                        // echo ('<pre>');
+                                        // print_r ($child_cat);
+                                        // echo ('</pre>');
+                                        foreach ($child_cat as $grandkid_id => $grandkid)
+                                        {
+                                             if ($grandkid_id == 0)
+                                             {
+                                                  $ThisElementId = "'".$main_id.'-'.$parent_id.'-'.$child_id."'";
+                                                  $return_string .= '<div class="dropdown-divider"></div> ';
+                                                  $return_string .= '<a ';
+                                                  $return_string .= 'id="child_id-'.$child_id.'" ';
+                                                  $return_string .= 'class="dropdown-item dropdown-has-subitem" ';
+                                                  $return_string .= 'onclick="ChanceCategory('.$ThisElementId.')" ';
+                                                  // $return_string .= 'href="' . get_category_link( $child_id ) . '">';
+                                                  $return_string .= 'href="javascript: void(0)" >';
+                                                  $return_string .= $grandkid->name ;
+                                                  $return_string .= '</a> ';
 
+                                             }
+                                             else
+                                             {
+                                                  $ThisElementId = "'".$main_id.'-'.$parent_id.'-'.$child_id.'-'.$grandkid_id."'";
+                                                  $return_string .= '<a  ';
+                                                  $return_string .= 'class="dropdown-item  dropdown-subitem"  ';
+                                                  $return_string .= 'onclick="ChanceCategory('."'".$main_id.'-'.$parent_id.'-'.$child_id.'-'.$grandkid_id."'".')" ';
+                                                  // $return_string .= 'href="' . get_category_link( $grandkid_id ) . '">';
+                                                  $return_string .= 'href="javascript: void(0)" >';
+                                                  $return_string .= $grandkid->name;
+                                                  $return_string .= '</a> ';
+                                             }
+
+                                        }
+                                        /* has another level of categories */
+                                   }
+
+                              }
 
                          }
-
-                    }
-                    $return_string .= '</div>';
-                    $return_string .= '</div> <!-- dropdown -->';
+                         $return_string .= '</div><!-- dropdown-menu -->';
+                    $return_string .= '</div> <!-- btn-group -->';
                }
           }
           /* We do the first levet of sub-categories */

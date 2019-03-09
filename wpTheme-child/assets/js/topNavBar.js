@@ -52,8 +52,3 @@ function scrollFunction()
      {
      }
 }
-/*** Adds events to the category bar dropdowns ***/
-function ChanceCategory(target)
-{
-     console.log ('target - ' , target);
-}

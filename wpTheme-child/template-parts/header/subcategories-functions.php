@@ -154,13 +154,12 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
      {
           /* We set the previous and post button text */
           $return_string = '';
-
           foreach ($sub_categories as $main_id => $grandparent_cat)
           {
                foreach ($grandparent_cat as $parent_id => $parent_cat)
                {
-
-                    $return_string .= '<div class="btn-group">';
+                    $ThisElementId = "'".$main_id.'-'.$parent_id."'";
+                    $return_string .= '<div class="btn-group" id='. $ThisElementId .'>';
                          $return_string .= '<button type="button" ';
                          $return_string .= 'class="btn dropdown-toggle sub-cat-button" ';
                          $return_string .= 'data-toggle="dropdown" ';
@@ -177,10 +176,11 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
                               {
                                    if ( isset ( $child_cat->term_id ) )
                                    {
-
+                                        $ThisElementId = "'".$main_id.'-'.$parent_id.'-'.$child_id."'";
                                         $return_string .= '<a ';
+                                        $return_string .= 'id='. $ThisElementId .' ';
                                         $return_string .= 'class="dropdown-item" ';
-                                        $return_string .= 'onclick="ChanceCategory('."'".$main_id.'-'.$parent_id.'-'.$child_id."'".')" ';
+                                        $return_string .= 'onclick="ChanceCategory('. $ThisElementId .')" ';
                                         // $return_string .= 'href="' . get_category_link( $child_id ) . '">';
                                         $return_string .= 'href="#">';
                                         $return_string .= $child_cat->name;
@@ -196,20 +196,24 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
                                         {
                                              if ($grandkid_id == 0)
                                              {
+                                                  $ThisElementId = "'".$main_id.'-'.$parent_id.'-'.$child_id."'";
+                                                  $return_string .= '<div class="dropdown-divider"></div> ';
                                                   $return_string .= '<a ';
-                                                  $return_string .= 'id="child_id-'.$child_id.'" ';
-                                                  $return_string .= 'class="dropdown-item" ';
-                                                  $return_string .= 'onclick="ChanceCategory('."'".$main_id.'-'.$parent_id.'-'.$child_id.'-'.$grandkid_id."'".')" ';
+                                                  $return_string .= 'id='. $ThisElementId .' ';
+                                                  $return_string .= 'class="dropdown-item dropdown-has-subitem" ';
+                                                  $return_string .= 'onclick="ChanceCategory('.$ThisElementId.')" ';
                                                   // $return_string .= 'href="' . get_category_link( $child_id ) . '">';
                                                   $return_string .= 'href="#">';
                                                   $return_string .= $grandkid->name ;
                                                   $return_string .= '</a> ';
-                                                  $return_string .= '<div class="dropdown-divider"></div> ';
+
                                              }
                                              else
                                              {
+                                                  $ThisElementId = "'".$main_id.'-'.$parent_id.'-'.$child_id.'-'.$grandkid_id."'";
                                                   $return_string .= '<a  ';
-                                                  $return_string .= 'class="dropdown-item"  ';
+                                                  $return_string .= 'id='. $ThisElementId .' ';
+                                                  $return_string .= 'class="dropdown-item  dropdown-subitem"  ';
                                                   $return_string .= 'onclick="ChanceCategory('."'".$main_id.'-'.$parent_id.'-'.$child_id.'-'.$grandkid_id."'".')" ';
                                                   // $return_string .= 'href="' . get_category_link( $grandkid_id ) . '">';
                                                   $return_string .= 'href="#">';

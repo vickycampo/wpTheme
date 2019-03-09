@@ -22,5 +22,7 @@ if ($buttons != '')
      <div class="sub-cat-div" id="sub-cat-div">
           <?php echo ( $buttons ); ?>
      </div>
+     <div id="sub-cat-filters" class="sub-cat-filters">
+     </div>
      <?php
 }?>

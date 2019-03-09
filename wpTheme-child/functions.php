@@ -105,7 +105,15 @@ if ( ! function_exists( 'wpChild_scripts' ) )
           $handle= 'topNavBar_js'; //is simply the name of the stylesheet.
           $src = get_stylesheet_directory_uri() . '/assets/js/topNavBar.js';
           $deps = '';
-          $ver = '4.2.1'; //sets the version number.
+          $ver = wp_get_theme()->get('Version'); //sets the version number.
+          $in_footer = true;
+          wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
+
+          /* Add Top navbar functions javascript file */
+          $handle= 'subCatNav_js'; //is simply the name of the stylesheet.
+          $src = get_stylesheet_directory_uri() . '/assets/js/catNavBar.js';
+          $deps = '';
+          $ver = wp_get_theme()->get('Version'); //sets the version number.
           $in_footer = true;
           wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
      }
