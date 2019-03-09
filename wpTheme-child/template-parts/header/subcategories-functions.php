@@ -177,14 +177,14 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
                                    if ( isset ( $child_cat->term_id ) )
                                    {
                                         $ThisElementId = "'".$main_id.'-'.$parent_id.'-'.$child_id."'";
-                                        $return_string .= '<a ';
+                                        $return_string .= '<span ';
                                         $return_string .= 'id='. $ThisElementId .' ';
                                         $return_string .= 'class="dropdown-item" ';
                                         $return_string .= 'onclick="ChanceCategory('. $ThisElementId .')" ';
                                         // $return_string .= 'href="' . get_category_link( $child_id ) . '">';
-                                        $return_string .= 'href="#">';
+                                        $return_string .= '>';
                                         $return_string .= $child_cat->name;
-                                        $return_string .= '</a> ';
+                                        $return_string .= '</span> ';
                                         // $return_string .= '<a class="dropdown-item" href="#">Separated link</a> ';
                                    }
                                    else
@@ -198,27 +198,27 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
                                              {
                                                   $ThisElementId = "'".$main_id.'-'.$parent_id.'-'.$child_id."'";
                                                   $return_string .= '<div class="dropdown-divider"></div> ';
-                                                  $return_string .= '<a ';
+                                                  $return_string .= '<span ';
                                                   $return_string .= 'id='. $ThisElementId .' ';
                                                   $return_string .= 'class="dropdown-item dropdown-has-subitem" ';
                                                   $return_string .= 'onclick="ChanceCategory('.$ThisElementId.')" ';
                                                   // $return_string .= 'href="' . get_category_link( $child_id ) . '">';
-                                                  $return_string .= 'href="#">';
+                                                  $return_string .= '>';
                                                   $return_string .= $grandkid->name ;
-                                                  $return_string .= '</a> ';
+                                                  $return_string .= '</span> ';
 
                                              }
                                              else
                                              {
                                                   $ThisElementId = "'".$main_id.'-'.$parent_id.'-'.$child_id.'-'.$grandkid_id."'";
-                                                  $return_string .= '<a  ';
+                                                  $return_string .= '<span ';
                                                   $return_string .= 'id='. $ThisElementId .' ';
                                                   $return_string .= 'class="dropdown-item  dropdown-subitem"  ';
                                                   $return_string .= 'onclick="ChanceCategory('."'".$main_id.'-'.$parent_id.'-'.$child_id.'-'.$grandkid_id."'".')" ';
                                                   // $return_string .= 'href="' . get_category_link( $grandkid_id ) . '">';
-                                                  $return_string .= 'href="#">';
+                                                  $return_string .= '>';
                                                   $return_string .= $grandkid->name;
-                                                  $return_string .= '</a> ';
+                                                  $return_string .= '</span> ';
                                              }
 
                                         }

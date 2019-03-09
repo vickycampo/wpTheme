@@ -55,9 +55,9 @@ function ChanceCategory(target)
           var grandKid = 0;
      }
      /* Now that we have the ids we get the name of the categroy we want to filter */
-     var filterId = target + '_filter';
+     var filterId = target;
      /* We check if the filter exists we don't add it again */
-     if ( document.getElementById(filterId) )
+     if ( document.getElementById(target + '_filter') )
      {
 
      }
@@ -76,19 +76,21 @@ function createFilterElementDiv (filterId , targeted )
      var text = targeted.lastChild.data;
      /* Create a div to add the filter info */
      var filterBoxDiv = document.createElement('div');
-     filterBoxDiv.id = filterId;
+     filterBoxDiv.id = filterId + '_filter';
 
      filterBoxDiv.className = 'sub-cat-filters-element';
 
      /* Create a div where we are adding the text */
      filterName = document.createElement('div');
      filterName.className = 'sub-cat-filters-name';
+     filterName.id = filterId + '_name';
      filterName.innerHTML = text;
 
      /* Create a div where we are adding the close cross */
      filterClose = document.createElement('div');
      filterClose.className = 'sub-cat-filters-close';
      filterClose.className += " fa fa-times";
+     filterClose.id = filterId + '_close';
      filterClose.addEventListener("click", closeMe);
      //
      // filterClose.innerHTML = 'x';
@@ -101,7 +103,9 @@ function createFilterElementDiv (filterId , targeted )
 
      return (filterBoxDiv);
 }
-function closeMe(filterId)
+function closeMe(event)
 {
-     console.log ('close me - ' , filterId);
+     // console.log ('close me - ' , event.target.id);
+     var toClose = event.target.id.replace("_close", "_filter");
+     document.getElementById(toClose).parentElement.removeChild(document.getElementById(toClose));
 }
