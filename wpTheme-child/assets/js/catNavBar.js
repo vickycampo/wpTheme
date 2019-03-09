@@ -88,7 +88,10 @@ function createFilterElementDiv (filterId , targeted )
      /* Create a div where we are adding the close cross */
      filterClose = document.createElement('div');
      filterClose.className = 'sub-cat-filters-close';
-     filterClose.innerHTML = 'x';
+     filterClose.className += " fa fa-times";
+     filterClose.addEventListener("click", closeMe);
+     //
+     // filterClose.innerHTML = 'x';
 
      /* Add the other divs to the main div */
 
@@ -97,4 +100,8 @@ function createFilterElementDiv (filterId , targeted )
 
 
      return (filterBoxDiv);
+}
+function closeMe(filterId)
+{
+     console.log ('close me - ' , filterId);
 }
