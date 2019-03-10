@@ -50,7 +50,6 @@
 {
      display: block;
      text-align: center;
-     margin-top: 50px;
 }
 .header-site-title a
 {
@@ -117,7 +116,6 @@
 {
      .header-site-logo-div
      {
-          margin-top: 50px;
           grid-column-start: 1;
           grid-column-end: 2;
 
