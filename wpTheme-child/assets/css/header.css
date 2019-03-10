@@ -12,7 +12,7 @@
 /* Start from the top to the bottom */
 .parallax_effect
 {
-     min-height: 500px;
+     /* min-height: 500px; */
      background-attachment: fixed;
      background-position: center;
      background-repeat: no-repeat;
@@ -35,6 +35,40 @@
      width: auto;
      padding: 0px;
      margin: 0px;
+}
+.header-img
+{
+
+}
+.header_siteinfo
+{
+}
+.header-img img
+{
+}
+.header-site-logo-div
+{
+     display: block;
+     text-align: center;
+     margin-top: 50px;
+}
+.header-site-title a
+{
+     font-size: 75px;
+     color: white;
+}
+.div-header-site-description
+{
+
+}
+.header-site-description
+{
+     color: orange;
+     font-family: 'Rock Salt', cursive;
+     font-weight: bold;
+     /* font-size: 25PX; */
+     word-wrap: break-word;
+
 }
 /* Media Queries for the grid settings*/
 /* Small devices (landscape phones, 576px and up) */
@@ -112,48 +146,9 @@
           border-radius: 50% !important;
      }
 }
-
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px)
 {  }
-
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px)
-{
-
-}
-
-.header-img
-{
-
-}
-.header_siteinfo
-{
-}
-.header-img img
-{
-}
-.header-site-logo-div
-{
-     display: block;
-     text-align: center;
-     margin-top: 50px;
-}
-.header-site-title a
-{
-     font-size: 75px;
-     color: white;
-}
-.div-header-site-description
-{
-
-}
-.header-site-description
-{
-     color: orange;
-     font-family: 'Rock Salt', cursive;
-     font-weight: bold;
-     font-size: 25PX;
-     word-wrap: break-word;
-
-}
+{ }
