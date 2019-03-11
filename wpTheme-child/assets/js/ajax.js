@@ -1,47 +1,45 @@
-var http = createRequestObject();
-var objectId = '';
+/*
 
+@package WordPress
+@subpackage wpChildTheme  Child Them
+@since wpTheme
 
-function createRequestObject(htmlObjectId){
-    var obj;
-    var browser = navigator.appName;
-    
-    objectId = htmlObjectId;
-    
-    if(browser == "Microsoft Internet Explorer"){
-        obj = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    else{
-        obj = new XMLHttpRequest();
-    }
-    return obj;    
-}
+     ===================================
+          JQUERY AND AJAX FUNCTION
+     ===================================
+* Contains the javascript for jquery and ajax
+*
+*/
+jQuery(document).ready( function($)
+{
+     /* Ajax functions */
+	$(document).on('click','.read-more-link', function() /* Add the event listener to the link with this class */
+          {
+     		var that = $(this);
+     		var page = $(this).data('page');      //The current page
+     		var newPage = page+1;                 //Next page
+     		var ajaxurl = that.data('url');       //Get the wordrpess ajax
+     		$.ajax
+               ({
+     			url : ajaxurl,   //The url for the ajax file
+     			type : 'post',   //The method that we are going to use
+     			data :           //Send values to the ajax function
+                    {
+     				page : page,   //Sending the variable page
+     				action: 'wpTheme_read_more' //The name of the funciton that we want to call
+     			},
+     			error : function( response )    //return on error
+                    {
+     				console.log('Line 33 or the ajax file - ' , response);
+     			},
+     			success : function( response )  //return on success
+                    {
+                         console.log (response);
+     				that.data('page', newPage);
+     				$('.archive-results').append( response );
+     			}
+	          });
 
-function sendReq(serverFileName, variableNames, variableValues) {
-	var paramString = '';
-	
-	variableNames = variableNames.split(',');
-	variableValues = variableValues.split(',');
-	
-	for(i=0; i<variableNames.length; i++) {
-		paramString += variableNames[i]+'='+variableValues[i]+'&';
-	}
-	paramString = paramString.substring(0, (paramString.length-1));
-			
-	if (paramString.length == 0) {
-	   	http.open('get', serverFileName);
-	}
-	else {
-		http.open('get', serverFileName+'?'+paramString);
-	}
-    http.onreadystatechange = handleResponse;
-    http.send(null);
-}
-
-function handleResponse() {
-	
-	if(http.readyState == 4){
-		responseText = http.responseText;
-		document.getElementById(objectId).innerHTML = responseText;
-    }
-}
+     	}
+     );
+});

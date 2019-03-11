@@ -23,7 +23,10 @@ if ( have_posts() ) : ?>
      ?>
      <?php
      //The Loop
+     $post_number = 0;
      while ( have_posts() ) : the_post();
+          $post_number ++;
+          echo ('postNumber - ' . $post_number . '<br>');
           $wpTheme_post_format = get_post_format();
           //We check if there is a format
           if ( $wpTheme_post_format )

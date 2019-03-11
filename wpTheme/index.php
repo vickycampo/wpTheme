@@ -29,6 +29,7 @@
                     <?php tha_content_top(); ?>
                     <!-- The loop -->
                     <?php if (have_posts()) :
+
                               while (have_posts()) : the_post();
                               //get template part depending on the template format we are displaying
 
@@ -40,7 +41,6 @@
                               {
                                    get_template_part('template-parts/post', 'post');
                               }
-
                          endwhile; ?>
                          <?php get_template_part('template-parts/part', 'navigation' ); ?>
                     <?php endif; ?>

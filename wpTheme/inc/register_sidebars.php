@@ -12,11 +12,12 @@
 * Grouped by the section where they are going to be displayed.
 *
 */
-?><?php
+?>
+<?php
 /*
-     =====================
+     =========================
           GENERIC SIDEBARS
-     =====================
+     =========================
 */
 if ( ! function_exists( 'wpTheme_generic_sidebars' ) )
 {

@@ -77,8 +77,6 @@ h3
      .header-site-logo
      {
           align-items: center;
-          height: 50vh;
-
      }
 /*  We create the clases for the fixed height of the header image div */
      .fixed-height-40
@@ -103,7 +101,7 @@ h3
      }
      .fixed-height-60 img
      {
-          height:45;
+          height:45vh;
      }
      .fixed-height-70
      {

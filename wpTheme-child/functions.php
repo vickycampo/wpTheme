@@ -116,6 +116,14 @@ if ( ! function_exists( 'wpChild_scripts' ) )
           $ver = wp_get_theme()->get('Version'); //sets the version number.
           $in_footer = true;
           wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
+
+          /* Add ajax */
+          $handle= 'ajax_js'; //is simply the name of the stylesheet.
+          $src = get_stylesheet_directory_uri() . '/assets/js/ajax.js';
+          $deps = array('jquery');
+          $ver = wp_get_theme()->get('Version'); //sets the version number.
+          $in_footer = true;
+          wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
      }
      add_action( 'wp_enqueue_scripts', 'wpChild_scripts' );
 }
@@ -202,31 +210,36 @@ if ( !function_exists( 'wpTheme_breadcrumbs' ) )
      {
           add_action( 'tha_content_top', 'wpTheme_breadcrumbs' );
      }
+}?>
+<?php
+/*
+     ==============================
+          REGISTER NAVIGATION MENUS
+     ==============================
+*
+* To create a navigation menu you’ll need to register it,
+* and then display the menu in the appropriate location in your theme.
+* locations are added to the “Manage Locations” tab
+*/
+if ( ! function_exists( 'wpTheme_register_nav_menu' ) )
+{
+     function wpTheme_register_nav_menu()
+     {
+          $locations = array(
+         	'top' => __( 'Top Header Navigation', 'wpTheme' )
+          );
+          register_nav_menus( $locations );
+     }
+     add_action( 'init', 'wpTheme_register_nav_menu' );
 }
-
 ?>
 <?php
 /*
-     ===============================
-          ADD AJAX FILES
-     ===============================
-* Create a special BREADCRUMBS function for the child theme
+     ========================================
+          AJAX.PHP
+     ========================================
+*
+* File with the php functions for the ajax
 */
-if ( !function_exists( 'js_enqueue_scripts' ) )
-{
-     function js_enqueue_scripts()
-     {
-          $handle = "my-ajax-handle";
-          $src = get_stylesheet_directory_uri() . "/assets/js/ajax.js";
-          $deps = array('jquery');
-          wp_enqueue_script ( $handle , $src , $deps );
-
-          //the_ajax_script will use to print admin-ajaxurl in custom ajax.js
-          $handle = 'my-ajax-handle';
-          $name = 'the_ajax_script';
-          $data = array('ajaxurl' =>admin_url('admin-ajax.php'));
-          wp_localize_script( $handle, $name, $data );
-     }
-     add_action("wp_enqueue_scripts", "js_enqueue_scripts");
-}
+include_once (get_stylesheet_directory() . '/inc/ajax.php');
 ?>
