@@ -10,30 +10,52 @@
 	========================================
 * This part displays the next and previous options
 */
+
+
+global $wp_query;
+$max_num_pages = $wp_query->max_num_pages;
+$categoryName = get_the_category()[0]->term_id;
+$categoryName = '';
 ?>
-<nav class="navigation clearfix">
-	<ul class="pager">
-		<?php
-		if ( is_singular() )
-		{ ?>
-			<li class="previous"><?php next_post_link( '%link', '&larr; %title' ); ?></li>
-			<li class="next"><?php previous_post_link( '%link', '%title &rarr;' ); ?></li>
-		<?php
-		}
-		else
-		{
-			if (function_exists('wp_pagenavi'))
-			{
-				wp_pagenavi();
-			}
-			else
-			{
-				?>
-				<li class="previous"><?php next_posts_link(__('&larr; Older Entries','wpTheme')); ?></li>
-				<li class="next"><?php previous_posts_link(__('Newer Entries &rarr;','wpTheme')); ?></li>
-			<?php
-			}
-		}
+<script>
+var max_num_pages = "<?php echo ($max_num_pages);?>";
+<?php
+if ( ( count ( $wp_query->query ) ) > 0 )
+{
+	?>
+	var wp_query_string='';
+	<?php
+	/* Send the query values to the jquery */
+	foreach ( $wp_query->query as $filter_tag => $filter_value )
+	{
 		?>
-	</ul>
-</nav>
+		if (wp_query_string != '')
+		{
+			wp_query_string += ',';
+		}
+
+		wp_query_string += "<?php echo ($filter_tag); ?>:<?php echo ($filter_value); ?>";
+		<?php
+	}
+
+}
+else
+{
+	?>
+	var wp_query_string = '';
+	<?php
+}
+?>
+</script>
+<?php
+// echo ('max_num_pages - ' . $max_num_pages . '<br>');
+if ( $max_num_pages > 1 )
+{
+	?>
+	<div class="container text-center load-more-div">
+		<a class="btn btn-lg btn-default load-more-a" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+			<span id="load_more_icon" class="fas fa-sync-alt"></span> Load More
+		</a>
+	</div>
+	<?php
+}?>

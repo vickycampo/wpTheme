@@ -23,7 +23,10 @@ div
 }
 article
 {
-	background-color: red;
+     margin: 10px;
+     padding: 10px;
+	background-color: white;
+     border: solid 3px red;
 }
 section
 {
@@ -81,4 +84,14 @@ body.bs-fixed-nav nav.theme_location_top
 .wp-caption[style]
 {
 	max-width: 100% !important;
+}
+
+/* Show or hide elements */
+.show_element
+{
+     visibility: visible;
+}
+.hide_element
+{
+     visibility: hidden;
 }

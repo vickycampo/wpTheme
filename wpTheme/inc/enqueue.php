@@ -61,9 +61,6 @@ if ( ! function_exists( 'wpTheme_enqueue_bootstrap' ) )
                $ver = '4.2.1'; //sets the version number.
                $in_footer = true;
                wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
-
-
-
                //add style sheet so bootstrap can work
                $handle = 'bootstrap-4.2.1-css'; //is simply the name of the stylesheet.
                $src = get_template_directory_uri() . '/assets/bootstrap-4.2.1/css/bootstrap.css'; //is where it is located. The rest of the parameters are optional.

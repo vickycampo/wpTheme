@@ -48,7 +48,7 @@ function scrollFunction()
           }
      }
      /* Keep the sub category bar under the top nav bar */
-     if ( scrollTop >= subcat_navBar.offsetTop - topBar_obj.offsetHeight - 10 )
-     {
-     }
+     // if ( scrollTop >= subcat_navBar.offsetTop - topBar_obj.offsetHeight - 10 )
+     // {
+     // }
 }

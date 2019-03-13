@@ -118,8 +118,8 @@ if ( ! function_exists( 'wpChild_scripts' ) )
           wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
 
           /* Add ajax */
-          $handle= 'ajax_js'; //is simply the name of the stylesheet.
-          $src = get_stylesheet_directory_uri() . '/assets/js/ajax.js';
+          $handle= 'child_ajax_js'; //is simply the name of the stylesheet.
+          $src = get_stylesheet_directory_uri() . '/assets/js/child_ajax.js';
           $deps = array('jquery');
           $ver = wp_get_theme()->get('Version'); //sets the version number.
           $in_footer = true;
@@ -192,25 +192,7 @@ if ( ! function_exists( 'wpTheme_register_nav_menu' ) )
      add_action( 'init', 'wpTheme_register_nav_menu' );
 }
 ?>
-<?php
-/*
-     ===============================
-          BREADCRUMBS
-     ===============================
-* Create a special BREADCRUMBS function for the child theme
-*/
-if ( !function_exists( 'wpTheme_breadcrumbs' ) )
-{
-     $options = get_option( 'wpTheme_options' );
-     function wpTheme_breadcrumbs()
-     {
-          echo ('breadcrumbs - Functions line 167');
-     }
-     if ( isset( $options['breadcrumbs'] )  && ( true == $options['breadcrumbs'] ) )
-     {
-          add_action( 'tha_content_top', 'wpTheme_breadcrumbs' );
-     }
-}?>
+
 <?php
 /*
      ==============================
@@ -236,10 +218,53 @@ if ( ! function_exists( 'wpTheme_register_nav_menu' ) )
 <?php
 /*
      ========================================
+          SHOWS CURRENT QUERY
+     ========================================
+*
+* Only used for development - We add a q to see what is being queried in the current page or template part
+*/
+add_action( 'wp_head', 'show_current_query' );
+if ( ! function_exists( 'show_current_query' ) )
+{
+     function show_current_query()
+     {
+          global $wp_query;
+
+          if ( !isset( $_GET['q'] ) )
+          return;
+          echo '<textarea cols="50" rows="10">';
+          print_r( $wp_query );
+          echo '</textarea>';
+     }
+}
+
+function show_current_query() {
+    global $wp_query;
+
+    if ( !isset( $_GET['q'] ) )
+        return;
+    echo '<textarea cols="50" rows="10">';
+    print_r( $wp_query );
+    echo '</textarea>';
+}
+?>
+<?php
+/*
+     ========================================
           AJAX.PHP
      ========================================
 *
 * File with the php functions for the ajax
 */
-include_once (get_stylesheet_directory() . '/inc/ajax.php');
+include_once (get_stylesheet_directory() . '/inc/child_ajax.php');
+?>
+<?php
+/*
+     ========================================
+          BREADCRUMBS
+     ========================================
+*
+* File with the php functions for the ajax
+*/
+include_once (get_stylesheet_directory() . '/inc/breadcrumbs.php');
 ?>

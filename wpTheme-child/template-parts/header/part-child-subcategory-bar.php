@@ -16,10 +16,16 @@ include('subcategories-functions.php' );
 $categories_values = wpChildTheme_get_catValues ();
 $buttons = $categories_values ['buttons'];
 $this_categories = $categories_values ['this_categories'];
+
 if ($buttons != '')
 {
-     ?>
+     /* we prepare the values we want to sent to the javascript */?>
+     <script>
+          var main_category = "<?php echo ($this_categories->term_id);?>"
+          var admin_url  = "<?php echo admin_url('admin-ajax.php'); ?>";
+     </script>
      <div class="sub-cat-div" id="sub-cat-div">
+
           <?php echo ( $buttons ); ?>
      </div>
      <div id="sub-cat-filters" class="sub-cat-filters">

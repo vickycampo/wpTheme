@@ -15,7 +15,7 @@
 <?php
 //check if we have any posts to display
 if ( have_posts() ) : ?>
-
+     <div id="ajax-posts" class="row read-more-results">
      <?php
      //set the listing the_title
      //use the part-list-title.php
@@ -23,10 +23,7 @@ if ( have_posts() ) : ?>
      ?>
      <?php
      //The Loop
-     $post_number = 0;
      while ( have_posts() ) : the_post();
-          $post_number ++;
-          echo ('postNumber - ' . $post_number . '<br>');
           $wpTheme_post_format = get_post_format();
           //We check if there is a format
           if ( $wpTheme_post_format )
@@ -45,10 +42,14 @@ if ( have_posts() ) : ?>
 
                     <div class="icon icon-archive pull-left" title="<?php esc_attr_e( 'Archive', 'wpTheme' ); ?>">
                     </div>
-                    <?php get_template_part( 'template-part', 'postmetadata' ); ?>
+                    <?php get_template_part( 'template-parts', 'postmetadata' ); ?>
                </article>
                <div class="spacer-10"></div>
           <?php }
      endwhile;
-     get_template_part( 'template-part', 'navigation' );
+     ?>
+     </div> <!-- ajax-posts -->
+     <?php
+     get_template_part('template-parts/part', 'navigation' );
+
 endif; ?>

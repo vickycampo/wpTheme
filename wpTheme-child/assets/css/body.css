@@ -17,3 +17,20 @@ body.bs-fixed-nav
 {
      padding-top: 0px !important;
 }
+.load-more-span-div
+{
+     margin: 10px;
+}
+.load-more-span-a
+{
+     font-weight: bold;
+     font-size: 12px;
+     padding-right: 5px;
+     color: white !important;
+     background-color: #101010;
+}
+.load-more-span-a:hover
+{
+     /* box-shadow: orange 0px 1px 5px 0px; */
+     color: orange !important;
+}

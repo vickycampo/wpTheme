@@ -425,3 +425,13 @@ require_once get_parent_theme_file_path( '/inc/theme_options_validations.php' );
 */
 require_once get_parent_theme_file_path( '/inc/wpTheme_core_functions.php' );
 ?>
+<?php
+/*
+     ========================================
+          AJAX.PHP
+     ========================================
+*
+* File with the php functions for the ajax
+*/
+include_once (get_parent_theme_file_path() . '/inc/ajax.php');
+?>

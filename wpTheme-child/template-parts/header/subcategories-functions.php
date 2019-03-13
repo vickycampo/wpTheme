@@ -180,7 +180,7 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
                                         $return_string .= '<span ';
                                         $return_string .= 'id='. $ThisElementId .' ';
                                         $return_string .= 'class="dropdown-item" ';
-                                        $return_string .= 'onclick="ChanceCategory('. $ThisElementId .')" ';
+                                        // $return_string .= 'onclick="ChanceCategory('. $ThisElementId .')" ';
                                         // $return_string .= 'href="' . get_category_link( $child_id ) . '">';
                                         $return_string .= '>';
                                         $return_string .= $child_cat->name;
@@ -201,7 +201,7 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
                                                   $return_string .= '<span ';
                                                   $return_string .= 'id='. $ThisElementId .' ';
                                                   $return_string .= 'class="dropdown-item dropdown-has-subitem" ';
-                                                  $return_string .= 'onclick="ChanceCategory('.$ThisElementId.')" ';
+                                                  // $return_string .= 'onclick="ChanceCategory('.$ThisElementId.')" ';
                                                   // $return_string .= 'href="' . get_category_link( $child_id ) . '">';
                                                   $return_string .= '>';
                                                   $return_string .= $grandkid->name ;
@@ -214,7 +214,7 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
                                                   $return_string .= '<span ';
                                                   $return_string .= 'id='. $ThisElementId .' ';
                                                   $return_string .= 'class="dropdown-item  dropdown-subitem"  ';
-                                                  $return_string .= 'onclick="ChanceCategory('."'".$main_id.'-'.$parent_id.'-'.$child_id.'-'.$grandkid_id."'".')" ';
+                                                  // $return_string .= 'onclick="ChanceCategory('."'".$main_id.'-'.$parent_id.'-'.$child_id.'-'.$grandkid_id."'".')" ';
                                                   // $return_string .= 'href="' . get_category_link( $grandkid_id ) . '">';
                                                   $return_string .= '>';
                                                   $return_string .= $grandkid->name;
