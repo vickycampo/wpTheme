@@ -31,12 +31,14 @@ if (is_category())
                var main_category = "<?php echo ($this_categories->term_id);?>"
                var admin_url  = "<?php echo admin_url('admin-ajax.php'); ?>";
           </script>
-          <div class="sub-cat-div" id="sub-cat-div">
+          <div class="sub-cat-main-div">
+               <div class="sub-cat-div" id="sub-cat-div">
 
-               <?php echo ( $buttons ); ?>
-          </div>
-          <div id="sub-cat-filters" class="sub-cat-filters">
-          </div>
+                    <?php echo ( $buttons ); ?>
+               </div> <!-- sub-cat-div -->
+               <div id="sub-cat-filters" class="sub-cat-filters">
+               </div> <!-- sub-cat-filters -->
+          </div> <!-- sub-cat-main-div -->
           <?php
      }
 }

@@ -12,10 +12,19 @@
 *
 */
 /* The class of the div that contains the dropdownbuttown */
+     header
+     {
+          text-align: center;
+     }
+     .sub-cat-main-div
+     {
+          display: inline-block;
+          max-width: 900px;
+     }
 /* The content of the menu */
      .sub-cat-div
      {
-          
+
           color: white;
           display: flex;
           flex-direction: row;
