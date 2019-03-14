@@ -17,7 +17,9 @@
 /* ol */
 .breadcrumb
 {
+     padding: 0px;
      background-color: blue;
+     height: 80px;
 }
 /* Add arrow effect */
 /* li */
@@ -47,9 +49,9 @@
 .breadcrumb-item a:after
 {
      content: "";
-	border-top: 40px solid red;
-	border-bottom: 40px solid red;
-	border-left: 40px solid blue;
+     border-top: 40px solid transparent;
+     border-bottom: 40px solid transparent;
+     border-left: 40px solid #3498db;
 	position: absolute; right: -40px; top: 0;
 }
 .breadcrumb-item a:before {
@@ -58,4 +60,5 @@
 	border-bottom: 40px solid transparent;
 	border-left: 40px solid #d4f2ff;
 	position: absolute; left: 0; top: 0;
+     padding: 30px 40px 0 80px;
 }
