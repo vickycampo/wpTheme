@@ -17,6 +17,12 @@ body.bs-fixed-nav
 {
      padding-top: 0px !important;
 }
+/* Remove the sidebar because we don't use them here */
+.body-left-sidebar
+{
+     visibility: hidden;
+     display: none;
+}
 .load-more-span-div
 {
      margin: 10px;
@@ -33,4 +39,25 @@ body.bs-fixed-nav
 {
      /* box-shadow: orange 0px 1px 5px 0px; */
      color: orange !important;
+}
+
+
+/* Content */
+/* Maximum width for reading 900 px */
+#wrap
+{
+     text-align: center;
+}
+#wrap .row
+{
+     max-width: 900px;
+     display: inline-block;
+}
+.the_content
+{
+
+}
+.read-more-results
+{
+     text-align: left;
 }

@@ -15,14 +15,13 @@
 /* The content of the menu */
      .sub-cat-div
      {
+          
           color: white;
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
           justify-content: center;
-
           margin-top: 15px;
-          margin-bottom: 15px;
      }
 /* The class of the button */
      .sub-cat-button

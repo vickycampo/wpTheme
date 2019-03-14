@@ -172,7 +172,7 @@ jQuery(document).ready( function($)
 	var header_img_height = $('#header-img').outerHeight(true);
 	var top_bar_height = $('#theme_location_top_nav').outerHeight(true);
 	var top = header_img_height - top_bar_height;
-	console.log (header_img_height + ' - ' +  top_bar_height + ' - ' + top );
+	//console.log (header_img_height + ' - ' +  top_bar_height + ' - ' + top );
 
 	$(window).scroll(function()
 	{

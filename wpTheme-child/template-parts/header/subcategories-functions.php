@@ -19,14 +19,19 @@ function wpChildTheme_get_catValues ()
           /* If is a single page we get the categories of that page */
           if ( is_single() )
           {
-               $this_categories = get_the_category();
-               foreach ($this_categories as $i => $cat_details)
+               $this_Multiple_categories = get_the_category();
+               foreach ($this_Multiple_categories as $i => $cat_details)
                {
                     /* We get the Top Category */
                     $main_category = wpChildTheme_get_topcategory ($cat_details);
                     $ID = $main_category->term_id;
                     /* We get the sub categories of the top category */
                     $sub_categories = wpChildTheme_get_subcategories ($ID);
+                    /* We just keep the main category */
+                    if ( $i == 0 )
+                    {
+                         $this_categories = $cat_details;
+                    }
                }
 
           }

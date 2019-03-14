@@ -26,7 +26,7 @@ if ( !function_exists( 'wpTheme_breadcrumbs' ) )
                <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                          <a href="<?php echo (home_url()); ?>">
-                              Home
+                              <i class="fa fa-home"></i>
                          </a>
                     </li>
 

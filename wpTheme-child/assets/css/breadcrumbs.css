@@ -12,53 +12,26 @@
 /* contentainer */
 .my-breadcrumbs
 {
-     background-color: red;
+     margin-top: 15px;
+     color: #181818;
 }
-/* ol */
+.my-breadcrumbs a
+{
+     color: #181818;
+}
+.my-breadcrumbs a:hover
+{
+     color: orange;
+}
 .breadcrumb
 {
-     padding: 0px;
-     background-color: blue;
-     height: 80px;
-}
-/* Add arrow effect */
-/* li */
-.breadcrumb-item
-{
-     background-color: yellow;
-}
-.breadcrumb-item:before
-{
-     content: none !important;
-}
-.breadcrumb-item a
-{
-     display: block;
-	float: left;
-	height: 50px;
-	background: #3498db;
-	text-align: center;
-	padding: 30px 40px 0 40px;
-	position: relative;
-	margin: 0 10px 0 0;
 
-	font-size: 20px;
-	text-decoration: none;
-	color: #fff;
+     margin-bottom: 0px;
 }
-.breadcrumb-item a:after
+.breadcrumb-item + .breadcrumb-item::before
 {
-     content: "";
-     border-top: 40px solid transparent;
-     border-bottom: 40px solid transparent;
-     border-left: 40px solid #3498db;
-	position: absolute; right: -40px; top: 0;
-}
-.breadcrumb-item a:before {
-     content: "";
-	border-top: 40px solid transparent;
-	border-bottom: 40px solid transparent;
-	border-left: 40px solid #d4f2ff;
-	position: absolute; left: 0; top: 0;
-     
+     color:orange;
+     font-weight: 600;
+     font-size: 10px;
+     content: ">>";
 }

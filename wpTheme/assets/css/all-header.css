@@ -207,19 +207,3 @@ h3
      {
 
      }
-
-/* The breadcrumbs */
-     .my-breadcrumbs
-     {
-
-     }
-     .breadcrumb
-     {
-          font-size: 10px;
-     }
-     .breadcrumb-item::before
-     {
-         font-family: 'FontAwesome';
-         color: grey !important;
-         content: "\f101" !important;
-     }
