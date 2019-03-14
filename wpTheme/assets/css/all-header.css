@@ -109,7 +109,7 @@ h3
      }
      .fixed-height-70 img
      {
-          height:55;
+          height:55vh;
      }
      .fixed-height-80
      {
@@ -117,7 +117,7 @@ h3
      }
      .fixed-height-80 img
      {
-          height:70;
+          height:70vh;
      }
      .fixed-height-90
      {
@@ -125,7 +125,7 @@ h3
      }
      .fixed-height-90 img
      {
-          height:80;
+          height:75vh;
      }
      .fixed-height-100
      {
@@ -133,7 +133,7 @@ h3
      }
      .fixed-height-100 img
      {
-          height:90;
+          height:80vh;
      }
 .header_siteinfo
 {

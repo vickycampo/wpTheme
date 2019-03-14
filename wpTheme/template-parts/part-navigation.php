@@ -14,8 +14,7 @@
 
 global $wp_query;
 $max_num_pages = $wp_query->max_num_pages;
-$categoryName = get_the_category()[0]->term_id;
-$categoryName = '';
+
 ?>
 <script>
 var max_num_pages = "<?php echo ($max_num_pages);?>";

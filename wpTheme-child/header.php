@@ -86,6 +86,3 @@
      </header>
      <?php tha_header_after(); ?>
      <main class="container" id="wrap"> <!-- wrap div-->
-          <script>
-               window.onscroll = function() {scrollFunction()};
-          </script>

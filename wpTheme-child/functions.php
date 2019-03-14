@@ -93,6 +93,15 @@ if ( ! function_exists( 'wpChild_scripts' ) )
 
           wp_enqueue_style( $handle , $src , $deps , $ver , $media );
 
+          /* Breadcrumbs */
+          $handle = 'breadcrumbs_css';
+          $src = get_stylesheet_directory_uri() . '/assets/css/breadcrumbs.css';
+          $deps = '';
+          $ver = wp_get_theme()->get('Version');
+          $media = '';
+
+          wp_enqueue_style( $handle , $src , $deps , $ver , $media );
+
           /* Add Javascript files */
           $handle= 'wpChildTheme_js'; //is simply the name of the stylesheet.
           $src = get_stylesheet_directory_uri() . '/assets/js/wpChildTheme.js';
@@ -257,14 +266,4 @@ function show_current_query() {
 * File with the php functions for the ajax
 */
 include_once (get_stylesheet_directory() . '/inc/child_ajax.php');
-?>
-<?php
-/*
-     ========================================
-          BREADCRUMBS
-     ========================================
-*
-* File with the php functions for the ajax
-*/
-include_once (get_stylesheet_directory() . '/inc/breadcrumbs.php');
 ?>

@@ -349,7 +349,7 @@ if ( ! function_exists( 'wpTheme_remove_version_scripts_styles' ) )
 * include bootstrap nav walker class
 */
 
-require_once( get_template_directory() . '/inc/bs4navwalker.php' );
+require_once( get_parent_theme_file_path() . '/inc/bs4navwalker.php' );
 
 /*
      ==============================
@@ -358,7 +358,7 @@ require_once( get_template_directory() . '/inc/bs4navwalker.php' );
 *
 * include the custom widgets
 */
-require_once( get_template_directory() . '/inc/class.my-widget.php' );
+require_once( get_parent_theme_file_path() . '/inc/class.my-widget.php' );
 /*
      ==============================
           ENQUEUE.PHP
@@ -366,7 +366,15 @@ require_once( get_template_directory() . '/inc/class.my-widget.php' );
 *
 * load the enqueue file
 */
-require_once get_parent_theme_file_path( '/inc/enqueue.php' );
+require_once ( get_parent_theme_file_path() .  '/inc/enqueue.php' );
+/*
+     ========================================
+          BREADCRUMBS
+     ========================================
+*
+* File with the php functions for the ajax
+*/
+include_once ( get_parent_theme_file_path() . '/inc/breadcrumbs.php' );
 /*
      ===================================
           HEAD_CALLBACK_FUNCTIONS.PHP
@@ -374,7 +382,7 @@ require_once get_parent_theme_file_path( '/inc/enqueue.php' );
 *
 * load the enqueue file
 */
-require_once get_parent_theme_file_path( '/inc/head_callback_functions.php' );
+include_once ( get_parent_theme_file_path() . '/inc/head_callback_functions.php' );
 /*
      ==============================
           THE HOOK ALLIANCE
@@ -382,7 +390,7 @@ require_once get_parent_theme_file_path( '/inc/head_callback_functions.php' );
 *
 * include theme hook alliance hooks
 */
-require_once( get_template_directory() . '/inc/hooks.php' );
+include_once ( get_parent_theme_file_path() . '/inc/hooks.php' );
 /*
      ==============================
           REGISTGER NAVBARS
@@ -390,7 +398,7 @@ require_once( get_template_directory() . '/inc/hooks.php' );
 *
 * where we register all the navitagion bars
 */
-require_once( get_template_directory() . '/inc/register_navbars.php' );
+include_once ( get_parent_theme_file_path() . '/inc/register_navbars.php' );
 /*
      ==============================
           REGISTGER SIDEBARS
@@ -398,7 +406,7 @@ require_once( get_template_directory() . '/inc/register_navbars.php' );
 *
 * where we register all the sidebars
 */
-require_once( get_template_directory() . '/inc/register_sidebars.php' );
+include_once ( get_parent_theme_file_path() . '/inc/register_sidebars.php' );
 /*
      ==============================
           THEME_OPTIONS.PHP
@@ -406,7 +414,7 @@ require_once( get_template_directory() . '/inc/register_sidebars.php' );
 *
 * load the enqueue file
 */
-require_once get_parent_theme_file_path( '/inc/theme_options.php' );
+include_once ( get_parent_theme_file_path() . '/inc/theme_options.php' );
 /*
 
 	===================================
@@ -415,7 +423,7 @@ require_once get_parent_theme_file_path( '/inc/theme_options.php' );
 *
 * All the functions that are used to validate the information in the theme_options.php
 */
-require_once get_parent_theme_file_path( '/inc/theme_options_validations.php' );
+require_once ( get_parent_theme_file_path() . '/inc/theme_options_validations.php' );
 /*
      ==============================
           WP THEME CORE FUNCTIONS
@@ -423,7 +431,7 @@ require_once get_parent_theme_file_path( '/inc/theme_options_validations.php' );
 *
 * load the WP THEME CORE FUNCTIONS
 */
-require_once get_parent_theme_file_path( '/inc/wpTheme_core_functions.php' );
+require_once ( get_parent_theme_file_path() . '/inc/wpTheme_core_functions.php' );
 ?>
 <?php
 /*
@@ -433,5 +441,5 @@ require_once get_parent_theme_file_path( '/inc/wpTheme_core_functions.php' );
 *
 * File with the php functions for the ajax
 */
-include_once (get_parent_theme_file_path() . '/inc/ajax.php');
+include_once ( get_parent_theme_file_path() . '/inc/ajax.php' );
 ?>

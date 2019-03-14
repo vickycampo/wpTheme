@@ -167,4 +167,36 @@ jQuery(document).ready( function($)
 			}
 		}
 	}
+	/* Scroll */
+	/* Set Variables */
+	var header_img_height = $('#header-img').outerHeight(true);
+	var top_bar_height = $('#theme_location_top_nav').outerHeight(true);
+	var top = header_img_height - top_bar_height;
+	console.log (header_img_height + ' - ' +  top_bar_height + ' - ' + top );
+
+	$(window).scroll(function()
+	{
+		console.log ($(window).scrollTop() + ' - ' + top);
+		if ($(window).scrollTop() > top  )
+		{
+
+			console.log ('addClass');
+			if ( ! ( $('#theme_location_top_nav').hasClass( "topNav_afterHeaderImage" ) ) )
+			{
+				$('#theme_location_top_nav').addClass( "topNav_afterHeaderImage" );
+			}
+
+		}
+		else if ($(window).scrollTop() < top  )
+		{
+
+			console.log ('removeClass');
+			if ( ( $('#theme_location_top_nav').hasClass( "topNav_afterHeaderImage" ) ) )
+			{
+				$('#theme_location_top_nav').removeClass( "topNav_afterHeaderImage" );
+			}
+
+		}
+
+	});
 });

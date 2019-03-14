@@ -1,0 +1,61 @@
+/*
+
+@package WordPress
+@subpackage wpChildTheme
+@since wpTheme
+
+	===================================
+		BREADCRUMBS STYLES CSS
+	===================================
+*
+*/
+/* contentainer */
+.my-breadcrumbs
+{
+     background-color: red;
+}
+/* ol */
+.breadcrumb
+{
+     background-color: blue;
+}
+/* Add arrow effect */
+/* li */
+.breadcrumb-item
+{
+     background-color: yellow;
+}
+.breadcrumb-item:before
+{
+     content: none !important;
+}
+.breadcrumb-item a
+{
+     display: block;
+	float: left;
+	height: 50px;
+	background: #3498db;
+	text-align: center;
+	padding: 30px 40px 0 40px;
+	position: relative;
+	margin: 0 10px 0 0;
+
+	font-size: 20px;
+	text-decoration: none;
+	color: #fff;
+}
+.breadcrumb-item a:after
+{
+     content: "";
+	border-top: 40px solid red;
+	border-bottom: 40px solid red;
+	border-left: 40px solid blue;
+	position: absolute; right: -40px; top: 0;
+}
+.breadcrumb-item a:before {
+     content: "";
+	border-top: 40px solid transparent;
+	border-bottom: 40px solid transparent;
+	border-left: 40px solid #d4f2ff;
+	position: absolute; left: 0; top: 0;
+}
