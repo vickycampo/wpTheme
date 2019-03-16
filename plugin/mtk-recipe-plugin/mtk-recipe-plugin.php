@@ -64,6 +64,7 @@ class MTK_RECIPEplugin
      function enqueue()
      {
           wp_enqueue_style ( 'mypluginstyle' , plugins_url( '/assets/mystyle.css' , __FILE__ )  , array ('') , false , 'all' );
+          wp_enqueue_style ( 'mypluginscript' , plugins_url( '/assets/myscript.js' , __FILE__ )  , array ('') , false , 'all' );
      }
 }
 /* We create an instance of the class */
