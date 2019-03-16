@@ -278,12 +278,3 @@ include_once (get_stylesheet_directory() . '/inc/child_ajax.php');
 include_once (get_stylesheet_directory() . '/inc/custom_post_types.php');
 
 ?>
-<?php
-/*
-     ========================================
-          RECIPE PLUGIN
-     ========================================
-*
-* File with the php functions for the ajax
-*/
-include_once (get_stylesheet_directory() . '/recipe-Plugin/recipe-Plugin.php');

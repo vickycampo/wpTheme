@@ -77,7 +77,6 @@ if ( ! ( function_exists ( 'wpChildTheme_books' ) ) )
 */
 if ( ! ( function_exists ( 'wpChildTheme_recipes' ) ) )
 {
-     echo ('here');
      function wpChildTheme_recipes ()
      {
           $post_type = 'recipe'; //string, only lowercase

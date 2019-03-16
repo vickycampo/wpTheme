@@ -12,4 +12,10 @@ Author URI: www.virginiacampo.com
 License: GPL2
 Text Domain: wpTheme
 */
+
+/*Notes: modify the location of the plugins in the default-constans.php
+if ( ! defined( 'WP_PLUGIN_DIR' ) ) {
+     define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/themes/wpTheme/plugin' ); // full path, no trailing slash
+}
+*/
 ?>
