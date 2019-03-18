@@ -28,36 +28,33 @@ defined( 'ABSPATH' ) or die( 'Hey, you can\t access this file, you silly human!'
  */
 class MTK_RECIPEplugin
 {
+     /* Public */
+     // can be accessed everywhere
+     /* Protected */
+     // can be accessed only within the class itself or extensions of that class
+     /* Private */
+     // can be accessed only within the class itself
+     /* Static */
+     // use a method without initializing the class
+
      function __construct(  )
      {
 
      }
      /* Plugin Actions */
-     // activation
-     function activate ()
-     {
-          // Generate a Custom Post Type (CPT)
-          $this->custom_post_type ();
-          // Flush rewrite rules
-          flush_rewrite_rules();
-     }
+
      //create a function that will be trigered on a specific time
      function register ()
      {
           add_action ( 'init' , array( $this , 'custom_post_type' ) );
           add_action( 'admin_enqueue_scripts' , array( $this , 'enqueue' ) );
      }
-     // deactivation
-     function deactivation ()
-     {
-          // Flush rewrite rules
-     }
      //Creates the CPT for the recipe
      function custom_post_type ()
      {
-          $CPT_name = 'recipe';
+          $CPT_name = 'mtk_recipe_cpt_2';
           $CPT_settings['public'] = true;
-          $CPT_settings['label'] = 'Recipes';
+          $CPT_settings['label'] = 'Recipes Plugin';
           register_post_type ( $CPT_name , $CPT_settings );
      }
      //Enqueue function
