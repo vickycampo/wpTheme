@@ -11,7 +11,7 @@
 */
 class MTK_RECIPEplugin_deactivate
 {
-     public static fucntion deactivate ()
+     public static function deactivate ()
      {
           flush_rewrite_rules();
      }

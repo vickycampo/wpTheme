@@ -42,6 +42,16 @@ class MTK_RECIPEplugin
 
      }
      /* Plugin Actions */
+     function activate()
+     {
+		require_once plugin_dir_path( __FILE__ ) . 'inc/mtk-recipe-plugin-activate.php';
+		MTK_RECIPEplugin_activate::activate();
+	}
+     function deactivate()
+     {
+		require_once plugin_dir_path( __FILE__ ) . 'inc/mtk-recipe-plugin-deactivate.php';
+		MTK_RECIPEplugin_deactivate::deactivate();
+	}
 
      //create a function that will be trigered on a specific time
      function register ()
