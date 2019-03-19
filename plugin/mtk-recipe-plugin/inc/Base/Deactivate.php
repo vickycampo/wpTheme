@@ -4,14 +4,15 @@
 @package mkt-recipe-plugin
 
      ===================================
-          ACTIVATE.PHP
+          DEACTIVATE.PHP
      ===================================
 *
 *
 */
-class MTK_RECIPEplugin_activate
+namespace Inc\Base;
+class Deactivate
 {
-     public static function activate ()
+     public static function deactivate ()
      {
           flush_rewrite_rules();
      }
