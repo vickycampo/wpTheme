@@ -277,13 +277,3 @@ include_once (get_stylesheet_directory() . '/inc/child_ajax.php');
 */
 include_once (get_stylesheet_directory() . '/inc/custom_post_types.php');
 ?>
-<?php
-/*
-     ========================================
-          CUSTOMIZE TAXONOMY
-     ========================================
-*
-* File with the php functions for the ajax
-*/
-include_once (get_stylesheet_directory() . '/inc/custom_taxonomy.php');
-?>

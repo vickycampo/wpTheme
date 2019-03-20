@@ -21,7 +21,8 @@ final class Init //final - cannot be extended
      {
           return [
                Pages\Admin::class,
-               Base\Enqueue::class
+               Base\Enqueue::class,
+               Base\CustomTypes::class
           ];
      }
      /*** Initialize the class, and call the register method if it exists ***/
