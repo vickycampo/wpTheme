@@ -11,8 +11,8 @@
 */
 namespace Inc\Base;
 /**
- * CustomPostTypes
- */
+ *  CustomTypes - Create the CPT and Custom Taxonomies
+**/
 class CustomTypes
 {
 

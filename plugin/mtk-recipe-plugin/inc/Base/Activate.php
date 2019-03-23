@@ -10,6 +10,9 @@
 *
 */
 namespace Inc\Base;
+/**
+ *  Active - The activation function for the plugin
+**/
 class Activate
 {
 	public static function activate() {

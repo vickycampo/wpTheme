@@ -10,6 +10,9 @@
 *
 */
 namespace Inc\Base;
+/**
+ *  Deactive - The deactivation function for the plugin
+**/
 class Deactivate
 {
      public static function deactivate ()
