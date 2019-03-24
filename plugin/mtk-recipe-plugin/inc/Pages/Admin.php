@@ -10,131 +10,131 @@
 *
 */
 namespace Inc\Pages;
-
-use \Inc\Api\SettingsApi;
-use \Inc\Base\BaseController;
-use \Inc\Api\Callbacks\AdminCallbacks;
+use Inc\Api\SettingsApi;
+use Inc\Base\BaseController;
+use Inc\Api\Callbacks\AdminCallbacks;
 /**
-* Admin - adds the admin page
+*
 */
 class Admin extends BaseController
 {
 	public $settings;
-	public $pages;
-	public $subpages;
 	public $callbacks;
+	public $pages = array();
+	public $subpages = array();
 
-	public $settingValues;
-	public $sectionValues;
-	public $fieldValues;
-
-	public function register ()
+	public function register()
 	{
 		/* Initialize the class that will actually generate the menu pages and subpages */
 		$this->settings = new SettingsApi();
 		/* Initialize the class that manages the */
 		$this->callbacks = new AdminCallbacks();
 		/* Create the pages and Subpages arrays*/
-		$this->setPages ();
+		$this->setPages();
 		$this->setSubpages();
-
 		/* Create the pages and subpages */
 		$this->setSettings();
 		$this->setSections();
 		$this->setFields();
 
-		$this->settings->addPages ( $this->pages )->withSubpage( 'Dashboard' )->addSubPages( $this->subpages )->register();
+		$this->settings->addPages( $this->pages )->withSubPage( 'Dashboard' )->addSubPages( $this->subpages )->register();
 	}
-	public function setPages ()
+	public function setPages()
 	{
-		/* The main page of the plugin */
-		$this->pages =
-		[
-			[
+		$this->pages = array(
+			array(
 				'page_title' => 'MTK Recipe Plugin',
-				'menu_title' => 'MTK Recipe Plugin',
+				'menu_title' => 'MTK Recipe',
 				'capability' => 'manage_options',
-				'menu_slug' => 'mtk_recipe_plugin',
-				'callback' => array ($this->callbacks, 'adminDashboard'),
+				'menu_slug' => 'mtk_plugin',
+				'callback' => array( $this->callbacks, 'adminDashboard' ),
 				'icon_url' => 'dashicons-carrot',
-				'position' => '110'
-			]
-
-		];
+				'position' => 110
+			)
+		);
 	}
-	public function setSubpages ()
+	public function setSubpages()
 	{
-		$this->subpages =
-		[
-			/* The supbage where we manage the CPT */
-			[
-				'parent_slug' => $this->pages[0]['menu_slug'],
-                    'page_title' => 'Custom Post Type',
+		$this->subpages = array(
+			array(
+				'parent_slug' => 'mtk_plugin',
+				'page_title' => 'Custom Post Types',
 				'menu_title' => 'CPT',
 				'capability' => 'manage_options',
 				'menu_slug' => 'mtk_cpt',
-				'callback' => array ($this->callbacks, 'adminCPT')
-			],
-			/* The supbage where we manage the TAXONOMIES */
-			[
-				'parent_slug' => $this->pages[0]['menu_slug'],
-                    'page_title' => 'Custom Taxonomies',
+				'callback' => array( $this->callbacks, 'adminCpt' )
+			),
+			array(
+				'parent_slug' => 'mtk_plugin',
+				'page_title' => 'Custom Taxonomies',
 				'menu_title' => 'Taxonomies',
 				'capability' => 'manage_options',
 				'menu_slug' => 'mtk_taxonomies',
-				'callback' => array ($this->callbacks, 'adminTaxonomy')
-			],
-			/* The supbage where we manage the WIDGETS */
-			[
-				'parent_slug' => $this->pages[0]['menu_slug'],
-                    'page_title' => 'Custom Widgets',
+				'callback' => array( $this->callbacks, 'adminTaxonomy' )
+			),
+			array(
+				'parent_slug' => 'mtk_plugin',
+				'page_title' => 'Custom Widgets',
 				'menu_title' => 'Widgets',
 				'capability' => 'manage_options',
 				'menu_slug' => 'mtk_widgets',
-				'callback' => array ($this->callbacks, 'adminWidgets')
-			]
-		];
-	}
-	/* Functions for the settings / Sections and Fields */
-	public function setSettings ()
-	{
-		$this->settingValues = array (
-			array (
-				'option_group' => 	'mtk_options_group',
-				'option_name'	=> 	'text_example', //Id of the custom field
-				'callback'	=>	array ( $this->callbacks , 'mtk_OptionsGroup')
+				'callback' => array( $this->callbacks, 'adminWidget' )
 			)
 		);
-		$this->settings->setSettings( $this->settingValues );
 	}
-	public function setSections ()
+	public function setSettings()
 	{
-		$this->sectionValues = array (
-			array (
-				'id'			=>	'mtk_admin_index',
-				'title'		=>	'Settings',
-				'callback'	=>	array ( $this->callbacks , 'mtk_AdminSection'),
-				'page'		=>	$this->pages[0]['menu_slug']
+		$args = array(
+			array(
+				'option_group' => 'mtk_options_group',
+				'option_name' => 'text_example',
+				'callback' => array( $this->callbacks, 'mtkOptionsGroup' )
+			),
+			array(
+				'option_group' => 'mtk_options_group',
+				'option_name' => 'first_name'
 			)
 		);
-		$this->settings->setSections( $this->sectionValues );
+		$this->settings->setSettings( $args );
 	}
-	public function setFields ()
+	public function setSections()
 	{
-		$fieldValues = array (
-			array (
-				'id'			=>	'text_example', // has to be identical to the option_name in the settings
-				'title'		=>	'Text Example',
-				'callback'	=>	array ( $this->callbacks , 'mtk_textExample'),
-				'page'		=>	$this->pages[0]['menu_slug'],
-				'section'		=>	$this->sectionValues[0]['id'],
-				'args'		=>	array (
-					'label_for'	=>	'text_example',
-					'class'		=>	'example-class'
+		$args = array(
+			array(
+				'id' => 'mtk_admin_index',
+				'title' => 'Settings',
+				'callback' => array( $this->callbacks, 'mtkAdminSection' ),
+				'page' => 'mtk_plugin'
+			)
+		);
+		$this->settings->setSections( $args );
+	}
+	public function setFields()
+	{
+		$args = array(
+			array(
+				'id' => 'text_example',
+				'title' => 'Text Example',
+				'callback' => array( $this->callbacks, 'mtkTextExample' ),
+				'page' => 'mtk_plugin',
+				'section' => 'mtk_admin_index',
+				'args' => array(
+					'label_for' => 'text_example',
+					'class' => 'example-class'
+				)
+			),
+			array(
+				'id' => 'first_name',
+				'title' => 'First Name',
+				'callback' => array( $this->callbacks, 'mtkFirstName' ),
+				'page' => 'mtk_plugin',
+				'section' => 'mtk_admin_index',
+				'args' => array(
+					'label_for' => 'first_name',
+					'class' => 'example-class'
 				)
 			)
 		);
-		$this->settings->setFields( $fieldValues );
+		$this->settings->setFields( $args );
 	}
-
 }

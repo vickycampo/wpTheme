@@ -33,17 +33,22 @@ class AdminCallbacks extends BaseController
      {
           return require_once ( "$this->plugin_path/templates/widget.php" ) ;
      }
-     public function mtk_OptionsGroup ( $input )
+     public function mtkOptionsGroup ( $input )
      {
           return ($input) ;
      }
-     public function mtk_AdminSection (  )
+     public function mtkAdminSection (  )
      {
           echo ('Check this section.');
      }
-     public function mtk_textExample ()
+     public function mtkTextExample ()
      {
-          $value = esc_attr ( get_option( 'text_example_02' ) );
-          echo ('<input type="text" class="regular-text" name="text_example_02" value="' . $value . '" placeholder="Write Something here!" /> ');
+          $value = esc_attr( get_option( 'text_example' ) );
+		echo '<input type="text" class="regular-text" name="text_example" value="' . $value . '" placeholder="Write Something Here!">';
      }
+     public function mtkFirstName()
+	{
+		$value = esc_attr( get_option( 'first_name' ) );
+		echo '<input type="text" class="regular-text" name="first_name" value="' . $value . '" placeholder="Write your First Name">';
+	}
 }
