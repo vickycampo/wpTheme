@@ -116,7 +116,12 @@ class SettingsApi
                /* Add settings field */
                add_settings_field ( $field['id'] , $field['title'] , ( isset ( $field['callback'] )  ? $field['callback'] : '' ) , $field['page'] , $field['section'] ,  ( isset ( $field['args'] )  ? $field['args'] : '' ) );
           }
-
+          // echo ('all has been registered');
+          // echo ('<pre>');
+          // print_r ($this->settings);
+          // print_r ($this->sections);
+          // print_r ($this->fields);
+          // echo ('</pre>');
 
      }
 }

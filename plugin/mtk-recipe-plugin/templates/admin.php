@@ -16,7 +16,7 @@
      <form methot="post" action="options.php">
           <?php
                /* Print the settings fields */
-               settings_fields ( 'mtk_options_group' ); // From the settings -> option_group
+               settings_fields ( 'mtk_options_group' ); // This should match the group name used in register_setting().
                /* Do the settings section that we did before */
                do_settings_sections ( 'mtk_recipe_plugin' ); //From the pages -> menu_slug
                /* Generate the submit button, no parameters */

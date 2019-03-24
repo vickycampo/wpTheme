@@ -24,10 +24,6 @@ class Admin extends BaseController
 	public $subpages;
 	public $callbacks;
 
-	public $settingValues;
-	public $sectionValues;
-	public $fieldValues;
-
 	public function register ()
 	{
 		/* Initialize the class that will actually generate the menu pages and subpages */
@@ -98,43 +94,43 @@ class Admin extends BaseController
 	/* Functions for the settings / Sections and Fields */
 	public function setSettings ()
 	{
-		$this->settingValues = array (
+		$args = array (
 			array (
 				'option_group' => 	'mtk_options_group',
 				'option_name'	=> 	'text_example', //Id of the custom field
 				'callback'	=>	array ( $this->callbacks , 'mtk_OptionsGroup')
 			)
 		);
-		$this->settings->setSettings( $this->settingValues );
+		$this->settings->setSettings( $args );
 	}
 	public function setSections ()
 	{
-		$this->sectionValues = array (
+		$args = array (
 			array (
-				'id'			=>	'mtk_admin_index',
+				'id'			=>	'mtk_recipe_plugin_admin_index',
 				'title'		=>	'Settings',
 				'callback'	=>	array ( $this->callbacks , 'mtk_AdminSection'),
 				'page'		=>	$this->pages[0]['menu_slug']
 			)
 		);
-		$this->settings->setSections( $this->sectionValues );
+		$this->settings->setSections( $args );
 	}
 	public function setFields ()
 	{
-		$fieldValues = array (
+		$args = array (
 			array (
 				'id'			=>	'text_example', // has to be identical to the option_name in the settings
 				'title'		=>	'Text Example',
 				'callback'	=>	array ( $this->callbacks , 'mtk_textExample'),
 				'page'		=>	$this->pages[0]['menu_slug'],
-				'section'		=>	$this->sectionValues[0]['id'],
+				'section'		=>	'mtk_recipe_plugin_admin_index',
 				'args'		=>	array (
 					'label_for'	=>	'text_example',
 					'class'		=>	'example-class'
 				)
 			)
 		);
-		$this->settings->setFields( $fieldValues );
+		$this->settings->setFields( $args );
 	}
 
 }

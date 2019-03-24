@@ -43,8 +43,7 @@ class AdminCallbacks extends BaseController
      }
      public function mtk_textExample ()
      {
-          $value = esc_attr ( get_option( 'text_example' ) );
-          echo ('value - ' . $value . '<br>');
-          echo ('<input type="text" class="regular-text" name="text_example" value="' . $value . '" placeholder="Write Something here!"> ');
+          $value = esc_attr ( get_option( 'text_example_02' ) );
+          echo ('<input type="text" class="regular-text" name="text_example_02" value="' . $value . '" placeholder="Write Something here!" /> ');
      }
 }
