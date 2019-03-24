@@ -26,7 +26,7 @@ class CustomTypes
      {
           $post_type = 'mtk_recipe_cpt';
 
-          $args ['label'] = 'MTK Recipe';
+          $args ['label'] = 'MTK Recipes';
           $args ['description'] = 'Recipes Plugin';
 
           $args ['public'] = true;

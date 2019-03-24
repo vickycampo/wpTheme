@@ -82,6 +82,7 @@ class Admin extends BaseController
 			)
 		);
 	}
+	/* Create the settings */
 	public function setSettings()
 	{
 		$args = array(
@@ -97,6 +98,7 @@ class Admin extends BaseController
 		);
 		$this->settings->setSettings( $args );
 	}
+	/* Create the Section */
 	public function setSections()
 	{
 		$args = array(
@@ -104,11 +106,12 @@ class Admin extends BaseController
 				'id' => 'mtk_admin_index',
 				'title' => 'Settings',
 				'callback' => array( $this->callbacks, 'mtkAdminSection' ),
-				'page' => 'mtk_plugin'
+				'page' => 'mtk_plugin' //The slug of the page where
 			)
 		);
 		$this->settings->setSections( $args );
 	}
+	/* Create the fields */
 	public function setFields()
 	{
 		$args = array(
@@ -116,8 +119,8 @@ class Admin extends BaseController
 				'id' => 'text_example',
 				'title' => 'Text Example',
 				'callback' => array( $this->callbacks, 'mtkTextExample' ),
-				'page' => 'mtk_plugin',
-				'section' => 'mtk_admin_index',
+				'page' => 'mtk_plugin', //The slug of the page
+				'section' => 'mtk_admin_index', // The id of the seciton 
 				'args' => array(
 					'label_for' => 'text_example',
 					'class' => 'example-class'
