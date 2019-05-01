@@ -119,7 +119,8 @@
 
      font-size: 10px;
      font-weight: bold;
-     min-width: 100px;
+     padding: 0px;
+     /* min-width: 100px; */
 
      margin: 3px;
 }
@@ -129,6 +130,8 @@
      text-align: center;
      padding-left: 3px;
      border-left: 1px solid #A9A9A9;
+     min-width: 100px;
+     margin: 0px;
 }
 
 .sub-cat-filters-close
@@ -136,8 +139,9 @@
      display: inline-block;
      background-color: #BEBEBE;
      text-align: center;
-     padding:6px;
+     padding:7px;
      cursor: pointer;
+     min-height: 100%;
 }
 .sub-cat-filters-close:hover
 {
