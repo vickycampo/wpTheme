@@ -18,8 +18,8 @@ class my_widget extends WP_Widget {
 
     public function __construct() {
       parent::__construct(
-          'WP_Widget',  // Base ID
-          'WP Widget'   // Name
+          'wp_widget',  // Base ID
+          'WP Widget FROM THE THEME'   // Name
       );
     }
     public $args = array(
