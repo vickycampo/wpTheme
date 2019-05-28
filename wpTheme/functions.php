@@ -192,25 +192,6 @@ if ( ! ( function_exists ( 'wpTheme_custom_post_formats_setup' ) ) )
      add_action( 'init', 'wpTheme_custom_post_formats_setup' );
 }
 
-
-/*
-     =====================
-          REGISTER WIDGET
-     =====================
-*/
-if ( ! function_exists( 'wpTheme_register_widget' ) )
-{
-     //if we are going to use the widget we load the file of the widget class
-     require_once get_parent_theme_file_path( '/inc/class.my-widget.php' );
-
-     function wpTheme_register_widget()
-     {
-          register_widget( 'my_widget' );
-     }
-     add_action( 'widgets_init', 'wpTheme_register_widget' );
-
-}
-
 /*
      ==============================
           ENABLE FEATURED IMAGE
@@ -299,13 +280,22 @@ if ( ! function_exists( 'wpTheme_remove_version_scripts_styles' ) )
 require_once( get_parent_theme_file_path() . '/inc/bs4navwalker.php' );
 
 /*
-     ==============================
-          CLASS MY WIDGET
-     ==============================
-*
-* include the custom widgets
+
+     =====================
+          REGISTER WIDGET
+     =====================
 */
-require_once( get_parent_theme_file_path() . '/inc/class.my-widget.php' );
+// if ( ! function_exists( 'wpTheme_register_widget' ) )
+// {
+//      //if we are going to use the widget we load the file of the widget class
+//      require_once ( get_parent_theme_file_path( '/inc/class.my-widget.php' ) );
+//      function wpTheme_register_widget()
+//      {
+//           register_widget( 'my_widget' );
+//      }
+//      add_action( 'widgets_init', 'wpTheme_register_widget' );
+//
+// }
 /*
      ==============================
           ENQUEUE.PHP
