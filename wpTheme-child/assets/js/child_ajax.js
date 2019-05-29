@@ -30,7 +30,7 @@ jQuery(document).ready( function($)
 		/* Get the main Category */
 		ActiveFilterList[0] = MainCategoryId;
 
-		//console.log ('MainCategoryId - ' + MainCategoryId);
+
 		/* Get the id of the element clicked */
 		var target_id = event.target.id;
 		var target_txt = $(event.target).text();
@@ -65,7 +65,7 @@ jQuery(document).ready( function($)
 			$( '#' + target_id + '_filter' ).remove();
 			/* We remove the id of the array */
 			ActiveFilterList.splice(index, 1);
-			//console.log ('Active_filters ' + ActiveFilterList.length)
+
 			/* Change the content that is being filter */
 			trigger_content_change ();
 		}
@@ -125,8 +125,7 @@ jQuery(document).ready( function($)
 			}
 			wp_query_string += '),';
 
-			//console.log ('filter_categories ' + filter_categories);
-			//console.log ('We have stopped in line 104 ');
+
 			if ( filter_categories.length > 0 )
 			{
 				$.ajax
@@ -141,24 +140,24 @@ jQuery(document).ready( function($)
 					},
 					error : function( response )    //return on error
 		               {
-						//console.log('Line 33 or the ajax file - ' , response);
+
 					},
 					success : function( response )  //return on success
 		               {
-		                    //console.log ('wp_query_string - ' + wp_query_string);
+
 
 						$('.read-more-results').empty();
 						$('.read-more-results').append( response );
-						//console.log ('max_num_pages 01 - ' + max_num_pages);
+
 						if ( max_num_pages == 1)
 						{
-							//console.log ('Hide Load more');
+
 							$('.load-more-div').addClass('.hide_element');
 
 						}
 						else
 						{
-							//console.log ('Show Load more');
+
 							$('.load-more-div').addClass('.show_element');
 						}
 					}
@@ -172,15 +171,15 @@ jQuery(document).ready( function($)
 	var header_img_height = $('#header-img').outerHeight(true);
 	var top_bar_height = $('#theme_location_top_nav').outerHeight(true);
 	var top = header_img_height - top_bar_height;
-	//console.log (header_img_height + ' - ' +  top_bar_height + ' - ' + top );
+
 
 	$(window).scroll(function()
 	{
-		console.log ($(window).scrollTop() + ' - ' + top);
+
 		if ($(window).scrollTop() > top  )
 		{
 
-			console.log ('addClass');
+
 			if ( ! ( $('#theme_location_top_nav').hasClass( "topNav_afterHeaderImage" ) ) )
 			{
 				$('#theme_location_top_nav').addClass( "topNav_afterHeaderImage" );
@@ -190,7 +189,7 @@ jQuery(document).ready( function($)
 		else if ($(window).scrollTop() < top  )
 		{
 
-			console.log ('removeClass');
+			
 			if ( ( $('#theme_location_top_nav').hasClass( "topNav_afterHeaderImage" ) ) )
 			{
 				$('#theme_location_top_nav').removeClass( "topNav_afterHeaderImage" );
