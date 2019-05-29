@@ -19,7 +19,7 @@
 
 		<?php
 		//check if the blog excerpts function exists
-		// echo ('get_post_format - ' . get_post_format() . '<br>');
+
 		if ( function_exists( 'wpTheme_blog_excerpts' ) &&  wpTheme_blog_excerpts() == false )
           {
 			the_content(__('Read more &raquo;','wpTheme'));

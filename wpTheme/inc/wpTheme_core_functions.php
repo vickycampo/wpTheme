@@ -397,7 +397,9 @@ if ( !function_exists( 'wpTheme_blog_excerpts' ) )
        {
           $excerpt = $options['excerpts'];
        }
-
+       // echo ('excerpt - <pre>');
+       // print_r ($excerpt);
+       // echo ('</pre>');
        return $excerpt;
    }
 }
@@ -500,7 +502,7 @@ if (!function_exists('wpTheme_new_excerpt_more'))
      function wpTheme_new_excerpt_more($more)
      {
           global $post;
-          return '...&nbsp;(<a href="'. get_permalink($post->ID) . '">' . __('read more','wpTheme') . '</a>)';
+          return '...&nbsp;(<a href="'. get_permalink($post->ID) . '">' . __('Continue Reading...','wpTheme') . '</a>)';
      }
      add_filter('excerpt_more', 'wpTheme_new_excerpt_more');
 }
