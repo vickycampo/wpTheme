@@ -49,7 +49,7 @@ if ( ! function_exists( 'wpTheme_enqueue_bootstrap' ) )
           {
                //add scripts so bootstrap can work
                $handle= 'popper-js'; //is simply the name of the stylesheet.
-               $src = get_template_directory_uri() . '/assets/popper-js/popper.min.js';
+               $src = get_template_directory_uri() . '/assets/popper-js/popper.js';
                $deps = array('jquery');
                $ver = '4.2.1'; //sets the version number.
                $in_footer = true;
