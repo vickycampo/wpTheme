@@ -68,7 +68,7 @@ body.bs-fixed-nav nav.theme_location_top
 /* The wrap div contains all the header and contant part */
 #wrap
 {
-	max-width: 100%;
+	width: 100%;
 }
 .entry
 {
