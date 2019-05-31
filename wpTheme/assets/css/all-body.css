@@ -17,25 +17,17 @@ body, html {
 	font-size: 14px;
 	line-height: 1.6em;
 }
+
 div
 {
 
 }
-article
-{
-     margin: 10px;
-     padding: 10px;
-	background-color: white;
-     border: solid 3px red;
-}
+
 section
 {
 	background-color: blue;
 }
-.entry
-{
-	background-color: yellow;
-}
+
 p
 {
 	background-color: orange;
@@ -46,8 +38,8 @@ a, a:hover, a:active
 }
 img
 {
-	max-width: 100%;
-	height: auto;
+     width: 100%;
+     height: auto;
 	object-fit: contain;
 }
 /* The bs-fixed-nav class is set when there is options['nav-menu'] is set and is true*/
@@ -65,22 +57,38 @@ body.bs-fixed-nav nav.theme_location_top
 
 }
 
-/* The wrap div contains all the header and contant part */
-#wrap
+/*
+     ===================================
+          CONTENT SIDEBARS CSS
+     ===================================
+*/
+/* Class that containg the side bars */
+.sidebar
 {
-	width: 100%;
+
 }
-.entry
+/* Class of the left side bar */
+.body-left-sidebar
 {
-	content: "";
-	display: table;
-	max-width: 100% !important;
+
 }
-.entry img
+     .body-left-sidebar > ul
+     {
+
+     }
+/* Class of the right side bar */
+.body-right-sidebar
 {
-	max-width: 100% !important;
-	height: auto;
+
 }
+     .body-right-sidebar > ul
+     {
+
+     }
+
+
+
+
 .wp-caption[style]
 {
 	max-width: 100% !important;

@@ -10,40 +10,57 @@
 * Style Sheet for all classes used in the content part.
 *
 */
-/* Is the class of the div that wraps all the content of the loop*/
+/* The tag that contains all the the content */
+main
+{
+
+}
+/* The id of the main */
+#wrap
+{
+	width: 100%;
+}
+.content
+{
+
+}
 .the_content
 {
 
 }
-     .the_content > article
-     {
-          
-     }
-/*
-     ===================================
-          CONTENT SIDEBARS CSS
-     ===================================
-*/
-/* Class that containg the side bars */
-.sidebar
+.read-more-results
 {
 
 }
-/* Class of the left side bar */
-.body-left-sidebar
+
+article
+{
+     max-width: 100%;
+     margin: 10px;
+     padding: 10px;
+	background-color: white;
+     border: solid 3px red;
+}
+.the_date
 {
 
 }
-     .body-left-sidebar > ul
-     {
-
-     }
-/* Class of the right side bar */
-.body-right-sidebar
+.the_title
 {
 
 }
-     .body-right-sidebar > ul
-     {
+section
+{
 
-     }
+}
+.entry
+{
+     max-width: 100%;
+	background-color: yellow;
+}
+
+.entry img
+{
+	max-width: 100% !important;
+	height: auto;
+}
