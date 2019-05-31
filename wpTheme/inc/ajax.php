@@ -19,7 +19,7 @@
           READ MORE FUNCTION
      ===================================
 * Contains the funcitons that will be needed for the ajax
-*
+* It is triggered when the load more posts button is pressed
 */
 /* connects ajax.js to this functons*/
 add_action( 'wp_ajax_nopriv_wpTheme_read_more', 'wpTheme_read_more' );

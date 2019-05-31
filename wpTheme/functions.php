@@ -285,17 +285,17 @@ require_once( get_parent_theme_file_path() . '/inc/bs4navwalker.php' );
           REGISTER WIDGET
      =====================
 */
-// if ( ! function_exists( 'wpTheme_register_widget' ) )
-// {
-//      //if we are going to use the widget we load the file of the widget class
-//      require_once ( get_parent_theme_file_path( '/inc/class.my-widget.php' ) );
-//      function wpTheme_register_widget()
-//      {
-//           register_widget( 'my_widget' );
-//      }
-//      add_action( 'widgets_init', 'wpTheme_register_widget' );
-//
-// }
+if ( ! function_exists( 'wpTheme_register_widget' ) )
+{
+     //if we are going to use the widget we load the file of the widget class
+     require_once ( get_parent_theme_file_path( '/inc/class.my-widget.php' ) );
+     function wpTheme_register_widget()
+     {
+          register_widget( 'my_widget' );
+     }
+     add_action( 'widgets_init', 'wpTheme_register_widget' );
+
+}
 /*
      ==============================
           ENQUEUE.PHP
