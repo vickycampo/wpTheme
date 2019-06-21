@@ -33,8 +33,7 @@
                     <?php
                          while (have_posts()) : the_post();
                          //get template part depending on the template format we are displaying
-
-                         if (locate_template( array( 'template-parts/post-' . get_post_format() . '.php' ) ) != '')
+                         if ( ( get_post_format() ) && ( locate_template( array( 'template-parts/post-' . get_post_format() . '.php' ) ) != '') )
                          {
                               get_template_part('template-parts/post', get_post_format());
                          }
