@@ -19,9 +19,7 @@ body, html {
 }
 
 div
-{
-
-}
+{}
 
 section
 {
@@ -49,14 +47,8 @@ body.bs-fixed-nav
      padding: 0px;
 	padding-top: 50px;
 }
-
-
 body.bs-fixed-nav nav.theme_location_top
-{
-
-
-}
-
+{}
 /*
      ===================================
           CONTENT SIDEBARS CSS
@@ -64,31 +56,17 @@ body.bs-fixed-nav nav.theme_location_top
 */
 /* Class that containg the side bars */
 .sidebar
-{
-
-}
+{}
 /* Class of the left side bar */
 .body-left-sidebar
-{
-
-}
+{}
      .body-left-sidebar > ul
-     {
-
-     }
+     {}
 /* Class of the right side bar */
 .body-right-sidebar
-{
-
-}
+{}
      .body-right-sidebar > ul
-     {
-
-     }
-
-
-
-
+     {}
 .wp-caption[style]
 {
 	max-width: 100% !important;
