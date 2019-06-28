@@ -47,7 +47,7 @@ article
 }
 .the_title
 {
-
+	word-wrap: break-word !important;;
 }
 section
 {
