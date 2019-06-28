@@ -13,6 +13,7 @@
 /* Check if the top navigation bar is active */
 /* This nav Bar Location  */
 $location = 'main';
+
 if ( has_nav_menu( $location ) )
 {
      include('part-nav-options.php' );
@@ -29,6 +30,7 @@ if ( has_nav_menu( $location ) )
           'walker' => new bs4navwalker()
           );
 
+     }
      ?>
      <nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="navbar navbar-expand-<?php echo ( $screen_size ); ?> <?php esc_html_e( $bar_background_color , 'wpTheme' ); ?>  <?php esc_html_e( $data_target , 'wpTheme' ); ?>">
           <div class="collapse navbar-collapse"  id="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target">

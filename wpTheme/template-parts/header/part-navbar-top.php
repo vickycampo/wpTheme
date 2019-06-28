@@ -29,6 +29,15 @@ if ( has_nav_menu( $location ) )
           'add_li_class'  => 'nav-item',
           'walker' => new bs4navwalker()
      );
+     if ( is_admin_bar_showing() )
+     {
+          /* Add aa class to lower the navbar */
+          $adminbarClass = 'admin_bar_showing';
+     }
+     else
+     {
+          $adminbarClass = 'admin_bar_not_showing';
+     }
      //<li class="nav-item active">
      ?>
      <!-- prepare the bootstrap nav-menu -->
@@ -36,7 +45,7 @@ if ( has_nav_menu( $location ) )
      <!--navbar - Defines that is a navbar -->
      <!--navbar-expand-lg - The breakpoint for collapsing -->
      <!--navbar-light - Without it the button won't show -->
-     <nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="navbar <?php echo ( $fixed_nav ); ?> navbar-expand-<?php echo ( $screen_size ); ?> <?php esc_html_e( $bar_background_color , 'wpTheme' ); ?> <?php esc_html_e( $data_target , 'wpTheme' ); ?> <?php esc_html_e( $inverse_class , 'wpTheme' ); ?>" >
+     <nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="navbar <?php echo ( $adminbarClass ); ?> <?php echo ( $fixed_nav ); ?> navbar-expand-<?php echo ( $screen_size ); ?> <?php esc_html_e( $bar_background_color , 'wpTheme' ); ?> <?php esc_html_e( $data_target , 'wpTheme' ); ?> <?php esc_html_e( $inverse_class , 'wpTheme' ); ?>" >
           <!-- Toggler -->
           <?php
           /* DISPLAY A CUSTOM LOGO */

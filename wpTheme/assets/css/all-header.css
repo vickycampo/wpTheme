@@ -17,7 +17,7 @@ header
 }
      header div
      {
-          
+
      }
 
 h1
@@ -212,3 +212,8 @@ h3
      {
 
      }
+
+.admin_bar_showing
+{
+     margin-top: 15px !important;
+}
