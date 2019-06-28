@@ -22,9 +22,17 @@
 		<?php
 		if ( is_single() )
 		{
-			the_content();
+			if(has_post_thumbnail())
+			{
+			?>
+				<div class="">
+				<?php the_content();?>
+				</div>
+			<?php
+			}
+
 		}
-		else if ( function_exists( 'ap_core_blog_excerpts' ) && ap_core_blog_excerpts() == false ) {
+		else if ( function_exists( 'wpTheme_blog_excerpts' ) && wpTheme_blog_excerpts() == false ) {
 			the_content(__('Read more &raquo;','wpTheme'));
 		}
 		else

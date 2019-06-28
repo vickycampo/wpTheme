@@ -64,3 +64,16 @@ section
 	max-width: 100% !important;
 	height: auto;
 }
+.media
+{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	background-color: DodgerBlue;
+}
+.media > p {
+  background-color: #f1f1f1;
+  width: 100%;
+  max-width: 100% !important;
+  margin: 10px;
+}
