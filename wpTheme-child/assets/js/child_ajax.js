@@ -19,7 +19,7 @@ jQuery(document).ready( function($)
 	var PostType = '';
 	var ajaxurl = '';
 	var CurrentPage = 0;
-
+	var maxnumpages;
 	/*** Categories ***/
 	/* Add Event Listener to add filters */
 	$('#sub-cat-div').on('click', '.dropdown-item', addCategoryFilter);
@@ -64,7 +64,9 @@ jQuery(document).ready( function($)
 			/* We add the new id to the array */
 			ActiveFilterList.push (target_id);
 			/* Change the content that is being filter */
+			CurrentPage = 0;
 			trigger_content_change ();
+
 		}
 	}
 	/* Add Event Listener to remove filters */
@@ -72,7 +74,6 @@ jQuery(document).ready( function($)
 	function removeCategoryFilter(event)
 	{
 		/* Get the id of the element clicked */
-		CurrentPage = 0;
 		var target_id = event.target.id.replace("_close", "");
 		/* Check if the id exists in the array */
 		if ( ActiveFilterList.indexOf ( target_id ) > -1 )
@@ -82,9 +83,10 @@ jQuery(document).ready( function($)
 			$( '#' + target_id + '_filter' ).remove();
 			/* We remove the id of the array */
 			ActiveFilterList.splice(index, 1);
-
+			CurrentPage = 0;
 			/* Change the content that is being filter */
 			trigger_content_change ();
+
 		}
 	}
 	/* Change the content that is being filter */
@@ -92,7 +94,8 @@ jQuery(document).ready( function($)
 	{
 		var filter_categories = new Array;
 		/* Check how many items we have to filter */
-		console.log (ActiveFilterList.length);
+
+		var ListOfitems = '';
 		if ( ActiveFilterList.length > 0)
 		{
 			/* Since we have at least one category we apply the filter */
@@ -121,28 +124,6 @@ jQuery(document).ready( function($)
 
 				}
 			}
-
-
-			/* if we have filters_categories, we go and get results */
-			/* Prepare the sting to send the values */
-
-			if ( MainCategoryId != '' )
-			{
-				var queryType = 'CATEGORY';
-				var name = MainCategoryId;
-				var field= 'category_id';
-			}
-			else if ( TaxonomyName != '' )
-			{
-				var queryType = 'TAXONOMY';
-				var name = TaxonomyName;
-				var field= 'term_id';
-			}
-			var ListOfitems = '';
-			/* Add the categories of the filters to the array */
-
-			/* If the list is longer than 1, means we have more than the main category */
-
 			for (i in filter_categories )
 			{
 				/* We don't add the main category, if we have more than one */
@@ -158,10 +139,34 @@ jQuery(document).ready( function($)
 			}
 		}
 
-
-
-		if ( filter_categories.length > 0 )
+		/* if we have filters_categories, we go and get results */
+		/* Prepare the sting to send the values */
+		if ( MainCategoryId != '' )
 		{
+			var queryType = 'CATEGORY';
+			var name = MainCategoryId;
+			var field= 'category_id';
+			if ( ListOfitems == '')
+			{
+				ListOfitems = MainCategoryId;
+			}
+		}
+		else if ( TaxonomyName != '' )
+		{
+			var queryType = 'TAXONOMY';
+			var name = TaxonomyName;
+			var field= 'term_id';
+			if ( ListOfitems == '')
+			{
+				ListOfitems = TaxonomyName;
+			}
+		}
+
+		if ( ListOfitems != '')
+		{
+			$('#load_more_icon').removeClass('fa-sync-alt');
+			$('#load_more_icon').addClass('fa-spinner');
+			$('#load_more_icon').addClass('fa-spin');
 			$.ajax
 	          ({
 				url : ajaxurl,   //The url for the ajax file
@@ -178,22 +183,33 @@ jQuery(document).ready( function($)
 				},
 				error : function( response )    //return on error
 	               {
+					$('#load_more_icon').addClass('fa-exclamation-circle');
+					$('#load_more_icon').removeClass('fa-spinner');
+					$('#load_more_icon').removeClass('fa-spin');
 				},
 				success : function( response )  //return on success
 	               {
-					$('.read-more-results').empty();
+					/* if the current page is 0 we reset the previous content */
+					if ( CurrentPage == 0 )
+					{
+						$('.read-more-results').empty();
+					}
+
 					$('.read-more-results').append( response );
 
-					if ( max_num_pages == 1)
+					$('#load_more_icon').addClass('fa-sync-alt');
+					$('#load_more_icon').removeClass('fa-spinner');
+					$('#load_more_icon').removeClass('fa-spin');
+
+					if ( max_num_pages > 1 )
 					{
-
-						$('.load-more-div').addClass('.hide_element');
-
+						$('.load-more-div').addClass('show_element');
 					}
 					else
 					{
+						$('.load-more-div').addClass('hide_element');
+						$('.load-more-div').removeClass('show_element');
 
-						$('.load-more-div').addClass('.show_element');
 					}
 				}
 	          });
@@ -203,23 +219,31 @@ jQuery(document).ready( function($)
 	}
 	$(document).on('click','.load-more-a', function()
 	{
-
 		MainCategoryId = main_category;
 		TaxonomyName = taxonomyName;
 		PostType = thisPostType;
-		CurrentPage = 0;
+		ajaxurl = admin_url;
+		maxnumpages = max_num_pages;
+
 		if ( ActiveFilterList.length == 0 )
 		{
-
-			console.log ('tengo que corregir esta funcion - fix el list de ids');
+			if (MainCategoryId != '')
+			{
+				ListOfitems = MainCategoryId;
+			}
+			else if (TaxonomyName != '')
+			{
+				ListOfitems = TaxonomyName;
+			}
 		}
-		else
+		trigger_content_change ();
+		if ( CurrentPage == max_num_pages -1 )
 		{
-			console.log ('click');
-			CurrentPage ++;
-			trigger_content_change ();
 
+			$('.load-more-div').addClass('hide_element');
+			$('.load-more-div').removeClass('show_element');
 		}
+		CurrentPage++;
 
 	});
 	/* Scroll */

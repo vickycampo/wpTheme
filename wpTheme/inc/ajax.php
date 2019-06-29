@@ -27,21 +27,15 @@ add_action( 'wp_ajax_wpTheme_read_more', 'wpTheme_read_more' );
 /*** wpTheme_read_more () ***/
 function wpTheme_read_more ()
 {
-     error_log (__FILE__ . ' - ' . __LINE__ .' - ');
-     error_log (print_r ($_POST , true));
-     error_log ('-----------------------------------');
-     // [page] => 0
-     // [queryType] => TAXONOMY
-     // [name] => recipe_tax
-     // [field] => term_id
-     // [ListOfitems] => 352-351-
-     // [post_type] => default_recipe
-     // [action] => wpTheme_read_more
+     // error_log (__FILE__ . ' - ' . __LINE__ .' - ');
+     // error_log (print_r ($_POST , true));
+     // error_log ('-----------------------------------');
+
 
      /* old query string */
      if ( ( isset ( $_POST['query'] ) ) && ( $_POST['query'] != '' ) )
      {
-          
+
      }
      else
      {
@@ -63,17 +57,15 @@ function wpTheme_read_more ()
           }
           else if ( $_POST['queryType'] == 'CATEGORY' )
           {
+               $ListOfitems = explode( '-' , $_POST['ListOfitems'] );
                $args = array( 'cat' => $ListOfitems );
           }
      }
 
      $args['paged'] = $paged;
      $the_query = new WP_Query( $args );
-
-     // echo ('<pre>');
-     // print_r ($the_query->query);
-     // echo ('</pre>');
      // The Loop
+
      if ( $the_query->have_posts() )
      {
           $max_num_pages = $the_query->max_num_pages;
