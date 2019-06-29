@@ -12,7 +12,7 @@
 <?php
 /* We only show the subcategory bar in the category page */
 
-if (is_category() || is_archive() )
+if (is_category() || is_archive() || is_single ())
 {
 
      wp_reset_query();
@@ -23,6 +23,7 @@ if (is_category() || is_archive() )
      // var_dump ($categories_values);
      if ( ! empty ($categories_values) )
      {
+          $thisPostType = $categories_values ['thisPostType'];
           $buttons = $categories_values ['buttons'];
           $this_categories = $categories_values ['this_categories'];
      }
@@ -36,12 +37,21 @@ if (is_category() || is_archive() )
      if ($buttons != '')
      {
           /* we prepare the values we want to sent to the javascript */
-          // echo ('<pre>');
-          // var_dump ($this_categories);
-          // echo ('</pre>');
+          if (is_array ($this_categories)) /* Is not a category, is a taxonomy */
+          {
+               $taxName = $this_categories['term_id'];
+               $term_id = '';
+          }
+          else if (gettype ( $this_categories )  == 'object') /* Category object */
+          {
+               $taxName = '';
+               $term_id = $this_categories->term_id;
+          }
           ?>
           <script>
-               var main_category = "<?php echo ($this_categories->term_id);?>"
+               var main_category = "<?php echo ( $term_id );?>"
+               var taxonomyName = "<?php echo ( $taxName );?>"
+               var thisPostType = "<?php echo ( $thisPostType );?>"
                var admin_url  = "<?php echo admin_url('admin-ajax.php'); ?>";
           </script>
           <div class="sub-cat-main-div">

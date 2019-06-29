@@ -12,7 +12,7 @@
 */
 jQuery(document).ready( function($)
 {
-
+	return;
      /* Ajax functions */
 	$(document).on('click','.load-more-a', function()
 	/* Add the event listener to the link with this class */

@@ -15,8 +15,11 @@ jQuery(document).ready( function($)
 	/*** Global Variables ***/
 	var ActiveFilterList = new Array;
 	var MainCategoryId = '';
-	var ajax_url = '';
-	// var wp_query_string;
+	var TaxonomyName = '';
+	var PostType = '';
+	var ajaxurl = '';
+	var CurrentPage = 0;
+
 	/*** Categories ***/
 	/* Add Event Listener to add filters */
 	$('#sub-cat-div').on('click', '.dropdown-item', addCategoryFilter);
@@ -25,10 +28,24 @@ jQuery(document).ready( function($)
 	{
 		/* Get the main category fron the page */
 		MainCategoryId = main_category;
+		TaxonomyName = taxonomyName;
+		PostType = thisPostType;
+		CurrentPage = 0;
+
 		/* The url that processes the ajax */
 		ajaxurl = admin_url;
 		/* Get the main Category */
-		ActiveFilterList[0] = MainCategoryId;
+
+		if (MainCategoryId != '')
+		{
+			ActiveFilterList[0] = MainCategoryId;
+		}
+		else if (TaxonomyName != '')
+		{
+			ActiveFilterList[0] = TaxonomyName;
+		}
+
+
 
 
 		/* Get the id of the element clicked */
@@ -55,7 +72,7 @@ jQuery(document).ready( function($)
 	function removeCategoryFilter(event)
 	{
 		/* Get the id of the element clicked */
-
+		CurrentPage = 0;
 		var target_id = event.target.id.replace("_close", "");
 		/* Check if the id exists in the array */
 		if ( ActiveFilterList.indexOf ( target_id ) > -1 )
@@ -75,6 +92,7 @@ jQuery(document).ready( function($)
 	{
 		var filter_categories = new Array;
 		/* Check how many items we have to filter */
+		console.log (ActiveFilterList.length);
 		if ( ActiveFilterList.length > 0)
 		{
 			/* Since we have at least one category we apply the filter */
@@ -103,9 +121,24 @@ jQuery(document).ready( function($)
 
 				}
 			}
+
+
 			/* if we have filters_categories, we go and get results */
 			/* Prepare the sting to send the values */
-			wp_query_string = 'cat:array( ';
+
+			if ( MainCategoryId != '' )
+			{
+				var queryType = 'CATEGORY';
+				var name = MainCategoryId;
+				var field= 'category_id';
+			}
+			else if ( TaxonomyName != '' )
+			{
+				var queryType = 'TAXONOMY';
+				var name = TaxonomyName;
+				var field= 'term_id';
+			}
+			var ListOfitems = '';
 			/* Add the categories of the filters to the array */
 
 			/* If the list is longer than 1, means we have more than the main category */
@@ -119,53 +152,111 @@ jQuery(document).ready( function($)
 				}
 				else
 				{
-					wp_query_string += filter_categories[i] + '-';
+					ListOfitems += filter_categories[i] + '-';
 				}
 
 			}
-			wp_query_string += '),';
-
-
-			if ( filter_categories.length > 0 )
-			{
-				$.ajax
-		          ({
-					url : ajaxurl,   //The url for the ajax file
-					type : 'post',   //The method that we are going to use
-					data :           //Send values to the ajax function
-		               {
-						page : '0',   //Sending the variable page
-						query : wp_query_string, //Sending the previous query
-						action: 'wpTheme_read_more' //The name of the funciton that we want to call
-					},
-					error : function( response )    //return on error
-		               {
-
-					},
-					success : function( response )  //return on success
-		               {
-
-
-						$('.read-more-results').empty();
-						$('.read-more-results').append( response );
-
-						if ( max_num_pages == 1)
-						{
-
-							$('.load-more-div').addClass('.hide_element');
-
-						}
-						else
-						{
-
-							$('.load-more-div').addClass('.show_element');
-						}
-					}
-		          });
-
-			}
 		}
+
+
+
+		if ( filter_categories.length > 0 )
+		{
+			$.ajax
+	          ({
+				url : ajaxurl,   //The url for the ajax file
+				type : 'post',   //The method that we are going to use
+				data :           //Send values to the ajax function
+	               {
+					page : CurrentPage,   //Sending the variable page
+					queryType : queryType, //Sending the previous query
+					name: name,
+					field: field,
+					ListOfitems: ListOfitems,
+					post_type : PostType, //Sending the previous query
+					action: 'wpTheme_read_more' //The name of the funciton that we want to call
+				},
+				error : function( response )    //return on error
+	               {
+				},
+				success : function( response )  //return on success
+	               {
+					$('.read-more-results').empty();
+					$('.read-more-results').append( response );
+
+					if ( max_num_pages == 1)
+					{
+
+						$('.load-more-div').addClass('.hide_element');
+
+					}
+					else
+					{
+
+						$('.load-more-div').addClass('.show_element');
+					}
+				}
+	          });
+
+		}
+
 	}
+	$(document).on('click','.load-more-a', function()
+	{
+		console.log ('tengo que corregir esta funcion ');
+		MainCategoryId = main_category;
+		TaxonomyName = taxonomyName;
+		PostType = thisPostType;
+		CurrentPage = 0;
+		if ( ActiveFilterList.length == 0 )
+		{
+			/* We have no filters */
+			$.ajax
+	          ({
+				url : ajaxurl,   //The url for the ajax file
+				type : 'post',   //The method that we are going to use
+				data :           //Send values to the ajax function
+	               {
+					page : CurrentPage,   //Sending the variable page
+					queryType : queryType, //Sending the previous query
+					name: name,
+					field: field,
+					ListOfitems: ListOfitems,
+					post_type : PostType, //Sending the previous query
+					action: 'wpTheme_read_more' //The name of the funciton that we want to call
+				},
+				error : function( response )    //return on error
+	               {
+				},
+				success : function( response )  //return on success
+	               {
+					$('.read-more-results').empty();
+					$('.read-more-results').append( response );
+
+					if ( max_num_pages == 1)
+					{
+
+						$('.load-more-div').addClass('.hide_element');
+
+					}
+					else
+					{
+
+						$('.load-more-div').addClass('.show_element');
+					}
+				}
+	          });
+
+		}
+		else
+		{
+			console.log ('click');
+			CurrentPage ++;
+			trigger_content_change ();
+
+		}
+
+	});
 	/* Scroll */
 	/* Set Variables */
 	var header_img_height = $('#header-img').outerHeight(true);
@@ -189,7 +280,7 @@ jQuery(document).ready( function($)
 		else if ($(window).scrollTop() < top  )
 		{
 
-			
+
 			if ( ( $('#theme_location_top_nav').hasClass( "topNav_afterHeaderImage" ) ) )
 			{
 				$('#theme_location_top_nav').removeClass( "topNav_afterHeaderImage" );

@@ -19,7 +19,9 @@ function wpChildTheme_get_catValues ()
           /* If is a single page we get the categories of that page */
           if ( is_single() )
           {
+               $thisPostType = get_post_type();
                $this_Multiple_categories = get_the_category();
+
                foreach ($this_Multiple_categories as $i => $cat_details)
                {
                     /* We get the Top Category */
@@ -37,6 +39,7 @@ function wpChildTheme_get_catValues ()
           /* If is category, we get all the sub categores */
           else if ( is_category() )
           {
+               $thisPostType = '';
                /* We get the current category */
                $this_categories = get_queried_object();
                /* We get the Top Category */
@@ -55,6 +58,8 @@ function wpChildTheme_get_catValues ()
                /* Custom Post Type */
                if (isset ( $PostTypeObject ) && (get_class  ( $PostTypeObject ) == 'WP_Post_Type' ))
                {
+
+                    $thisPostType = $PostTypeObject->name;
                     $taxonomies = get_object_taxonomies( $PostTypeObject->name );
                     if ( count  ($taxonomies) == 0)
                     {
@@ -113,22 +118,19 @@ function wpChildTheme_get_catValues ()
           /* We prepare the values to send back */
           if ( isset ( $this_categories ))
           {
-               // echo ('<pre>');
-               // print_r ($this_categories);
-               // echo ('-------------------------<br>');
-               // print_r ($main_category . '<br>');
-               // echo ('-------------------------<br>');
-               // echo ($ID . '<br>');
-               // echo ('-------------------------<br>');
-               // print_r ($sub_categories);
-               // echo ('-------------------------<br>');
-               // echo ('</pre>');
 
+
+               $return_values['thisPostType'] = $thisPostType;
                $return_values['this_categories'] = $this_categories;
                $return_values['main_category'] = $main_category;
                /* Once we have the sub_Categories, we prepare the buttons for the menu */
                $subcategories_buttons = wpChildTheme_subcat_buttons ( $sub_categories );
                $return_values['buttons'] = $subcategories_buttons;
+
+               // echo ('<pre>');
+               // print_r ($return_values);
+               // echo ('-------------------------<br>');
+               // echo ('</pre>');
           }
           else
           {

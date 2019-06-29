@@ -27,47 +27,28 @@ add_action( 'wp_ajax_wpTheme_read_more', 'wpTheme_read_more' );
 /*** wpTheme_read_more () ***/
 function wpTheme_read_more ()
 {
-     error_log (__FILE__ . ' - ' . __LINE__ .' - ');
-     error_log (print_r ($_POST , true));
-     error_log ('-----------------------------------');
-     // [page] => 0
-     // [queryType] => TAXONOMY
-     // [name] => recipe_tax
-     // [field] => term_id
-     // [ListOfitems] => 352-351-
-     // [post_type] => default_recipe
-     // [action] => wpTheme_read_more
+     // error_log (__FILE__ . ' - ' . __LINE__ .' - ');
+     // error_log (print_r ($_POST , true));
+     // error_log ('-----------------------------------');
+     $query = $_POST["query"];
+     $post_type = $_POST["post_type"];
+     $paged = $_POST["page"]+1;
+     /* Convert the query string into an array */
 
-     /* old query string */
-     if ( ( isset ( $_POST['query'] ) ) && ( $_POST['query'] != '' ) )
+     if ( $query != '' )
      {
-          
+          //category_name:template-2
      }
-     else
-     {
-          $paged = $_POST["page"]+1;
-          /* Create the arguments for query */
-          if ( $_POST['queryType'] == 'TAXONOMY' )
-          {
-               $ListOfitems = explode( '-' , $_POST['ListOfitems'] );
-               $args = array(
-                   'post_type' => $_POST['post_type'],
-                   'tax_query' => array(
-                       array(
-                           'taxonomy' => $_POST['name'],
-                           'field'    => 'term_id',
-                           'terms'    => $ListOfitems
-                       ),
-                   ),
-               );
-          }
-          else if ( $_POST['queryType'] == 'CATEGORY' )
-          {
-               $args = array( 'cat' => $ListOfitems );
-          }
-     }
+     /* We need to do an advanced search */
+     
 
+     if ( $post_type != '')
+     {
+          $args['post_type'] = $post_type;
+     }
      $args['paged'] = $paged;
+
+
      $the_query = new WP_Query( $args );
 
      // echo ('<pre>');

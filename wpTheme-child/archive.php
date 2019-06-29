@@ -26,7 +26,7 @@
      //Get the standard header
      get_header();
      /* Since we are in the archive we are going to add the Taxonomy menu */
-     echo ('<div>Taxonomy Menu</div>');
+
      //we determine how many columns the content will ocuppy
      $wpTheme_content_columns = wpTheme_get_content_columns('body'); ?>
      <!-- add the class to the content div-->
