@@ -203,50 +203,15 @@ jQuery(document).ready( function($)
 	}
 	$(document).on('click','.load-more-a', function()
 	{
-		console.log ('tengo que corregir esta funcion ');
+
 		MainCategoryId = main_category;
 		TaxonomyName = taxonomyName;
 		PostType = thisPostType;
 		CurrentPage = 0;
 		if ( ActiveFilterList.length == 0 )
 		{
-			/* We have no filters */
-			$.ajax
-	          ({
-				url : ajaxurl,   //The url for the ajax file
-				type : 'post',   //The method that we are going to use
-				data :           //Send values to the ajax function
-	               {
-					page : CurrentPage,   //Sending the variable page
-					queryType : queryType, //Sending the previous query
-					name: name,
-					field: field,
-					ListOfitems: ListOfitems,
-					post_type : PostType, //Sending the previous query
-					action: 'wpTheme_read_more' //The name of the funciton that we want to call
-				},
-				error : function( response )    //return on error
-	               {
-				},
-				success : function( response )  //return on success
-	               {
-					$('.read-more-results').empty();
-					$('.read-more-results').append( response );
 
-					if ( max_num_pages == 1)
-					{
-
-						$('.load-more-div').addClass('.hide_element');
-
-					}
-					else
-					{
-
-						$('.load-more-div').addClass('.show_element');
-					}
-				}
-	          });
-
+			console.log ('tengo que corregir esta funcion - fix el list de ids');
 		}
 		else
 		{
