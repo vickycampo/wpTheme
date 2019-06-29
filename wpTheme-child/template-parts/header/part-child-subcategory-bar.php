@@ -11,14 +11,27 @@
 ?>
 <?php
 /* We only show the subcategory bar in the category page */
-if (is_category())
+
+if (is_category() || is_archive() )
 {
+
      wp_reset_query();
      include('subcategories-functions.php' );
      //firstly, load data for your child category
      $categories_values = wpChildTheme_get_catValues ();
-     $buttons = $categories_values ['buttons'];
-     $this_categories = $categories_values ['this_categories'];
+     // var_dump ($categories_values);
+     // var_dump ($categories_values);
+     if ( ! empty ($categories_values) )
+     {
+          $buttons = $categories_values ['buttons'];
+          $this_categories = $categories_values ['this_categories'];
+     }
+     else
+     {
+          $buttons = '';
+          $this_categories = '';
+     }
+
 
      if ($buttons != '')
      {

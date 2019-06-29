@@ -14,7 +14,7 @@
 function wpChildTheme_get_catValues ()
 {
      /* We add the category menu if is a category or a single page */
-     if ( is_category() || is_single() )
+     if ( is_category() || is_single() || is_archive())
      {
           /* If is a single page we get the categories of that page */
           if ( is_single() )
@@ -33,10 +33,9 @@ function wpChildTheme_get_catValues ()
                          $this_categories = $cat_details;
                     }
                }
-
           }
           /* If is category, we get all the sub categores */
-          if ( is_category() )
+          else if ( is_category() )
           {
                /* We get the current category */
                $this_categories = get_queried_object();
@@ -44,24 +43,125 @@ function wpChildTheme_get_catValues ()
                $main_category = wpChildTheme_get_topcategory ($this_categories);
                $ID = $main_category->term_id;
                $sub_categories = wpChildTheme_get_subcategories ($ID);
+
+          }
+          else if ( is_archive() )
+          {
+               /* We get the current category */
+               /* if you're on an archive page, it will return the post type object */
+               $PostTypeObject = get_queried_object();
+               //var_dump ($PostTypeObject);
+               /* for custom post type archives */
+               /* Custom Post Type */
+               if (isset ( $PostTypeObject ) && (get_class  ( $PostTypeObject ) == 'WP_Post_Type' ))
+               {
+                    $taxonomies = get_object_taxonomies( $PostTypeObject->name );
+                    if ( count  ($taxonomies) == 0)
+                    {
+                         echo (__FILE__ . ' - ' . __LINE__);
+                         echo ('<h1>no taxonomies</h1>');
+                    }
+                    else
+                    {
+                         foreach ($taxonomies as $i => $taxName)
+                         {
+                              /* Create the variables we need to match the categories */
+                              $this_categories = array
+                              (
+                                   'term_id' => $taxName,
+                                   'name' => $taxName,
+                                   'slug' => $taxName,
+                                   'term_group' => '0',
+                                   'term_taxonomy_id' => $taxName,
+                                   'taxonomy' => $taxName,
+                                   'description' => $taxName,
+                                   'parent' => '0',
+                                   'count' => '0',
+                                   'filter' => 'raw',
+                                   'cat_ID' => $taxName,
+                                   'category_count' => '12',
+                                   'category_description' => $taxName,
+                                   'cat_name' => $taxName,
+                                   'category_nicename' => $taxName,
+                                   'category_parent' => '0'
+                              );
+                              $main_category = $taxName;
+                              /* We don't use the regular ones */
+                              if (( $taxName != 'category' ) && ( $taxName != 'post_tag' ))
+                              {
+                                   /* get the terms */
+                                   $sub_categories = wpChildTheme_get_subcategories ($taxName);
+
+                              }
+                         }
+                    }
+
+               }
+               /* Regular archive - no category in common */
+               else  if (get_class  ( $PostTypeObject ) != 'WP_Post_Type' )
+               {
+                    error_log (__FILE__ . ' - ' . __LINE__ .' - Unknown Object');
+                    error_log ( get_class  ( $PostTypeObject ) );
+                    error_log (print_r ($taxonomies , true));
+                    error_log ('-----------------------------------');
+               }
+               else {
+                    error_log (__FILE__ . ' - ' . __LINE__ .' - Unknown Object');
+               }
+
           }
           /* We prepare the values to send back */
-          $return_values['this_categories'] = $this_categories;
-          $return_values['main_category'] = $main_category;
-          /* Once we have the sub_Categories, we prepare the buttons for the menu */
-          $subcategories_buttons = wpChildTheme_subcat_buttons ( $sub_categories );
-          $return_values['buttons'] = $subcategories_buttons;
+          if ( isset ( $this_categories ))
+          {
+               // echo ('<pre>');
+               // print_r ($this_categories);
+               // echo ('-------------------------<br>');
+               // print_r ($main_category . '<br>');
+               // echo ('-------------------------<br>');
+               // echo ($ID . '<br>');
+               // echo ('-------------------------<br>');
+               // print_r ($sub_categories);
+               // echo ('-------------------------<br>');
+               // echo ('</pre>');
+
+               $return_values['this_categories'] = $this_categories;
+               $return_values['main_category'] = $main_category;
+               /* Once we have the sub_Categories, we prepare the buttons for the menu */
+               $subcategories_buttons = wpChildTheme_subcat_buttons ( $sub_categories );
+               $return_values['buttons'] = $subcategories_buttons;
+          }
+          else
+          {
+               $return_values = [];
+          }
+
 
           return ( $return_values );
      }
 }
+/**** Get the Taxonomy Terms ****/
+function wpChildTheme_get_taxTerms ($taxName)
+{
+
+
+}
 /*** GET ALL THE SUB-CATEGORIES ***/
 function wpChildTheme_get_subcategories ( $ID )
 {
-
-     $args = array('child_of' => $ID );
-     $categories = get_categories( $args );
-
+     if (gettype ( $ID ) === 'string')
+     {
+          $categories = get_terms (
+               array (
+                   'taxonomy' => $ID,
+                   'hide_empty' => false,
+               )
+          );
+     }
+     else if (gettype ( $ID ) === 'integer')
+     {
+          $args = array('child_of' => $ID );
+          $categories = get_categories( $args );
+     }
 
      /* Order the subcategories */
      foreach ( $categories as $i => $single_sub )
