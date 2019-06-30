@@ -12,5 +12,9 @@
 */
 jQuery(document).ready( function($)
 {
-	return;
+     $( ".load-more-a" ).click(function()
+          {
+            alert( "Handler for .click() called." );
+          }
+     );
 });

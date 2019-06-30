@@ -33,7 +33,7 @@ if ( !function_exists( 'wpTheme_breadcrumbs' ) )
           <?php
           /**/
           /* if is a category of a single page we put the category */
-          if (is_category() || is_single())
+          if ( is_category() || is_single() )
           {
                if (is_category())
                {

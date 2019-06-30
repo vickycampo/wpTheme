@@ -217,35 +217,41 @@ jQuery(document).ready( function($)
 		}
 
 	}
-	$(document).on('click','.load-more-a', function()
+	/* We use this function for load more only if we are in a page with sub menu*/
+	if ( $('.sub-cat-main-div').length > 0)
 	{
-		MainCategoryId = main_category;
-		TaxonomyName = taxonomyName;
-		PostType = thisPostType;
-		ajaxurl = admin_url;
-		maxnumpages = max_num_pages;
-
-		if ( ActiveFilterList.length == 0 )
+		$("#foo").unbind('click');
+		$(document).on('click','.load-more-a', function()
 		{
-			if (MainCategoryId != '')
-			{
-				ListOfitems = MainCategoryId;
-			}
-			else if (TaxonomyName != '')
-			{
-				ListOfitems = TaxonomyName;
-			}
-		}
-		trigger_content_change ();
-		if ( CurrentPage == max_num_pages -1 )
-		{
+			MainCategoryId = main_category;
+			TaxonomyName = taxonomyName;
+			PostType = thisPostType;
+			ajaxurl = admin_url;
+			maxnumpages = max_num_pages;
 
-			$('.load-more-div').addClass('hide_element');
-			$('.load-more-div').removeClass('show_element');
-		}
-		CurrentPage++;
+			if ( ActiveFilterList.length == 0 )
+			{
+				if (MainCategoryId != '')
+				{
+					ListOfitems = MainCategoryId;
+				}
+				else if (TaxonomyName != '')
+				{
+					ListOfitems = TaxonomyName;
+				}
+			}
+			trigger_content_change ();
+			if ( CurrentPage == max_num_pages -1 )
+			{
 
-	});
+				$('.load-more-div').addClass('hide_element');
+				$('.load-more-div').removeClass('show_element');
+			}
+			CurrentPage++;
+
+		});
+	}
+
 	/* Scroll */
 	/* Set Variables */
 	var header_img_height = $('#header-img').outerHeight(true);
