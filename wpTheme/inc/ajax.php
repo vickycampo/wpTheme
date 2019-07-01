@@ -27,11 +27,6 @@ add_action( 'wp_ajax_wpTheme_read_more', 'wpTheme_read_more' );
 /*** wpTheme_read_more () ***/
 function wpTheme_read_more ()
 {
-     // error_log (__FILE__ . ' - ' . __LINE__ .' - ');
-     // error_log (print_r ($_POST , true));
-     // error_log ('-----------------------------------');
-
-
      /* old query string */
      if ( ( isset ( $_POST['query'] ) ) && ( $_POST['query'] != '' ) )
      {
@@ -43,17 +38,34 @@ function wpTheme_read_more ()
           /* Create the arguments for query */
           if ( $_POST['queryType'] == 'TAXONOMY' )
           {
-               $ListOfitems = explode( '-' , $_POST['ListOfitems'] );
-               $args = array(
-                   'post_type' => $_POST['post_type'],
-                   'tax_query' => array(
-                       array(
-                           'taxonomy' => $_POST['name'],
-                           'field'    => 'term_id',
-                           'terms'    => $ListOfitems
-                       ),
-                   ),
-               );
+               if ($_POST['name'] != $_POST['ListOfitems']) // has a term Id
+               {
+                    $ListOfitems = explode( '-' , $_POST['ListOfitems'] );
+                    $args = array(
+                        'post_type' => $_POST['post_type'],
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => $_POST['name'],
+                                'field'    => 'term_id',
+                                'terms'    => $ListOfitems
+                            ),
+                        ),
+                    );
+               }
+               else
+               {
+                    /* we get all the posts of a custom type */
+                    /* since there is no taxonomy filter */
+
+                    $args = array(
+                        'post_type' => $_POST['post_type'],
+                        'post_status' => 'publish'
+                    );
+                    // error_log (__FILE__ . ' - ' . __LINE__ .' - ');
+                    // error_log (print_r ($args , true));
+                    // error_log ('-----------------------------------');
+               }
+
           }
           else if ( $_POST['queryType'] == 'CATEGORY' )
           {

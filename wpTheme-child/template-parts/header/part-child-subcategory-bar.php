@@ -39,6 +39,9 @@ if (is_category() || is_archive() || is_single ())
           /* we prepare the values we want to sent to the javascript */
           if (is_array ($this_categories)) /* Is not a category, is a taxonomy */
           {
+               // echo ('<pre>');
+               // var_dump ($this_categories);
+               // echo ('</pre>');
                $taxName = $this_categories['term_id'];
                $term_id = '';
           }

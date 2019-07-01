@@ -20,6 +20,8 @@
 		<?php tha_entry_top(); ?>
 
 		<?php
+
+
 		if ( is_single() )
 		{
 			if(has_post_thumbnail())
@@ -29,6 +31,14 @@
 				<?php the_content();?>
 				</div>
 			<?php
+			}
+			else
+			{
+				?>
+					<div class="">
+					<?php the_content();?>
+					</div>
+				<?php	
 			}
 
 		}
