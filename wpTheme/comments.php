@@ -14,6 +14,7 @@
 ?>
 <?php
 /* Check if the post requires a password */
+echo ('comments form');
 if ( post_password_required() )
 { ?>
      <!-- This post requires a pass wrod, leave a message to log in. -->

@@ -13,34 +13,22 @@
 ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<?php get_template_part( 'template-parts/part', 'title' ); ?>
-
-	<?php tha_entry_before(); ?>
+	<?php
+	get_template_part( 'template-parts/part', 'title' );
+	tha_entry_before(); ?>
 	<section class="entry media">
-		<?php tha_entry_top(); ?>
-
 		<?php
-
-
+		tha_entry_top();
 		if ( is_single() )
 		{
-			if(has_post_thumbnail())
-			{
-			?>
-				<div class="">
-				<?php the_content();?>
-				</div>
-			<?php
-			}
-			else
-			{
-				?>
-					<div class="">
-					<?php the_content();?>
-					</div>
-				<?php	
-			}
-
+		?>
+			<div class="the_content">
+			<?php the_content();?>
+			</div>
+			<div class="the_comments">
+			<?php get_template_part( 'template-parts/part', 'comments' );;?>
+			</div>
+		<?php
 		}
 		else if ( function_exists( 'wpTheme_blog_excerpts' ) && wpTheme_blog_excerpts() == false ) {
 			the_content(__('Read more &raquo;','wpTheme'));
@@ -62,16 +50,12 @@
 		?>
 		<?php
 		get_template_part( 'template-parts/part', 'link-pages' );
-		?>
-
-		<?php
 		tha_entry_bottom();
 		?>
 	</section>
 	<?php
 	tha_entry_after();
 	?>
-
 	<div class="icon icon-post pull-left"></div><?php get_template_part( 'template-parts/part', 'postmetadata' ); ?>
 
 </article>

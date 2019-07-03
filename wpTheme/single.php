@@ -14,7 +14,6 @@
 <?php
      //Get the standard header
      get_header();
-
      //we determine how many columns the content will ocuppy
      $wpTheme_content_columns = wpTheme_get_content_columns('body'); ?>
      <!-- add the class to the content div-->
@@ -25,11 +24,8 @@
           ?>
           <div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
                <!-- Add hook -->
-               <?php tha_content_top(); ?>
-               <!-- The loop -->
-
                <?php
-
+               tha_content_top();
                if (have_posts()) :
                     ?>
                     <div class="read-more-results">
