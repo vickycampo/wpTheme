@@ -86,7 +86,11 @@ if ( comments_open() )
 
      $ap_comment_notes_after = '<div class="form-group form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'wpTheme' ), ' <pre>' . allowed_tags() . '</pre>' ) . '</div>';
      /* Display coment form */
-     comment_form( array( 'comment_field' => $ap_comment_form, 'comment_notes_after' => $ap_comment_notes_after ) ); ?>
+     comment_form( array ( 
+          'comment_field' => $ap_comment_form,
+          'comment_notes_after' => $ap_comment_notes_after
+          )
+     ); ?>
 
 <?php
 } // end comments_open() ?>
