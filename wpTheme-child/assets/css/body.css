@@ -51,14 +51,53 @@ body.bs-fixed-nav
 #wrap .row
 {
      width: 100%;
-     max-width: 900px;
+     /* max-width: 900px; */
      display: inline-block;
 }
-.the_content
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+#wrap .the_content
 {
 
 }
 .read-more-results
 {
+     display: flex;
      text-align: left;
+     flex-wrap: wrap;
+     justify-content: center;
+}
+.read-more-results > article {
+     width: 200px;
+     max-height: 250px;
+     margin: 5px;
+     padding: 5px;
+     background-color: white;
+     border: solid 1px red;
+}
+.read-more-results > article > the_date
+{
+     font-size = 14px;
 }
