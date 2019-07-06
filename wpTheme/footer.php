@@ -26,7 +26,7 @@
 				printf(
 					'<a %s href="%s">%s</a>',
 					is_customize_preview() ? 'id="wptheme-footer-copy-control"' : '',
-					esc_url( __( 'https://github.com/Alecaddd/Awps', 'wpTheme' ) ),
+					esc_url( __( 'https://github.com/vickycampo/wpTheme', 'wpTheme' ) ),
 					esc_html( wptheme\Api\Customizer::text( 'wptheme_footer_copy_text' ) )
 				);
 			?>

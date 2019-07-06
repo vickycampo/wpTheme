@@ -39,19 +39,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alecaddd/Awps.git"
+    "url": "git+https://github.com/vickycampo/wpTheme.git"
   },
   "keywords": [
     "wordpress",
     "theme",
     "starter"
   ],
-  "author": "Alessandro Castellani <me@alecaddd.com> (http://alecaddd.com)",
+  "author": "Vicky Campo <infor@virginiacampo.com> (http://virginiacampo.com)",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/Alecaddd/Awps/issues"
+    "url": "https://github.com/vickycampo/wpTheme/issues"
   },
-  "homepage": "https://github.com/Alecaddd/Awps#readme",
+  "homepage": "https://github.com/vickycampo/wpTheme#readme",
   "dependencies": {
     "eslint-config-wordpress": "^2.0.0",
     "normalize-scss": "^7.0.1",
