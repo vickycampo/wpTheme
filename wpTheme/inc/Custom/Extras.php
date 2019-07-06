@@ -1,6 +1,6 @@
 <?php
 
-namespace Awps\Custom;
+namespace wptheme\Custom;
 
 /**
  * Extras.

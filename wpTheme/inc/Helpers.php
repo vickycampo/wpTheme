@@ -3,7 +3,7 @@
  * Helpers methods
  * List all your static functions you wish to use globally on your theme
  *
- * @package awps
+ * @package wpTheme
  */
 
 if ( ! function_exists( 'dd' ) ) {
@@ -54,7 +54,7 @@ if (! function_exists('mix')) {
 	function mix($path, $manifestDirectory = '')
 	{
 		if (! $manifestDirectory) {
-			//Setup path for standard AWPS-Folder-Structure
+			//Setup path for standard wpTheme-Folder-Structure
 			$manifestDirectory = "assets/dist/";
 		}
 		static $manifest;

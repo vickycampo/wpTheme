@@ -1,6 +1,6 @@
 <?php
 
-namespace Awps\Setup;
+namespace wptheme\Setup;
 
 class Setup
 {
@@ -19,7 +19,7 @@ class Setup
         /*
          * You can activate this if you're planning to build a multilingual theme
          */
-        // load_theme_textdomain( 'awps', get_template_directory() . '/languages' );
+        // load_theme_textdomain( 'wpTheme', get_template_directory() . '/languages' );
 
         /*
          * Default Theme Support options better have
@@ -42,7 +42,7 @@ class Setup
             'caption',
         ) );
 
-        add_theme_support( 'custom-background', apply_filters( 'awps_custom_background_args', array(
+        add_theme_support( 'custom-background', apply_filters( 'wptheme_custom_background_args', array(
             'default-color' => 'ffffff',
             'default-image' => '',
         ) ) );

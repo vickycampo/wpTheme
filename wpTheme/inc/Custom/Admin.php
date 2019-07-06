@@ -1,9 +1,9 @@
 <?php
 
-namespace Awps\Custom;
+namespace wptheme\Custom;
 
-use Awps\Api\Settings;
-use Awps\Api\Callbacks\SettingsCallback;
+use wptheme\Api\Settings;
+use wptheme\Api\Callbacks\SettingsCallback;
 
 /**
  * Admin
@@ -60,19 +60,19 @@ class Admin
 	{
 		// Scripts multidimensional array with styles and scripts
 		$scripts = array(
-			'script' => array( 
-				'jquery', 
+			'script' => array(
+				'jquery',
 				'media_uploader',
 				get_template_directory_uri() . '/assets/dist/js/admin.js'
 			),
-			'style' => array( 
+			'style' => array(
 				get_template_directory_uri() . '/assets/dist/css/admin.css',
 				'wp-color-picker'
 			)
 		);
 
 		// Pages array to where enqueue scripts
-		$pages = array( 'toplevel_page_awps' );
+		$pages = array( 'toplevel_page_wptheme' );
 
 		// Enqueue files in Admin area
 		$this->settings->admin_enqueue( $scripts, $pages );
@@ -89,13 +89,13 @@ class Admin
 	{
 		// Scripts multidimensional array with styles and scripts
 		$scripts = array(
-			'style' => array( 
+			'style' => array(
 				get_template_directory_uri() . '/assets/dist/css/admin.css',
 			)
 		);
 
 		// Pages array to where enqueue scripts
-		$pages = array( 'awps_page_awps_faq' );
+		$pages = array( 'wptheme_page_wptheme_faq' );
 
 		// Enqueue files in Admin area
 		$settings->admin_enqueue( $scripts, $pages )->register();
@@ -109,10 +109,10 @@ class Admin
 	{
 		$admin_pages = array(
 			array(
-				'page_title' => 'AWPS Admin Page',
-				'menu_title' => 'AWPS',
+				'page_title' => 'wptTheme Admin Page',
+				'menu_title' => 'wpTheme',
 				'capability' => 'manage_options',
-				'menu_slug' => 'awps',
+				'menu_slug' => 'wpTheme',
 				'callback' => array( $this->callback, 'admin_index' ),
 				'icon_url' => get_template_directory_uri() . '/assets/dist/images/admin-icon.png',
 				'position' => 110,
@@ -121,11 +121,11 @@ class Admin
 
 		$admin_subpages = array(
 			array(
-				'parent_slug' => 'awps',
-				'page_title' => 'Awps FAQ',
+				'parent_slug' => 'wpTheme',
+				'page_title' => 'wpTheme FAQ',
 				'menu_title' => 'FAQ',
 				'capability' => 'manage_options',
-				'menu_slug' => 'awps_faq',
+				'menu_slug' => 'wptheme_faq',
 				'callback' => array( $this->callback, 'admin_faq' )
 			)
 		);
@@ -145,13 +145,13 @@ class Admin
 		// Register settings
 		$args = array(
 			array(
-				'option_group' => 'awps_options_group',
+				'option_group' => 'wptheme_options_group',
 				'option_name' => 'first_name',
-				'callback' => array( $this->callback, 'awps_options_group' )
+				'callback' => array( $this->callback, 'wptheme_options_group' )
 			),
 			array(
-				'option_group' => 'awps_options_group',
-				'option_name' => 'awps_test2'
+				'option_group' => 'wptheme_options_group',
+				'option_name' => 'wptheme_test2'
 			)
 		);
 
@@ -169,10 +169,10 @@ class Admin
 		// Register sections
 		$args = array(
 			array(
-				'id' => 'awps_admin_index',
+				'id' => 'wptheme_admin_index',
 				'title' => 'Settings',
-				'callback' => array( $this->callback, 'awps_admin_index' ),
-				'page' => 'awps'
+				'callback' => array( $this->callback, 'wptheme_admin_index' ),
+				'page' => 'wpTheme'
 			)
 		);
 
@@ -193,8 +193,8 @@ class Admin
 				'id' => 'first_name',
 				'title' => 'First Name',
 				'callback' => array( $this->callback, 'first_name' ),
-				'page' => 'awps',
-				'section' => 'awps_admin_index',
+				'page' => 'wpTheme',
+				'section' => 'wptheme_admin_index',
 				'args' => array(
 					'label_for' => 'first_name',
 					'class' => ''

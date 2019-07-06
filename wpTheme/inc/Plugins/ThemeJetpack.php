@@ -5,7 +5,7 @@
  * @link https://jetpack.com/
  */
 
-namespace Awps\Plugins;
+namespace wptheme\Plugins;
 
 use Jetpack;
 

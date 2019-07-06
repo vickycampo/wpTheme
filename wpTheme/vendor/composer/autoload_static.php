@@ -23,7 +23,7 @@ class ComposerStaticInitee64b1f52d278c3b544ef136e6be7637
         ),
         'A' => 
         array (
-            'Awps\\' => 5,
+            'wptheme\\' => 5,
         ),
     );
 
@@ -40,7 +40,7 @@ class ComposerStaticInitee64b1f52d278c3b544ef136e6be7637
         array (
             0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
         ),
-        'Awps\\' => 
+        'wptheme\\' => 
         array (
             0 => __DIR__ . '/../..' . '/inc',
         ),

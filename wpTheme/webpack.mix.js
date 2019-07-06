@@ -1,5 +1,5 @@
 /*
- * AWPS uses Laravel Mix
+ * wpTheme uses Laravel Mix
  *
  * Check the documentation at
  * https://laravel.com/docs/5.6/mix

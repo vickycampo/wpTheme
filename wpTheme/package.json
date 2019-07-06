@@ -1,7 +1,7 @@
 {
-  "name": "awps",
-  "version": "3.0.4",
-  "description": "Alecaddd WordPress Starter Theme for savvy developers",
+  "name": "wptheme",
+  "version": "1.0.0",
+  "description": "wpTheme",
   "main": "index.js",
   "scripts": {
     "dev": "npm run development",
@@ -39,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Alecaddd/awps.git"
+    "url": "git+https://github.com/Alecaddd/Awps.git"
   },
   "keywords": [
     "wordpress",
@@ -49,9 +49,9 @@
   "author": "Alessandro Castellani <me@alecaddd.com> (http://alecaddd.com)",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/Alecaddd/awps/issues"
+    "url": "https://github.com/Alecaddd/Awps/issues"
   },
-  "homepage": "https://github.com/Alecaddd/awps#readme",
+  "homepage": "https://github.com/Alecaddd/Awps#readme",
   "dependencies": {
     "eslint-config-wordpress": "^2.0.0",
     "normalize-scss": "^7.0.1",

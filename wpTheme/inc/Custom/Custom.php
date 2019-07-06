@@ -1,6 +1,6 @@
 <?php
 
-namespace Awps\Custom;
+namespace wptheme\Custom;
 
 /**
  * Custom
@@ -33,7 +33,7 @@ class Custom
 				'plural' => 'Artists',
 				'menu_icon' => 'dashicons-admin-customizer',
 				'menu_position' => 18,
-				'text_domain' => 'awps',
+				'text_domain' => 'wpTheme',
 				'supports' => array( 'title', /*'editor', 'thumbnail' , 'excerpt', 'author', 'comments'*/ ),
 				'description' => 'Artists Custom Post Type',
 				'public' => true,
@@ -52,7 +52,7 @@ class Custom
 				'plural'  => 'Books',
 				'menu_icon' => 'dashicons-book-alt',
 				'menu_position' => 18,
-				'text_domain' => 'awps',
+				'text_domain' => 'wpTheme',
 				'supports' => array( 'title', 'editor', 'thumbnail' , 'excerpt', 'author', /*'comments'*/ ),
 				'description' => 'Artists Custom Post Type',
 				'public' => true,

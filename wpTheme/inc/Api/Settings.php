@@ -2,10 +2,10 @@
 /**
  * Settings API
  *
- * @package awps
+ * @package wpTheme
  */
 
-namespace Awps\Api;
+namespace wptheme\Api;
 
 /**
  * Settings API Class

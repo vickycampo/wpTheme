@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package awps
+ * @package wpTheme
  */
 
 ?>
@@ -22,7 +22,7 @@
 		?>
 				<div class="entry-meta">
 					<?php
-					Awps\Core\Tags::posted_on();
+					wptheme\Core\Tags::posted_on();
 					?>
 				</div><!-- .entry-meta -->
 		<?php
@@ -36,7 +36,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. */
-						__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'awps' ),
+						__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'wpTheme' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -49,7 +49,7 @@
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'awps' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wpTheme' ),
 					'after'  => '</div>',
 				)
 			);
@@ -57,6 +57,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php Awps\Core\Tags::entry_footer(); ?>
+		<?php wptheme\Core\Tags::entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

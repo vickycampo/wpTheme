@@ -5,13 +5,13 @@
  * Every function, hook and action is properly divided and organized inside related folders and files
  * Use the file `inc/Custom/Custom.php` to write your custom functions
  *
- * @package awps
+ * @package wpTheme
  */
 
 if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) :
 	require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 endif;
 
-if ( class_exists( 'Awps\\Init' ) ) :
-	Awps\Init::register_services();
+if ( class_exists( 'wptheme\\Init' ) ) :
+	wptheme\Init::register_services();
 endif;

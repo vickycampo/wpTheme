@@ -1,7 +1,7 @@
-# ![awps](http://www.alecaddd.com/wp-content/uploads/2017/05/awps-logo.png)
+# ![wptheme](http://www.alecaddd.com/wp-content/uploads/2017/05/Awps-logo.png)
 > A Modern WordPress Starter Theme for savvy Developers
 
-[![Build Status](https://travis-ci.org/Alecaddd/awps.svg?branch=master)](https://travis-ci.org/Alecaddd/awps) ![Dependecies](https://david-dm.org/Alecaddd/awps.svg) ![NPM latest](https://img.shields.io/npm/v/npm.svg) ![GPL License](https://img.shields.io/badge/license-GPLv3-blue.svg) [![Code Climate](https://codeclimate.com/github/Alecaddd/awps/badges/gpa.svg)](https://codeclimate.com/github/Alecaddd/awps)
+[![Build Status](https://travis-ci.org/Alecaddd/Awps.svg?branch=master)](https://travis-ci.org/Alecaddd/Awps) ![Dependecies](https://david-dm.org/Alecaddd/Awps.svg) ![NPM latest](https://img.shields.io/npm/v/npm.svg) ![GPL License](https://img.shields.io/badge/license-GPLv3-blue.svg) [![Code Climate](https://codeclimate.com/github/Alecaddd/Awps/badges/gpa.svg)](https://codeclimate.com/github/Alecaddd/Awps)
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ This theme relies on **NPM** and **Composer** in order to load dependencies and 
 
 ## Webpack
 
-AWPS uses [Laravel Mix](https://laravel.com/docs/5.6/mix) for assets management. Check the official documentation for advanced options
+wpTheme uses [Laravel Mix](https://laravel.com/docs/5.6/mix) for assets management. Check the official documentation for advanced options
 
 * Edit the `webpack.mix.js` in the root directory of your theme to set your localhost URL and customize your assets
 * `npm run watch` to start browserSync with LiveReload and proxy to your custom URL
@@ -45,4 +45,4 @@ AWPS uses [Laravel Mix](https://laravel.com/docs/5.6/mix) for assets management.
 
 ## License
 
-[GPLv3](https://github.com/Alecaddd/awps/blob/master/LICENSE.txt)
+[GPLv3](https://github.com/Alecaddd/Awps/blob/master/LICENSE.txt)

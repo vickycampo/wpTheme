@@ -1,6 +1,6 @@
 <?php
 
-namespace Awps\Api\Widgets;
+namespace wptheme\Api\Widgets;
 
 use WP_Widget;
 /**
@@ -18,9 +18,9 @@ class TextWidget extends WP_Widget
 
 	function __construct() {
 
-		$this->widget_ID = 'widget_awps';
+		$this->widget_ID = 'widget_wptheme';
 
-		$this->widget_name = 'AWPS Custom Text';
+		$this->widget_name = 'wpTheme Custom Text';
 
 		$this->widget_options = array(
 			'classname' => $this->widget_ID,
@@ -72,13 +72,13 @@ class TextWidget extends WP_Widget
 	 * @param array $instance The widget options
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Custom Text', 'awps' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Custom Text', 'wpTheme' );
 		?>
 		<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'awps' ); ?></label> 
+		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'wpTheme' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
-		<?php 
+		<?php
 	}
 
 	/**

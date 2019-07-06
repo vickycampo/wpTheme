@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package awps
+ * @package wpTheme
  */
 
 get_header(); ?>
@@ -27,7 +27,7 @@ get_header(); ?>
 						<?php
 						printf(
 							/* translators: %s: Search Term. */
-							esc_html__( 'Search Results for: %s', 'awps' ),
+							esc_html__( 'Search Results for: %s', 'wpTheme' ),
 							'<span>' . get_search_query() . '</span>'
 						);
 						?>

@@ -1,8 +1,8 @@
 {
-	"name": "alecaddd/awps",
-	"description": "Alecaddd WordPress Starter Theme for savvy developers",
+	"name": "wpTheme",
+	"description": "wpTheme",
 	"keywords": ["WordPress", "Theme", "Starter"],
-	"homepage": "https://github.com/Alecaddd/awps",
+	"homepage": "https://github.com/Alecaddd/Awps",
 	"license": "GPL-3.0",
 	"version": "3.0.5",
 	"authors": [
@@ -23,7 +23,7 @@
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
 	},
 	"autoload": {
-		"psr-4": { "Awps\\": "./inc" },
+		"psr-4": { "wptheme\\": "./inc" },
 		"files": [ "./inc/Helpers.php" ]
 	}
 }

@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package awps
+ * @package wpTheme
  */
 
 ?>
@@ -20,7 +20,7 @@
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'awps' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'wpTheme' ),
 					'after'  => '</div>',
 				)
 			);

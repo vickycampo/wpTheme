@@ -1,6 +1,6 @@
 <?php
 
-namespace Awps\Core;
+namespace wptheme\Core;
 
 use Walker_Nav_Menu;
 

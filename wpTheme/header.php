@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package awps
+ * @package wpTheme
  */
 
 ?><!DOCTYPE html>
@@ -27,7 +27,7 @@
 
 			<?php
 			if ( is_customize_preview() ) {
-				echo '<div id="awps-header-control"></div>';
+				echo '<div id="wptheme-header-control"></div>';
 			}
 			?>
 
@@ -64,7 +64,7 @@
 								array(
 									'theme_location' => 'primary',
 									'menu_id'        => 'primary-menu',
-									'walker'         => new Awps\Core\WalkerNav(),
+									'walker'         => new wptheme\Core\WalkerNav(),
 								)
 							);
 						endif;

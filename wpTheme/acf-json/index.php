@@ -4,5 +4,5 @@
  *
  * @link https://github.com/elliotcondon/acf
  *
- * @package awps
+ * @package wpTheme
  */

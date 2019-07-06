@@ -1,6 +1,6 @@
 <?php
 
-namespace Awps\Core;
+namespace wptheme\Core;
 
 /**
  * Sidebar.
@@ -22,9 +22,9 @@ class Sidebar
     public function widgets_init()
     {
         register_sidebar( array(
-            'name' => esc_html__('Sidebar', 'awps'),
-            'id' => 'awps-sidebar',
-            'description' => esc_html__('Default sidebar to add all your widgets.', 'awps'),
+            'name' => esc_html__('Sidebar', 'wpTheme'),
+            'id' => 'wptheme-sidebar',
+            'description' => esc_html__('Default sidebar to add all your widgets.', 'wpTheme'),
             'before_widget' => '<section id="%1$s" class="widget %2$s p-2">',
             'after_widget' => '</section>',
             'before_title' => '<h2 class="widget-title">',

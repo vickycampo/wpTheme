@@ -2,25 +2,25 @@
 /**
  * Theme Customizer
  *
- * @package awps
+ * @package wpTheme
  */
 
-namespace Awps\Api;
+namespace wptheme\Api;
 
-use Awps\Api\Customizer\Sidebar;
-use Awps\Api\Customizer\Header;
-use Awps\Api\Customizer\Footer;
+use wptheme\Api\Customizer\Sidebar;
+use wptheme\Api\Customizer\Header;
+use wptheme\Api\Customizer\Footer;
 
 /**
  * Customizer class
  */
-class Customizer 
+class Customizer
 {
 	/**
 	 * register default hooks and actions for WordPress
 	 * @return
 	 */
-	public function register() 
+	public function register()
 	{
 		add_action( 'wp_head', array($this , 'output') );
 
@@ -45,7 +45,7 @@ class Customizer
 	 *
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 */
-	public function setup( $wp_customize ) 
+	public function setup( $wp_customize )
 	{
 		foreach ( $this->get_classes() as $class ) {
 			$service = new $class;
@@ -62,18 +62,18 @@ class Customizer
 	public function output()
 	{
 		echo '<!--Customizer CSS--> <style type="text/css">';
-			echo self::css( '#sidebar', 'background-color', 'awps_sidebar_background_color' );
-			echo self::css( '.site-footer', 'background-color', 'awps_footer_background_color' );
-			echo self::css( '.site-header', 'background-color', 'awps_header_background_color' );
-			echo self::css( '.site-header', 'color', 'awps_header_text_color' );
-			echo self::css( '.site-header a', 'color', 'awps_header_link_color' );
+			echo self::css( '#sidebar', 'background-color', 'wptheme_sidebar_background_color' );
+			echo self::css( '.site-footer', 'background-color', 'wptheme_footer_background_color' );
+			echo self::css( '.site-header', 'background-color', 'wptheme_header_background_color' );
+			echo self::css( '.site-header', 'color', 'wptheme_header_text_color' );
+			echo self::css( '.site-header a', 'color', 'wptheme_header_link_color' );
 		echo '</style><!--/Customizer CSS-->';
 	}
 
 	/**
 	 * This will generate a line of CSS for use in selective refresh. If the setting
 	 * ($mod_name) has no defined value, the CSS will not be output.
-	 * 
+	 *
 	 * @uses get_theme_mod()
 	 * @param string $selector CSS selector
 	 * @param string $property The name of the CSS *property* to modify
@@ -93,7 +93,7 @@ class Customizer
 	/**
 	 * This will generate text for use inin selective refresh. If the setting
 	 * ($mod_name) has no defined value, the text will not be output.
-	 * 
+	 *
 	 * @uses get_theme_mod()
 	 * @param string $mod_name The name of the 'theme_mod' option to fetch
 	 * @param bool $echo Optional. Whether to print directly to the page (default: true).

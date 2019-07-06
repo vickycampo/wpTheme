@@ -2,32 +2,32 @@
 /**
  * Callbacks for Settings API
  *
- * @package awps
+ * @package wpTheme
  */
 
-namespace Awps\Api\Callbacks;
+namespace wptheme\Api\Callbacks;
 
 /**
  * Settings API Callbacks Class
  */
 class SettingsCallback
 {
-	public function admin_index() 
+	public function admin_index()
 	{
 		return require_once( get_template_directory() . '/views/admin/index.php' );
 	}
 
-	public function admin_faq() 
+	public function admin_faq()
 	{
 		echo '<div class="wrap"><h1>FAQ Page</h1></div>';
 	}
 
-	public function awps_options_group( $input ) 
+	public function wptheme_options_group( $input )
 	{
 		return $input;
 	}
 
-	public function awps_admin_index() 
+	public function wptheme_admin_index()
 	{
 		echo 'Customize this Theme Settings section and add description and instructions';
 	}

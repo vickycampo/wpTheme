@@ -2,13 +2,13 @@
 /**
  * Theme Customizer - Header
  *
- * @package awps
+ * @package wpTheme
  */
 
-namespace Awps\Api\Customizer;
+namespace wptheme\Api\Customizer;
 
 use WP_Customize_Color_Control;
-use Awps\Api\Customizer;
+use wptheme\Api\Customizer;
 
 /**
  * Customizer class
@@ -21,43 +21,43 @@ class Header
 	 */
 	public function register( $wp_customize ) 
 	{
-		$wp_customize->add_section( 'awps_header_section' , array(
-			'title' => __( 'Header', 'awps' ),
+		$wp_customize->add_section( 'wptheme_header_section' , array(
+			'title' => __( 'Header', 'wpTheme' ),
 			'description' => __( 'Customize the Header' ),
 			'priority' => 35
 		) );
 
-		$wp_customize->add_setting( 'awps_header_background_color' , array(
+		$wp_customize->add_setting( 'wptheme_header_background_color' , array(
 			'default' => '#ffffff',
 			'transport' => 'postMessage', // or refresh if you want the entire page to reload
 		) );
 
-		$wp_customize->add_setting( 'awps_header_text_color' , array(
+		$wp_customize->add_setting( 'wptheme_header_text_color' , array(
 			'default' => '#333333',
 			'transport' => 'postMessage', // or refresh if you want the entire page to reload
 		) );
 
-		$wp_customize->add_setting( 'awps_header_link_color' , array(
+		$wp_customize->add_setting( 'wptheme_header_link_color' , array(
 			'default' => '#004888',
 			'transport' => 'postMessage', // or refresh if you want the entire page to reload
 		) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'awps_header_background_color', array(
-			'label' => __( 'Header Background Color', 'awps' ),
-			'section' => 'awps_header_section',
-			'settings' => 'awps_header_background_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wptheme_header_background_color', array(
+			'label' => __( 'Header Background Color', 'wpTheme' ),
+			'section' => 'wptheme_header_section',
+			'settings' => 'wptheme_header_background_color',
 		) ) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'awps_header_text_color', array(
-			'label' => __( 'Header Text Color', 'awps' ),
-			'section' => 'awps_header_section',
-			'settings' => 'awps_header_text_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wptheme_header_text_color', array(
+			'label' => __( 'Header Text Color', 'wpTheme' ),
+			'section' => 'wptheme_header_section',
+			'settings' => 'wptheme_header_text_color',
 		) ) );
 
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'awps_header_link_color', array(
-			'label' => __( 'Header Link Color', 'awps' ),
-			'section' => 'awps_header_section',
-			'settings' => 'awps_header_link_color',
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wptheme_header_link_color', array(
+			'label' => __( 'Header Link Color', 'wpTheme' ),
+			'section' => 'wptheme_header_section',
+			'settings' => 'wptheme_header_link_color',
 		) ) );
 
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
@@ -76,18 +76,18 @@ class Header
 					bloginfo( 'description' );
 				},
 			) );
-			$wp_customize->selective_refresh->add_partial( 'awps_header_background_color', array(
-				'selector' => '#awps-header-control',
+			$wp_customize->selective_refresh->add_partial( 'wptheme_header_background_color', array(
+				'selector' => '#wptheme-header-control',
 				'render_callback' => array( $this, 'outputCss' ),
 				'fallback_refresh' => true
 			) );
-			$wp_customize->selective_refresh->add_partial( 'awps_header_text_color', array(
-				'selector' => '#awps-header-control',
+			$wp_customize->selective_refresh->add_partial( 'wptheme_header_text_color', array(
+				'selector' => '#wptheme-header-control',
 				'render_callback' => array( $this, 'outputCss' ),
 				'fallback_refresh' => true
 			) );
-			$wp_customize->selective_refresh->add_partial( 'awps_header_link_color', array(
-				'selector' => '#awps-header-control',
+			$wp_customize->selective_refresh->add_partial( 'wptheme_header_link_color', array(
+				'selector' => '#wptheme-header-control',
 				'render_callback' => array( $this, 'outputCss' ),
 				'fallback_refresh' => true
 			) );
@@ -100,9 +100,9 @@ class Header
 	public function outputCss()
 	{
 		echo '<style type="text/css">';
-			echo Customizer::css( '.site-header', 'background-color', 'awps_header_background_color' );
-			echo Customizer::css( '.site-header', 'color', 'awps_header_text_color' );
-			echo Customizer::css( '.site-header a', 'color', 'awps_header_link_color' );
+			echo Customizer::css( '.site-header', 'background-color', 'wptheme_header_background_color' );
+			echo Customizer::css( '.site-header', 'color', 'wptheme_header_text_color' );
+			echo Customizer::css( '.site-header a', 'color', 'wptheme_header_link_color' );
 		echo '</style>';
 	}
 }

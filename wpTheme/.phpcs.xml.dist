@@ -35,7 +35,7 @@
 	<!-- Include WordPress I18n ruleset-->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="awps,tgmpa" />
+			<property name="text_domain" type="array" value="wptheme,tgmpa" />
 		</properties>
 	</rule>
 	<!-- Include PHP Compatibility Coding Standard for WordPress. -->
