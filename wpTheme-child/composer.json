@@ -1,6 +1,6 @@
 {
-	"name": "vc/wptheme",
-	"description": "wpTheme",
+	"name": "vc/wptheme-child",
+	"description": "wpTheme-child",
 	"keywords": ["WordPress", "Theme", "Starter"],
 	"homepage": "https://github.com/vickycampo/wpTheme",
 	"license": "GPL-3.0",
@@ -23,7 +23,7 @@
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
 	},
 	"autoload": {
-		"psr-4": { "wptheme\\": "./inc" },
+		"psr-4": { "wptheme_child\\": "./inc" },
 		"files": [ "./inc/Helpers.php" ]
 	}
 }

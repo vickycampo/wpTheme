@@ -15,6 +15,14 @@
 */
 ?>
 <?php
+if ( file_exists( get_theme_file_path('/vendor/autoload.php') ) ) {
+    require_once get_theme_file_path('/vendor/autoload.php');
+}
+if ( file_exists( get_parent_theme_file_path('/vendor/autoload.php') ) ) {
+    require_once get_parent_theme_file_path('/vendor/autoload.php');
+}
+?>
+<?php
 /*
      ========================================
           ENQUEUE PARENT STYLES FUNMCTION
