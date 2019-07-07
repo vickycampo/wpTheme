@@ -9,95 +9,87 @@
 	===================================
 *
 */
-.custom-background
-{
-     background-image:none !important;
-}
-body.bs-fixed-nav
-{
-     padding-top: 0px !important;
-}
-/* Remove the sidebar because we don't use them here */
-.body-left-sidebar
-{
-     visibility: hidden;
-     display: none;
-}
-.load-more-span-div
-{
-     margin: 10px;
-}
-.load-more-span-a
-{
-     font-weight: bold;
-     font-size: 12px;
-     padding-right: 5px;
-     color: white !important;
-     background-color: #101010;
-}
-.load-more-span-a:hover
-{
-     /* box-shadow: orange 0px 1px 5px 0px; */
-     color: orange !important;
+.custom-background {
+  background-image: none !important;
 }
 
+body.bs-fixed-nav {
+  padding-top: 0px !important;
+}
+
+/* Remove the sidebar because we don't use them here */
+.body-left-sidebar {
+  visibility: hidden;
+  display: none;
+}
+
+.load-more-span-div {
+  margin: 10px;
+}
+
+.load-more-span-a {
+  font-weight: bold;
+  font-size: 12px;
+  padding-right: 5px;
+  color: white !important;
+  background-color: #101010;
+}
+
+.load-more-span-a:hover {
+  /* box-shadow: orange 0px 1px 5px 0px; */
+  color: orange !important;
+}
 
 /* Content */
 /* Maximum width for reading 900 px */
-#wrap
-{
-     text-align: center;
+#wrap {
+  text-align: center;
 }
-#wrap .row
-{
-     width: 100%;
-     /* max-width: 900px; */
-     display: inline-block;
+
+#wrap .row {
+  width: 100%;
+  /* max-width: 900px; */
+  display: inline-block;
 }
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
   }
 }
-
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
   }
 }
-
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
 }
-
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
   }
 }
-
-#wrap .the_content
-{
-
+.read-more-results {
+  display: -webkit-box;
+  display: flex;
+  text-align: left;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+          justify-content: center;
 }
-.read-more-results
-{
-     display: flex;
-     text-align: left;
-     flex-wrap: wrap;
-     justify-content: center;
-}
+
 .read-more-results > article {
-     width: 200px;
-     max-height: 250px;
-     margin: 5px;
-     padding: 5px;
-     background-color: white;
-     border: solid 1px red;
+  width: 200px;
+  max-height: 250px;
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border: solid 1px red;
 }
-.read-more-results > article > the_date
-{
-     font-size = 14px;
+
+.read-more-results > article > the_date {
+  font-size: 14px;
 }

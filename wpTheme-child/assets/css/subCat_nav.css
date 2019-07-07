@@ -12,138 +12,127 @@
 *
 */
 /* The class of the div that contains the dropdownbuttown */
-     header
-     {
-          text-align: center;
-     }
-     .sub-cat-main-div
-     {
-          display: inline-block;
-          max-width: 900px;
-     }
+header {
+  text-align: center;
+}
+
+.sub-cat-main-div {
+  display: inline-block;
+  max-width: 900px;
+}
+
 /* The content of the menu */
-     .sub-cat-div
-     {
-
-          color: white;
-          display: flex;
+.sub-cat-div {
+  color: white;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
           flex-direction: row;
-          flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
           justify-content: center;
-          margin-top: 15px;
-     }
+  margin-top: 15px;
+}
+
 /* The class of the button */
-     .sub-cat-button
-     {
-          background-color: #101010;
-          color: #F5F5F5;
-          margin:3px;
-          text-transform: capitalize;
-          border-radius: 10px;
-     }
-     .sub-cat-button span
-     {
-          font-weight: bold;
-          font-size: 12px;
-          padding-right: 5px;
-          border-right: 1px solid orange;
-     }
-     .sub-cat-button::after
-     {
-          color:orange;
-     }
-     .sub-cat-button:hover
-     {
-          color:orange;
-     }
-     .sub-cat-button:focus
-     {
-          box-shadow: 0 0 0 0rem;
-     }
+.sub-cat-button {
+  background-color: #101010;
+  color: #F5F5F5;
+  margin: 3px;
+  text-transform: capitalize;
+  border-radius: 10px;
+}
+
+.sub-cat-button span {
+  font-weight: bold;
+  font-size: 12px;
+  padding-right: 5px;
+  border-right: 1px solid orange;
+}
+
+.sub-cat-button::after {
+  color: orange;
+}
+
+.sub-cat-button:hover {
+  color: orange;
+}
+
+.sub-cat-button:focus {
+  box-shadow: 0 0 0 0rem;
+}
+
 /* The class of the menu, the dropdown part */
-     .sub-cat-menu
-     {
-          padding: 0px;
-          border: 1px solid #A9A9A9;
-          color: #505050;
-          background-color: #DCDCDC;
-     }
-     /* Each sub category */
-     .sub-cat-menu .dropdown-item
-     {
+.sub-cat-menu {
+  padding: 0px;
+  border: 1px solid #A9A9A9;
+  color: #505050;
+  background-color: #DCDCDC;
+}
 
+/* Each sub category */
+.sub-cat-menu .dropdown-item {
+  font-size: 12px;
+  padding-left: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  cursor: pointer;
+}
 
-          font-size: 12px;
-          padding-left: 5px;
-          padding-top: 0px;
-          padding-bottom: 0px;
-          cursor: pointer;
-     }
-     /* Each sub category with subcategories */
-     .sub-cat-menu .dropdown-has-subitem
-     {
+/* Each sub category with subcategories */
+.sub-cat-menu .dropdown-subitem {
+  padding-left: 15px;
+}
 
-     }
-     .sub-cat-menu .dropdown-subitem
-     {
-          padding-left: 15px;
-     }
-     .sub-cat-menu .dropdown-divider
-     {
-          margin: 0px;
-          line-height:auto;
-     }
+.sub-cat-menu .dropdown-divider {
+  margin: 0px;
+  line-height: auto;
+}
+
 /* Div where we put the filters */
-.sub-cat-filters
-{
-
-     display: flex;
-     flex-direction: row;
-     flex-wrap: wrap;
-     justify-content: center;
-
-     height: auto;
-     /* visibility: hidden; */
-}
-.sub-cat-filters div
-{
-
-}
-.sub-cat-filters-element
-{
-
-
-     border: 1px solid #A9A9A9;
-     color: #505050;
-     background-color: #DCDCDC;
-
-     font-size: 10px;
-     font-weight: bold;
-     padding: 0px;
-     /* min-width: 100px; */
-
-     margin: 3px;
-}
-.sub-cat-filters-name
-{
-     display: inline-block;
-     text-align: center;
-     padding-left: 3px;
-     border-left: 1px solid #A9A9A9;
-     min-width: 100px;
-     margin: 0px;
+.sub-cat-filters {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+          justify-content: center;
+  height: auto;
+  /* visibility: hidden; */
 }
 
-.sub-cat-filters-close
-{
-     display: inline-block;
-     background-color: #BEBEBE;
-     text-align: center;
-     padding:7px;
-     cursor: pointer;
-     min-height: 100%;
+.sub-cat-filters-element {
+  border: 1px solid #A9A9A9;
+  color: #505050;
+  background-color: #DCDCDC;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 0px;
+  /* min-width: 100px; */
+  margin: 3px;
 }
-.sub-cat-filters-close:hover
-{
-     color: orange;
+
+.sub-cat-filters-name {
+  display: inline-block;
+  text-align: center;
+  padding-left: 3px;
+  border-left: 1px solid #A9A9A9;
+  min-width: 100px;
+  margin: 0px;
+}
+
+.sub-cat-filters-close {
+  display: inline-block;
+  background-color: #BEBEBE;
+  text-align: center;
+  padding: 7px;
+  cursor: pointer;
+  min-height: 100%;
+}
+
+.sub-cat-filters-close:hover {
+  color: orange;
 }

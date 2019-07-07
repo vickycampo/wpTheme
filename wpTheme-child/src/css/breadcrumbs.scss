@@ -1,0 +1,40 @@
+/*
+
+@package WordPress
+@subpackage wpChildTheme
+@since wpTheme
+
+	===================================
+		BREADCRUMBS STYLES CSS
+	===================================
+*
+*/
+/* contentainer */
+.my-breadcrumbs
+{
+     margin-top: 15px;
+     color: #181818;
+
+
+}
+.my-breadcrumbs a
+{
+     color: #181818;
+}
+.my-breadcrumbs a:hover
+{
+     color: orange;
+}
+.breadcrumb
+{
+     background-color: #DCDCDC;
+     border-radius: 10px;
+     margin-bottom: 0px;
+}
+.breadcrumb-item + .breadcrumb-item::before
+{
+     color:orange;
+     font-weight: 600;
+     font-size: 10px;
+     content: ">>";
+}
