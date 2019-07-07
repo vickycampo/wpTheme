@@ -26,12 +26,12 @@ else
      $screen_size = $defaults['bs-screen-size'];
 }
 ?>
-<?php tha_sidebars_before();
+<?php wptheme\Custom\Hooks::tha_sidebars_before();
 if ( is_active_sidebar( 'body-right-sidebar' ) )
 {
 ?>
      <aside class="sidebar body-right-sidebar col<?php echo ( $screen_size );?>3 order-3">
-      	<?php tha_sidebar_top(); ?>
+      	<?php wptheme\Custom\Hooks::tha_sidebar_top(); ?>
           <?php
 
            ?>
@@ -40,9 +40,9 @@ if ( is_active_sidebar( 'body-right-sidebar' ) )
                </ul>
 
 
-          <?php tha_sidebar_bottom(); ?>
+          <?php wptheme\Custom\Hooks::tha_sidebar_bottom(); ?>
      </aside>
 <?php
 }
 ?>
-<?php tha_sidebars_after(); ?>
+<?php wptheme\Custom\Hooks::tha_sidebars_after(); ?>

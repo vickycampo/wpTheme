@@ -15,10 +15,10 @@
 
 	<?php
 	get_template_part( 'template-parts/part', 'title' );
-	tha_entry_before(); ?>
+	wptheme\Custom\Hooks::tha_entry_before(); ?>
 	<section class="entry media">
 		<?php
-		tha_entry_top();
+		wptheme\Custom\Hooks::tha_entry_top();
 		if ( is_single() )
 		{
 		?>
@@ -50,11 +50,11 @@
 		?>
 		<?php
 		get_template_part( 'template-parts/part', 'link-pages' );
-		tha_entry_bottom();
+		wptheme\Custom\Hooks::tha_entry_bottom();
 		?>
 	</section>
 	<?php
-	tha_entry_after();
+	wptheme\Custom\Hooks::tha_entry_after();
 	?>
 	<div class="icon icon-post pull-left"></div><?php get_template_part( 'template-parts/part', 'postmetadata' ); ?>
 

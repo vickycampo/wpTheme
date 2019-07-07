@@ -17,9 +17,9 @@
      <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
           <h1 class="the_title"><?php the_title(); ?></h1>
 
-          <?php tha_entry_before(); ?>
+          <?php wptheme\Custom\Hooks::tha_entry_before(); ?>
           <?php get_template_part( 'template-parts/part', 'section' ); ?>
-          <?php tha_entry_after(); ?>
+          <?php wptheme\Custom\Hooks::tha_entry_after(); ?>
 
           <?php get_template_part('template-parts/part', 'postmetadata' ); ?>
           <?php get_template_part('template-parts/part', 'navigation' ); ?>

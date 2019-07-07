@@ -23,13 +23,13 @@
 
 		<?php
           /* Add the hook */
-          tha_entry_before(); ?>
+          wptheme\Custom\Hooks::tha_entry_before(); ?>
           <!-- The Section Tag -->
 		<section class="entry media">
 
 			<?php
                /* Add the hook */
-               tha_entry_top(); ?>
+               wptheme\Custom\Hooks::tha_entry_top(); ?>
 			<div class="container">
 				<div class="row">
 				<?php
@@ -68,13 +68,13 @@
 			</div>
 			<?php
                /* Add the hook */
-               tha_entry_bottom();
+               wptheme\Custom\Hooks::tha_entry_bottom();
                ?>
 		</section>
 	</article>
 	<?php
      /* Add the hook */
-     tha_entry_after();
+     wptheme\Custom\Hooks::tha_entry_after();
      ?>
 
 	<?php

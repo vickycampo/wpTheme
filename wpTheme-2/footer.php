@@ -17,10 +17,10 @@ FOOTER
 </main> <!-- /wrap div-->
 
 
-<?php tha_footer_before(); ?>
+<?php wptheme\Custom\Hooks::tha_footer_before(); ?>
 
 <footer class="container footer-container">
-     <?php tha_footer_top(); ?>
+     <?php wptheme\Custom\Hooks::tha_footer_top(); ?>
      <div class="row footer-widgets">
           <?php
                //add the widget part of the template
@@ -41,11 +41,11 @@ FOOTER
                get_template_part( 'template-parts/footer/part', 'credit' );
           ?>
      </div>
-     <?php tha_footer_bottom(); ?>
+     <?php wptheme\Custom\Hooks::tha_footer_bottom(); ?>
 </footer>
 
-<?php tha_footer_after(); ?>
-<?php tha_body_bottom(); ?>
+<?php wptheme\Custom\Hooks::tha_footer_after(); ?>
+<?php wptheme\Custom\Hooks::tha_body_bottom(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

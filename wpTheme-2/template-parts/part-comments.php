@@ -12,7 +12,7 @@
 */
 ?>
 
-<?php tha_comments_before(); ?>
+<?php wptheme\Custom\Hooks::tha_comments_before(); ?>
 <section id="comments">
      <?php
      // If comments are open or we have at least one comment, load up the comment template.
@@ -21,4 +21,4 @@
      endif;
      ?>
 </section>
-<?php tha_comments_after(); ?>
+<?php wptheme\Custom\Hooks::tha_comments_after(); ?>

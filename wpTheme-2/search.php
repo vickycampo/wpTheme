@@ -37,16 +37,16 @@ $wpTheme_content_columns = wpTheme_get_content_columns('body'); ?>
 <div class="row" >
 	<?php
 	//Add hook
-	tha_content_before();
+	wptheme\Custom\Hooks::tha_content_before();
 	?>
 	<div class="content col<?php echo ( $screen_size );?>9 <<?php echo esc_attr( $wpTheme_content_columns ) ?>">
-		<?php tha_content_top(); ?>
+		<?php wptheme\Custom\Hooks::tha_content_top(); ?>
 
 		<?php get_template_part('template-parts/content','search'); ?>
 
-		<?php tha_content_bottom(); ?>
+		<?php wptheme\Custom\Hooks::tha_content_bottom(); ?>
 	</div>
-     <?php tha_content_after(); ?>
+     <?php wptheme\Custom\Hooks::tha_content_after(); ?>
      <?php get_sidebar('left'); ?>
      <?php get_sidebar('right'); ?>
 </div><!--sidebar and content row-->

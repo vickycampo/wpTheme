@@ -12,7 +12,7 @@
 */
 ?>
 <section class="entry media">
-     <?php tha_entry_top(); ?>
+     <?php wptheme\Custom\Hooks::tha_entry_top(); ?>
      <?php
      if ( wpTheme_archive_excerpts() == false )
      {
@@ -37,5 +37,5 @@
 
           <?php
      } ?>
-     <?php tha_entry_bottom(); ?>
+     <?php wptheme\Custom\Hooks::tha_entry_bottom(); ?>
 </section>

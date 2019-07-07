@@ -19,9 +19,9 @@
           <time datetime=<?php the_time('Y-m-d'); ?>></time>
           <h1 class="the_title"><?php the_title(); ?></h1>
 
-          <?php tha_entry_before(); ?>
+          <?php wptheme\Custom\Hooks::tha_entry_before(); ?>
           <?php get_template_part( 'template-parts/part', 'section' ); ?>
-          <?php tha_entry_after(); ?>
+          <?php wptheme\Custom\Hooks::tha_entry_after(); ?>
 
           <?php get_template_part('template-parts/part', 'postmetadata' ); ?>
           <!-- Comments Section -->

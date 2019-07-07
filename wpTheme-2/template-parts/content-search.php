@@ -38,12 +38,12 @@ $total_results = $wp_query->found_posts;
 
 	<?php
      //Add Hook
-     tha_entry_before();
+     wptheme\Custom\Hooks::tha_entry_before();
      ?>
 	<section class="entry media">
 		<?php
           //Add Hook
-          tha_entry_top();
+          wptheme\Custom\Hooks::tha_entry_top();
           ?>
 
 		<?php
@@ -63,9 +63,9 @@ $total_results = $wp_query->found_posts;
 			<?php the_excerpt(); ?>
 		</div>
 
-		<?php tha_entry_bottom(); ?>
+		<?php wptheme\Custom\Hooks::tha_entry_bottom(); ?>
 	</section>
-	<?php tha_entry_after(); ?>
+	<?php wptheme\Custom\Hooks::tha_entry_after(); ?>
 
 	<div class="icon icon-search pull-left" title="<?php esc_attr_e( 'Search', 'wpTheme' ); ?>">
      </div>

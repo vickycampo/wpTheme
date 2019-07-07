@@ -21,11 +21,11 @@
      <div class="row" >
           <?php
           //Add hook
-          tha_content_before();
+          wptheme\Custom\Hooks::tha_content_before();
           ?>
           <div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
                <!-- Add hook -->
-               <?php tha_content_top(); ?>
+               <?php wptheme\Custom\Hooks::tha_content_top(); ?>
                <!-- The loop -->
 
                <?php
@@ -91,10 +91,10 @@
                wp_reset_query();  // Restore global post data stomped by the_post().
                ?>
 
-               <?php tha_content_bottom(); ?>
+               <?php wptheme\Custom\Hooks::tha_content_bottom(); ?>
           </div>
 
-          <?php tha_content_after(); ?>
+          <?php wptheme\Custom\Hooks::tha_content_after(); ?>
           <?php get_sidebar('left'); ?>
           <?php get_sidebar('right'); ?>
      </div><!-- /Row -->

@@ -14,9 +14,9 @@
 <!--  -->
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	<time datetime=<?php the_time('Y-m-d'); ?>></time>
-	<?php tha_entry_before(); ?>
+	<?php wptheme\Custom\Hooks::tha_entry_before(); ?>
 		<?php get_template_part( 'template-parts/part', 'section' ); ?>
-	<?php tha_entry_after(); ?>
+	<?php wptheme\Custom\Hooks::tha_entry_after(); ?>
 
 	<div class="icon icon-bullhorn pull-left" title="<?php esc_attr_e( 'Aside', 'wpTheme' ); ?>">
 	</div>

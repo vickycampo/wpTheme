@@ -23,18 +23,18 @@
 
 ?>
 <div class="row" >
-     <?php tha_content_before(); ?>
+     <?php wptheme\Custom\Hooks::tha_content_before(); ?>
      <!-- The Content Div -->
      <div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
-     	<?php tha_content_top(); ?>
+     	<?php wptheme\Custom\Hooks::tha_content_top(); ?>
 
      	<?php
           //Get the Template part
           get_template_part('template-parts/content','author'); ?>
 
-     	<?php tha_content_bottom(); ?>
+     	<?php wptheme\Custom\Hooks::tha_content_bottom(); ?>
      </div> <!-- /content -->
-     <?php tha_content_after(); ?>
+     <?php wptheme\Custom\Hooks::tha_content_after(); ?>
      <?php get_sidebar('left'); ?>
      <?php get_sidebar('right'); ?>
 </div><!--row-->

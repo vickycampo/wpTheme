@@ -11,14 +11,7 @@
 if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) :
 	require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 endif;
-/*
-     ==============================
-          THE HOOK ALLIANCE
-     ==============================
-*
-* include theme hook alliance hooks
-*/
-include_once ( get_parent_theme_file_path() . '/inc/hooks.php' );
+
 /*
      ==============================
           INIT

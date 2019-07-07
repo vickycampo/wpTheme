@@ -13,10 +13,10 @@
 */
 ?>
 <!DOCTYPE html>
-<?php tha_html_before (); ?>
+<?php wptheme\Custom\Hooks::tha_html_before (); ?>
 <html <?php language_attributes();  ?> dir="ltr" class="no-js">
 <head>
-     <?php tha_head_top (); ?>
+     <?php wptheme\Custom\Hooks::tha_head_top (); ?>
      <!-- Set the metas -->
      <meta charset="<?php bloginfo( 'charset' ); ?>">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,18 +55,18 @@
      ?>
      <!-- Set the page title -->
      <title><?php wp_title ();?></title>
-     <?php tha_head_bottom(); ?>
+     <?php wptheme\Custom\Hooks::tha_head_bottom(); ?>
      <?php wp_head(); ?>
 </head>
 <body <?php body_class( $fixed_nav ); ?>>
 
-     <?php tha_body_top(); ?>
+     <?php wptheme\Custom\Hooks::tha_body_top(); ?>
      <!-- Create a div that is going to wrap all the content -->
      <!-- Add the head part-->
-     <?php tha_header_before(); ?>
+     <?php wptheme\Custom\Hooks::tha_header_before(); ?>
      <header>
           <?php
-          tha_header_top();
+          wptheme\Custom\Hooks::tha_header_top();
           $height = 'fixed-height-' . $defaults['big-header-image']['percentage'];
           if ( isset ($options['big-header-image']['percentage']) )
           {
@@ -82,7 +82,7 @@
           </div> <!-- Header-img -->
           <!-- Main Navigation bar part -->
           <?php get_template_part( 'template-parts/header/part', 'child-subcategory-bar' ); ?>
-          <?php tha_header_bottom(); ?>
+          <?php wptheme\Custom\Hooks::tha_header_bottom(); ?>
      </header>
-     <?php tha_header_after(); ?>
+     <?php wptheme\Custom\Hooks::tha_header_after(); ?>
      <main class="container" id="wrap"> <!-- wrap div-->

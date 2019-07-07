@@ -21,22 +21,22 @@
 /**
  * Define the version of THA support, in case that becomes useful down the road.
  */
-define( 'THA_HOOKS_VERSION', '1.0-draft' );
+define( 'wptheme\Custom\Hooks::tha_HOOKS_VERSION', '1.0-draft' );
 
 /**
- * Themes and Plugins can check for tha_hooks using current_theme_supports( 'tha_hooks', $hook )
+ * Themes and Plugins can check for wptheme\Custom\Hooks::tha_hooks using current_theme_supports( 'wptheme\Custom\Hooks::tha_hooks', $hook )
  * to determine whether a theme declares itself to support this specific hook type.
  *
  * Example:
  * <code>
  * 		// Declare support for all hook types
- * 		add_theme_support( 'tha_hooks', array( 'all' ) );
+ * 		add_theme_support( 'wptheme\Custom\Hooks::tha_hooks', array( 'all' ) );
  *
  * 		// Declare support for certain hook types only
- * 		add_theme_support( 'tha_hooks', array( 'header', 'content', 'footer' ) );
+ * 		add_theme_support( 'wptheme\Custom\Hooks::tha_hooks', array( 'header', 'content', 'footer' ) );
  * </code>
  */
-add_theme_support( 'tha_hooks', array(
+add_theme_support( 'wptheme\Custom\Hooks::tha_hooks', array(
 
 	/**
 	 * As a Theme developer, use the 'all' parameter, to declare support for all
@@ -81,8 +81,8 @@ add_theme_support( 'tha_hooks', array(
  *
  * Example:
  * <code>
- * 		if ( current_theme_supports( 'tha_hooks', 'header' ) )
- * 	  		add_action( 'tha_head_top', 'prefix_header_top' );
+ * 		if ( current_theme_supports( 'wptheme\Custom\Hooks::tha_hooks', 'header' ) )
+ * 	  		add_action( 'wptheme\Custom\Hooks::tha_head_top', 'prefix_header_top' );
  * </code>
  *
  * @param bool $bool true
@@ -91,161 +91,161 @@ add_theme_support( 'tha_hooks', array(
  *
  * @return bool
  */
-function tha_current_theme_supports( $bool, $args, $registered )
+function wptheme\Custom\Hooks::tha_current_theme_supports( $bool, $args, $registered )
 {
 	return in_array( $args[0], $registered[0] ) || in_array( 'all', $registered[0] );
 }
-add_filter( 'current_theme_supports-tha_hooks', 'tha_current_theme_supports', 10, 3 );
+add_filter( 'current_theme_supports-wptheme\Custom\Hooks::tha_hooks', 'wptheme\Custom\Hooks::tha_current_theme_supports', 10, 3 );
 
 /**
  * HTML <html> hook
  * Special case, useful for <DOCTYPE>, etc.
- * $tha_supports[] = 'html;
+ * $wptheme\Custom\Hooks::tha_supports[] = 'html;
  */
- function tha_html_before() {
-	 do_action( 'tha_html_before' );
+ function wptheme\Custom\Hooks::tha_html_before() {
+	 do_action( 'wptheme\Custom\Hooks::tha_html_before' );
  }
 /**
  * HTML <body> hooks
- * $tha_supports[] = 'body';
+ * $wptheme\Custom\Hooks::tha_supports[] = 'body';
  */
- function tha_body_top() {
-	 do_action( 'tha_body_top' );
+ function wptheme\Custom\Hooks::tha_body_top() {
+	 do_action( 'wptheme\Custom\Hooks::tha_body_top' );
 	 do_action( 'body_open' );
 	 do_action( 'before' );
  }
 
- function tha_body_bottom() {
-	 do_action( 'tha_body_bottom' );
+ function wptheme\Custom\Hooks::tha_body_bottom() {
+	 do_action( 'wptheme\Custom\Hooks::tha_body_bottom' );
  }
 
 /**
 * HTML <head> hooks
 *
-* $tha_supports[] = 'head';
+* $wptheme\Custom\Hooks::tha_supports[] = 'head';
 */
-function tha_head_top() {
-	do_action( 'tha_head_top' );
+function wptheme\Custom\Hooks::tha_head_top() {
+	do_action( 'wptheme\Custom\Hooks::tha_head_top' );
 }
 
-function tha_head_bottom() {
-	do_action( 'tha_head_bottom' );
+function wptheme\Custom\Hooks::tha_head_bottom() {
+	do_action( 'wptheme\Custom\Hooks::tha_head_bottom' );
 }
 
 /**
 * Semantic <header> hooks
 *
-* $tha_supports[] = 'header';
+* $wptheme\Custom\Hooks::tha_supports[] = 'header';
 */
-function tha_header_before() {
-	do_action( 'tha_header_before' );
+function wptheme\Custom\Hooks::tha_header_before() {
+	do_action( 'wptheme\Custom\Hooks::tha_header_before' );
 }
 
-function tha_header_after() {
-	do_action( 'tha_header_after' );
+function wptheme\Custom\Hooks::tha_header_after() {
+	do_action( 'wptheme\Custom\Hooks::tha_header_after' );
 }
 
-function tha_header_top() {
-	do_action( 'tha_header_top' );
+function wptheme\Custom\Hooks::tha_header_top() {
+	do_action( 'wptheme\Custom\Hooks::tha_header_top' );
 }
 
-function tha_header_bottom() {
-	do_action( 'tha_header_bottom' );
+function wptheme\Custom\Hooks::tha_header_bottom() {
+	do_action( 'wptheme\Custom\Hooks::tha_header_bottom' );
 }
 
 /**
 * Semantic <content> hooks
 *
-* $tha_supports[] = 'content';
+* $wptheme\Custom\Hooks::tha_supports[] = 'content';
 */
-function tha_content_before() {
-	do_action( 'tha_content_before' );
+function wptheme\Custom\Hooks::tha_content_before() {
+	do_action( 'wptheme\Custom\Hooks::tha_content_before' );
 }
 
-function tha_content_after() {
-	do_action( 'tha_content_after' );
+function wptheme\Custom\Hooks::tha_content_after() {
+	do_action( 'wptheme\Custom\Hooks::tha_content_after' );
 }
 
-function tha_content_top() {
-	do_action( 'tha_content_top' );
+function wptheme\Custom\Hooks::tha_content_top() {
+	do_action( 'wptheme\Custom\Hooks::tha_content_top' );
 }
 
-function tha_content_bottom() {
-	do_action( 'tha_content_bottom' );
+function wptheme\Custom\Hooks::tha_content_bottom() {
+	do_action( 'wptheme\Custom\Hooks::tha_content_bottom' );
 }
 
 /**
 * Semantic <entry> hooks
 *
-* $tha_supports[] = 'entry';
+* $wptheme\Custom\Hooks::tha_supports[] = 'entry';
 */
-function tha_entry_before() {
-	do_action( 'tha_entry_before' );
+function wptheme\Custom\Hooks::tha_entry_before() {
+	do_action( 'wptheme\Custom\Hooks::tha_entry_before' );
 }
 
-function tha_entry_after() {
-	do_action( 'tha_entry_after' );
+function wptheme\Custom\Hooks::tha_entry_after() {
+	do_action( 'wptheme\Custom\Hooks::tha_entry_after' );
 }
 
-function tha_entry_top() {
-	do_action( 'tha_entry_top' );
+function wptheme\Custom\Hooks::tha_entry_top() {
+	do_action( 'wptheme\Custom\Hooks::tha_entry_top' );
 }
 
-function tha_entry_bottom() {
-	do_action( 'tha_entry_bottom' );
+function wptheme\Custom\Hooks::tha_entry_bottom() {
+	do_action( 'wptheme\Custom\Hooks::tha_entry_bottom' );
 }
 
 /**
 * Comments block hooks
 *
-* $tha_supports[] = 'comments';
+* $wptheme\Custom\Hooks::tha_supports[] = 'comments';
 */
-function tha_comments_before() {
-	do_action( 'tha_comments_before' );
+function wptheme\Custom\Hooks::tha_comments_before() {
+	do_action( 'wptheme\Custom\Hooks::tha_comments_before' );
 }
 
-function tha_comments_after() {
-	do_action( 'tha_comments_after' );
+function wptheme\Custom\Hooks::tha_comments_after() {
+	do_action( 'wptheme\Custom\Hooks::tha_comments_after' );
 }
 
 /**
 * Semantic <sidebar> hooks
 *
-* $tha_supports[] = 'sidebar';
+* $wptheme\Custom\Hooks::tha_supports[] = 'sidebar';
 */
-function tha_sidebars_before() {
-	do_action( 'tha_sidebars_before' );
+function wptheme\Custom\Hooks::tha_sidebars_before() {
+	do_action( 'wptheme\Custom\Hooks::tha_sidebars_before' );
 }
 
-function tha_sidebars_after() {
-	do_action( 'tha_sidebars_after' );
+function wptheme\Custom\Hooks::tha_sidebars_after() {
+	do_action( 'wptheme\Custom\Hooks::tha_sidebars_after' );
 }
 
-function tha_sidebar_top() {
-	do_action( 'tha_sidebar_top' );
+function wptheme\Custom\Hooks::tha_sidebar_top() {
+	do_action( 'wptheme\Custom\Hooks::tha_sidebar_top' );
 }
 
-function tha_sidebar_bottom() {
-	do_action( 'tha_sidebar_bottom' );
+function wptheme\Custom\Hooks::tha_sidebar_bottom() {
+	do_action( 'wptheme\Custom\Hooks::tha_sidebar_bottom' );
 }
 
 /**
 * Semantic <footer> hooks
 *
-* $tha_supports[] = 'footer';
+* $wptheme\Custom\Hooks::tha_supports[] = 'footer';
 */
-function tha_footer_before() {
-	do_action( 'tha_footer_before' );
+function wptheme\Custom\Hooks::tha_footer_before() {
+	do_action( 'wptheme\Custom\Hooks::tha_footer_before' );
 }
 
-function tha_footer_after() {
-	do_action( 'tha_footer_after' );
+function wptheme\Custom\Hooks::tha_footer_after() {
+	do_action( 'wptheme\Custom\Hooks::tha_footer_after' );
 }
 
-function tha_footer_top() {
-	do_action( 'tha_footer_top' );
+function wptheme\Custom\Hooks::tha_footer_top() {
+	do_action( 'wptheme\Custom\Hooks::tha_footer_top' );
 }
 
-function tha_footer_bottom() {
-	do_action( 'tha_footer_bottom' );
+function wptheme\Custom\Hooks::tha_footer_bottom() {
+	do_action( 'wptheme\Custom\Hooks::tha_footer_bottom' );
 }

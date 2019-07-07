@@ -25,6 +25,7 @@ final class Init
 			Setup\Menus::class,
 			Setup\Enqueue::class,
 			Custom\Custom::class,
+			Custom\Hooks::class,
 			Custom\Admin::class,
 			Custom\Extras::class,
 			Api\Customizer::class,

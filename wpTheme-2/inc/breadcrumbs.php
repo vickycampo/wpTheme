@@ -118,7 +118,7 @@ if ( !function_exists( 'wpTheme_breadcrumbs' ) )
      }
      if ( isset( $options['breadcrumbs'] )  && ( true == $options['breadcrumbs'] ) )
      {
-          add_action( 'tha_content_top', 'wpTheme_breadcrumbs' );
+          add_action( 'wptheme\Custom\Hooks::tha_content_top', 'wpTheme_breadcrumbs' );
      }
 }
  ?>
