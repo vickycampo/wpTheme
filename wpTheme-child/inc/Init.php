@@ -22,7 +22,8 @@ final class Init
 			BreadCrumbs::class,
 			Enqueue::class,
 			ChildAjax::class,
-               Setup\Menus::class
+               Setup\Menus::class,
+               Setup\SideBars::class
 		];
           showSpaceNames ();
 	}

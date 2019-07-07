@@ -20,7 +20,9 @@ class Menus
      public function setMenuLoctaion ()
      {
           $this->menu_location[] = array(
-         	'top' => esc_html__( 'Top Header Navigation', 'wpTheme' )
+          'top' => esc_html__( 'Top Header Navigation', 'wpTheme' ),
+         	'main' => esc_html__( 'Main Navigation', 'wpTheme' ),
+         	'footer' => esc_html__( 'Footer Navigation', 'wpTheme' )
           );
      }
      public function menus()

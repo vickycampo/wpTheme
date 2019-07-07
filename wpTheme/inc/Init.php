@@ -25,6 +25,7 @@ final class Init
 			Setup\Setup::class,
 			Setup\Menus::class,
 			Setup\Enqueue::class,
+               Custom\Ajax::class,
 			Custom\Custom::class,
 			Custom\BreadCrumbs::class,
 			Custom\Hooks::class,

@@ -19,9 +19,21 @@
           GENERIC SIDEBARS
      =========================
 */
-if ( ! function_exists( 'wpTheme_generic_sidebars' ) )
+
+namespace wptchild\Setup;
+
+/**
+* Menus
+*/
+class SideBars
 {
-     function wpTheme_generic_sidebars()
+
+     public function register()
+     {
+          add_action( 'widgets_init', array ( $this , 'generic_sidebars' ) );
+          add_action( 'widgets_init', array ( $this , 'footer_sidebars' ) );
+     }
+     public function generic_sidebars()
      {
           $id = 'body-left-sidebar';
           $footer_sidebar[$id]['name'] = 'Body - Left sidebar';
@@ -51,16 +63,7 @@ if ( ! function_exists( 'wpTheme_generic_sidebars' ) )
           }
 
      }
-     add_action( 'widgets_init', 'wpTheme_generic_sidebars' );
-}
-/*
-     =====================
-          FOOTER SIDEBARS
-     =====================
-*/
-if ( ! function_exists ( 'wpTheme_footer_sidebars' ) )
-{
-     function wpTheme_footer_sidebars ()
+     function footer_sidebars ()
      {
           //ARRAY OF ALL POSSIBLE COMBINATIONS OF SIDEBARD FOR THE FOOTER
           $id = 'footer-left-box';
@@ -92,6 +95,4 @@ if ( ! function_exists ( 'wpTheme_footer_sidebars' ) )
                register_sidebar( $args );
           }
      }
-     add_action( 'widgets_init', 'wpTheme_footer_sidebars' );
 }
-?>
