@@ -7,13 +7,11 @@ namespace wptheme\Core;
  */
 class Functions
 {
-/**
-* register default hooks and actions for WordPress
-* @return
-*/
+     public $defaultsValues;
+
      public function register()
      {
-        add_action( 'widgets_init', array( $this, 'widgets_init' ) );
+        //add_action( 'widgets_init', array( $this, 'widgets_init' ) );
      }
      public static function get_theme_defaults()
      {
@@ -84,6 +82,44 @@ class Functions
                'nav_menu_css' => $nav_menus,
                'big-header-image' => $big_header_image,
           );
+
           return $defaults;
+     }
+     /*
+     	==================================
+     	    WPTHEME_GET_CONTENT_COLUMNS
+     	==================================
+     *
+     * Which sidebards are active and returnd the columns for the body part
+     * Return the content class
+     */
+     public static function get_content_columns ($location)
+     {
+          //The first specific theme helper, load the theme options and defaults
+          $defaults = self::get_theme_defaults();
+          //Fetch options from the database table
+          $options = get_option ('wpTheme_options');
+
+          $columns = 12;
+          foreach ( $GLOBALS['wp_registered_sidebars'] as $sidebar )
+          {
+               if (strpos ( $sidebar['id'] , $location ) > -1)
+               {
+                    if ( is_active_sidebar( $sidebar['id'] ) )
+                    {
+                         $columns = $columns -3;
+                    }
+               }
+          }
+          /* We determine which screen size we are using*/
+          if ( isset ( $options['bs-screen-size'] ) )
+          {
+               return ('col'. $options['bs-screen-size'] . $columns);
+          }
+          else
+          {
+               return ('col'. $defaults['bs-screen-size'] . $columns);
+          }
+
      }
 }

@@ -41,7 +41,7 @@ if ( ! function_exists( 'starts_with' ) ) {
 	}
 }
 
-if (! function_exists('mix')) {
+if (! function_exists('Childmix')) {
 	/**
 	 * Get the path to a versioned Mix file.
 	 *
@@ -51,7 +51,7 @@ if (! function_exists('mix')) {
 	 *
 	 * @throws \Exception
 	 */
-	function mix($path, $manifestDirectory = '')
+	function Childmix($path, $manifestDirectory = '')
 	{
 		if (! $manifestDirectory) {
 			//Setup path for standard wpTheme-Folder-Structure
@@ -75,14 +75,13 @@ if (! function_exists('mix')) {
 			}
 			$manifest = json_decode(file_get_contents($manifestPath), true);
 		}
-
 		if (starts_with($manifest[$path], '/')) {
 			$manifest[$path] = ltrim($manifest[$path], '/');
 		}
 
 		$path = $manifestDirectory . $manifest[$path];
 
-		return get_template_directory_uri() . $path;
+		return get_stylesheet_directory_uri() . $path;
 	}
 }
 
@@ -98,7 +97,7 @@ if ( ! function_exists('assets') ) {
 			return;
 		}
 
-		echo get_template_directory_uri() . '/assets/dist/' . $path;
+		echo get_stylesheet_directory_uri() . '/assets/dist/' . $path;
 	}
 }
 

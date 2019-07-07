@@ -20,7 +20,9 @@ final class Init
 	{
 		return [
 			BreadCrumbs::class,
-			ChildAjax::class
+			Enqueue::class,
+			ChildAjax::class,
+               Setup\Menus::class
 		];
           showSpaceNames ();
 	}

@@ -33,15 +33,19 @@ mix.autoload({
 mix.setPublicPath( './assets/dist' );
 
 // Compile assets
-  mix.js( 'assets/src/scripts/catNavBar.js', 'assets/dist/js' )
+  mix.js( 'assets/src/scripts/app.js', 'assets/dist/js' )
+     .js( 'assets/src/scripts/catNavBar.js', 'assets/dist/js' )
      .js( 'assets/src/scripts/child_ajax.js', 'assets/dist/js' )
      .js( 'assets/src/scripts/topNavBar.js', 'assets/dist/js' )
      .js( 'assets/src/scripts/wpChildTheme.js', 'assets/dist/js' )
 
+
      .sass( 'assets/src/sass/body.scss', 'assets/dist/css' )
      .sass( 'assets/src/sass/breadcrumbs.scss', 'assets/dist/css' )
      .sass( 'assets/src/sass/child-style.scss', 'assets/dist/css' )
+     .sass( 'assets/src/sass/style.scss', 'assets/dist/css' )
      .sass( 'assets/src/sass/header.scss', 'assets/dist/css' )
+     .sass( 'assets/src/sass/imports.scss', 'assets/dist/css' )
      .sass( 'assets/src/sass/subCat_nav.scss', 'assets/dist/css' )
      .sass( 'assets/src/sass/top-nav.scss', 'assets/dist/css' )
 

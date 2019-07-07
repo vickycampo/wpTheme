@@ -12,14 +12,7 @@
 
 <?php
      /* Include file template parts */
-     if ( @ (include('part-header-image-options.php' ) ) )
-     {
-
-     }
-     else
-     {
-          include(get_parent_theme_file_path()  . '/template-parts/header/part-header-image-options.php' );
-     }
+     include('part-header-image-options.php' )
      /* Do we have to display the site title in the header image? */
      /* add site logo */
      if ( ( $show_site_logo ) && ( function_exists( 'the_custom_logo' ) ) )

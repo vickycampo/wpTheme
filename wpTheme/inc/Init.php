@@ -19,6 +19,7 @@ final class Init
 	public static function get_services()
 	{
 		return [
+			Core\Functions::class,
 			Core\Tags::class,
 			Core\Sidebar::class,
 			Setup\Setup::class,
@@ -44,11 +45,7 @@ final class Init
 	{
 		foreach ( self::get_services() as $class )
           {
-
-               error_log (__FILE__ . ' - ' . __LINE__ . '<br>');
-               error_log (print_r ( $class , true));
-
-			$service = self::instantiate( $class );
+               $service = self::instantiate( $class );
 			if ( method_exists( $service, 'register') ) {
 				$service->register();
 			}

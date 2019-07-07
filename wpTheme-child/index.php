@@ -10,45 +10,13 @@
 	=========================
 * The main template file. It is required in all themes.
 */
-namespace FirstNamespace;
-class Bar {}
-
-namespace SecondNamespace;
-class Bar {}
-
-namespace ThirdNamespace\FirstSubNamespace;
-class Bar {}
-
-namespace ThirdNamespace\SecondSubNamespace;
-class Bar {}
-
-namespace SecondNamespace\FirstSubNamespace;
-class Bar {}
-
-$namespaces=array();
-foreach(get_declared_classes() as $name) {
-    if(preg_match_all("@[^\\\]+(?=\\\)@iU", $name, $matches)) {
-        $matches = $matches[0];
-        $parent =&$namespaces;
-        while(count($matches)) {
-            $match = array_shift($matches);
-            if(!isset($parent[$match]) && count($matches))
-                $parent[$match] = array();
-            $parent =&$parent[$match];
-
-        }
-    }
-}
-echo('<pre>');
-print_r($namespaces);
-echo('</pre>');
 ?>
 <?php
      //Get the standard header
      get_header();
 
      //we determine how many columns the content will ocuppy
-     $wpTheme_content_columns = wpTheme_get_content_columns('body'); ?>
+     $wpTheme_content_columns = wptheme\Core\Functions::get_content_columns('body'); ?>
      <!-- add the class to the content div-->
      <div class="row" >
           <?php
