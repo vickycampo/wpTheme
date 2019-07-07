@@ -27,7 +27,7 @@ if ( has_nav_menu( $location ) )
           'theme_location' => 'top',
           'fallback_cb' => false,
           'add_li_class'  => 'nav-item',
-          'walker' => new bs4navwalker()
+          'walker' => new wptchild\Core\bs4navwalker()
      );
      if ( is_admin_bar_showing() )
      {
