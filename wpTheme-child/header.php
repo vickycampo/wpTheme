@@ -13,7 +13,7 @@
 */
 ?>
 <!DOCTYPE html>
-<?php wptheme\Custom\Hooks::tha_html_before (); ?>
+<?php wptheme\Custom\Hooks::tha_html_before(); ?>
 <html <?php language_attributes();  ?> dir="ltr" class="no-js">
 <head>
      <?php wptheme\Custom\Hooks::tha_head_top (); ?>
@@ -42,7 +42,7 @@
      //get the theme options
           $options = get_option( 'wpTheme_options' );
      /* We get the defaults */
-          $defaults = wpTheme_get_theme_defaults();
+          $defaults = wptheme\Core\Functions::get_theme_defaults();
      ?>
      <?php
           //Check $options['nav-menu']

@@ -30,20 +30,20 @@ mix.autoload({
 	jquery: ['$', 'window.jQuery', 'jQuery'],
 });
 
-mix.setPublicPath( './assets' );
+mix.setPublicPath( './assets/dist' );
 
 // Compile assets
-  mix.js( 'src/js/catNavBar.js', 'assets/js' )
-	.js( 'src/js/child_ajax.js', 'assets/js' )
-	.js( 'src/js/topNavBar.js', 'assets/js' )
-	.js( 'src/js/wpChildTheme.js', 'assets/js' )
+  mix.js( 'assets/src/scripts/catNavBar.js', 'assets/dist/js' )
+     .js( 'assets/src/scripts/child_ajax.js', 'assets/dist/js' )
+     .js( 'assets/src/scripts/topNavBar.js', 'assets/dist/js' )
+     .js( 'assets/src/scripts/wpChildTheme.js', 'assets/dist/js' )
 
-	.sass( 'src/css/body.scss', 'assets/css' )
-	.sass( 'src/css/breadcrumbs.scss', 'assets/css' )
-	.sass( 'src/css/child-style.scss', 'assets/css' )
-	.sass( 'src/css/header.scss', 'assets/css' )
-	.sass( 'src/css/subCat_nav.scss', 'assets/css' )
-	.sass( 'src/css/top-nav.scss', 'assets/css' );
+     .sass( 'assets/src/sass/body.scss', 'assets/dist/css' )
+     .sass( 'assets/src/sass/breadcrumbs.scss', 'assets/dist/css' )
+     .sass( 'assets/src/sass/child-style.scss', 'assets/dist/css' )
+     .sass( 'assets/src/sass/header.scss', 'assets/dist/css' )
+     .sass( 'assets/src/sass/subCat_nav.scss', 'assets/dist/css' )
+     .sass( 'assets/src/sass/top-nav.scss', 'assets/dist/css' )
 
 // Add versioning to assets in production environment
 if ( mix.inProduction() ) {
