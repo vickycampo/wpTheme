@@ -9,9 +9,7 @@
 * 	Include hooks to acces any parto of the theme
 */
 
-<?php
-
-namespace wptheme\Hooks;
+namespace wptheme\Custom;
 class Hooks
 {
 	/**
@@ -61,19 +59,6 @@ class Hooks
 		do_action( 'body_open' );
 		do_action( 'before' );
 	}
-	/**
-	* HTML <body> hooks
-	* $tha_supports[] = 'body';
-	*/
-	public function tha_body_top()
-	{
-		do_action( 'tha_body_top' );
-		do_action( 'body_open' );
-		do_action( 'before' );
-	}
-
-
-
 	public function tha_body_bottom()
 	{
 		do_action( 'tha_body_bottom' );

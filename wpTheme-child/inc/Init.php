@@ -8,7 +8,7 @@
  * @package wpTheme
  */
 
-namespace wptheme;
+namespace wptchild;
 
 final class Init
 {
@@ -19,21 +19,10 @@ final class Init
 	public static function get_services()
 	{
 		return [
-			Core\Tags::class,
-			Core\Sidebar::class,
-			Setup\Setup::class,
-			Setup\Menus::class,
-			Setup\Enqueue::class,
-			Custom\Custom::class,
-			Custom\Hooks::class,
-			Custom\Admin::class,
-			Custom\Extras::class,
-			Api\Customizer::class,
-			Api\Gutenberg::class,
-			Api\Widgets\TextWidget::class,
-			Plugins\ThemeJetpack::class,
-			Plugins\Acf::class
+			BreadCrumbs::class,
+			ChildAjax::class
 		];
+          showSpaceNames ();
 	}
 
 	/**
@@ -42,12 +31,7 @@ final class Init
 	 */
 	public static function register_services()
 	{
-		foreach ( self::get_services() as $class )
-          {
-
-               error_log (__FILE__ . ' - ' . __LINE__ . '<br>');
-               error_log (print_r ( $class , true));
-
+		foreach ( self::get_services() as $class ) {
 			$service = self::instantiate( $class );
 			if ( method_exists( $service, 'register') ) {
 				$service->register();

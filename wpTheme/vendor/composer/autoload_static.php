@@ -8,10 +8,14 @@ class ComposerStaticInitee64b1f52d278c3b544ef136e6be7637
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        'de115f95ba3b622fd8c9ca2baddc5afc' => __DIR__ . '/../..' . '/inc/Helpers.php',
+        '55a9156c1edce78ca26ceef5f2d65ef1' => __DIR__ . '/../..' . '/inc/Helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'w' => 
+        array (
+            'wptheme\\' => 8,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Ctype\\' => 23,
@@ -21,13 +25,13 @@ class ComposerStaticInitee64b1f52d278c3b544ef136e6be7637
             'Dotenv\\' => 7,
             'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 55,
         ),
-        'A' => 
-        array (
-            'wptheme\\' => 5,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'wptheme\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/inc',
+        ),
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
@@ -39,10 +43,6 @@ class ComposerStaticInitee64b1f52d278c3b544ef136e6be7637
         'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
         array (
             0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
-        ),
-        'wptheme\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/inc',
         ),
     );
 

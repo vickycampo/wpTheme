@@ -15,13 +15,25 @@
 */
 ?>
 <?php
-if ( file_exists( get_theme_file_path('/vendor/autoload.php') ) ) {
-    require_once get_theme_file_path('/vendor/autoload.php');
+
+if ( file_exists( get_theme_file_path('/vendor/autoload.php') ) )
+{
+    require_once (get_theme_file_path('/vendor/autoload.php'));
 }
-if ( file_exists( get_parent_theme_file_path('/vendor/autoload.php') ) ) {
-    require_once get_parent_theme_file_path('/vendor/autoload.php');
-}
+
+/*
+     ==============================
+          INIT
+     ==============================
+*
+* include theme hook alliance hooks
+*/
+
+if ( class_exists( 'wptchild\\Init' ) ):
+	wptchild\Init::register_services();
+endif;
 ?>
+
 <?php
 /*
      ========================================
@@ -34,6 +46,9 @@ if ( file_exists (get_parent_theme_file_path() . '/inc/enqueue.php') )
 {
      include_once (get_parent_theme_file_path() . '/inc/enqueue.php');
 }
+
+?>
+<?php
 
 ?>
 <?php
@@ -269,24 +284,4 @@ function show_current_query() {
     print_r( $wp_query );
     echo '</textarea>';
 }
-?>
-<?php
-/*
-     ========================================
-          AJAX.PHP
-     ========================================
-*
-* File with the php functions for the ajax
-*/
-include_once (get_stylesheet_directory() . '/inc/child_ajax.php');
-?>
-<?php
-/*
-     ========================================
-          CUSTOMIZE POST TYPES
-     ========================================
-*
-* File with the php functions for the ajax
-*/
-include_once (get_stylesheet_directory() . '/inc/custom_post_types.php');
 ?>

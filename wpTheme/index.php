@@ -12,7 +12,8 @@
  * @package wpTheme
  */
 
-get_header(); ?>
+get_header();
+?>
 
 <div class="container">
 
