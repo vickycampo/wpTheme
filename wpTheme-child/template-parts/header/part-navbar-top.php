@@ -13,9 +13,11 @@
 /* Check if the top navigation bar is active */
 /* This nav Bar Location  */
 $location = 'top';
+// error_log (__FILE__.' - '.__FILE__.' - '.'options');
+// error_log (print_r ( has_nav_menu( $location ) , true ));
+// error_log ('------------------------------------------------');
 if ( has_nav_menu( $location ) )
 {
-
      include('part-nav-options.php' );
 
      //Collapse target name

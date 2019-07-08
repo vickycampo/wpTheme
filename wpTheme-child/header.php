@@ -77,11 +77,11 @@
                <!-- Top Navitagion bar part -->
                <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
                <!-- Header Image part -->
-               <?php get_template_part( 'template-parts/header/part', 'child-header-image' ); ?>
+               <?php get_template_part( 'template-parts/header/part', 'header-image' ); ?>
 
           </div> <!-- Header-img -->
           <!-- Main Navigation bar part -->
-          <?php get_template_part( 'template-parts/header/part', 'child-subcategory-bar' ); ?>
+          <?php get_template_part( 'template-parts/header/part', 'subcategory-bar' ); ?>
           <?php wptheme\Custom\Hooks::tha_header_bottom(); ?>
      </header>
      <?php wptheme\Custom\Hooks::tha_header_after(); ?>

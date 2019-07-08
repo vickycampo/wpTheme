@@ -20,8 +20,8 @@ final class Init
 	{
 		return [
 			BreadCrumbs::class,
-			Enqueue::class,
 			ChildAjax::class,
+               Setup\Enqueue::class,
                Setup\Menus::class,
                Setup\SideBars::class
 		];

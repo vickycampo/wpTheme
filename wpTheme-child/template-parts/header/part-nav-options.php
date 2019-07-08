@@ -14,6 +14,7 @@
 $defaults = wptheme\Core\Functions::get_theme_defaults();
 //Fetch options from the database table
 $options = get_option ('wpTheme_options');
+
 //we create a variable that contains the container class depending on which settings are set in the options
 /* We determine which screen size we are using*/
 if ( isset ( $options['bs-screen-size'] ) )
