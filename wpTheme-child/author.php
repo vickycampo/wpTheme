@@ -17,7 +17,7 @@
      //Calls the header.php
      get_header();
      //we determine how many columns the content will ocuppy
-     $wpTheme_content_columns = wptheme\Core\Functions::get_content_columns('body');
+     $wptheme\Core\Functions::get_content_columns = wptheme\Core\Functions::get_content_columns('body');
      //Add Hook
 
 
@@ -25,7 +25,7 @@
 <div class="row" >
      <?php wptheme\Custom\Hooks::tha_content_before(); ?>
      <!-- The Content Div -->
-     <div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
+     <div class="content <?php echo esc_attr( $wptheme\Core\Functions::get_content_columns ) ?> order-2 the_content">
      	<?php wptheme\Custom\Hooks::tha_content_top(); ?>
 
      	<?php

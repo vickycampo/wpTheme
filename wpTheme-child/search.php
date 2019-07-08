@@ -33,13 +33,13 @@ else
 get_header();
 
 //we determine how many columns the content will ocuppy
-$wpTheme_content_columns = wptheme\Core\Functions::get_content_columns('body'); ?>
+$wptheme\Core\Functions::get_content_columns = wptheme\Core\Functions::get_content_columns('body'); ?>
 <div class="row" >
 	<?php
 	//Add hook
 	wptheme\Custom\Hooks::tha_content_before();
 	?>
-	<div class="content col<?php echo ( $screen_size );?>9 <<?php echo esc_attr( $wpTheme_content_columns ) ?>">
+	<div class="content col<?php echo ( $screen_size );?>9 <<?php echo esc_attr( $wptheme\Core\Functions::get_content_columns ) ?>">
 		<?php wptheme\Custom\Hooks::tha_content_top(); ?>
 
 		<?php get_template_part('template-parts/content','search'); ?>
