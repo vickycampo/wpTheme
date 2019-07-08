@@ -9,20 +9,124 @@
 	===================================
 *
 */
+/* The container of all the body elements */
+body, html {
+     margin: 0;
+	font-size: 14px;
+	line-height: 1.6em;
+}
 .custom-background
 {
      background-image:none !important;
 }
+/* The bs-fixed-nav class is set when there is options['nav-menu'] is set and is true*/
 body.bs-fixed-nav
 {
+     margin: 0px;
+     padding: 0px;
      padding-top: 0px !important;
 }
-/* Remove the sidebar because we don't use them here */
+body.bs-fixed-nav nav.theme_location_top
+{}
+body.bs-fixed-nav
+{
+
+}
+/*
+     ===================================
+          SIDEBARS
+     ===================================
+*/
+.sidebar
+{}
+/* Class of the left side bar */
+.body-left-sidebar
+{}
+     .body-left-sidebar > ul
+     {}
+/* Class of the right side bar */
+.body-right-sidebar
+{
+     display: block;
+}
+     .body-right-sidebar > ul
+     {}
+.wp-caption[style]
+{
+	max-width: 100% !important;
+}
 .body-left-sidebar
 {
      visibility: hidden;
-     display: none;
+     display: block;
 }
+/*
+	===================================
+		TAGS
+	===================================
+*/
+div
+{}
+section
+{
+	background-color: blue;
+}
+
+p
+{
+	background-color: orange;
+}
+a, a:hover, a:active
+{
+	text-decoration: none;
+}
+img
+{
+     // width: 100%;
+     // height: auto;
+	// object-fit: contain;
+}
+h1
+{
+     font-size: 25px;
+}
+h2
+{
+     font-size: 20px;
+}
+h3
+{
+     font-size: 15px;
+}
+.entry
+{
+     max-width: 100%;
+	background-color: yellow;
+}
+
+.entry img
+{
+	max-width: 100% !important;
+	height: auto;
+}
+.media
+{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	background-color: DodgerBlue;
+}
+.media > p {
+  background-color: #f1f1f1;
+  width: 100%;
+  max-width: 100% !important;
+  margin: 10px;
+}
+/*
+	===================================
+		LOAD MORE
+	===================================
+*/
 .load-more-span-div
 {
      margin: 10px;
@@ -40,10 +144,57 @@ body.bs-fixed-nav
      /* box-shadow: orange 0px 1px 5px 0px; */
      color: orange !important;
 }
+/*
+	===================================
+		READ MORE
+	===================================
+*/
+#wrap
+{
+	width: 100%;
+}
+#wrap .the_content
+{
 
+}
+.read-more-results
+{
+     display: flex;
+     text-align: left;
+     flex-wrap: wrap;
+     justify-content: center;
+}
+.read-more-results > article {
+     width: 200px;
+     max-height: 250px;
+     margin: 5px;
+     padding: 5px;
+     background-color: white;
+     border: solid 1px red;
+}
+.read-more-results > article > the_date
+{
+     font-size: 14px;
+}
+/*
+	===================================
+		SHOW / HIDE
+	===================================
+*/
+.show_element
+{
+     visibility: visible;
+}
+.hide_element
+{
+     visibility: hidden;
+}
 
-/* Content */
-/* Maximum width for reading 900 px */
+/*
+	===================================
+		CONTAINER
+	===================================
+*/
 #wrap
 {
      text-align: center;
@@ -77,27 +228,223 @@ body.bs-fixed-nav
     max-width: 1140px;
   }
 }
+/*
+	===================================
+		POST PARTS
+	===================================
+*/
 
-#wrap .the_content
+.the_title
+{
+	word-wrap: break-word !important;;
+}
+.the_date
+{
+
+}
+.content
+{
+
+}
+.the_content
 {
 
 }
 .read-more-results
 {
-     display: flex;
-     text-align: left;
-     flex-wrap: wrap;
-     justify-content: center;
+
 }
-.read-more-results > article {
-     width: 200px;
-     max-height: 250px;
-     margin: 5px;
-     padding: 5px;
-     background-color: white;
-     border: solid 1px red;
-}
-.read-more-results > article > the_date
+/*
+===================================
+     HEADER
+===================================
+*/
+header
 {
-     font-size: 14px;
+     width: 100vw;
 }
+.header-img
+{
+     padding-top: 0px;
+}
+.as_background
+{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     box-sizing: content-box;
+     width: 100vw;
+
+}
+/* Header site-logo */
+     .header-site-logo-div
+     {
+          display: flex;
+          align-items: center;
+          align-self:center;
+     }
+     .header-site-logo
+     {
+          align-items: center;
+     }
+/*  We create the clases for the fixed height of the header image div */
+     .fixed-height-40
+     {
+          height: 40vh;
+     }
+     .fixed-height-40 img
+     {
+          height:25vh;
+     }
+     .fixed-height-50
+     {
+          height: 50vh;
+     }
+     .fixed-height-50 img
+     {
+          height:35vh;
+     }
+     .fixed-height-60
+     {
+          height: 60vh;
+     }
+     .fixed-height-60 img
+     {
+          height:45vh;
+     }
+     .fixed-height-70
+     {
+          height: 70vh;
+     }
+     .fixed-height-70 img
+     {
+          height:55vh;
+     }
+     .fixed-height-80
+     {
+          height: 80vh;
+     }
+     .fixed-height-80 img
+     {
+          height:70vh;
+     }
+     .fixed-height-90
+     {
+          height:90vh;
+     }
+     .fixed-height-90 img
+     {
+          height:75vh;
+     }
+     .fixed-height-100
+     {
+          height: 100vh;
+     }
+     .fixed-height-100 img
+     {
+          height:80vh;
+     }
+.header_siteinfo
+{
+     align-content: center;
+     justify-content: center;
+     display:flex;
+     max-width: 100%;
+     max-height: 100%;
+}
+/*
+===================================
+     NAVIGATION BAR
+===================================
+*/
+     .hamburger
+     {
+         position: relative;
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         margin-right: 1px;
+         border-top: 0.2em solid #fff;
+         border-bottom: 0.2em solid #fff;
+     }
+
+     .hamburger:before
+     {
+         content: "";
+         position: absolute;
+         top: 0.3em;
+         left: 0px;
+         width: 100%;
+         border-top: 0.2em solid #fff;
+     }
+     .navbar-toggler .collapsed
+     {
+          /* height: 40px; */
+     }
+     /* The id of the nav tag that contains the top navigation bar */
+     #theme_location_top_nav
+     {
+          margin: 0px;
+          padding: 0px;
+          border: 0px;
+          background-color: black;
+     }
+     /* The part of the navigation bar that contains the elements */
+     #theme_location_top_target
+     {
+          margin: 0px;
+          padding: 0px;
+          border: 0px;
+     }
+
+          #theme_location_top_target li
+          {
+          }
+          #theme_location_top_target a
+          {
+          }
+          #theme_location_top_target h1
+          {
+               font-size: 25px;
+          }
+          #theme_location_top_target > ul
+          {
+
+          }
+          #theme_location_top_target > ul > li
+          {
+
+          }
+          #theme_location_top_target > ul > li:hover
+          {
+          }
+          .top_navbar_logo
+          {
+               object-fit: cover;
+               width: 25px;
+               height: 25px;
+          }
+          .navbar-logo
+          {
+               margin-left: 14px;
+          }
+
+     /* The id of the tag that contains the main navigation bar */
+     #theme_location_main
+     {
+
+     }
+          #theme_location_main > ul
+          {
+
+          }
+          #theme_location_main > ul > li
+          {
+
+          }
+
+     .admin_bar_showing
+     {
+          margin-top: 15px !important;
+     }
