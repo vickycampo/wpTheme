@@ -43,9 +43,9 @@ mix.setPublicPath( './assets/dist' );
      .sass( 'assets/src/sass/body.scss', 'assets/dist/css' )
      .sass( 'assets/src/sass/breadcrumbs.scss', 'assets/dist/css' )
      .sass( 'assets/src/sass/child-style.scss', 'assets/dist/css' )
+     .sass( 'assets/src/sass/custom.scss', 'assets/dist/css' )
      .sass( 'assets/src/sass/style.scss', 'assets/dist/css' )
      .sass( 'assets/src/sass/header.scss', 'assets/dist/css' )
-     .sass( 'assets/src/sass/imports.scss', 'assets/dist/css' )
      .sass( 'assets/src/sass/subCat_nav.scss', 'assets/dist/css' )
      .sass( 'assets/src/sass/top-nav.scss', 'assets/dist/css' )
 
