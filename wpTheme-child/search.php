@@ -33,7 +33,7 @@ else
 get_header();
 
 //we determine how many columns the content will ocuppy
-$wpTheme_content_columns = wpTheme_get_content_columns('body'); ?>
+$wpTheme_content_columns = wptheme\Core\Functions::get_content_columns('body'); ?>
 <div class="row" >
 	<?php
 	//Add hook

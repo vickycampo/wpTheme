@@ -17,7 +17,7 @@
      get_header();
 
      //we determine how many columns the content will ocuppy
-     $wpTheme_content_columns = wpTheme_get_content_columns('body'); ?>
+     $wpTheme_content_columns = wptheme\Core\Functions::get_content_columns('body'); ?>
      <!-- add the class to the content div-->
      <div class="row" >
           <?php
