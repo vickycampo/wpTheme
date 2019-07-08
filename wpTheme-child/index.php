@@ -16,14 +16,14 @@
      get_header();
 
      //we determine how many columns the content will ocuppy
-     $wptheme\Core\Functions::get_content_columns = wptheme\Core\Functions::get_content_columns('body'); ?>
+     $wpTheme_content_columns = wptheme\Core\Functions::get_content_columns('body'); ?>
      <!-- add the class to the content div-->
      <div class="row" >
           <?php
           //Add hook
           wptheme\Custom\Hooks::tha_content_before();
           ?>
-          <div class="content <?php echo esc_attr( $wptheme\Core\Functions::get_content_columns ) ?> order-2 the_content">
+          <div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
                <!-- Add hook -->
                <?php wptheme\Custom\Hooks::tha_content_top(); ?>
                <!-- The loop -->
