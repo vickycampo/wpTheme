@@ -80,7 +80,7 @@ class Colors extends BaseCustomizer
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = array ($this->callbacks , 'sanitize_hex_color' );
           /* Section Details */
-		$this->SetSectionDetails( 'Colors' ,  1 );
+		$this->SetSectionDetails( 'Colors' ,  40 );
 		$this->SetSettingDetails( $SettingsList );
 		foreach ($SettingsList as $i => $Setings)
 		{

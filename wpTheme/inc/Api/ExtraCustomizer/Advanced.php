@@ -71,7 +71,7 @@ class Advanced extends BaseCustomizer
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = array ($this->callbacks , 'wpTheme_validate_true_false' );
 
 		/* Section Details */
-		$this->SetSectionDetails( 'Advanced Options' ,  0 );
+		$this->SetSectionDetails( 'Advanced Options' ,  180 );
 		$this->SetSettingDetails( $SettingsList );
 		foreach ($SettingsList as $i => $Setings)
 		{

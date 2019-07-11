@@ -63,6 +63,9 @@ class BaseCustomizer
 			$this->SettingsDetails[$i]['index'] = __( $section['index'], 'wpTheme' );
 			$this->SettingsDetails[$i]['type'] = __( $section['type'], 'wpTheme' );
 			$this->SettingsDetails[$i]['sanitize_callback'] = __( $section['index'], 'wpTheme' );
+			// echo ($section['index']);
+			// var_dump ($this->theme_defaults[$section['index']]);
+			// echo ('----------------------------------<br>');
 			if ( is_array ( $this->theme_defaults[$section['index']] ) )
 			{
 				$this->SettingsDetails[$i]['sub-index'] = __( $section['sub-index'], 'wpTheme' );
