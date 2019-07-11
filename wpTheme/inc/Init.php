@@ -35,7 +35,11 @@ final class Init
 			Api\Gutenberg::class,
 			Api\Widgets\TextWidget::class,
 			Plugins\ThemeJetpack::class,
-			Plugins\Acf::class
+			Plugins\Acf::class,
+
+			/* My Customizations */
+			Api\ExtraCustomizer\Advanced::class,
+			Api\ExtraCustomizer\Colors::class,
 		];
 	}
 

@@ -15,19 +15,19 @@ use wptheme\Api\Customizer;
 /**
  * Customizer class
  */
-class Footer 
+class Footer
 {
 	/**
 	 * register default hooks and actions for WordPress
 	 * @return
 	 */
-	public function register( $wp_customize ) 
+	public function register( $wp_customize )
 	{
 		$wp_customize->add_section( 'wptheme_footer_section' , array(
 			'title' => __( 'Footer', 'wpTheme' ),
 			'description' => __( 'Customize the Footer' ),
 			'priority' => 162
-		) ); 
+		) );
 
 		$wp_customize->add_setting( 'wptheme_footer_background_color' , array(
 			'default' => '#ffffff',
