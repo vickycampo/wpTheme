@@ -40,6 +40,7 @@ final class Init
 			/* My Customizations */
 			Api\ExtraCustomizer\Advanced::class,
 			Api\ExtraCustomizer\Colors::class,
+			Api\ExtraCustomizer\Header::class,
 		];
 	}
 

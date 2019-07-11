@@ -29,25 +29,21 @@ if ( ! function_exists( 'wpTheme_header_image' ) )
           /* Add the settings */
           $id = 'wpTheme_options[big-header-image][as_background]';
           $args = array(
-
 			'default' => $defaults['big-header-image']['as_background'],
 			'capability' => 'edit_theme_options',
 			'transport' => 'refresh',
 			'type' => 'option',
 			'sanitize_callback' => 'wpTheme_validate_true_false'
-
 		);
           $wp_customize->add_setting( $id , $args );
           /* Add the control */
           $args = array(
-
-			'label' => __( 'Show as a background?', 'wpTheme' ),
+			'label' => __( 'Show as a background?', 'wpTheme' )
 			'section' => 'header_image',
 			'settings' => $id,
 			'type' => 'checkbox',
 			'choices' => wpTheme_true_false(),
 			'sanitize_callback' => 'wpTheme_validate_true_false'
-
 		);
           $wp_customize->add_control( $id , $args );
      }

@@ -30,7 +30,7 @@ class Colors extends BaseCustomizer
 	{
 
 		$Functions = new Functions();
-		$this->default = $Functions->get_theme_defaults();
+		$this->theme_defaults = $Functions->get_theme_defaults();
 		/* Initialize the class that manages the CallBacks*/
 		$this->callbacks = new Callbacks();
 		/* add Details */

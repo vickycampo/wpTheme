@@ -47,13 +47,26 @@ class BaseCustomizer
 		$this->SectionDetails['id'] = str_replace(" " , "_", $this->SectionDetails['id'] );
 		$this->priority = $priority;
 	}
+	public function var_error_log( $object=null )
+	{
+		ob_start();                    // start buffer capture
+		var_dump( $object );           // dump the values
+		$contents = ob_get_contents(); // put the buffer into a variable
+		ob_end_clean();                // end capture
+		error_log( $contents );        // log contents of the result of var_dump( $object )
+	}
 	public function SetSettingDetails( $SectionsList )
 	{
+
 		foreach ( $SectionsList as $i => $section )
 		{
 			$this->SettingsDetails[$i]['index'] = __( $section['index'], 'wpTheme' );
 			$this->SettingsDetails[$i]['type'] = __( $section['type'], 'wpTheme' );
 			$this->SettingsDetails[$i]['sanitize_callback'] = __( $section['index'], 'wpTheme' );
+			if ( is_array ( $this->theme_defaults[$section['index']] ) )
+			{
+				$this->SettingsDetails[$i]['sub-index'] = __( $section['sub-index'], 'wpTheme' );
+			}
 		}
 	}
 	public function setControlDetails ( $settingsId , $controlInfo )
@@ -82,15 +95,27 @@ class BaseCustomizer
 	{
 		foreach ($this->SettingsDetails as $i => $setting)
 		{
+
 			/* set the index */
 			$index = $setting['index'];
 			$type = $setting['type'];
 			$sanitize_callback = $setting['sanitize_callback'];
+			$sub_index = '';
+			if ( is_array ( $this->theme_defaults[$setting['index']] ) )
+			{
+				$sub_index = $setting['sub-index'];
+				$id = 'wpTheme_options['.$index.']['.$sub_index.']';
+				$defaultValue = $this->theme_defaults[$index][$sub_index];
+			}
+			else
+			{
+				$id = 'wpTheme_options['.$index.']';
+				$defaultValue = $this->theme_defaults[$index];
+			}
 	          /* Add the settings */
-	          $id = 'wpTheme_options['.$index.']';
-	          $args = array(
 
-				'default' => $this->theme_defaults[$index],
+	          $args = array (
+				'default' => $defaultValue,
 				'capability' => 'edit_theme_options',
 				'transport' => 'refresh',
 				'type' => $type,
@@ -98,16 +123,25 @@ class BaseCustomizer
 
 			);
 	          $wp_customize->add_setting( $id , $args );
-			$this->add_control ( $index , $wp_customize );
+			$this->add_control ( $index , $wp_customize, $sub_index );
 		}
 
 	}
-	public function add_control ( $index , $wp_customize )
+	public function add_control ( $index , $wp_customize , $sub_index='' )
 	{
 		foreach ($this->ControlDetails[$index] as $i => $control)
 		{
 			/* Add the control */
-			$id = 'wpTheme_options['.$index.']';
+			if ( ( $sub_index !='' ) && ( is_array ( $this->theme_defaults[$index] ) ) )
+			{
+
+				$id = 'wpTheme_options['.$index.']['.$sub_index.']';
+			}
+			else
+			{
+				$id = 'wpTheme_options['.$index.']';
+			}
+
 			$label = $control['label'];
 			$type = $control['type'];
 			$choices = $control['choices'];
@@ -120,11 +154,15 @@ class BaseCustomizer
 					$args = array(
 						'label' => __( $label, 'wpTheme' ),
 						'section' => __( $this->SectionDetails['id'] ),
-						'settings' => 'wpTheme_options['.$index.']',
+						'settings' => $id,
 						'type' => $type,
 						'sanitize_callback' => $sanitize_callback
-
 					);
+					error_log (__LINE__);
+					error_log ( $this->SectionDetails['id'] );
+					error_log ( $id );
+					error_log ( print_r ($args , true) );
+					error_log ('----------------------------------------------');
 					$wp_customize->add_control( $id , $args );
 				}
 				else
@@ -132,19 +170,17 @@ class BaseCustomizer
 					$args = array(
 						'label' => __( $label, 'wpTheme' ),
 						'section' => __( $this->SectionDetails['id'] ),
-						'settings' => 'wpTheme_options['.$index.']',
+						'settings' => $id,
 						'type' => $type,
 						'choices' => $this->callbacks->{$choices}(),
 						'sanitize_callback' => $sanitize_callback
-
 					);
 					$wp_customize->add_control( $id , $args );
 				}
 			}
 			else
 			{
-				error_log ($id . ' - '. __LINE__ . ' - ' . $choices );
-				error_log ($type);
+
 				$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $id, array(
 					'label' => __( $label, 'wpTheme' ),
 					'section' => __( $this->SectionDetails['id'] ),
