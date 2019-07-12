@@ -21,9 +21,9 @@
      //we prepare a funciotn so the heather will have a link for the homepage
           $wpTheme_headerimg = null;
           /* Do we add a link to the header image */
-          $isOptionsSet = ( isset ( $options['big-header-image']['site_name'] ) && ( $options['big-header-image']['site_name'] == false ) );
-          $isDefaultsSet = (! ( isset ( $options['big-header-image']['site_name'] ) )
-          && ( $defaults['big-header-image']['site_name'] == false ) );
+          $isOptionsSet = ( isset ( $options['big_header_image']['site_name'] ) && ( $options['big_header_image']['site_name'] == false ) );
+          $isDefaultsSet = (! ( isset ( $options['big_header_image']['site_name'] ) )
+          && ( $defaults['big_header_image']['site_name'] == false ) );
           $isSiteTitleSet = ( ( ! ( isset ( $options['site-title'] ) ) ) || ( ! ( $options['site-title'] ) ) );
           if ( $isOptionsSet || $isDefaultsSet || $isSiteTitleSet)
           {
@@ -37,36 +37,36 @@
           $width = get_theme_support( 'custom-header', 'width' );
      // Set the image as a background
           $as_a_background = false;
-          if (( isset ( $options['big-header-image']['as_background'] ) && ( $options['big-header-image']['as_background'] ) ) || ( ( ! isset ( $options['big-header-image']['as_background'] )) && $defaults['big-header-image']['as_background'] ))
+          if (( isset ( $options['big_header_image']['as_background'] ) && ( $options['big_header_image']['as_background'] ) ) || ( ( ! isset ( $options['big_header_image']['as_background'] )) && $defaults['big_header_image']['as_background'] ))
           {
                $as_a_background = true;
           }
      // Show site logo
           $show_site_logo = false;
-          if (( isset ( $options['big-header-image']['show_site_logo'] ) && ( $options['big-header-image']['show_site_logo'] ) ) || ( ( ! isset ( $options['big-header-image']['show_site_logo'] )) && $defaults['big-header-image']['show_site_logo'] ))
+          if (( isset ( $options['big_header_image']['show_site_logo'] ) && ( $options['big_header_image']['show_site_logo'] ) ) || ( ( ! isset ( $options['big_header_image']['show_site_logo'] )) && $defaults['big_header_image']['show_site_logo'] ))
           {
                $show_site_logo = true;
           }
      // Show site Name
           $site_name = false;
-          if (( isset ( $options['big-header-image']['site_name'] ) && ( $options['big-header-image']['site_name'] ) ) || ( ( ! isset ( $options['big-header-image']['site_name'] )) && $defaults['big-header-image']['site_name'] ))
+          if (( isset ( $options['big_header_image']['site_name'] ) && ( $options['big_header_image']['site_name'] ) ) || ( ( ! isset ( $options['big_header_image']['site_name'] )) && $defaults['big_header_image']['site_name'] ))
           {
                $site_name = true;
           }
      // Show site Description
           $site_description = false;
-          if (( isset ( $options['big-header-image']['site_description'] ) && ( $options['big-header-image']['site_description'] ) ) || ( ( ! isset ( $options['big-header-image']['site_description'] )) && $defaults['big-header-image']['site_description'] ))
+          if (( isset ( $options['big_header_image']['site_description'] ) && ( $options['big_header_image']['site_description'] ) ) || ( ( ! isset ( $options['big_header_image']['site_description'] )) && $defaults['big_header_image']['site_description'] ))
           {
                $site_description = true;
           }
      //Height
           // echo ('<pre>');
-          // var_dump ($options['big-header-image']);
+          // var_dump ($options['big_header_image']);
           // echo ('</pre>');
-          $height = 'fixed-height-' . $defaults['big-header-image']['percentage'];
-          if ( isset ($options['big-header-image']['percentage']) )
+          $height = 'fixed-height-' . $defaults['big_header_image']['percentage'];
+          if ( isset ($options['big_header_image']['percentage']) )
           {
-               $height = 'fixed-height-' . $options['big-header-image']['percentage'];
+               $height = 'fixed-height-' . $options['big_header_image']['percentage'];
           }
 
 

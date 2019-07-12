@@ -60,7 +60,7 @@ if ( has_nav_menu( $location ) )
                {
                     $logo[0] = $options['nav_menu_css']['top']['custom_logo'];
                }
-               else if ( has_custom_logo() && ( ! $options['big-header-image']['show_site_logo'] )  && ( ! $defaults['big-header-image']['show_site_logo'] ))
+               else if ( has_custom_logo() && ( ! $options['big_header_image']['show_site_logo'] )  && ( ! $defaults['big_header_image']['show_site_logo'] ))
                {
                     $custom_logo_id = get_theme_mod( 'custom_logo' );
                     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
@@ -68,7 +68,7 @@ if ( has_nav_menu( $location ) )
                /* Chose the wrap for the name of the site in the nav bar*/
                $site_name_wrap_before = '';
                $site_name_wrap_after = '';
-               if ( ( isset ($options['big-header-image']['show_site_name']) && ( $options['big-header-image']['show_site_logo'] == false ) ) || ( ! isset ($options['big-header-image']['show_site_name']) && ( $defaults['big-header-image']['show_site_logo'] == false ) ) )
+               if ( ( isset ($options['big_header_image']['show_site_name']) && ( $options['big_header_image']['show_site_logo'] == false ) ) || ( ! isset ($options['big_header_image']['show_site_name']) && ( $defaults['big_header_image']['show_site_logo'] == false ) ) )
                {
                     $site_name_wrap_before = '<h1>';
                     $site_name_wrap_after = '</h1>';

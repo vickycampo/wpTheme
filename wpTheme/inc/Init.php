@@ -41,7 +41,7 @@ final class Init
 			Api\ExtraCustomizer\Advanced::class,
 			Api\ExtraCustomizer\Colors::class,
 			Api\ExtraCustomizer\HeaderImage::class,
-			Api\ExtraCustomizer\Layout::class,
+			Api\ExtraCustomizer\LayoutOptions::class,
 		];
 	}
 

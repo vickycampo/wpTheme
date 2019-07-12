@@ -146,7 +146,7 @@ class Settings
 	 *
 	 * @param  var $pages      array of user's defined pages
 	 */
-	public function addPages( $pages ) 
+	public function addPages( $pages )
 	{
 		$this->admin_pages = $pages;
 
@@ -158,7 +158,7 @@ class Settings
 		if ( empty( $this->admin_pages ) ) {
 			return $this;
 		}
-		
+
 		$adminPage = $this->admin_pages[0];
 
 		$subpage = array(
@@ -182,7 +182,7 @@ class Settings
 	 *
 	 * @param  var $pages      array of user's defined pages
 	 */
-	public function addSubPages( $pages ) 
+	public function addSubPages( $pages )
 	{
 		$this->admin_subpages = ( count( $this->admin_subpages ) == 0 ) ? $pages : array_merge( $this->admin_subpages, $pages );
 
@@ -208,7 +208,7 @@ class Settings
 	 *
 	 * @param  var $args      array of user's defined settings
 	 */
-	public function add_settings( $args ) 
+	public function add_settings( $args )
 	{
 		$this->settings = $args;
 
@@ -220,7 +220,7 @@ class Settings
 	 *
 	 * @param  var $args      array of user's defined sections
 	 */
-	public function add_sections( $args ) 
+	public function add_sections( $args )
 	{
 		$this->sections = $args;
 
@@ -232,7 +232,7 @@ class Settings
 	 *
 	 * @param  var $args      array of user's defined fields
 	 */
-	public function add_fields( $args ) 
+	public function add_fields( $args )
 	{
 		$this->fields = $args;
 
@@ -242,7 +242,7 @@ class Settings
 	/**
 	 * Call WordPress methods to register settings, sections, and fields
 	 */
-	public function register_custom_settings() 
+	public function register_custom_settings()
 	{
 		foreach( $this->settings as $setting ) {
 			register_setting( $setting["option_group"], $setting["option_name"], ( isset( $setting["callback"] ) ? $setting["callback"] : '' ) );

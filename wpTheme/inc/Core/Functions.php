@@ -80,7 +80,7 @@ class Functions
                'skins' => '',
                'bs-screen-size' => '-',
                'nav_menu_css' => $nav_menus,
-               'big-header-image' => $big_header_image,
+               'big_header_image' => $big_header_image,
           );
 
           return $defaults;

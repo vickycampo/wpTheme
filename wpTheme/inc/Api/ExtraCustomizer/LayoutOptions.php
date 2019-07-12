@@ -20,7 +20,7 @@ use wptheme\Core\Functions;
 /**
 * Customizer class
 */
-class Layout extends BaseCustomizer
+class LayoutOptions extends BaseCustomizer
 {
 	/**
 	* register default hooks and actions for WordPress

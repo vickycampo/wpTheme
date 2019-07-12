@@ -67,10 +67,10 @@
      <header>
           <?php
           wptheme\Custom\Hooks::tha_header_top();
-          $height = 'fixed-height-' . $defaults['big-header-image']['percentage'];
-          if ( isset ($options['big-header-image']['percentage']) )
+          $height = 'fixed-height-' . $defaults['big_header_image']['percentage'];
+          if ( isset ($options['big_header_image']['percentage']) )
           {
-               $height = 'fixed-height-' . $options['big-header-image']['percentage'];
+               $height = 'fixed-height-' . $options['big_header_image']['percentage'];
           }
           ?>
           <div id="header-img" class="header-img as_background <?php echo esc_attr( $height ); ?> parallax_effect" style="background-image:url(<?php echo ( get_background_image () ); ?>); "> <!-- Header-img -->

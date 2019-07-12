@@ -20,6 +20,7 @@ namespace wptheme\Api\ExtraCustomizer;
  */
 class CallBacks
 {
+     
      public function wpTheme_true_false()
      {
           $true_false = array(
