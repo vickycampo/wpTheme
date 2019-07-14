@@ -28,7 +28,9 @@ if ( file_exists( get_theme_file_path('/vendor/autoload.php') ) )
 *
 * include theme hook alliance hooks
 */
-
+// echo ('<pre>');
+// var_dump ( class_exists( 'wptchild\\Init' ) );
+// echo ('</pre>');
 if ( class_exists( 'wptchild\\Init' ) ):
 	wptchild\Init::register_services();
 endif;

@@ -382,58 +382,11 @@ header
      {
           /* height: 40px; */
      }
-     /* The id of the nav tag that contains the top navigation bar */
-     #theme_location_top_nav
-     {
-          margin: 0px;
-          padding: 0px;
-          border: 0px;
-          background-color: black;
-     }
-     /* The part of the navigation bar that contains the elements */
-     #theme_location_top_target
-     {
-          margin: 0px;
-          padding: 0px;
-          border: 0px;
-     }
 
-          #theme_location_top_target li
-          {
-          }
-          #theme_location_top_target a
-          {
-          }
-          #theme_location_top_target h1
-          {
-               font-size: 25px;
-          }
-          #theme_location_top_target > ul
-          {
-
-          }
-          #theme_location_top_target > ul > li
-          {
-
-          }
-          #theme_location_top_target > ul > li:hover
-          {
-          }
-          .top_navbar_logo
-          {
-               object-fit: cover;
-               width: 25px;
-               height: 25px;
-          }
-          .navbar-logo
-          {
-               margin-left: 14px;
-          }
 
      /* The id of the tag that contains the main navigation bar */
      #theme_location_main
      {
-
      }
           #theme_location_main > ul
           {

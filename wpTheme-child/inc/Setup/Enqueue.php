@@ -27,9 +27,9 @@ class Enqueue
 	{
 		// CSS
 		wp_enqueue_style( 'body', Childmix('css/body.css'), array(), '1.0.0', 'all' );
+		wp_enqueue_style( 'bootstrap', Childmix('css/bootstrap.css'), array(), '1.0.0', 'all' );
 		wp_enqueue_style( 'breadcrumbs', Childmix('css/breadcrumbs.css'), array(), '1.0.0', 'all' );
 		wp_enqueue_style( 'child-style', Childmix('css/child-style.css'), array(), '1.0.0', 'all' );
-		wp_enqueue_style( 'custom', Childmix('css/custom.css'), array(), '1.0.0', 'all' );
 		wp_enqueue_style( 'header', Childmix('css/header.css'), array(), '1.0.0', 'all' );
 		wp_enqueue_style( 'style', Childmix('css/style.css'), array(), '1.0.0', 'all' );
 		wp_enqueue_style( 'subCat_nav', Childmix('css/subCat_nav.css'), array(), '1.0.0', 'all' );
@@ -39,6 +39,7 @@ class Enqueue
 		wp_enqueue_script( 'app', Childmix('js/app.js'), array(), '1.0.0', true );
 		wp_enqueue_script( 'catNavBar', Childmix('js/catNavBar.js'), array(), '1.0.0', true );
 		wp_enqueue_script( 'child_ajax', Childmix('js/child_ajax.js'), array(), '1.0.0', true );
+		wp_enqueue_script( 'child_ajax', Childmix('js/bootstrap.js'), array(), '1.0.0', true );
 		wp_enqueue_script( 'topNavBar', Childmix('js/topNavBar.js'), array(), '1.0.0', true );
 		wp_enqueue_script( 'wpChildTheme', Childmix('js/wpChildTheme.js'), array(), '1.0.0', true );
 

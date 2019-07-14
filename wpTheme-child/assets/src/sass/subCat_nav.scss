@@ -40,6 +40,9 @@
           margin:3px;
           text-transform: capitalize;
           border-radius: 10px;
+          padding:5px;
+          border: none;
+          border-radius: 0px;
      }
      .sub-cat-button span
      {
@@ -64,20 +67,39 @@
      .sub-cat-menu
      {
           padding: 0px;
-          border: 1px solid #A9A9A9;
-          color: #505050;
-          background-color: #DCDCDC;
+          border: 1px solid #000000;
+          color: #000000;
+          background-color: #F5F5F5;
      }
      /* Each sub category */
      .sub-cat-menu .dropdown-item
      {
-
-
           font-size: 12px;
-          padding-left: 5px;
+          font-weight: lighter;
+          padding-left: 10px;
           padding-top: 0px;
           padding-bottom: 0px;
+          border-radius: 0px !important;
+          background-color: #181818 !important;
+          color: #b4b9be;
           cursor: pointer;
+          width: 100%;
+     }
+     .dropdown-menu
+     {
+          width: 100%;
+          border-radius: 0px !important;
+          padding-right: 6px;
+          border: none;
+          margin: 0px;
+     }
+     .dropdown-item:hover, .dropdown-item:focus
+     {
+          color: orange !important;
+          border-radius: 0px !important;
+          background-color: #23282d !important;
+          color: white;
+
      }
      /* Each sub category with subcategories */
      .sub-cat-menu .dropdown-has-subitem
@@ -111,11 +133,10 @@
 }
 .sub-cat-filters-element
 {
-
-
      border: 1px solid #A9A9A9;
      color: #505050;
      background-color: #DCDCDC;
+     vertical-align: middle;
 
      font-size: 10px;
      font-weight: bold;
@@ -126,22 +147,25 @@
 }
 .sub-cat-filters-name
 {
-     display: inline-block;
      text-align: center;
+     vertical-align: middle;
      padding-left: 3px;
      border-left: 1px solid #A9A9A9;
      min-width: 100px;
      margin: 0px;
+     display: inline-block;
 }
 
 .sub-cat-filters-close
 {
      display: inline-block;
+     vertical-align: middle;
      background-color: #BEBEBE;
      text-align: center;
      padding:7px;
      cursor: pointer;
-     min-height: 100%;
+     min-height: 100%;max-height: 100%;
+     content: "\f158";
 }
 .sub-cat-filters-close:hover
 {

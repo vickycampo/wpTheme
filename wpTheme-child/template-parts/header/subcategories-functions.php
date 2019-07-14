@@ -268,7 +268,7 @@ function wpChildTheme_subcat_buttons ( $sub_categories )
                     $ThisElementId = "'".$main_id.'-'.$parent_id."'";
                     $return_string .= '<div class="btn-group" id='. $ThisElementId .'>';
                          $return_string .= '<button type="button" ';
-                         $return_string .= 'class="btn dropdown-toggle sub-cat-button" ';
+                         $return_string .= 'class="dropdown-toggle sub-cat-button" ';
                          $return_string .= 'data-toggle="dropdown" ';
                          $return_string .= 'aria-haspopup="true" ';
                          $return_string .= 'aria-expanded="false"><span> ';

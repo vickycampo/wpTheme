@@ -25,7 +25,7 @@ final class Init
                Setup\Menus::class,
                Setup\SideBars::class
 		];
-          showSpaceNames ();
+          
 	}
 
 	/**

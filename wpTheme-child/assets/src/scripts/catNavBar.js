@@ -81,7 +81,7 @@ jQuery(document).ready( function($)
 
 			/* Before we add we need to check if it exists */
 			$('#sub-cat-filters').append('<div class="sub-cat-filters-element" id="' + target_id + '_filter">');
-			$('#sub-cat-filters').find('#' + target_id + '_filter').append('<div class="sub-cat-filters-close fa fa-times" id="' + target_id + '_close">');
+			$('#sub-cat-filters').find('#' + target_id + '_filter').append('<div class="sub-cat-filters-close " id="' + target_id + '_close">');
 			$('#sub-cat-filters').find('#' + target_id + '_filter').append('<div class="sub-cat-filters-name" id="' + target_id + '_name">');
 			/* Add the filter name */
 			$('#' + target_id + '_name').append(target_txt);

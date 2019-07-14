@@ -1,0 +1,8 @@
+Install angular-font-awesome
+ - npm uninstall --save font-awesome angular-font-awesome
+ - npm uninstall --save-dev @fortawesome/fontawesome-free
+Install Bootstrap
+ - npm install bootstrap
+
+
+ https://fontawesome.com/cheatsheet
