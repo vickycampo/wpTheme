@@ -39,46 +39,46 @@ class Colors extends BaseCustomizer
 		$i = 0;
 		$SettingsList[$i]['index'] = 'font-color';
 		$SettingsList[$i]['type'] = 'option';
-		$SettingsList[$i]['sanitize_callback'] = array ($this->callbacks , 'sanitize_hex_color' );
+		$SettingsList[$i]['sanitize_callback'] = 'sanitize_hex_color';
 		$j = 0;
 		$settingsId = $SettingsList[$i]['index'];
 		$ControlsList[$settingsId][$j]['label'] = 'Font Color';
 		$ControlsList[$settingsId][$j]['type'] = 'WP_Customize_Color_Control';
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
-		$ControlsList[$settingsId][$j]['sanitize_callback'] = array ($this->callbacks , 'sanitize_hex_color' );
+		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'sanitize_hex_color';
           /*-----------------------------------------------------------------*/
           $i++;
           $SettingsList[$i]['index'] = 'link';
 		$SettingsList[$i]['type'] = 'option';
-		$SettingsList[$i]['sanitize_callback'] = array ($this->callbacks , 'sanitize_hex_color' );
+		$SettingsList[$i]['sanitize_callback'] = 'sanitize_hex_color';
           $j = 0;
 		$settingsId = $SettingsList[$i]['index'];
 		$ControlsList[$settingsId][$j]['label'] = 'Link Color';
 		$ControlsList[$settingsId][$j]['type'] = 'WP_Customize_Color_Control';
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
-		$ControlsList[$settingsId][$j]['sanitize_callback'] = array ($this->callbacks , 'sanitize_hex_color' );
+		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'sanitize_hex_color';
           /*-----------------------------------------------------------------*/
           $i++;
           $SettingsList[$i]['index'] = 'hover';
 		$SettingsList[$i]['type'] = 'option';
-		$SettingsList[$i]['sanitize_callback'] = array ($this->callbacks , 'sanitize_hex_color' );
+		$SettingsList[$i]['sanitize_callback'] = 'sanitize_hex_color';
           $j = 0;
 		$settingsId = $SettingsList[$i]['index'];
 		$ControlsList[$settingsId][$j]['label'] = 'Hover Color';
 		$ControlsList[$settingsId][$j]['type'] = 'WP_Customize_Color_Control';
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
-		$ControlsList[$settingsId][$j]['sanitize_callback'] = array ($this->callbacks , 'sanitize_hex_color' );
+		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'sanitize_hex_color';
           /*-----------------------------------------------------------------*/
           $i++;
           $SettingsList[$i]['index'] = 'navbar-color';
 		$SettingsList[$i]['type'] = 'option';
-		$SettingsList[$i]['sanitize_callback'] = array ($this->callbacks , 'sanitize_hex_color' );
+		$SettingsList[$i]['sanitize_callback'] = 'sanitize_hex_color';
           $j = 0;
 		$settingsId = $SettingsList[$i]['index'];
 		$ControlsList[$settingsId][$j]['label'] = 'Navbar (top) Background Color';
 		$ControlsList[$settingsId][$j]['type'] = 'WP_Customize_Color_Control';
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
-		$ControlsList[$settingsId][$j]['sanitize_callback'] = array ($this->callbacks , 'sanitize_hex_color' );
+		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'sanitize_hex_color';
           /* Section Details */
 		$this->SetSectionDetails( 'Colors' ,  40 );
 		$this->SetSettingDetails( $SettingsList );

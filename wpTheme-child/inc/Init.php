@@ -19,13 +19,14 @@ final class Init
 	public static function get_services()
 	{
 		return [
+			Setup\Enqueue::class,
 			BreadCrumbs::class,
 			ChildAjax::class,
-               Setup\Enqueue::class,
+
                Setup\Menus::class,
                Setup\SideBars::class
 		];
-          
+
 	}
 
 	/**

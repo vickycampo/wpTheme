@@ -154,7 +154,8 @@ class BaseCustomizer
 				'capability' => 'edit_theme_options',
 				'transport' => 'refresh',
 				'type' => $type,
-				'sanitize_callback' => array( $this->callbacks , $sanitize_callback )
+				'sanitize_callback' => array( $this->callbacks, $sanitize_callback )
+				//'sanitize_callback' => $this->callbacks->{$sanitize_callback}()
 
 			);
 	          $wp_customize->add_setting( $id , $args );
@@ -200,7 +201,7 @@ class BaseCustomizer
 						'section' => __( $this->SectionDetails['id'] ),
 						'settings' => $id,
 						'type' => $type,
-						'sanitize_callback' => $sanitize_callback
+						'sanitize_callback' => $this->callbacks->{$sanitize_callback}()
 					);
 					// error_log (__LINE__);
 					// error_log ( $this->SectionDetails['id'] );
@@ -220,7 +221,7 @@ class BaseCustomizer
 						'settings' => $id,
 						'type' => $type,
 						'choices' => $this->callbacks->{$choices}(),
-						'sanitize_callback' => $sanitize_callback
+						'sanitize_callback' => array( $this->callbacks, $sanitize_callback )
 					);
 					$wp_customize->add_control( $id , $args );
 				}

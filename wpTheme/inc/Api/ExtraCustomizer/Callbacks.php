@@ -20,8 +20,8 @@ namespace wptheme\Api\ExtraCustomizer;
  */
 class CallBacks
 {
-     
-     public function wpTheme_true_false()
+
+     public static function wpTheme_true_false()
      {
           $true_false = array(
                true => __('Yes','wpTheme'),
@@ -29,7 +29,7 @@ class CallBacks
           );
           return $true_false;
      }
-     public function wpTheme_show_excerpts()
+     public static function wpTheme_show_excerpts()
      {
         $show_excerpts = array(
             true => __('Show Post Excerpts','wpTheme'),
@@ -37,7 +37,7 @@ class CallBacks
         );
         return $show_excerpts;
      }
-     public function wpTheme_fonts()
+     public static function wpTheme_fonts()
      {
           $fonts = array(
                'PT Serif' => 'PT Serif',
@@ -50,7 +50,7 @@ class CallBacks
           );
           return $fonts;
      }
-     public function wpTheme_font_subset()
+     public static function wpTheme_font_subset()
      {
           $font_subsets = array(
                'latin' => __( 'Latin', 'wpTheme' ),
@@ -63,7 +63,7 @@ class CallBacks
           );
           return $font_subsets;
      }
-     public function wpTheme_skins()
+     public static function wpTheme_skins()
      {
           $skins = array(
                ' '            => __( '', 'wpTheme' ),
@@ -91,7 +91,7 @@ class CallBacks
           );
           return $skins;
      }
-     public function wpTheme_screen_size()
+     public static function wpTheme_screen_size()
      {
           $screen_sizes = array(
                '-'            => __( 'Extra small (<576px)', 'wpTheme' ),
@@ -103,7 +103,7 @@ class CallBacks
           );
           return $screen_sizes;
      }
-     public function wpTheme_nav_menu_color()
+     public static function wpTheme_nav_menu_color()
      {
           $color = array (
                '' => __( 'None', 'wpTheme' ),
@@ -120,7 +120,7 @@ class CallBacks
           );
           return ($color);
      }
-     public function wpTheme_nav_menu_auto_margins()
+     public static function wpTheme_nav_menu_auto_margins()
      {
           $color = array (
                '' => __( "Don't Push Items", 'wpTheme' ),
@@ -131,7 +131,7 @@ class CallBacks
           );
           return ($color);
      }
-     public function wpTheme_percentages()
+     public static function wpTheme_percentages()
      {
           $percentage = array (
                '' => __( " ", 'wpTheme' ),
@@ -145,14 +145,14 @@ class CallBacks
           );
           return ($percentage);
      }
-     public function wpTheme_esc_textarea ()
+     public static function wpTheme_esc_textarea ()
      {
           return ('wpTheme_esc_textarea');
      }
 
 
 
-     public function wpTheme_validate_true_false( $value )
+     public static function wpTheme_validate_true_false( $value )
 	{
 		if ($value == false)
 		{
@@ -167,7 +167,7 @@ class CallBacks
 
 		return $value;
 	}
-     public function wpTheme_validate_fonts( $value )
+     public static function wpTheme_validate_fonts( $value )
 	{
 		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
 		if ( ! array_key_exists( $value, $this->wpTheme_fonts() ) )
@@ -179,7 +179,7 @@ class CallBacks
 		//TRUE - VALID
 		return $value;
 	}
-     public function wpTheme_validate_excerpts( $value )
+     public static function wpTheme_validate_excerpts( $value )
 	{
 		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
 		if ( !array_key_exists( $value, wpTheme_show_excerpts() ) )
@@ -190,7 +190,7 @@ class CallBacks
 		//TRUE - VALID
 		return $value;
 	}
-     public function wpTheme_validate_subset( $value )
+     public static function wpTheme_validate_subset( $value )
 	{
 		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
 			if ( !array_key_exists( $value, $this->wpTheme_font_subset() ) )
@@ -201,12 +201,12 @@ class CallBacks
 		//TRUE - VALID
 		return $value;
 	}
-     public function wpTheme_kses( $value )
+     public static function wpTheme_kses( $value )
 	{
 		return wp_kses_post( $value ); //Sanitize content for allowed HTML tags for post content.
 	}
 
-     public function wpTheme_validate_favicon( $value )
+     public static function wpTheme_validate_favicon( $value )
 	{
 		/*  Create a list of valid file types */
 		define('TYPE_WHITELIST', serialize(array(
@@ -236,7 +236,7 @@ class CallBacks
 		}
 		return $value;
 	}
-     public function wpTheme_validate_skins( $value )
+     public static function wpTheme_validate_skins( $value )
 	{
 		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
 			if ( !array_key_exists( $value, $this->wpTheme_skins() ) )
@@ -247,7 +247,7 @@ class CallBacks
 		//TRUE - VALID
 		return $value;
 	}
-     public function wpTheme_validate_screen_size( $value )
+     public static function wpTheme_validate_screen_size( $value )
 	{
 		//WE CHECK IF THE FONT IS IN THE ARRAY OF VALID VALUES
 		if ( !array_key_exists( $value, $this->wpTheme_screen_size() ) )
@@ -258,7 +258,7 @@ class CallBacks
 		//TRUE - VALID
 		return $value;
 	}
-     public function wpTheme_validate_nav_menu_color( $value )
+     public static function wpTheme_validate_nav_menu_color( $value )
 	{
 		if ( !array_key_exists( $value, wpTheme_nav_menu_color() ) )
 		{
@@ -268,7 +268,7 @@ class CallBacks
 		//TRUE - VALID
 		return $value;
 	}
-     public function wpTheme_validate_nav_menu_auto_margins( $value )
+     public static function wpTheme_validate_nav_menu_auto_margins( $value )
 	{
 		if ( !array_key_exists( $value, $this->wpTheme_nav_menu_auto_margins() ) )
 		{
@@ -278,7 +278,7 @@ class CallBacks
 		//TRUE - VALID
 		return $value;
 	}
-     public function wpTheme_validate_percentages( $value )
+     public static function wpTheme_validate_percentages( $value )
 	{
 		if ( !array_key_exists( $value, $this->wpTheme_percentages() ) )
 		{
