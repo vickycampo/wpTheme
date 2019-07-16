@@ -60,7 +60,7 @@ if ( has_nav_menu( $location ) )
                {
                     $logo[0] = $options['nav_menu_css']['top']['custom_logo'];
                }
-               else if ( has_custom_logo() && ( ! $options['big_header_image']['show_site_logo'] )  && ( ! $defaults['big_header_image']['show_site_logo'] ))
+               else if ( has_custom_logo() && ( ! $defaults['big_header_image']['show_site_logo'] )  && (( ! isset ($options['big_header_image'])) || ( ! $options['big_header_image']['show_site_logo'] )) )
                {
                     $custom_logo_id = get_theme_mod( 'custom_logo' );
                     $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
