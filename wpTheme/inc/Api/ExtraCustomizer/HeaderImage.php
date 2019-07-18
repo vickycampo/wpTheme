@@ -42,7 +42,7 @@ class HeaderImage extends BaseCustomizer
 		$SettingsList[$i]['sanitize_callback'] = 'wpTheme_validate_true_false';
 		$j = 0;
 		$settingsId = $SettingsList[$i]['sub-index'];
-		$ControlsList[$settingsId][$j]['label'] = 'Show as a background?';
+		$ControlsList[$settingsId][$j]['label'] = 'Use the template background for the header?';
 		$ControlsList[$settingsId][$j]['type'] = 'checkbox';
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_true_false';
@@ -54,7 +54,7 @@ class HeaderImage extends BaseCustomizer
 		$SettingsList[$i]['sanitize_callback'] = 'wpTheme_validate_true_false';
 		$j = 0;
 		$settingsId = $SettingsList[$i]['sub-index'];
-		$ControlsList[$settingsId][$j]['label'] = 'Show the site logo?';
+		$ControlsList[$settingsId][$j]['label'] = 'Show the site logo in the header and not the Navigation bar?';
 		$ControlsList[$settingsId][$j]['type'] = 'checkbox';
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_true_false';

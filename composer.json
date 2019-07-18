@@ -1,0 +1,13 @@
+{
+    "name": "vicky/wp-theme",
+    "description": "wp container theme",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Vicky Campo",
+            "email": "info@virginiacampo.com"
+        }
+    ],
+    "require": {}
+}

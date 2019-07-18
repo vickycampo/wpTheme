@@ -11,3 +11,13 @@ https://developer.wordpress.org/themes/
 
 Source for the child theme:
 https://developer.wordpress.org/themes/advanced-topics/child-themes/
+
+Instructions:
+1. Download Composer - https://getcomposer.org/
+2. Download Node - https://getcomposer.org/
+3. Create composer.json - composer init
+4. Modify the composer.json file
+5. Install composer - composer install		
+6. Create package.json file - cd /path/to/package - npm init
+7. Install - npm install
+8.
