@@ -86,49 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/src/scripts/topNavBar.js":
-/*!*****************************************!*\
-  !*** ./assets/src/scripts/topNavBar.js ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(jQuery) {/*
-
-@package WordPress
-@subpackage wpChildTheme
-@since wpTheme
-
-	====================================
-		TOP NAVIGATION BAR JAVASCRIPT
-	====================================
-*
-* Set the styles for the top navigation bar
-*
-*/
-
-/* Scroll */
-jQuery(document).ready(function ($) {
-  /* Set Variables */
-  var header_img_height = $('#header-img').outerHeight(true);
-  var top_bar_height = $('#theme_location_top_nav').outerHeight(true);
-  var top = header_img_height - top_bar_height;
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > top) {
-      if (!$('#theme_location_top_nav').hasClass("topNav_afterHeaderImage")) {
-        $('#theme_location_top_nav').addClass("topNav_afterHeaderImage");
-      }
-    } else if ($(window).scrollTop() < top) {
-      if ($('#theme_location_top_nav').hasClass("topNav_afterHeaderImage")) {
-        $('#theme_location_top_nav').removeClass("topNav_afterHeaderImage");
-      }
-    }
-  });
-});
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
-
-/***/ }),
-
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -10739,14 +10696,57 @@ return jQuery;
 
 /***/ }),
 
-/***/ 4:
-/*!***********************************************!*\
-  !*** multi ./assets/src/scripts/topNavBar.js ***!
-  \***********************************************/
+/***/ "./wpTheme-child/assets/src/scripts/topNavBar.js":
+/*!*******************************************************!*\
+  !*** ./wpTheme-child/assets/src/scripts/topNavBar.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\scripts\topNavBar.js */"./assets/src/scripts/topNavBar.js");
+/* WEBPACK VAR INJECTION */(function(jQuery) {/*
+
+@package WordPress
+@subpackage wpChildTheme
+@since wpTheme
+
+	====================================
+		TOP NAVIGATION BAR JAVASCRIPT
+	====================================
+*
+* Set the styles for the top navigation bar
+*
+*/
+
+/* Scroll */
+jQuery(document).ready(function ($) {
+  /* Set Variables */
+  var header_img_height = $('#header-img').outerHeight(true);
+  var top_bar_height = $('#theme_location_top_nav').outerHeight(true);
+  var top = header_img_height - top_bar_height;
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > top) {
+      if (!$('#theme_location_top_nav').hasClass("topNav_afterHeaderImage")) {
+        $('#theme_location_top_nav').addClass("topNav_afterHeaderImage");
+      }
+    } else if ($(window).scrollTop() < top) {
+      if ($('#theme_location_top_nav').hasClass("topNav_afterHeaderImage")) {
+        $('#theme_location_top_nav').removeClass("topNav_afterHeaderImage");
+      }
+    }
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ 4:
+/*!*************************************************************!*\
+  !*** multi ./wpTheme-child/assets/src/scripts/topNavBar.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\scripts\topNavBar.js */"./wpTheme-child/assets/src/scripts/topNavBar.js");
 
 
 /***/ })

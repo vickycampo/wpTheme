@@ -86,120 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/src/sass/body.scss":
-/*!***********************************!*\
-  !*** ./assets/src/sass/body.scss ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./assets/src/sass/bootstrap.scss":
-/*!****************************************!*\
-  !*** ./assets/src/sass/bootstrap.scss ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./assets/src/sass/breadcrumbs.scss":
-/*!******************************************!*\
-  !*** ./assets/src/sass/breadcrumbs.scss ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./assets/src/sass/child-style.scss":
-/*!******************************************!*\
-  !*** ./assets/src/sass/child-style.scss ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./assets/src/sass/font-awesome.scss":
-/*!*******************************************!*\
-  !*** ./assets/src/sass/font-awesome.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./assets/src/sass/header.scss":
-/*!*************************************!*\
-  !*** ./assets/src/sass/header.scss ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./assets/src/sass/style.scss":
-/*!************************************!*\
-  !*** ./assets/src/sass/style.scss ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./assets/src/sass/subCat_nav.scss":
-/*!*****************************************!*\
-  !*** ./assets/src/sass/subCat_nav.scss ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./assets/src/sass/top-nav.scss":
-/*!**************************************!*\
-  !*** ./assets/src/sass/top-nav.scss ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./assets/src/scripts/app.js":
-/*!***********************************!*\
-  !*** ./assets/src/scripts/app.js ***!
-  \***********************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
-/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);
-
-
-/***/ }),
-
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -17904,23 +17790,125 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./wpTheme-child/assets/src/sass/body.scss":
+/*!*************************************************!*\
+  !*** ./wpTheme-child/assets/src/sass/body.scss ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./wpTheme-child/assets/src/sass/bootstrap.scss":
+/*!******************************************************!*\
+  !*** ./wpTheme-child/assets/src/sass/bootstrap.scss ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./wpTheme-child/assets/src/sass/breadcrumbs.scss":
+/*!********************************************************!*\
+  !*** ./wpTheme-child/assets/src/sass/breadcrumbs.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./wpTheme-child/assets/src/sass/child-style.scss":
+/*!********************************************************!*\
+  !*** ./wpTheme-child/assets/src/sass/child-style.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./wpTheme-child/assets/src/sass/header.scss":
+/*!***************************************************!*\
+  !*** ./wpTheme-child/assets/src/sass/header.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./wpTheme-child/assets/src/sass/style.scss":
+/*!**************************************************!*\
+  !*** ./wpTheme-child/assets/src/sass/style.scss ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./wpTheme-child/assets/src/sass/subCat_nav.scss":
+/*!*******************************************************!*\
+  !*** ./wpTheme-child/assets/src/sass/subCat_nav.scss ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./wpTheme-child/assets/src/sass/top-nav.scss":
+/*!****************************************************!*\
+  !*** ./wpTheme-child/assets/src/sass/top-nav.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./wpTheme-child/assets/src/scripts/app.js":
+/*!*************************************************!*\
+  !*** ./wpTheme-child/assets/src/scripts/app.js ***!
+  \*************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
+/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/***/ }),
+
 /***/ 0:
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./assets/src/scripts/app.js ./assets/src/sass/body.scss ./assets/src/sass/bootstrap.scss ./assets/src/sass/breadcrumbs.scss ./assets/src/sass/child-style.scss ./assets/src/sass/font-awesome.scss ./assets/src/sass/style.scss ./assets/src/sass/header.scss ./assets/src/sass/subCat_nav.scss ./assets/src/sass/top-nav.scss ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./wpTheme-child/assets/src/scripts/app.js ./wpTheme-child/assets/src/sass/body.scss ./wpTheme-child/assets/src/sass/bootstrap.scss ./wpTheme-child/assets/src/sass/breadcrumbs.scss ./wpTheme-child/assets/src/sass/child-style.scss ./wpTheme-child/assets/src/sass/style.scss ./wpTheme-child/assets/src/sass/header.scss ./wpTheme-child/assets/src/sass/subCat_nav.scss ./wpTheme-child/assets/src/sass/top-nav.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\scripts\app.js */"./assets/src/scripts/app.js");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\body.scss */"./assets/src/sass/body.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\bootstrap.scss */"./assets/src/sass/bootstrap.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\breadcrumbs.scss */"./assets/src/sass/breadcrumbs.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\child-style.scss */"./assets/src/sass/child-style.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\font-awesome.scss */"./assets/src/sass/font-awesome.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\style.scss */"./assets/src/sass/style.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\header.scss */"./assets/src/sass/header.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\subCat_nav.scss */"./assets/src/sass/subCat_nav.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\top-nav.scss */"./assets/src/sass/top-nav.scss");
+__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\scripts\app.js */"./wpTheme-child/assets/src/scripts/app.js");
+__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\body.scss */"./wpTheme-child/assets/src/sass/body.scss");
+__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\bootstrap.scss */"./wpTheme-child/assets/src/sass/bootstrap.scss");
+__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\breadcrumbs.scss */"./wpTheme-child/assets/src/sass/breadcrumbs.scss");
+__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\child-style.scss */"./wpTheme-child/assets/src/sass/child-style.scss");
+__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\style.scss */"./wpTheme-child/assets/src/sass/style.scss");
+__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\header.scss */"./wpTheme-child/assets/src/sass/header.scss");
+__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\subCat_nav.scss */"./wpTheme-child/assets/src/sass/subCat_nav.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\top-nav.scss */"./wpTheme-child/assets/src/sass/top-nav.scss");
 
 
 /***/ })

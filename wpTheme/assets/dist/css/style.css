@@ -44,7 +44,7 @@ section {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  /* font-size: 2em; */
+  font-size: 2em;
   margin: 0.67em 0;
 }
 
@@ -92,7 +92,7 @@ main {
 pre {
   font-family: monospace, monospace;
   /* 1 */
-  /* font-size: 1em; */
+  font-size: 1em;
   /* 2 */
 }
 
@@ -150,7 +150,7 @@ kbd,
 samp {
   font-family: monospace, monospace;
   /* 1 */
-  /* font-size: 1em; */
+  font-size: 1em;
   /* 2 */
 }
 
@@ -173,7 +173,7 @@ mark {
  * Add the correct font size in all browsers.
  */
 small {
-  /* font-size: 80%; */
+  font-size: 80%;
 }
 
 /**
@@ -182,7 +182,7 @@ small {
  */
 sub,
 sup {
-  /* font-size: 75%; */
+  font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
@@ -241,7 +241,7 @@ select,
 textarea {
   font-family: sans-serif;
   /* 1 */
-  /* font-size: 100%; */
+  font-size: 100%;
   /* 1 */
   line-height: 1.15;
   /* 1 */
@@ -5389,7 +5389,7 @@ a img.aligncenter {
   color: #21759b;
   display: block;
   font-size: 14px;
-  /* font-size: 0.875rem; */
+  font-size: 0.875rem;
   font-weight: bold;
   height: auto;
   left: 5px;

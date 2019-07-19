@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/src/scripts/wpChildTheme.js":
-/*!********************************************!*\
-  !*** ./assets/src/scripts/wpChildTheme.js ***!
-  \********************************************/
+/***/ "./wpTheme-child/assets/src/scripts/wpChildTheme.js":
+/*!**********************************************************!*\
+  !*** ./wpTheme-child/assets/src/scripts/wpChildTheme.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -110,13 +110,13 @@
 /***/ }),
 
 /***/ 5:
-/*!**************************************************!*\
-  !*** multi ./assets/src/scripts/wpChildTheme.js ***!
-  \**************************************************/
+/*!****************************************************************!*\
+  !*** multi ./wpTheme-child/assets/src/scripts/wpChildTheme.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\scripts\wpChildTheme.js */"./assets/src/scripts/wpChildTheme.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\scripts\wpChildTheme.js */"./wpTheme-child/assets/src/scripts/wpChildTheme.js");
 
 
 /***/ })

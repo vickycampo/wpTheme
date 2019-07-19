@@ -36,22 +36,25 @@ class EnqueueChild
 
 		$BASE = get_stylesheet_directory_uri();
 
-		wp_enqueue_style( 'body', $BASE .'/assets/dist/css/body.css', array(), '1.0.0', 'all' );
-		wp_enqueue_style( 'bootstrap', $BASE .'/assets/dist/css/bootstrap.css', array(), '1.0.0', 'all' );
-		wp_enqueue_style( 'breadcrumbs', $BASE .'/assets/dist/css/breadcrumbs.css', array(), '1.0.0', 'all' );
-		wp_enqueue_style( 'child-style', $BASE .'/assets/dist/css/child-style.css', array(), '1.0.0', 'all' );
-		wp_enqueue_style( 'header', $BASE .'/assets/dist/css/header.css', array(), '1.0.0', 'all' );
-		wp_enqueue_style( 'style', $BASE .'/assets/dist/css/style.css', array(), '1.0.0', 'all' );
-		wp_enqueue_style( 'subCat_nav', $BASE .'/assets/dist/css/subCat_nav.css', array(), '1.0.0', 'all' );
-		wp_enqueue_style( 'top-nav', $BASE .'/assets/dist/css/top-nav.css', array(), '1.0.0', 'all' );
+		wp_enqueue_style( 'body', $BASE .'/assets/dist/css/body.css', array(), null, 'all' );
+		wp_enqueue_style( 'bootstrap', $BASE .'/assets/dist/css/bootstrap.css', array(), null, 'all' );
+		wp_enqueue_style( 'breadcrumbs', $BASE .'/assets/dist/css/breadcrumbs.css', array(), null, 'all' );
+		wp_enqueue_style( 'child-style-extra', $BASE .'/assets/dist/css/child-style.css', array(), null, 'all' );
+		wp_enqueue_style( 'header', $BASE .'/assets/dist/css/header.css', array(), null, 'all' );
+		wp_enqueue_style( 'child-style', $BASE .'/assets/dist/css/style.css', array(), null, 'all' );
+		wp_enqueue_style( 'subCat_nav', $BASE .'/assets/dist/css/subCat_nav.css', array(), null, 'all' );
+		wp_enqueue_style( 'top-nav', $BASE .'/assets/dist/css/top-nav.css', array(), null, 'all' );
 
 		// JS
-		//wp_enqueue_script( 'app', ('js/app.js', array(), '1.0.0', true );
-		wp_enqueue_script( 'catNavBar', $BASE .'/assets/dist/js/catNavBar.js', array(), '1.0.0', true );
-		wp_enqueue_script( 'child_ajax', $BASE .'/assets/dist/js/child_ajax.js', array(), '1.0.0', true );
-		wp_enqueue_script( 'bootstrap_ajax', $BASE .'/assets/dist/js/bootstrap.js', array(), '1.0.0', true );
-		wp_enqueue_script( 'topNavBar', $BASE .'/assets/dist/js/topNavBar.js', array(), '1.0.0', true );
-		wp_enqueue_script( 'wpChildTheme', $BASE .'/assets/dist/js/wpChildTheme.js', array(), '1.0.0', true );
+		//wp_enqueue_script( 'app', ('js/app.js', array(), null, true );
+		// echo ($BASE .'/assets/dist/js/catNavBar.js<br>');
+		// echo ($BASE .'/assets/dist/js/child_ajax.js<br>');
+		wp_enqueue_script( 'catNavBar', $BASE .'/assets/dist/js/catNavBar.js', array(), null, true );
+		wp_enqueue_script( 'child_ajax', $BASE .'/assets/dist/js/child_ajax.js', array( ), null, true );
+		wp_enqueue_script( 'bootstrap_js', $BASE .'/assets/dist/js/bootstrap.js', array( ), null, true );
+		wp_enqueue_script( 'popper_js', $BASE .'/assets/dist/js/popper.js', array( ), null, true );
+		wp_enqueue_script( 'topNavBar', $BASE .'/assets/dist/js/topNavBar.js', array( ), null, true );
+		wp_enqueue_script( 'wpChildTheme', $BASE .'/assets/dist/js/wpChildTheme.js', array( ), null, true );
 
 	}
 

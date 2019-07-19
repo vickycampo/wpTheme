@@ -9,14 +9,16 @@
 	===================================
 *
 */
+
 /* The container of all the body elements */
-body, html
-{
-     width: 100%;
-     height: 100%;
-     margin: 0;
-     font-size: 14px;
-     line-height: 1.6em;
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6em;
 }
 
 .custom-background {
@@ -24,6 +26,7 @@ body, html
 }
 
 /* The bs-fixed-nav class is set when there is options['nav-menu'] is set and is true*/
+
 body.bs-fixed-nav {
   margin: 0px;
   padding: 0px;
@@ -35,8 +38,11 @@ body.bs-fixed-nav {
           SIDEBARS
      ===================================
 */
+
 /* Class of the left side bar */
+
 /* Class of the right side bar */
+
 .body-right-sidebar {
   display: block;
 }
@@ -55,6 +61,7 @@ body.bs-fixed-nav {
 		TAGS
 	===================================
 */
+
 section {
   background-color: blue;
 }
@@ -63,7 +70,9 @@ p {
   background-color: orange;
 }
 
-a, a:hover, a:active {
+a,
+a:hover,
+a:active {
   text-decoration: none;
 }
 
@@ -90,12 +99,9 @@ h3 {
 }
 
 .media {
-  display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
+  flex-direction: row;
   background-color: DodgerBlue;
 }
 
@@ -111,6 +117,7 @@ h3 {
 		LOAD MORE
 	===================================
 */
+
 .load-more-span-div {
   margin: 10px;
 }
@@ -133,17 +140,16 @@ h3 {
 		READ MORE
 	===================================
 */
+
 #wrap {
   width: 100%;
 }
 
 .read-more-results {
-  display: -webkit-box;
   display: flex;
   text-align: left;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .read-more-results > article {
@@ -164,6 +170,7 @@ h3 {
 		SHOW / HIDE
 	===================================
 */
+
 .show_element {
   visibility: visible;
 }
@@ -177,6 +184,7 @@ h3 {
 		CONTAINER
 	===================================
 */
+
 #wrap {
   text-align: center;
 }
@@ -192,26 +200,31 @@ h3 {
     max-width: 540px;
   }
 }
+
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
   }
 }
+
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
   }
 }
+
 /*
 	===================================
 		POST PARTS
 	===================================
 */
+
 .the_title {
   word-wrap: break-word !important;
 }
@@ -221,6 +234,7 @@ h3 {
      HEADER
 ===================================
 */
+
 header {
   width: 100vw;
 }
@@ -230,34 +244,28 @@ header {
 }
 
 .as_background {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   box-sizing: content-box;
   width: 100vw;
 }
 
 /* Header site-logo */
+
 .header-site-logo-div {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   align-self: center;
 }
 
 .header-site-logo {
-  -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 /*  We create the clases for the fixed height of the header image div */
+
 .fixed-height-40 {
   height: 40vh;
 }
@@ -325,6 +333,7 @@ header {
      NAVIGATION BAR
 ===================================
 */
+
 .hamburger {
   position: relative;
   display: inline-block;
@@ -349,6 +358,8 @@ header {
 }
 
 /* The id of the tag that contains the main navigation bar */
+
 .admin_bar_showing {
   margin-top: 15px !important;
 }
+

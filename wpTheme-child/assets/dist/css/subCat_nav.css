@@ -11,7 +11,9 @@
 * Set the styles for the top navigation bar
 *
 */
+
 /* The class of the div that contains the dropdownbuttown */
+
 header {
   text-align: center;
 }
@@ -22,20 +24,18 @@ header {
 }
 
 /* The content of the menu */
+
 .sub-cat-div {
   color: white;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
+  flex-direction: row;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-top: 15px;
 }
 
 /* The class of the button */
+
 .sub-cat-button {
   background-color: #101010;
   color: #F5F5F5;
@@ -67,6 +67,7 @@ header {
 }
 
 /* The class of the menu, the dropdown part */
+
 .sub-cat-menu {
   padding: 0px;
   border: 1px solid #000000;
@@ -75,6 +76,7 @@ header {
 }
 
 /* Each sub category */
+
 .sub-cat-menu .dropdown-item {
   font-size: 12px;
   font-weight: lighter;
@@ -96,7 +98,8 @@ header {
   margin: 0px;
 }
 
-.dropdown-item:hover, .dropdown-item:focus {
+.dropdown-item:hover,
+.dropdown-item:focus {
   color: orange !important;
   border-radius: 0px !important;
   background-color: #23282d !important;
@@ -104,6 +107,7 @@ header {
 }
 
 /* Each sub category with subcategories */
+
 .sub-cat-menu .dropdown-subitem {
   padding-left: 15px;
 }
@@ -114,15 +118,12 @@ header {
 }
 
 /* Div where we put the filters */
+
 .sub-cat-filters {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
+  flex-direction: row;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
   height: auto;
   /* visibility: hidden; */
 }
@@ -158,9 +159,10 @@ header {
   cursor: pointer;
   min-height: 100%;
   max-height: 100%;
-  content: url("data:image/svg+xml; utf8, <svg.. code here</svg>");
+  content: "\F158";
 }
 
 .sub-cat-filters-close:hover {
   color: orange;
 }
+
