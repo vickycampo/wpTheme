@@ -49,13 +49,13 @@
           if ( $site_name )
           {
                ?>
-               <div class="header-site-logo-div">
+               <div class="header-site-title-div">
                     <h1 class="alt header-site-title">
                     <a href="<?php echo esc_url( home_url() ) ?>" title="<?php bloginfo('title'); ?>">
                          <?php bloginfo('title'); ?>
                     </a>
                     </h1>
-               </div><br>
+               </div>
                <?php
           }
           /* Show the site description */
@@ -79,11 +79,13 @@
           if ( $site_name )
           {
                ?>
-               <h1 class="header-site-title">
-                    <a href="<?php echo esc_url( home_url() ) ?>" title="<?php bloginfo('title'); ?>">
-                         <?php bloginfo('title'); ?>
-                    </a>
-               </h1>
+               <div class="header-site-title-div">
+                    <h1 class="header-site-title">
+                         <a href="<?php echo esc_url( home_url() ) ?>" title="<?php bloginfo('title'); ?>">
+                              <?php bloginfo('title'); ?>
+                         </a>
+                    </h1>
+               </div>
                <?php
           }
           ?>
@@ -93,9 +95,11 @@
           if ( $site_description )
           {
                ?>
-               <h2 class="header-site-description">
-                    <?php bloginfo('description'); ?>
-               </h2>
+               <div class="header-site-description-div">
+                    <h2 class="header-site-description">
+                         <?php bloginfo('description'); ?>
+                    </h2>
+               </div>
                <?php
           }
           ?>

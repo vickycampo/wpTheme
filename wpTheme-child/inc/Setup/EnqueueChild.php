@@ -49,7 +49,7 @@ class EnqueueChild
 		//wp_enqueue_script( 'app', ('js/app.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'catNavBar', $BASE .'/assets/dist/js/catNavBar.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'child_ajax', $BASE .'/assets/dist/js/child_ajax.js', array(), '1.0.0', true );
-		wp_enqueue_script( 'child_ajax', $BASE .'/assets/dist/js/bootstrap.js', array(), '1.0.0', true );
+		wp_enqueue_script( 'bootstrap_ajax', $BASE .'/assets/dist/js/bootstrap.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'topNavBar', $BASE .'/assets/dist/js/topNavBar.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'wpChildTheme', $BASE .'/assets/dist/js/wpChildTheme.js', array(), '1.0.0', true );
 
