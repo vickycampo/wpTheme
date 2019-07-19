@@ -26,14 +26,7 @@ class EnqueueChild
 	public function enqueue_scripts()
 	{
 		// CSS
-		error_log (__LINE__ . ' - '. get_stylesheet_uri());
-		//error_log (__LINE__ . ' - '. get_template_directory_uri());
-		// error_log (__LINE__ . ' - '. plugin_dir_path( dirname( __FILE__, 2 )));
-		// error_log (__LINE__ . ' - '. plugin_dir_url( dirname( __FILE__, 2 )));
-		//error_log (__LINE__ . ' - '. plugin_basename ( dirname ( __FILE__ , 3 ) ));
-
-
-
+		
 		$BASE = get_stylesheet_directory_uri();
 
 		wp_enqueue_style( 'body', $BASE .'/assets/dist/css/body.css', array(), null, 'all' );

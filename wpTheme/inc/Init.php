@@ -38,7 +38,7 @@ final class Init
 			Plugins\Acf::class,
 
 			/* My Customizations */
-			Api\ExtraCustomizer\Advanced::class,
+			Api\ExtraCustomizer\AdvancedOptions::class,
 			Api\ExtraCustomizer\Colors::class,
 			Api\ExtraCustomizer\HeaderImage::class,
 			Api\ExtraCustomizer\LayoutOptions::class,

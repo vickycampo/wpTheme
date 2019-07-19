@@ -46,7 +46,7 @@ class LayoutOptions extends BaseCustomizer
 		$j = 0;
 		$settingsId = $SettingsList[$i]['index'];
 		$ControlsList[$settingsId][$j]['label'] = 'Fixed nav menu?';
-		$ControlsList[$settingsId][$j]['type'] = 'WP_Customize_Color_Control';
+		$ControlsList[$settingsId][$j]['type'] = 'checkbox';
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_true_false';
           /*-----------------------------------------------------------------*/
@@ -57,7 +57,7 @@ class LayoutOptions extends BaseCustomizer
 		$j = 0;
 		$settingsId = $SettingsList[$i]['index'];
 		$ControlsList[$settingsId][$j]['label'] = 'Enable breadcrumbs?';
-		$ControlsList[$settingsId][$j]['type'] = 'WP_Customize_Color_Control';
+		$ControlsList[$settingsId][$j]['type'] = 'checkbox';
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_excerpts';
           /*-----------------------------------------------------------------*/
@@ -68,7 +68,7 @@ class LayoutOptions extends BaseCustomizer
 		$j = 0;
 		$settingsId = $SettingsList[$i]['index'];
 		$ControlsList[$settingsId][$j]['label'] = 'Full posts or excerpts on blog home?';
-		$ControlsList[$settingsId][$j]['type'] = 'WP_Customize_Color_Control';
+		$ControlsList[$settingsId][$j]['type'] = 'checkbox';
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_excerpts';
           /*-----------------------------------------------------------------*/
@@ -79,7 +79,7 @@ class LayoutOptions extends BaseCustomizer
 		$j = 0;
 		$settingsId = $SettingsList[$i]['index'];
 		$ControlsList[$settingsId][$j]['label'] = 'Full posts or excerpts on archive pages?';
-		$ControlsList[$settingsId][$j]['type'] = 'WP_Customize_Color_Control';
+		$ControlsList[$settingsId][$j]['type'] = 'checkbox';
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_excerpts';
           /*-----------------------------------------------------------------*/
@@ -90,13 +90,13 @@ class LayoutOptions extends BaseCustomizer
 		$j = 0;
 		$settingsId = $SettingsList[$i]['index'];
 		$ControlsList[$settingsId][$j]['label'] = 'Display post author?';
-		$ControlsList[$settingsId][$j]['type'] = 'WP_Customize_Color_Control';
+		$ControlsList[$settingsId][$j]['type'] = 'checkbox';
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_true_false';
           /*-----------------------------------------------------------------*/
 
           /* Section Details */
-		$this->SetSectionDetails( 'Layout' ,  200 );
+		$this->SetSectionDetails( 'Layout' ,  37 );
 		$this->SetSettingDetails( $SettingsList );
 		foreach ($SettingsList as $i => $Setings)
 		{

@@ -48,7 +48,7 @@ class Template extends BaseCustomizer
           /*-----------------------------------------------------------------*/
 
           /* Section Details */
-		$this->SetSectionDetails( 'Colors' ,  1 );
+		$this->SetSectionDetails( 'Colors' ,  38 );
 		$this->SetSettingDetails( $SettingsList );
 		foreach ($SettingsList as $i => $Setings)
 		{

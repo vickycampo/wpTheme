@@ -20,7 +20,7 @@ use wptheme\Core\Functions;
 /**
 * Customizer class
 */
-class Advanced extends BaseCustomizer
+class AdvancedOptions extends BaseCustomizer
 {
 	/**
 	* register default hooks and actions for WordPress
@@ -71,7 +71,7 @@ class Advanced extends BaseCustomizer
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_true_false';
 
 		/* Section Details */
-		$this->SetSectionDetails( 'Advanced Options' ,  180 );
+		$this->SetSectionDetails( 'Advanced Options' ,  160 );
 		$this->SetSettingDetails( $SettingsList );
 		foreach ($SettingsList as $i => $Setings)
 		{

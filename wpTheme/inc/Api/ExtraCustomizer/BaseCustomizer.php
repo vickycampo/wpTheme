@@ -34,6 +34,7 @@ class BaseCustomizer
 
 	public function register(  )
 	{
+
 		/* Register Settings */
 		add_action ( 'admin_init', array ( $this , 'wpTheme_options_init') );
 		/* Register the Section */
@@ -50,10 +51,12 @@ class BaseCustomizer
 
 	public function SetSectionDetails( $name , $priority )
 	{
+
 		$this->SectionDetails['name'] = __( $name, 'wpTheme' );
 		$this->SectionDetails['id'] = strtolower($name);
 		$this->SectionDetails['id'] = str_replace(" " , "_", $this->SectionDetails['id'] );
 		$this->priority = $priority;
+
 	}
 	public function var_error_log( $object=null )
 	{
@@ -111,15 +114,21 @@ class BaseCustomizer
 	public function add_sections( $wp_customize )
 	{
 		/* Check if section exists */
-		if ( ! $this->SectionDetails['id'] == 'wptheme_header_section' )
+		if ($this->SectionDetails['name'] === 'wptheme_header_section')
 		{
-			$args = array
-	          (
-	              'title'      => __( $this->SectionDetails['name'] ),
-	              'priority'   => $this->priority
-	          );
-	          $wp_customize -> add_section( $this->SectionDetails['id'] , $args );
+
+			// error_log (__FILE__ . ' - '. __LINE__);
+			// error_log (print_r ( $this->SectionDetails , true));
+			// $this->var_error_log ($this->SectionDetails['name']);
+			return;
 		}
+		$args = array
+		(
+		    'title'      => __( $this->SectionDetails['name'] ),
+		    'priority'   => $this->priority
+		);
+		$wp_customize -> add_section( $this->SectionDetails['id'] , $args );
+
 
 
 

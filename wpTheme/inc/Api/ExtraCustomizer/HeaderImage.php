@@ -91,8 +91,8 @@ class HeaderImage extends BaseCustomizer
 		$j = 0;
 		$settingsId = $SettingsList[$i]['sub-index'];
 		$ControlsList[$settingsId][$j]['label'] = 'Set the height of the image?';
-		$ControlsList[$settingsId][$j]['type'] = 'checkbox';
-		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
+		$ControlsList[$settingsId][$j]['type'] = 'select';
+		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_percentages';
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_percentages';
 		/*-----------------------------------------------------------------*/
 
