@@ -24,7 +24,13 @@ final class Init
 			ChildAjax::class,
 
                Setup\Menus::class,
-               Setup\SideBars::class
+               Setup\SideBars::class,
+
+			/* My Customizations */
+			Api\ExtraCustomizer\AdvancedOptions::class,
+			Api\ExtraCustomizer\Colors::class,
+			Api\ExtraCustomizer\HeaderImage::class,
+			Api\ExtraCustomizer\LayoutOptions::class,
 		];
 
 	}

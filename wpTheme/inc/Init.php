@@ -19,7 +19,6 @@ final class Init
 	public static function get_services()
 	{
 		return [
-			Core\Functions::class,
 			Core\Tags::class,
 			Core\Sidebar::class,
 			Setup\Setup::class,
@@ -35,13 +34,7 @@ final class Init
 			Api\Gutenberg::class,
 			Api\Widgets\TextWidget::class,
 			//Plugins\ThemeJetpack::class,
-			Plugins\Acf::class,
-
-			/* My Customizations */
-			Api\ExtraCustomizer\AdvancedOptions::class,
-			Api\ExtraCustomizer\Colors::class,
-			Api\ExtraCustomizer\HeaderImage::class,
-			Api\ExtraCustomizer\LayoutOptions::class,
+			Plugins\Acf::class
 		];
 	}
 

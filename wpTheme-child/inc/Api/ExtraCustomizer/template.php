@@ -12,10 +12,10 @@
 * The advenced custominzation functions
 */
 
-namespace wptheme\Api\ExtraCustomizer;
-use wptheme\Api\ExtraCustomizer\BaseCustomizer;
-use wptheme\Api\ExtraCustomizer\Callbacks;
-use wptheme\Core\Functions;
+namespace wptchild\Api\ExtraCustomizer;
+use wptchild\Api\ExtraCustomizer\BaseCustomizer;
+use wptchild\Api\ExtraCustomizer\Callbacks;
+use wptchild\Setup\Functions;
 
 /**
 * Customizer class

@@ -42,7 +42,7 @@
      //get the theme options
           $options = get_option( 'wpTheme_options' );
      /* We get the defaults */
-          $defaults = wptheme\Core\Functions::get_theme_defaults();
+          $defaults = wptchild\Setup\Functions::get_theme_defaults();
      ?>
      <?php
           //Check $options['nav-menu']

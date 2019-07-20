@@ -11,7 +11,7 @@
 ?>
 <?php
      //The first specific theme helper, load the theme options and defaults
-     $defaults = wptheme\Core\Functions::get_theme_defaults ();
+     $defaults = wptchild\Setup\Functions::get_theme_defaults ();
      //Fetch options from the database table
      $options = get_option ('wpTheme_options');
      /* We determine which screen size we are using*/

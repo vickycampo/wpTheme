@@ -12,7 +12,7 @@
 * The advenced custominzation functions
 */
 
-namespace wptheme\Api\ExtraCustomizer;
+namespace wptchild\Api\ExtraCustomizer;
 
 
 /**

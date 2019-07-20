@@ -12,7 +12,7 @@
 <?php
 //get the theme options and defaults
 $ap_options = get_option( 'wpTheme_options' );
-$ap_defaults = wptheme\Core\Functions::get_theme_defaults();
+$ap_defaults = wptchild\Setup\Functions::get_theme_defaults();
 ?>
 
 <!-- Add the credit part of the theme-->

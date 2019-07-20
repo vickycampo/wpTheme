@@ -1,6 +1,6 @@
 <?php
 
-namespace wptheme\Core;
+namespace wptchild\Setup;
 
 /**
  * Sidebar.
