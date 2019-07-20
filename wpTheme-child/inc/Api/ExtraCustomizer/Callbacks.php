@@ -134,7 +134,7 @@ class CallBacks
      public static function wpTheme_percentages()
      {
           $percentage = array (
-               '' => __( " ", 'wpTheme' ),
+               'auto' => __( "auto", 'wpTheme' ),
                '40' => __( '40%', 'wpTheme' ),
                '50' => __( '50%', 'wpTheme' ),
                '60' => __( '60%', 'wpTheme' ),

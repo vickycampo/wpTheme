@@ -105,23 +105,32 @@ header
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px)
 {
-     .header-site-logo-div
+     .fixed-height-auto
      {
-
+     	max-width:100% !important;
+     	max-height:100% !important;
      }
-     .header_siteinfo
+     .fixed-height-auto .header-site-logo
      {
-
-     }
-     .header-food-image-div
-     {
-          text-align: center;
-     }
-     .header-site-logo
-     {
+     	max-width:25%;
+     	max-height:50%;
           border-radius: 50% !important;
      }
-}
+     .fixed-height-auto .header_siteinfo
+     {
+     	height:auto;
+     }
+     .fixed-height-auto .header-site-title a
+     {
+     	line-height: 12px;
+     	font-size: 40px !important;
+     }
+     .fixed-height-auto .header-site-description
+     {
+     	line-height: 12px;
+     	font-size: 20px !important;
+     }
+
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px)
 {  }
