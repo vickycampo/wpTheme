@@ -288,4 +288,26 @@ class CallBacks
 		//TRUE - VALID
 		return $value;
 	}
+     public static function wpTheme_validate_image ( $value )
+     {
+          define('TYPE_WHITELIST', serialize(array(
+     		'image/jpeg',
+     		'image/jpg',
+     		'image/png',
+     		'image/gif',
+     		'image/ico'
+     	)));
+
+     	if ( isset( $value['favicon'] ) ) {
+     		$favicon = $value['favicon'];
+     		$favicon = getimagesize($favicon);
+     		if (in_array($favicon['mime'], unserialize(TYPE_WHITELIST))) {
+     			$value['favicon'] = esc_url_raw( $value['favicon'] );
+     		} else {
+     			$value['favicon'] = null;
+     		}
+     	}
+
+         return $value;
+     }
 }

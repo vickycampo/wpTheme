@@ -14,6 +14,7 @@
 
 namespace wptchild\Api\ExtraCustomizer;
 use WP_Customize_Color_Control;
+use WP_Customize_Image_Control;
 
 class BaseCustomizer
 {
@@ -201,7 +202,35 @@ class BaseCustomizer
 			$choices = $control['choices'];
 			$sanitize_callback = $control['sanitize_callback'];
 
-			if ($type != 'WP_Customize_Color_Control')
+			if ($type === 'WP_Customize_Color_Control')
+			{
+				$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $id, array(
+					'label' => __( $label, 'wpTheme' ),
+					'section' => __( $this->SectionDetails['id'] ),
+					'settings' => 'wpTheme_options['.$index.']',
+					'sanitize_callback' => 'sanitize_hex_color'
+				) ) );
+			}
+			if ($type === 'WP_Customize_Image_Control')
+			{
+				// error_log (__LINE__);
+				// error_log ( $this->SectionDetails['id'] );
+				// error_log ( $id );
+				// error_log ('----------------------------------------------');
+				$wp_customize->add_control(
+					new WP_Customize_Image_Control(
+							$wp_customize,
+							$id,
+							array(
+							'label'      => __( $label, 'wpTheme' ),
+							'section'    => __( $this->SectionDetails['id'] ),
+							'settings'   =>$id,
+							'sanitize_callback' => array( $this->callbacks, $sanitize_callback )
+						)
+					)
+				);
+			}
+			else
 			{
 				if ( $choices == '')
 				{
@@ -212,11 +241,6 @@ class BaseCustomizer
 						'type' => $type,
 						'sanitize_callback' => $this->callbacks->{$sanitize_callback}()
 					);
-					// error_log (__LINE__);
-					// error_log ( $this->SectionDetails['id'] );
-					// error_log ( $id );
-					// error_log ( print_r ($args , true) );
-					// error_log ('----------------------------------------------');
 					$wp_customize->add_control( $id , $args );
 				}
 				else
@@ -235,16 +259,7 @@ class BaseCustomizer
 					$wp_customize->add_control( $id , $args );
 				}
 			}
-			else
-			{
 
-				$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $id, array(
-					'label' => __( $label, 'wpTheme' ),
-					'section' => __( $this->SectionDetails['id'] ),
-					'settings' => 'wpTheme_options['.$index.']',
-					'sanitize_callback' => 'sanitize_hex_color'
-				) ) );
-			}
 
 
 

@@ -42,11 +42,12 @@ class HeaderImage extends BaseCustomizer
 		$SettingsList[$i]['sanitize_callback'] = 'wpTheme_validate_true_false';
 		$j = 0;
 		$settingsId = $SettingsList[$i]['sub-index'];
-		$ControlsList[$settingsId][$j]['label'] = 'Use the template background for the header?';
-		$ControlsList[$settingsId][$j]['type'] = 'checkbox';
-		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
-		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_true_false';
+		$ControlsList[$settingsId][$j]['label'] = 'Choose a Background image for the header';
+		$ControlsList[$settingsId][$j]['type'] = 'WP_Customize_Image_Control';
+		$ControlsList[$settingsId][$j]['choices'] = 'header_bg_image';
+		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_image';
           /*-----------------------------------------------------------------*/
+
 		$i++;
 		$SettingsList[$i]['index'] = 'big_header_image';
 		$SettingsList[$i]['sub-index'] = 'show_site_logo';

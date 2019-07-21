@@ -9,18 +9,243 @@
 	===================================
 *
 */
+/*
+     ===================================
+          HEADER
+     ===================================
+*/
+
+.header {
+  width: 100vw;
+  position: relative;
+}
+
+.header-img {
+  position: relative;
+}
+.header-content
+{
+     max-height: 75%;
+     max-width: 75%;
+
+     position:absolute;
+     top:55%;
+     left: 50%;
+     transform: translate( -50% , -50%);
+
+     text-align: center;
+
+}
+.as_background
+{
+
+}
+.header-site-logo-div
+{
+     text-align: center;
+     display: inline-block;
+}
+.header-site-info-div
+{
+     display: inline-block;
+     max-width: 100%;
+     width: 100%;
+}
+.header-site-title-div
+{
+     display: inline-block;
+     max-width: 100%;
+     width: 100%;
+}
+.header-site-title a
+{
+     display: block;
+     font-size: 50px;
+     font-weight:500;
+     letter-spacing: 5px;
+     text-align: center;
+     line-height: 40px;
+     color: white;
+}
+
+.header-site-description-div
+{
+     display: inline-block;
+     max-width: 100%;
+     width: 100%;
+}
+.header-site-description
+{
+     font-size: 25px;
+     letter-spacing: 5px;
+     text-align: center;
+
+     color: orange;
+     font-family: 'Rock Salt', cursive;
+     font-weight: bold;
+     word-wrap: break-word;
+}
+
+
+.header-site-logo
+{
+
+}
+
+/*
+     ===================================
+          HEADER
+     ===================================
+
+We create the clases for the fixed height of the header image div
+*/
+
+.fixed-height-auto {
+     max-height: 75%;
+     max-width: 75%;
+}
+.fixed-height-40 {
+  height: 40vh;
+}
+
+.fixed-height-50 {
+  height: 50vh;
+}
+
+.fixed-height-60 {
+  height: 60vh;
+}
+.fixed-height-60 {
+     height: 70vh;
+}
+.fixed-height-60 .header-site-logo {
+     height: 75%;
+}
+.fixed-height-60 .header-site-logo.has_site_name {
+     height: 55vh;
+}
+.fixed-height-60 .header-site-logo.has_site_description {
+     height: 45vh;
+}
+.fixed-height-60 .header-site-logo.has_site_name_description {
+     height: 35vh;
+}
+.fixed-height-60 .header-site-title {
+     font-size: 30px;
+}
+.fixed-height-60 .header-site-description {
+     font-size: 20px;
+}
+
+
+
+
+
+
+
+
+.fixed-height-70 {
+     height: 70vh;
+}
+.fixed-height-70 .header-site-logo {
+     height: 75%;
+}
+.fixed-height-70 .header-site-logo.has_site_name {
+     height: 55vh;
+}
+.fixed-height-70 .header-site-logo.has_site_description {
+     height: 45vh;
+}
+.fixed-height-70 .header-site-logo.has_site_name_description {
+     height: 35vh;
+}
+.fixed-height-70 .header-site-title {
+     font-size: 30px;
+}
+.fixed-height-70 .header-site-description {
+     font-size: 20px;
+}
+
+
+.fixed-height-80 {
+     height: 80vh;
+}
+.fixed-height-80 .header-site-logo {
+     height: 75vh;
+}
+.fixed-height-80 .header-site-logo.has_site_name {
+     height: 65vh;
+}
+.fixed-height-80 .header-site-logo.has_site_description {
+     height: 55vh;
+}
+.fixed-height-80 .header-site-logo.has_site_name_description {
+     height: 45vh;
+}
+.fixed-height-80 .header-site-title {
+     font-size: 30px;
+}
+.fixed-height-70 .header-site-description {
+     font-size: 20px;
+}
+
+
+
+.fixed-height-90 {
+     height: 90vh;
+}
+.fixed-height-90 .header-site-logo {
+     height: 85vh;
+}
+.fixed-height-90 .header-site-logo.has_site_name {
+     height: 75vh;
+}
+.fixed-height-90 .header-site-logo.has_site_description {
+     height: 65vh;
+}
+.fixed-height-90 .header-site-logo.has_site_name_description {
+     height: 55vh;
+}
+.fixed-height-90 .header-site-title {
+     font-size: 35px;
+}
+.fixed-height-90 .header-site-description {
+     font-size: 25px;
+}
+
+.fixed-height-100 {
+     height: 100vh;
+}
+.fixed-height-100 .header-site-logo {
+     height: 85vh;
+}
+.fixed-height-100 .header-site-logo.has_site_name {
+     height: 75vh;
+}
+.fixed-height-100 .header-site-logo.has_site_description {
+     height: 65vh;
+}
+.fixed-height-100 .header-site-logo.has_site_name_description {
+     height: 55vh;
+}
+.fixed-height-100 .header-site-title {
+     font-size: 35px;
+}
+.fixed-height-100 .header-site-description {
+     font-size: 25px;
+}
+
+
+
+
+
+
+
 
 /* Try to center the divs */
 
 /* Start from the top to the bottom */
 
-.parallax_effect {
-  /* min-height: 500px; */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 .as_background {
   background-position: center;
@@ -38,24 +263,9 @@
   margin: 0px;
 }
 
-.header-site-logo-div {
-  margin-top: 40px;
-  display: block;
-  text-align: center;
-}
-
-.header-site-title a {
-  font-size: 50px;
-  color: white;
-  line-height: normal;
-}
 
 .header-site-description {
-  color: orange;
-  font-family: 'Rock Salt', cursive;
-  font-weight: bold;
-  /* font-size: 25PX; */
-  word-wrap: break-word;
+
 }
 
 /* Small devices (landscape phones, 576px and up) */

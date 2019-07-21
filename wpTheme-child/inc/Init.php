@@ -20,6 +20,7 @@ final class Init
 	{
 		return [
 			Setup\EnqueueChild::class,
+			Setup\Setup::class,
 			BreadCrumbs::class,
 			ChildAjax::class,
 

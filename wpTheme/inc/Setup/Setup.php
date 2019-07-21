@@ -28,7 +28,7 @@ class Setup
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'customize-selective-refresh-widgets' );
-        
+
         /**
         * Add woocommerce support and woocommerce override
         */
@@ -50,7 +50,7 @@ class Setup
         /*
          * Activate Post formats if you need
          */
-        add_theme_support( 'post-formats', array( 
+        add_theme_support( 'post-formats', array(
             'aside',
             'gallery',
             'link',
@@ -61,6 +61,11 @@ class Setup
             'audio',
             'chat',
         ) );
+        /*
+        *
+        *
+        *
+        */
     }
 
     /*

@@ -64,16 +64,26 @@
      <!-- Create a div that is going to wrap all the content -->
      <!-- Add the head part-->
      <?php wptheme\Custom\Hooks::tha_header_before(); ?>
-     <header>
+     <header class="header">
           <?php
           wptheme\Custom\Hooks::tha_header_top();
+          /* Do we have a fixed hight */
           $height = 'fixed-height-' . $defaults['big_header_image']['percentage'];
           if ( isset ($options['big_header_image']['percentage']) )
           {
                $height = 'fixed-height-' . $options['big_header_image']['percentage'];
           }
+          /* do we have a file for the background */
+
+          $as_background = '';
+          if ( ( isset ($options['big_header_image']['as_background']) ) && ( isset ($options['big_header_image']['as_background']) ) != 1 )
+          {
+               $as_background = 'style="background-image:url('.$options['big_header_image']['as_background'].');"';
+          }
+
           ?>
-          <div id="header-img" class="header-img as_background <?php echo esc_attr( $height ); ?> parallax_effect" style="background-image:url(<?php echo ( get_background_image () ); ?>); "> <!-- Header-img -->
+
+          <div id="header-img" class="header-img as_background <?php echo esc_attr( $height ); ?> parallax_effect" <?php echo ( $as_background ); ?> "> <!-- Header-img -->
                <!-- Top Navitagion bar part -->
                <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
                <!-- Header Image part -->
