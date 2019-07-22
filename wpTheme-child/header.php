@@ -76,14 +76,37 @@
           /* do we have a file for the background */
 
           $as_background = '';
-          if ( ( isset ($options['big_header_image']['as_background']) ) && ( isset ($options['big_header_image']['as_background']) ) != 1 )
+          $class = '';
+          if ( isset ($options['big_header_image']['as_background']) )
           {
+               error_log (__FILE__ . ' - ' . __LINE__);
+               error_log ( print_r ( $options['big_header_image'] , true) );
+
                $as_background = 'style="background-image:url('.$options['big_header_image']['as_background'].');"';
+               $class = ' as_background';
+          }
+          else if ( get_custom_header() )
+          {
+               $custom_header = get_custom_header();
+               $url = $custom_header -> url;
+               $width = $custom_header -> width;
+               $as_background = 'style="background-image:url('.$url.');"';
+               /*we check the size of the image */
+               if ( $width < 900)
+               {
+                    $class = ' as_background_tile';
+               }
+               else
+               {
+                    $class = ' as_background';
+               }
+
+
           }
 
           ?>
 
-          <div id="header-img" class="header-img as_background <?php echo esc_attr( $height ); ?> parallax_effect" <?php echo ( $as_background ); ?> "> <!-- Header-img -->
+          <div id="header-img" class="header-img <?php echo esc_attr( $class ); ?> <?php echo esc_attr( $height ); ?> parallax_effect" <?php echo ( $as_background ); ?> "> <!-- Header-img -->
                <!-- Top Navitagion bar part -->
                <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
                <!-- Header Image part -->

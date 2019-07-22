@@ -208,6 +208,8 @@ class CallBacks
 
      public static function wpTheme_validate_favicon( $value )
 	{
+          error_log ( __FILE__ . ' - ' . __LINE__);
+          error_log ( print_r ( $value , true) );
 		/*  Create a list of valid file types */
 		define('TYPE_WHITELIST', serialize(array(
 			'image/jpeg',
@@ -290,14 +292,18 @@ class CallBacks
 	}
      public static function wpTheme_validate_image ( $value )
      {
-          define('TYPE_WHITELIST', serialize(array(
-     		'image/jpeg',
-     		'image/jpg',
-     		'image/png',
-     		'image/gif',
-     		'image/ico'
-     	)));
-
+          // error_log (__FILE__ . ' - ' . __LINE__);
+          // error_log ( print_r ( $value , true) );
+          if ( ! defined ( 'TYPE_WHITELIST' ) )
+          {
+               define('TYPE_WHITELIST', serialize(array(
+          		'image/jpeg',
+          		'image/jpg',
+          		'image/png',
+          		'image/gif',
+          		'image/ico'
+          	)));
+          }
      	if ( isset( $value['favicon'] ) ) {
      		$favicon = $value['favicon'];
      		$favicon = getimagesize($favicon);

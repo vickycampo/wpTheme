@@ -19,9 +19,25 @@
   width: 100vw;
   position: relative;
 }
-
-.header-img {
+.header-img
+{
   position: relative;
+}
+/* Define how we are going to put the background image */
+.as_background
+{
+     background-position: center;
+     background-size: cover;
+     justify-content: center;
+     background-color: black;
+     padding: 0px;
+     margin: 0px;
+}
+.as_background_tile
+{
+     background-color: black;
+     padding: 0px;
+     margin: 0px;
 }
 .header-content
 {
@@ -36,10 +52,7 @@
      text-align: center;
 
 }
-.as_background
-{
 
-}
 .header-site-logo-div
 {
      text-align: center;
@@ -122,13 +135,19 @@ We create the clases for the fixed height of the header image div
      height: 75%;
 }
 .fixed-height-60 .header-site-logo.has_site_name {
-     height: 55vh;
+     max-height: 55vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-60 .header-site-logo.has_site_description {
-     height: 45vh;
+     max-height: 45vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-60 .header-site-logo.has_site_name_description {
-     height: 35vh;
+     max-height: 35vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-60 .header-site-title {
      font-size: 30px;
@@ -136,34 +155,38 @@ We create the clases for the fixed height of the header image div
 .fixed-height-60 .header-site-description {
      font-size: 20px;
 }
-
-
-
-
-
-
-
-
 .fixed-height-70 {
      height: 70vh;
 }
 .fixed-height-70 .header-site-logo {
-     height: 75%;
+     max-height: 75%;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-70 .header-site-logo.has_site_name {
-     height: 55vh;
+     max-height: 55vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-70 .header-site-logo.has_site_description {
-     height: 45vh;
+     max-height: 45vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-70 .header-site-logo.has_site_name_description {
-     height: 35vh;
+     max-height: 35vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-70 .header-site-title {
      font-size: 30px;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-70 .header-site-description {
      font-size: 20px;
+     max-width: 75%;
+     width: auto;
 }
 
 
@@ -171,16 +194,24 @@ We create the clases for the fixed height of the header image div
      height: 80vh;
 }
 .fixed-height-80 .header-site-logo {
-     height: 75vh;
+     max-height: 75vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-80 .header-site-logo.has_site_name {
-     height: 65vh;
+     max-height: 65vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-80 .header-site-logo.has_site_description {
-     height: 55vh;
+     max-height: 55vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-80 .header-site-logo.has_site_name_description {
-     height: 45vh;
+     max-height: 45vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-80 .header-site-title {
      font-size: 30px;
@@ -195,16 +226,24 @@ We create the clases for the fixed height of the header image div
      height: 90vh;
 }
 .fixed-height-90 .header-site-logo {
-     height: 85vh;
+     max-height: 85vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-90 .header-site-logo.has_site_name {
-     height: 75vh;
+     max-height: 75vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-90 .header-site-logo.has_site_description {
-     height: 65vh;
+     max-height: 65vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-90 .header-site-logo.has_site_name_description {
-     height: 55vh;
+     max-height: 55vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-90 .header-site-title {
      font-size: 35px;
@@ -217,16 +256,24 @@ We create the clases for the fixed height of the header image div
      height: 100vh;
 }
 .fixed-height-100 .header-site-logo {
-     height: 85vh;
+     max-height: 85vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-100 .header-site-logo.has_site_name {
-     height: 75vh;
+     max-height: 75vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-100 .header-site-logo.has_site_description {
-     height: 65vh;
+     max-height: 65vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-100 .header-site-logo.has_site_name_description {
-     height: 55vh;
+     max-height: 55vh;
+     max-width: 75%;
+     width: auto;
 }
 .fixed-height-100 .header-site-title {
      font-size: 35px;
@@ -247,26 +294,8 @@ We create the clases for the fixed height of the header image div
 /* Start from the top to the bottom */
 
 
-.as_background {
-  background-position: center;
-  background-size: cover;
-  justify-content: center;
-  background-color: black;
-  padding: 0px;
-  margin: 0px;
-}
-
-.as_background picture {
-  height: auto;
-  width: auto;
-  padding: 0px;
-  margin: 0px;
-}
 
 
-.header-site-description {
-
-}
 
 /* Small devices (landscape phones, 576px and up) */
 
