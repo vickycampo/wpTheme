@@ -60,6 +60,7 @@
      display: inline-block;
      max-width: 100%;
      width: 100%;
+     backface-visibility: hidden;
 }
 .header-site-title-div
 {
@@ -67,6 +68,10 @@
      max-width: 100%;
      width: 100%;
      margin: 0px;
+     /* Animation */
+     animation-name: moveInLeft;
+     animation-duration: 1s;
+     animation-timing-function: ease-out;
 }
 .header-site-title
 {
@@ -87,6 +92,9 @@
      display: inline-block;
      max-width: 100%;
      width: 100%;
+     animation-name: moveInRight;
+     animation-duration: 1s;
+     animation-timing-function: ease-out;
 }
 .header-site-description
 {
@@ -315,23 +323,40 @@ We create the clases for the fixed height of the header image div
      font-size: calc(5px + 2vw + 2vh);
 }
 
-
-
-
-
-
-
-
-/* Try to center the divs */
-
-/* Start from the top to the bottom */
-
-
-
-
-
+/* animations */
+@keyframes moveInLeft {
+     /* Start fo the animation */
+     0%{
+          opacity: 0;
+          transform: translateX(-100px);
+     }
+     /* Middle steps */
+     80%{
+          transform: translateX(10px);
+     }
+     /* End of the animation */
+     100%{
+          opacity: 1;
+          transform: translateX(0);
+     }
+}
+@keyframes moveInRight {
+     /* Start fo the animation */
+     0%{
+          opacity: 0;
+          transform: translateX(100px);
+     }
+     /* Middle steps */
+     80%{
+          transform: translateX(-10px);
+     }
+     /* End of the animation */
+     100%{
+          opacity: 1;
+          transform: translateX(0);
+     }
+}
 /* Small devices (landscape phones, 576px and up) */
-
 @media (max-width: 766px) {
   .header-food-image-div {
     text-align: center;
@@ -355,19 +380,3 @@ We create the clases for the fixed height of the header image div
     border-radius: 50% !important;
   }
 }
-
-/* Medium devices (tablets, 768px and up) */
-
-@media (min-width: 768px) {
-  .header-food-image-div {
-    text-align: center;
-  }
-
-  .header-site-logo {
-    border-radius: 50% !important;
-  }
-}
-
-/* Large devices (desktops, 992px and up) */
-
-/* Extra large devices (large desktops, 1200px and up) */

@@ -19,27 +19,37 @@
   width: 100vw;
   position: relative;
 }
-
-.header-img {
+.header-img
+{
   position: relative;
+}
+/* Define how we are going to put the background image */
+.as_background
+{
+     background-position: center;
+     background-size: cover;
+     justify-content: center;
+     background-color: black;
+     padding: 0px;
+     margin: 0px;
+}
+.as_background_tile
+{
+     background-color: black;
+     padding: 0px;
+     margin: 0px;
 }
 .header-content
 {
-     max-height: 75%;
-     max-width: 75%;
-
+     width: 100%;
      position:absolute;
-     top:55%;
+     top:50%;
      left: 50%;
      transform: translate( -50% , -50%);
-
      text-align: center;
 
 }
-.as_background
-{
 
-}
 .header-site-logo-div
 {
      text-align: center;
@@ -50,22 +60,31 @@
      display: inline-block;
      max-width: 100%;
      width: 100%;
+     backface-visibility: hidden;
 }
 .header-site-title-div
 {
      display: inline-block;
      max-width: 100%;
      width: 100%;
+     margin: 0px;
+     /* Animation */
+     animation-name: moveInLeft;
+     animation-duration: 1s;
+     animation-timing-function: ease-out;
+}
+.header-site-title
+{
+     margin: 0px;
 }
 .header-site-title a
 {
      display: block;
-     font-size: 50px;
      font-weight:500;
      letter-spacing: 5px;
      text-align: center;
-     line-height: 40px;
      color: white;
+     margin: 0px;
 }
 
 .header-site-description-div
@@ -73,10 +92,12 @@
      display: inline-block;
      max-width: 100%;
      width: 100%;
+     animation-name: moveInRight;
+     animation-duration: 1s;
+     animation-timing-function: ease-out;
 }
 .header-site-description
 {
-     font-size: 25px;
      letter-spacing: 5px;
      text-align: center;
 
@@ -111,6 +132,28 @@ We create the clases for the fixed height of the header image div
 .fixed-height-50 {
   height: 50vh;
 }
+.fixed-height-50 .header-site-logo.has_site_name {
+     max-height: 55vh;
+     max-width: 75%;
+     width: auto;
+     height: auto;
+}
+.fixed-height-50 .header-site-logo.has_site_description {
+     max-height: 45vh;
+     max-width: 75%;
+     width: auto;
+     height: auto;
+}
+.fixed-height-50 .header-site-logo.has_site_name_description {
+     max-height: 35vh;
+     max-width: 75%;
+     width: auto;
+     height: auto;
+}
+.fixed-height-50 .header-site-title {
+}
+.fixed-height-50 .header-site-description {
+}
 
 .fixed-height-60 {
   height: 60vh;
@@ -122,48 +165,58 @@ We create the clases for the fixed height of the header image div
      height: 75%;
 }
 .fixed-height-60 .header-site-logo.has_site_name {
-     height: 55vh;
+     max-height: 55vh;
+     max-width: 75%;
+     width: auto;
+     height: auto;
 }
 .fixed-height-60 .header-site-logo.has_site_description {
-     height: 45vh;
+     max-height: 45vh;
+     max-width: 75%;
+     width: auto;
+     height: auto;
 }
 .fixed-height-60 .header-site-logo.has_site_name_description {
-     height: 35vh;
+     max-height: 35vh;
+     max-width: 75%;
+     width: auto;
+     height: auto;
 }
 .fixed-height-60 .header-site-title {
-     font-size: 30px;
 }
 .fixed-height-60 .header-site-description {
-     font-size: 20px;
 }
-
-
-
-
-
-
-
 
 .fixed-height-70 {
      height: 70vh;
 }
 .fixed-height-70 .header-site-logo {
-     height: 75%;
+     max-height: 75%;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-70 .header-site-logo.has_site_name {
-     height: 55vh;
+     max-height: 55vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-70 .header-site-logo.has_site_description {
-     height: 45vh;
+     max-height: 45vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-70 .header-site-logo.has_site_name_description {
-     height: 35vh;
+     max-height: 35vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-70 .header-site-title {
-     font-size: 30px;
 }
 .fixed-height-70 .header-site-description {
-     font-size: 20px;
 }
 
 
@@ -171,22 +224,33 @@ We create the clases for the fixed height of the header image div
      height: 80vh;
 }
 .fixed-height-80 .header-site-logo {
-     height: 75vh;
+     max-height: 75vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-80 .header-site-logo.has_site_name {
-     height: 65vh;
+     max-height: 65vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-80 .header-site-logo.has_site_description {
-     height: 55vh;
+     max-height: 55vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-80 .header-site-logo.has_site_name_description {
-     height: 45vh;
+     max-height: 45vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-80 .header-site-title {
-     font-size: 30px;
+     font-size: calc(15px + 2vw + 2vh);
 }
 .fixed-height-70 .header-site-description {
-     font-size: 20px;
 }
 
 
@@ -195,81 +259,104 @@ We create the clases for the fixed height of the header image div
      height: 90vh;
 }
 .fixed-height-90 .header-site-logo {
-     height: 85vh;
+     max-height: 85vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-90 .header-site-logo.has_site_name {
-     height: 75vh;
+     max-height: 75vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-90 .header-site-logo.has_site_description {
-     height: 65vh;
+     max-height: 65vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-90 .header-site-logo.has_site_name_description {
-     height: 55vh;
+     max-height: 55vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-90 .header-site-title {
-     font-size: 35px;
+     font-size: calc(15px + 2.5vw + 2.5vh);
 }
 .fixed-height-90 .header-site-description {
-     font-size: 25px;
 }
 
 .fixed-height-100 {
      height: 100vh;
 }
 .fixed-height-100 .header-site-logo {
-     height: 85vh;
+     max-height: 85vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-100 .header-site-logo.has_site_name {
-     height: 75vh;
+     max-height: 75vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-100 .header-site-logo.has_site_description {
-     height: 65vh;
+     max-height: 65vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
 .fixed-height-100 .header-site-logo.has_site_name_description {
-     height: 55vh;
+     max-height: 55vh;
+     max-width: 75%;
+     width: auto;
+   height: auto;
 }
-.fixed-height-100 .header-site-title {
-     font-size: 35px;
+.fixed-height-100 .header-site-title
+{
+     font-size: calc(15px + 3vw + 3vh);
 }
 .fixed-height-100 .header-site-description {
-     font-size: 25px;
+     font-size: calc(5px + 2vw + 2vh);
 }
 
-
-
-
-
-
-
-
-/* Try to center the divs */
-
-/* Start from the top to the bottom */
-
-
-.as_background {
-  background-position: center;
-  background-size: cover;
-  justify-content: center;
-  background-color: black;
-  padding: 0px;
-  margin: 0px;
+/* animations */
+@keyframes moveInLeft {
+     /* Start fo the animation */
+     0%{
+          opacity: 0;
+          transform: translateX(-100px);
+     }
+     /* Middle steps */
+     80%{
+          transform: translateX(10px);
+     }
+     /* End of the animation */
+     100%{
+          opacity: 1;
+          transform: translateX(0);
+     }
 }
-
-.as_background picture {
-  height: auto;
-  width: auto;
-  padding: 0px;
-  margin: 0px;
+@keyframes moveInRight {
+     /* Start fo the animation */
+     0%{
+          opacity: 0;
+          transform: translateX(100px);
+     }
+     /* Middle steps */
+     80%{
+          transform: translateX(-10px);
+     }
+     /* End of the animation */
+     100%{
+          opacity: 1;
+          transform: translateX(0);
+     }
 }
-
-
-.header-site-description {
-
-}
-
 /* Small devices (landscape phones, 576px and up) */
-
 @media (max-width: 766px) {
   .header-food-image-div {
     text-align: center;
@@ -293,19 +380,3 @@ We create the clases for the fixed height of the header image div
     border-radius: 50% !important;
   }
 }
-
-/* Medium devices (tablets, 768px and up) */
-
-@media (min-width: 768px) {
-  .header-food-image-div {
-    text-align: center;
-  }
-
-  .header-site-logo {
-    border-radius: 50% !important;
-  }
-}
-
-/* Large devices (desktops, 992px and up) */
-
-/* Extra large devices (large desktops, 1200px and up) */
