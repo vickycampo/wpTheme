@@ -16,13 +16,23 @@
 */
 
 .header {
-  width: 100vw;
-  position: relative;
+     width: 100vw;
+     position: relative;
+
+     &__content
+     {
+          width: 100%;
+          position:absolute;
+          top:50%;
+          left: 50%;
+          transform: translate( -50% , -50%);
+          text-align: center;
+
+     }
+
+
 }
-.header-img
-{
-  position: relative;
-}
+
 /* Define how we are going to put the background image */
 .as_background
 {
@@ -32,23 +42,15 @@
      background-color: black;
      padding: 0px;
      margin: 0px;
-}
-.as_background_tile
-{
-     background-color: black;
-     padding: 0px;
-     margin: 0px;
-}
-.header-content
-{
-     width: 100%;
-     position:absolute;
-     top:50%;
-     left: 50%;
-     transform: translate( -50% , -50%);
-     text-align: center;
 
+     &_tile
+     {
+          background-color: black;
+          padding: 0px;
+          margin: 0px;
+     }
 }
+
 
 .header-site-logo-div
 {

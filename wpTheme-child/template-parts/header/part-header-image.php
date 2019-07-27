@@ -16,9 +16,8 @@
      /* Do we have to display the site title in the header image? */
      /* add site logo */
      ?>
-     <div class="header-content">
+     <div class="header__content">
      <?php
-
      if ( ( $show_site_logo ) && ( function_exists( 'the_custom_logo' ) ) )
      {
           $custom_logo_id = get_theme_mod( 'custom_logo' );

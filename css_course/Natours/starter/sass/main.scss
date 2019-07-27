@@ -13,6 +13,7 @@ $color-primary-dark: #28b485;
 
 $color-gery-dark: #777;
 $color-white: #FFF;
+$color-black: #000;
 
 
 /* Basic reset */
@@ -48,25 +49,30 @@ body
      background-size: cover;
      background-position: top;
      position: relative;
+
+
+     &__logo-box
+     {
+          position: absolute;
+          top: 4.0rem;
+          left: 4.0rem;
+     }
+     &__logo
+     {
+          height: 3.5rem;
+     }
+     &__text-box
+     {
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform: translate( -50% , -50%);
+          text-align: center;
+     }
 }
-.logo-box
-{
-     position: absolute;
-     top: 4.0rem;
-     left: 4.0rem;
-}
-.logo
-{
-     height: 3.5rem;
-}
-.text-box
-{
-     position: absolute;
-     top:50%;
-     left: 50%;
-     transform: translate( -50% , -50%);
-     text-align: center;
-}
+
+
+
 .heading-primary
 {
      color: $color-white;
@@ -74,28 +80,29 @@ body
 
      backface-visibility: hidden;
      margin-bottom: 6.0rem;
-}
-.heading-primary-main
-{
-     display: block;
-     font-size: 6.0rem;
-     font-weight: 400;
-     letter-spacing: 3.5rem;
-     animation-name: moveInLeft;
-     animation-duration: 1s;
-     animation-timing-function: ease-out;
+     &--main
+     {
+          display: block;
+          font-size: 6.0rem;
+          font-weight: 400;
+          letter-spacing: 3.5rem;
+          animation-name: moveInLeft;
+          animation-duration: 1s;
+          animation-timing-function: ease-out;
 
+     }
+     &--sub
+     {
+          display: block;
+          font-size: 2.0rem;
+          font-weight: 400;
+          letter-spacing: 1.74rem;
+          animation-name: moveInRight;
+          animation-duration: 1s;
+          animation-timing-function: ease-out;
+     }
 }
-.heading-primary-sub
-{
-     display: block;
-     font-size: 2.0rem;
-     font-weight: 400;
-     letter-spacing: 1.74rem;
-     animation-name: moveInRight;
-     animation-duration: 1s;
-     animation-timing-function: ease-out;
-}
+
 
 @keyframes moveInLeft {
      /* Start fo the animation */
@@ -158,11 +165,11 @@ body
      /* move up */
      transform: translateY(-.3rem);
      /* box shadow */
-     box-shadow: 0 1.0rem 2.0rem rgba(0, 0, 0, 0.2);
+     box-shadow: 0 1.0rem 2.0rem rgba($color-black, 0.2);
 }
 .btn:active{
      transform: translateY(-.1rem);
-     box-shadow: 0 .5rem 1.0rem rgba(0, 0, 0, 0.2);
+     box-shadow: 0 .5rem 1.0rem rgba($color-black, 0.2);
 }
 .btn-white {
      background-color: $color-white;
