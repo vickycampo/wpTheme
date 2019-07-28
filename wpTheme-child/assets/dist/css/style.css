@@ -377,12 +377,12 @@ header {
       animation-duration: 1s;
       animation-timing-function: ease-out;
       color: white; }
-    .header__title a:link {
+    .header__title a {
       display: block;
       font-weight: 500;
       letter-spacing: 5px;
       text-align: center;
-      color: white;
+      color: #FFF;
       margin: 0px; }
     .header__title a:hover {
       display: block;
