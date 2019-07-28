@@ -17,6 +17,7 @@
      },
      "homepage": "https://github.com/vickycampo/wpTheme#readme",
      "dependencies": {
+          "bootstrap": "^4.3.1",
           "install": "^0.13.0",
           "npm": "^6.10.1"
      },
