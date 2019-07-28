@@ -1,11 +1,5 @@
 /*
-To Compile:
-modify the package.json. in the script section
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
+imports
 */
 /* Basic reset */
 /* Make every brower render the page the same way */
@@ -109,8 +103,7 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   font-size: 1.6rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -125,6 +118,9 @@ body {
   transform: translateY(-0.3rem);
   /* box shadow */
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.5) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-0.1rem);
@@ -133,6 +129,8 @@ body {
 .btn-white {
   background-color: #FFF;
   color: #777; }
+  .btn-white::after {
+    background-color: #FFF; }
 
 .btn::after {
   content: "";
@@ -145,13 +143,6 @@ body {
   left: 0;
   z-index: -1;
   transition: all .4s; }
-
-.btn-white::after {
-  background-color: #FFF; }
-
-.btn:hover::after {
-  transform: scaleX(1.5) scaleY(1.6);
-  opacity: 0; }
 
 .btn-animation {
   animation: moveInBottom .5s ease-out .75s;

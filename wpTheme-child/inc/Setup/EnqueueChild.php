@@ -26,17 +26,9 @@ class EnqueueChild
 	public function enqueue_scripts()
 	{
 		// CSS
-		
-		$BASE = get_stylesheet_directory_uri();
 
-		wp_enqueue_style( 'body', $BASE .'/assets/dist/css/body.css', array(), null, 'all' );
-		wp_enqueue_style( 'bootstrap', $BASE .'/assets/dist/css/bootstrap.css', array(), null, 'all' );
-		wp_enqueue_style( 'breadcrumbs', $BASE .'/assets/dist/css/breadcrumbs.css', array(), null, 'all' );
-		wp_enqueue_style( 'child-style-extra', $BASE .'/assets/dist/css/child-style.css', array(), null, 'all' );
-		wp_enqueue_style( 'header', $BASE .'/assets/dist/css/header.css', array(), null, 'all' );
+		$BASE = get_stylesheet_directory_uri();
 		wp_enqueue_style( 'child-style', $BASE .'/assets/dist/css/style.css', array(), null, 'all' );
-		wp_enqueue_style( 'subCat_nav', $BASE .'/assets/dist/css/subCat_nav.css', array(), null, 'all' );
-		wp_enqueue_style( 'top-nav', $BASE .'/assets/dist/css/top-nav.css', array(), null, 'all' );
 
 		// JS
 		//wp_enqueue_script( 'app', ('js/app.js', array(), null, true );

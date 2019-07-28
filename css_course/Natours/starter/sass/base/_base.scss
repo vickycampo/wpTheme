@@ -1,0 +1,19 @@
+/* Basic reset */
+/* Make every brower render the page the same way */
+/* Universal selector */
+*,
+*::after,
+*::before{
+     margin: 0;
+     padding: 0;
+     box-sizing: inherit;
+}
+/* Set the font - Inherited */
+html {
+     /* Default font size is 16px */
+     font-size: 62.5%;
+}
+body
+{
+     box-sizing: border-box;
+}

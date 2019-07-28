@@ -23,7 +23,7 @@ const mix = require('laravel-mix');
     .js( 'wpTheme-child/assets/src/scripts/popper.js', 'wpTheme-child/assets/dist/js' )
 
 
-    .sass( 'wpTheme-child/assets/src/sass/body.scss', 'wpTheme-child/assets/dist/css' )
+    .sass( 'wpTheme-child/assets/src/sass/style.scss', 'wpTheme-child/assets/dist/css' )
     .sass( 'wpTheme-child/assets/src/sass/bootstrap.scss', 'wpTheme-child/assets/dist/css' )
     .sass( 'wpTheme-child/assets/src/sass/breadcrumbs.scss', 'wpTheme-child/assets/dist/css' )
     .sass( 'wpTheme-child/assets/src/sass/child-style.scss', 'wpTheme-child/assets/dist/css' )
