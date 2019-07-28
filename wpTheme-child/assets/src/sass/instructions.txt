@@ -4,7 +4,9 @@
           "scripts": {
                "compile:sass": "node-sass wpTheme-child/assets/src/sass/main.scss wpTheme-child/assets/dist/css/style.css -w"
           },
-4. Execute: npm run compile:sass
+4. Execute:
+     cd C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme
+     npm run compile:sass
 
 optional:
 1. npm install bootstrap

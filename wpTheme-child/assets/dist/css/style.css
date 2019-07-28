@@ -57,8 +57,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #FFF;
-  padding: 2.5rem; }
+  color: #FFF; }
 
 .heading-primary {
   color: #FFF;
@@ -355,66 +354,70 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+  .header__logo {
+    text-align: center;
+    display: inline-block; }
+    .header__logo--div {
+      text-align: center;
+      display: inline-block; }
+  .header__info--div {
+    display: inline-block;
+    max-width: 100%;
+    width: 100%;
+    backface-visibility: hidden; }
+  .header__title {
+    margin: 0px; }
+    .header__title--div {
+      display: inline-block;
+      max-width: 100%;
+      width: 100%;
+      margin: 0px;
+      /* Animation */
+      animation-name: moveInLeft;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      color: white; }
+    .header__title a:link {
+      display: block;
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-align: center;
+      color: white;
+      margin: 0px; }
+    .header__title a:hover {
+      display: block;
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-align: center;
+      color: #F8F9F9;
+      margin: 0px; }
+  .header__description {
+    letter-spacing: 5px;
+    text-align: center;
+    color: orange;
+    font-family: 'Rock Salt', cursive;
+    font-weight: bold;
+    word-wrap: break-word; }
+    .header__description--div {
+      display: inline-block;
+      max-width: 100%;
+      width: 100%;
+      animation-name: moveInRight;
+      animation-duration: 1s;
+      animation-timing-function: ease-out; }
 
 /* Define how we are going to put the background image */
-.as_background {
+.as-background {
   background-position: center;
   background-size: cover;
   justify-content: center;
   background-color: black;
   padding: 0px;
   margin: 0px; }
-  .as_background_tile {
+  .as-background-tile {
     background-color: black;
     padding: 0px;
     margin: 0px; }
-
-.header-site-logo-div {
-  text-align: center;
-  display: inline-block; }
-
-.header-site-info-div {
-  display: inline-block;
-  max-width: 100%;
-  width: 100%;
-  backface-visibility: hidden; }
-
-.header-site-title-div {
-  display: inline-block;
-  max-width: 100%;
-  width: 100%;
-  margin: 0px;
-  /* Animation */
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out; }
-
-.header-site-title {
-  margin: 0px; }
-
-.header-site-title a {
-  display: block;
-  font-weight: 500;
-  letter-spacing: 5px;
-  text-align: center;
-  color: white;
-  margin: 0px; }
-
-.header-site-description-div {
-  display: inline-block;
-  max-width: 100%;
-  width: 100%;
-  animation-name: moveInRight;
-  animation-duration: 1s;
-  animation-timing-function: ease-out; }
-
-.header-site-description {
-  letter-spacing: 5px;
-  text-align: center;
-  color: orange;
-  font-family: 'Rock Salt', cursive;
-  font-weight: bold;
-  word-wrap: break-word; }
 
 /*
      ===================================
@@ -433,19 +436,19 @@ We create the clases for the fixed height of the header image div
 .fixed-height-50 {
   height: 50vh; }
 
-.fixed-height-50 .header-site-logo.has_site_name {
+.fixed-height-50 .header__logo--has-name {
   max-height: 55vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-50 .header-site-logo.has_site_description {
+.fixed-height-50 .header__logo--has-description {
   max-height: 45vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-50 .header-site-logo.has_site_name_description {
+.fixed-height-50 .header__logo--has-name-description {
   max-height: 35vh;
   max-width: 75%;
   width: auto;
@@ -457,22 +460,22 @@ We create the clases for the fixed height of the header image div
 .fixed-height-60 {
   height: 70vh; }
 
-.fixed-height-60 .header-site-logo {
+.fixed-height-60 .header__logo {
   height: 75%; }
 
-.fixed-height-60 .header-site-logo.has_site_name {
+.fixed-height-60 .header__logo--has-name {
   max-height: 55vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-60 .header-site-logo.has_site_description {
+.fixed-height-60 .header__logo--has-description {
   max-height: 45vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-60 .header-site-logo.has_site_name_description {
+.fixed-height-60 .header__logo--has-name-description {
   max-height: 35vh;
   max-width: 75%;
   width: auto;
@@ -481,25 +484,25 @@ We create the clases for the fixed height of the header image div
 .fixed-height-70 {
   height: 70vh; }
 
-.fixed-height-70 .header-site-logo {
+.fixed-height-70 .header__logo {
   max-height: 75%;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-70 .header-site-logo.has_site_name {
+.fixed-height-70 .header__logo--has-name {
   max-height: 55vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-70 .header-site-logo.has_site_description {
+.fixed-height-70 .header__logo--has-description {
   max-height: 45vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-70 .header-site-logo.has_site_name_description {
+.fixed-height-70 .header__logo--has-name-description {
   max-height: 35vh;
   max-width: 75%;
   width: auto;
@@ -508,94 +511,94 @@ We create the clases for the fixed height of the header image div
 .fixed-height-80 {
   height: 80vh; }
 
-.fixed-height-80 .header-site-logo {
+.fixed-height-80 .header__logo {
   max-height: 75vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-80 .header-site-logo.has_site_name {
+.fixed-height-80 .header__logo--has-name {
   max-height: 65vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-80 .header-site-logo.has_site_description {
+.fixed-height-80 .header__logo--has-description {
   max-height: 55vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-80 .header-site-logo.has_site_name_description {
+.fixed-height-80 .header__logo--has-name-description {
   max-height: 45vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-80 .header-site-title {
+.fixed-height-80 .header-title {
   font-size: calc(15px + 2vw + 2vh); }
 
 .fixed-height-90 {
   height: 90vh; }
 
-.fixed-height-90 .header-site-logo {
+.fixed-height-90 .header__logo {
   max-height: 85vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-90 .header-site-logo.has_site_name {
+.fixed-height-90 .header__logo--has-name {
   max-height: 75vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-90 .header-site-logo.has_site_description {
+.fixed-height-90 .header__logo--has-description {
   max-height: 65vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-90 .header-site-logo.has_site_name_description {
+.fixed-height-90 .header__logo--has-name-description {
   max-height: 55vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-90 .header-site-title {
+.fixed-height-90 .header-title {
   font-size: calc(15px + 2.5vw + 2.5vh); }
 
 .fixed-height-100 {
   height: 100vh; }
 
-.fixed-height-100 .header-site-logo {
+.fixed-height-100 .header__logo {
   max-height: 85vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-100 .header-site-logo.has_site_name {
+.fixed-height-100 .header__logo--has-name {
   max-height: 75vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-100 .header-site-logo.has_site_description {
+.fixed-height-100 .header__logo--has-description {
   max-height: 65vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-100 .header-site-logo.has_site_name_description {
+.fixed-height-100 .header__logo--has-name-description {
   max-height: 55vh;
   max-width: 75%;
   width: auto;
   height: auto; }
 
-.fixed-height-100 .header-site-title {
+.fixed-height-100 .header-title {
   font-size: calc(15px + 3vw + 3vh); }
 
-.fixed-height-100 .header-site-description {
+.fixed-height-100 .header-description {
   font-size: calc(5px + 2vw + 2vh); }
 
 /* For small screen we remove the height and make it fit the image */
@@ -609,7 +612,7 @@ We create the clases for the fixed height of the header image div
 .fixed-height-100 {
   max-width: 100vw; }
 
-.header-site-logo {
+.header__logo {
   /* max-width:50%; */
   border-radius: 50% !important; }
 

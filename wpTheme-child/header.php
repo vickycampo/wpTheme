@@ -83,7 +83,7 @@
                error_log ( print_r ( $options['big_header_image'] , true) );
 
                $as_background = 'style="background-image:url('.$options['big_header_image']['as_background'].');"';
-               $class = ' as_background';
+               $class = ' as-background';
           }
           else if ( get_custom_header() )
           {
@@ -94,11 +94,11 @@
                /*we check the size of the image */
                if ( $width < 900)
                {
-                    $class = ' as_background_tile';
+                    $class = ' as-background-tile';
                }
                else
                {
-                    $class = ' as_background';
+                    $class = ' as-background';
                }
 
 
