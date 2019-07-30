@@ -7,3 +7,5 @@
 <!--
 Casa:
 cd C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\css_course\Natours\starter
+
+https://stackoverflow.com/questions/22509402/apply-css-to-a-group-of-css-classes-containing-col-substring
