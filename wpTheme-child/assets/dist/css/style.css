@@ -1,3 +1,20 @@
+/* ------------------------------- */
+/* ----- MEDIA QUERY MANAGER ----- */
+/* ------------------------------- */
+/*
+0 - 600:       Phone
+600 - 900:     Tablet Portrait
+900 - 1200:    Tablet landscape
+1200 - 1800:   Normal style
+1800 +:        Big Desktop
+*/
+/*
+$breakpoint Argument choices:
+ - phone
+ - tab-port
+ - tab-land
+ - big-desktop
+*/
 /* animations */
 @keyframes moveInLeft {
   /* Start fo the animation */

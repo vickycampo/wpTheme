@@ -11,7 +11,24 @@
 /* Set the font - Inherited */
 html {
      /* Default font size is 16px */
-     font-size: 62.5%;
+     font-size: 62.5%; //1 rem - 10px
+     @include respond(phone)
+     {
+          font-size: 50%;
+     }
+     @include respond(tab-por)
+     {
+          font-size: 50%; //1rem = 8px
+     }
+     @include respond(tab-land)
+     {
+          font-size: 56.26%; //1rem = 9px
+     }
+     @include respond(big-desktop)
+     {
+          font-size: 50%;
+     }
+     }
 }
 body
 {
