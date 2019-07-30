@@ -34,17 +34,14 @@ $breakpoint Argument choices:
 
  1em = 16px => 600/16 = 37.5em
 */
-$phone_size = 37.5em; //600px
-$tab_port = 56.25em; //900px
-$tab_land = 75em; //1200px
-$big_desktop = 112.5em; //1800px
+
 @mixin respond($breakpoint)
 {
      @if ( $breakpoint == phone)
      {
           @media ( max-width: $phone_size ) { @content }
      }
-     @if ( $breakpoint == tab-port)
+     @if ( $breakpoint == tab-por)
      {
           @media ( max-width: $tab_port ) { @content }
      }
