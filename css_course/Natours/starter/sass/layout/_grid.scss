@@ -10,6 +10,11 @@
           }
      }
 
+     @include respond (tab-port)
+     {
+          max-width: 50rem;
+     }
+
      @include clearfix;
      /* What is this beginning */
      [class^="col-"] {
