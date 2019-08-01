@@ -16,37 +16,6 @@
 */
 
 .header {
-     width: 100vw;
-     position: relative;
-
-     &__content
-     {
-          width: 100%;
-          position:absolute;
-          top:50%;
-          left: 50%;
-          transform: translate( -50% , -50%);
-          text-align: center;
-
-     }
-     &__logo
-     {
-          text-align: center;
-          display: inline-block;
-          &--div
-          {
-               text-align: center;
-               display: inline-block;
-          }
-     }
-
-     &__info--div
-     {
-          display: inline-block;
-          max-width: 100%;
-          width: 100%;
-          backface-visibility: hidden;
-     }
 
      &__title
      {
@@ -124,10 +93,6 @@
      }
 }
 
-.header-
-{
-
-}
 
 
 /*
@@ -137,257 +102,276 @@
 
 We create the clases for the fixed height of the header image div
 */
-.fixed-height-auto
+@for $i from 4 through 10
 {
+     .fixed-height-#{$i*10}
+     {
+          /* Loop */
+          height: #{$i*10}vh;
+          & .header
+          {
+               @if ($i == 4)
+               {
 
-}
-.fixed-height-40
-{
-
-}
-.fixed-height-50
-{
-
-}
-.fixed-height-60
-{
-
-}
-.fixed-height-70
-{
-
-}
-.fixed-height-80
-{
-
-}
-.fixed-height-90
-{
-
-}
-.fixed-height-100
-{
-
-}
-
-.fixed-height-auto {
-     max-height: 75%;
-     max-width: 75%;
-}
-.fixed-height-40 {
-  height: 40vh;
-}
-
-.fixed-height-50 {
-  height: 50vh;
-}
-.fixed-height-50 .header__logo--has-name {
-     max-height: 55vh;
-     max-width: 75%;
-     width: auto;
-     height: auto;
-}
-.fixed-height-50 .header__logo--has-description {
-     max-height: 45vh;
-     max-width: 75%;
-     width: auto;
-     height: auto;
-}
-.fixed-height-50 .header__logo--has-name-description {
-     max-height: 35vh;
-     max-width: 75%;
-     width: auto;
-     height: auto;
-}
-.fixed-height-50 .header-title {
-}
-.fixed-height-50 .header-description {
-}
-
-.fixed-height-60 {
-  height: 60vh;
-}
-.fixed-height-60 {
-     height: 70vh;
-}
-.fixed-height-60 .header__logo {
-     height: 75%;
-}
-.fixed-height-60 .header__logo--has-name {
-     max-height: 55vh;
-     max-width: 75%;
-     width: auto;
-     height: auto;
-}
-.fixed-height-60 .header__logo--has-description {
-     max-height: 45vh;
-     max-width: 75%;
-     width: auto;
-     height: auto;
-}
-.fixed-height-60 .header__logo--has-name-description {
-     max-height: 35vh;
-     max-width: 75%;
-     width: auto;
-     height: auto;
-}
-.fixed-height-60 .header-title {
-}
-.fixed-height-60 .header-description {
-}
-
-.fixed-height-70 {
-     height: 70vh;
-}
-.fixed-height-70 .header__logo {
-     max-height: 75%;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-70 .header__logo--has-name {
-     max-height: 55vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-70 .header__logo--has-description {
-     max-height: 45vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-70 .header__logo--has-name-description {
-     max-height: 35vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-70 .header-title {
-}
-.fixed-height-70 .header-description {
-}
+               }
+               @else
+               {
+                    width: 100vw;
+               }
 
 
-.fixed-height-80 {
-     height: 80vh;
-}
-.fixed-height-80 .header__logo {
-     max-height: 75vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-80 .header__logo--has-name {
-     max-height: 65vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-80 .header__logo--has-description {
-     max-height: 55vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-80 .header__logo--has-name-description {
-     max-height: 45vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-80 .header-title {
-     font-size: calc(15px + 2vw + 2vh);
-}
-.fixed-height-70 .header-description {
-}
+               &__content
+               {
+                    @if ($i == 4)
+                    {
+                         /* We place logo next to the title */
+                         height: #{$i*10}vh;
+                         width: 80vw;
+                         $top: 50%;
+                         $left: 50%;
+                         $x: -50%;
+                         $y: -50%;
+                         @include centerBlock ($top , $left , $x , $y)
+                         position: relative;
+
+                    }
+                    @else
+                    {
+                         position: relative;
+                         height: #{$i*10}vh;
+                    }
+
+
+                    & .header__logo
+                    {
+                         @if ($i == 4)
+                         {
+                              /* We place logo next to the title */
+                              height: 75%;
+                              width: auto;
+                              $top: 50%;
+                              $left: 50%;
+                              $x: -50%;
+                              $y: -50%;
+                              @include centerBlock ($top , $left , $x , $y)
+
+
+                         }
+                         @else
+                         {
+                              height: #{($i*10)-($i*2.5)}vh;
+                              width: auto;
+                              $top: 50%;
+                              $left: 50%;
+                              $x: -50%;
+                              $y: -50%;
+                              @include centerBlock ($top , $left , $x , $y)
+                         }
+
+                         &--div
+                         {
+                              @if ($i == 4)
+                              {
+                                   position: absolute;
+                                   width: 30vw;
+                                   height: 100%;
+                                   $top: 50%;
+                                   $left: 50%;
+                                   $x: -100%;
+                                   $y: -50%;
+                                   @include centerBlock ($top , $left , $x , $y);
+                              }
+                              @else
+                              {
+                              }
+                         }
+                         &--has-name
+                         {
+                              @if ($i == 4)
+                              {
+                                   /* We place logo next to the title */
+                                   /* We place logo next to the title */
+                                   height: 75%;
+                                   width: auto;
+                                   $top: 50%;
+                                   $left: 100%;
+                                   $x: -100%;
+                                   $y: -40%;
+                                   @include centerBlock ($top , $left , $x , $y);
+                              }
+                              @else
+                              {
+                                   /* Image Class */
+                                   height: #{($i*10)-($i*3)}vh;
+                                   width: auto;
+                                   $top: #{$i}vh;
+                                   $left: 50%;
+                                   $x: -50%;
+                                   $y: 0%;
+                                   @include centerBlock ($top , $left , $x , $y)
+
+                              }
+
+                         }
+                         &--has-description
+                         {
+                              @if ($i == 4)
+                              {
+                                   /* We place logo next to the title */
+                                   /* We place logo next to the title */
+                                   height: 75%;
+                                   width: auto;
+                                   $top: 50%;
+                                   $left: 100%;
+                                   $x: -100%;
+                                   $y: -40%;
+                                   @include centerBlock ($top , $left , $x , $y);
+                              }
+                              @else
+                              {
+                                   /* Image Class */
+                                   height: #{($i*10)-($i*3)}vh;
+                                   width: auto;
+                                   $top: #{$i}vh;
+                                   $left: 50%;
+                                   $x: -50%;
+                                   $y: 0%;
+                                   @include centerBlock ($top , $left , $x , $y)
+
+                              }
+
+                         }
+                         &--has-name-description
+                         {
+                              @if ($i == 4)
+                              {
+                                   /* We place logo next to the title */
+                                   height: 75%;
+                                   width: auto;
+                                   $top: 50%;
+                                   $left: 100%;
+                                   $x: -100%;
+                                   $y: -40%;
+                                   @include centerBlock ($top , $left , $x , $y);
+                              }
+                              @else
+                              {
+                                   /* Image Class */
+                                   height: #{($i*10)-($i*3)}vh;
+                                   width: auto;
+                                   $top:  #{$i}vh;
+                                   $left: 50%;
+                                   $x: -50%;
+                                   $y: 0%;
+                                   @include centerBlock ($top , $left , $x , $y)
+                              }
+
+                         }
+                    }
+               }
+               &__info--div
+               {
+                    @if ($i == 4)
+                    {
+                         /* We place logo next to the title */
+                         height: 100%;
+                         width: 50vw;
+                         $top: 50%;
+                         $left: 50%;
+                         $x: 0%;
+                         $y: -50%;
+                         @include centerBlock ($top , $left , $x , $y)
+                         white-space: nowrap;
+
+
+                    }
+                    @else
+                    {
+                         display: block;
+                         position: absolute;
+                         top: #{($i*10)-($i*3)+($i)}vh;
+                         line-height: #{($i/2)}rem;
+                    }
+
+
+               }
+               &__title--div
+               {
+                    @if ($i == 4)
+                    {
+                         position: absolute;
+                         display: inline-block;
+                         max-width: 100%;
+                         width: 100%;
+                         margin: 0px;
+                         height: #{($i*10)/2}vh;
+                         left: 0%;
+                         padding-top: #{($i*10)/4}vh;
+                         text-align: left;
+                         padding-left: 1.5vw;
+                         & h1
+                         {
+                              font-size: #{($i/2)}rem;
+                              line-height: #{($i*10)/2}vh;
+                              display: inline;
+                              vertical-align: bottom;
+
+                              & a
+                              {
+                                   text-align: left;
+                              }
+                         }
+
+                    }
+                    @else
+                    {
+                         & h1
+                         {
+                              font-size: #{($i/2)}rem;
+                              line-height: #{($i/2)}rem;
+
+                         }
+                    }
+               }
+               &__description--div
+               {
+                    @if ($i == 4)
+                    {
+                         position: absolute;
+                         display: inline-block;
+                         max-width: 100%;
+                         width: 100%;
+                         margin: 0px;
+                         height: #{($i*10)/2}vh;
+                         top: #{($i*10)/2}vh;
+                         left: 0%;
+                         text-align: left;
+                         padding-left: 1.5vw;
+                         & h2
+                         {
+                              font-size: #{($i/4)}rem;
+                              display: inline;
+                              vertical-align: top;
+                         }
+                    }
+                    @else
+                    {
+                         & h2
+                         {
+                              font-size: #{($i/4)}rem;
+                              line-height: #{($i/4)}rem;
+                         }
+                    }
+
+
+               }
+          }
 
 
 
-.fixed-height-90 {
-     height: 90vh;
-}
-.fixed-height-90 .header__logo {
-     max-height: 85vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-90 .header__logo--has-name {
-     max-height: 75vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-90 .header__logo--has-description {
-     max-height: 65vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-90 .header__logo--has-name-description {
-     max-height: 55vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-90 .header-title {
-     font-size: calc(15px + 2.5vw + 2.5vh);
-}
-.fixed-height-90 .header-description {
-}
 
-.fixed-height-100 {
-     height: 100vh;
-}
-.fixed-height-100 .header__logo {
-     max-height: 85vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-100 .header__logo--has-name {
-     max-height: 75vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-100 .header__logo--has-description {
-     max-height: 65vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-100 .header__logo--has-name-description {
-     max-height: 55vh;
-     max-width: 75%;
-     width: auto;
-   height: auto;
-}
-.fixed-height-100 .header-title
-{
-     font-size: calc(15px + 3vw + 3vh);
-}
-.fixed-height-100 .header-description {
-     font-size: calc(5px + 2vw + 2vh);
-}
+     }
 
 
 
-  /* For small screen we remove the height and make it fit the image */
-
-  .fixed-height-30,
-  .fixed-height-40,
-  .fixed-height-50,
-  .fixed-height-60,
-  .fixed-height-70,
-  .fixed-height-80,
-  .fixed-height-90,
-  .fixed-height-100 {
-    max-width: 100vw;
-  }
-
-  .header__logo {
-    /* max-width:50%; */
-    border-radius: 50% !important;
-  }
+}

@@ -54,3 +54,16 @@ $breakpoint Argument choices:
           @media ( min-width: $big_desktop ) { @content }
      }
 }
+
+@mixin fixed_height ( $percentage )
+{
+
+}
+@mixin centerBlock ($top , $left , $x , $y)
+{
+     display: block;
+     position: absolute;
+     top: $top;
+     left: $left;
+     transform: translate($x, $y);
+}
