@@ -53,6 +53,24 @@ $breakpoint Argument choices:
      {
           @media ( min-width: $big_desktop ) { @content }
      }
+
+
+     @if ( $breakpoint == extra_small)
+     {
+          @media ( min-width: $extra_small ) { @content }
+     }
+     @if ( $breakpoint == small)
+     {
+          @media ( min-width: $small ) { @content }
+     }
+     @if ( $breakpoint == medium)
+     {
+          @media ( min-width: $medium ) { @content }
+     }
+     @if ( $breakpoint == large)
+     {
+          @media ( min-width: $large ) { @content }
+     }
 }
 
 @mixin fixed_height ( $percentage )

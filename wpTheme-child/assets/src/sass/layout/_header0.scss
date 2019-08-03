@@ -114,7 +114,6 @@ We create the clases for the fixed height of the header image div
                          /* We place logo next to the title */
                          height: 40vh;
                          width: 100vw;
-                         padding: 5vh;
                          top:auto;
                          $top: 50%;
                          $left: 50%;
@@ -192,7 +191,7 @@ We create the clases for the fixed height of the header image div
                          height: auto;
                          & h1
                          {
-                              font-size: 3rem;
+                              font-size: 4rem;
                               line-height:normal;
                               display: inline;
                               vertical-align: bottom;
@@ -211,7 +210,7 @@ We create the clases for the fixed height of the header image div
                          width: 100%;
                          & h2
                          {
-                              font-size: 1.5rem;
+                              font-size: 2rem;
                               display: inline;
                               vertical-align: top;
                          }
@@ -275,13 +274,6 @@ We create the clases for the fixed height of the header image div
                          {
                               position: relative;
                               height: #{$i*10}vh;
-
-                              display: -webkit-flex; /* Safari */
-                              -webkit-align-items: center; /* Safari 7.0+ */
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              flex-direction: column;
                          }
                          .header__logo--div
                          {
@@ -291,8 +283,6 @@ We create the clases for the fixed height of the header image div
                               }
                               @else
                               {
-                                   height: 80%;
-                                   position: relative;
                               }
 
                               .header__logo
@@ -300,6 +290,7 @@ We create the clases for the fixed height of the header image div
                                    @if ($i == 4)
                                    {
                                         /* We place logo next to the title */
+
                                         max-height: 100%;
                                         width: auto;
                                         height: auto;
@@ -376,7 +367,7 @@ We create the clases for the fixed height of the header image div
                                              height: auto;
                                              max-height: #{($i*10)-($i*3.5)}vh;
                                              width: auto;
-                                             $top:  50%;
+                                             $top:  50;
                                              $left: 50%;
                                              $x: -50%;
                                              $y: -50%;
@@ -402,9 +393,10 @@ We create the clases for the fixed height of the header image div
                          }
                          @else
                          {
-                              display: flex;
-                              flex-direction: column;
-                              justify-content: center;
+                              display: block;
+                              position: absolute;
+                              top: #{($i*10)-($i*3)+($i)}vh;
+                              line-height: #{($i/2)}rem;
                          }
 
 
