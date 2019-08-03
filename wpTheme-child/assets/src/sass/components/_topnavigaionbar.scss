@@ -11,23 +11,26 @@
 * Set the styles for the top navigation bar
 *
 */
-
-#theme_location_top_nav
+#theme_location
 {
-     height: 50px;
-     background-color: transparent;
-
-     button
+     &_top_nav
      {
-          margin-left: 10px;
-     }
+          height: 50px;
+          background-color: transparent;
 
-     a
-     {
-          color: #808080;
+          button
+          {
+               margin-left: 10px;
+          }
 
+          a
+          {
+               color: #808080;
+
+          }
      }
 }
+
 
 
 /* The part of the navigation bar that contains the elements */

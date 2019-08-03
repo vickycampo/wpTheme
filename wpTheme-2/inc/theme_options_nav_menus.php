@@ -47,7 +47,6 @@ if ( ! function_exists( 'wpTheme_nav_menu_css' ) )
      			'transport' => 'refresh',
      			'type' => 'option',
      			'sanitize_callback' => 'wpTheme_validate_true_false'
-
      		);
                $wp_customize->add_setting( $id , $args );
                /* Add the control */
@@ -139,6 +138,8 @@ if ( ! function_exists( 'wpTheme_nav_menu_css' ) )
 
      		);
                $wp_customize->add_control( $id , $args );
+
+
                /* Add a logo to the navbar */
                $id = 'wpTheme_options[nav_menu_css]['. $nav_menu .'][custom_logo]';
                $args = array(
