@@ -23,7 +23,7 @@
 }
 .my-breadcrumbs a:hover
 {
-     color: orange;
+     color: $color-orange;
 }
 .breadcrumb
 {
@@ -33,7 +33,7 @@
 }
 .breadcrumb-item + .breadcrumb-item::before
 {
-     color:orange;
+     color:$color-orange;
      font-weight: 600;
      font-size: 10px;
      content: ">>";

@@ -39,7 +39,7 @@
           bloginfo('description');
      } ?>" />
      <?php
-     //get the theme options
+     /* get the theme options */
           $options = get_option( 'wpTheme_options' );
      /* We get the defaults */
           $defaults = wptchild\Setup\Functions::get_theme_defaults();
@@ -79,8 +79,8 @@
           $class = '';
           if ( isset ($options['big_header_image']['as_background']) )
           {
-               error_log (__FILE__ . ' - ' . __LINE__);
-               error_log ( print_r ( $options['big_header_image'] , true) );
+               // error_log (__FILE__ . ' - ' . __LINE__);
+               // error_log ( print_r ( $options['big_header_image'] , true) );
 
                $as_background = 'style="background-image:url('.$options['big_header_image']['as_background'].');"';
                $class = ' as-background';
@@ -111,6 +111,8 @@
           <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
           <!-- Header Image part -->
           <?php get_template_part( 'template-parts/header/part', 'header-image' ); ?>
+          <!-- Main Navitagion bar part -->
+          <?php get_template_part( 'template-parts/header/part', 'navbar-main' ); ?>
 
      </header> <!-- Header-img -->
      <!-- Main Navigation bar part -->

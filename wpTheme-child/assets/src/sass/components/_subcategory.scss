@@ -49,15 +49,15 @@
           font-weight: bold;
           font-size: 12px;
           padding-right: 5px;
-          border-right: 1px solid orange;
+          border-right: 1px solid $color-orange;
      }
      .sub-cat-button::after
      {
-          color:orange;
+          color:$color-orange;
      }
      .sub-cat-button:hover
      {
-          color:orange;
+          color:$color-orange;
      }
      .sub-cat-button:focus
      {
@@ -95,7 +95,7 @@
      }
      .dropdown-item:hover, .dropdown-item:focus
      {
-          color: orange !important;
+          color: $color-orange !important;
           border-radius: 0px !important;
           background-color: #23282d !important;
           color: white;
@@ -169,5 +169,5 @@
 }
 .sub-cat-filters-close:hover
 {
-     color: orange;
+     color: $color-orange;
 }

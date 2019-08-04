@@ -36,18 +36,14 @@ class NavigationBarOptions extends BaseCustomizer
 		/* add Details */
 
 		//WE CREATE AN ARRAY WITH ALLA THE NAVIGATION MENUS
-          $i = 0;
-          $nav_menus[$i] = 'top';
-          $i ++;
-          $nav_menus[$i] = 'main';
-          $i ++;
-          $nav_menus[$i] = 'footer';
-          $i ++;
+          $nav_menus[] = 'top';
+          $nav_menus[] = 'main';
+		$nav_menus[] = 'footer';
           /* We get the defaults */
           $this->theme_defaults = $Functions->get_theme_defaults();
           //we set the settings for alla the navigation menus
 		$i = 0;
-          foreach ($nav_menus as $navId => $nav_menu)
+          foreach ($nav_menus as $keyd => $nav_menu)
           {
 			$SettingsList[$i]['index'] = 'nav_menu_css';
 			$SettingsList[$i]['sub-index'] = $nav_menu;
@@ -56,25 +52,25 @@ class NavigationBarOptions extends BaseCustomizer
 			$SettingsList[$i]['sanitize_callback'] = 'wpTheme_validate_true_false';
 			$j = 0;
 
-			$settingsId = $SettingsList[$i]['SecondSub-index'];
+			$settingsId = $SettingsList[$i]['sub-index'] . ' - ' . $SettingsList[$i]['SecondSub-index'];
 			$ControlsList[$settingsId][$j]['label'] = 'Show brand in the ' . $nav_menu;
 			$ControlsList[$settingsId][$j]['type'] = 'select';
 			$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
 			$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_true_false';
 	          /*-------------------------------------------------------------*/
-			$i ++;
-			$SettingsList[$i]['index'] = 'nav_menu_css';
-			$SettingsList[$i]['sub-index'] = $nav_menu;
-			$SettingsList[$i]['SecondSub-index'] = 'background_color';
-			$SettingsList[$i]['type'] = 'option';
-			$SettingsList[$i]['sanitize_callback'] = 'wpTheme_validate_nav_menu_color';
-			$j = 0;
-
-			$settingsId = $SettingsList[$i]['SecondSub-index'];
-			$ControlsList[$settingsId][$j]['label'] = 'Navigation Menus Color scheme for ' . $nav_menu;
-			$ControlsList[$settingsId][$j]['type'] = 'select';
-			$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_nav_menu_color';
-			$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_nav_menu_color';
+			// $i ++;
+			// $SettingsList[$i]['index'] = 'nav_menu_css';
+			// $SettingsList[$i]['sub-index'] = $nav_menu;
+			// $SettingsList[$i]['SecondSub-index'] = 'background_color';
+			// $SettingsList[$i]['type'] = 'option';
+			// $SettingsList[$i]['sanitize_callback'] = 'wpTheme_validate_nav_menu_color';
+			// $j = 0;
+			//
+			// $settingsId = $SettingsList[$i]['sub-index'] . ' - ' . $SettingsList[$i]['SecondSub-index'];
+			// $ControlsList[$settingsId][$j]['label'] = 'Navigation Menus Color scheme for ' . $nav_menu;
+			// $ControlsList[$settingsId][$j]['type'] = 'select';
+			// $ControlsList[$settingsId][$j]['choices'] = 'wpTheme_nav_menu_color';
+			// $ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_nav_menu_color';
 	          /*-------------------------------------------------------------*/
 			$i ++;
 			$SettingsList[$i]['index'] = 'nav_menu_css';
@@ -84,29 +80,30 @@ class NavigationBarOptions extends BaseCustomizer
 			$SettingsList[$i]['sanitize_callback'] = 'wpTheme_validate_nav_menu_auto_margins';
 			$j = 0;
 
-			$settingsId = $SettingsList[$i]['SecondSub-index'];
-			$ControlsList[$settingsId][$j]['label'] = 'Navigation Menus Color scheme for ' . $nav_menu;
+			$settingsId = $SettingsList[$i]['sub-index'] . ' - ' . $SettingsList[$i]['SecondSub-index'];
+			$ControlsList[$settingsId][$j]['label'] = 'Navigation Menus Location for ' . $nav_menu;
 			$ControlsList[$settingsId][$j]['type'] = 'select';
 			$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_nav_menu_auto_margins';
 			$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_nav_menu_auto_margins';
 	          /*-------------------------------------------------------------*/
-			$i ++;
-			$SettingsList[$i]['index'] = 'nav_menu_css';
-			$SettingsList[$i]['sub-index'] = $nav_menu;
-			$SettingsList[$i]['SecondSub-index'] = 'inverse';
-			$SettingsList[$i]['type'] = 'option';
-			$SettingsList[$i]['sanitize_callback'] = 'wpTheme_validate_true_false';
-			$j = 0;
-
-			$settingsId = $SettingsList[$i]['SecondSub-index'];
-			$ControlsList[$settingsId][$j]['label'] = $nav_menu . ' , Inverse?';
-			$ControlsList[$settingsId][$j]['type'] = 'select';
-			$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
-			$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_true_false';
+			// $i ++;
+			// $SettingsList[$i]['index'] = 'nav_menu_css';
+			// $SettingsList[$i]['sub-index'] = $nav_menu;
+			// $SettingsList[$i]['SecondSub-index'] = 'inverse';
+			// $SettingsList[$i]['type'] = 'option';
+			// $SettingsList[$i]['sanitize_callback'] = 'wpTheme_validate_true_false';
+			// $j = 0;
+			//
+			// $settingsId = $SettingsList[$i]['sub-index'] . ' - ' . $SettingsList[$i]['SecondSub-index'];
+			// $ControlsList[$settingsId][$j]['label'] = $nav_menu . ' , Inverse?';
+			// $ControlsList[$settingsId][$j]['type'] = 'select';
+			// $ControlsList[$settingsId][$j]['choices'] = 'wpTheme_true_false';
+			// $ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_true_false';
 	          /*-------------------------------------------------------------*/
 
 			$i ++;
 		}
+
 
 
 
@@ -118,7 +115,16 @@ class NavigationBarOptions extends BaseCustomizer
 			$settingsId = $Setings['index'];
 			$settingsSubId = $Setings['sub-index'];
 			$SecondSubIndex = $Setings['SecondSub-index'];
-			$this-> setControlDetails ( $settingsId , $ControlsList[$SecondSubIndex] , $settingsSubId , $SecondSubIndex );
+			$controlId = $Setings['sub-index'] . ' - ' . $Setings['SecondSub-index'];
+
+			// error_log (__FILE__.' - '.__FILE__.' - ');
+			// error_log (' ----- Setings ----- ');
+			// error_log (print_r ( $Setings , true ));
+			// error_log (' ----- ControlsList ----- ');
+			// error_log (print_r ( $ControlsList[$controlId] , true ));
+			// error_log ('------------------------------------------------');
+
+			$this-> setControlDetails ( $settingsId , $ControlsList[$controlId] , $settingsSubId , $SecondSubIndex );
 		}
      }
 }

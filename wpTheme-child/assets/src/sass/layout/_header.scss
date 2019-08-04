@@ -53,7 +53,7 @@ HEADER
           letter-spacing: 5px;
           text-align: center;
 
-          color: orange;
+          color: $color-orange;
           font-family: 'Rock Salt', cursive;
           font-weight: bold;
           word-wrap: break-word;
@@ -330,16 +330,16 @@ We create the clases for the fixed height of the header image div
                                              height: auto;
                                              max-height: #{($i*10)-($i*3)}vh;
                                              width: auto;
-                                             $top: #{$i}vh;
+                                             $top:  50%;
                                              $left: 50%;
                                              $x: -50%;
-                                             $y: 0%;
+                                             $y: -50%;
                                              @include centerBlock ($top , $left , $x , $y);
 
                                         }
 
                                    }
-                                   &--has-description
+                                   &--has_description
                                    {
                                         @if ($i == 4)
                                         {
@@ -353,11 +353,12 @@ We create the clases for the fixed height of the header image div
                                              height: auto;
                                              max-height: #{($i*10)-($i*3)}vh;
                                              width: auto;
-                                             $top: #{$i}vh;
+                                             $top:  50%;
                                              $left: 50%;
                                              $x: -50%;
-                                             $y: 0%;
+                                             $y: -50%;
                                              @include centerBlock ($top , $left , $x , $y);
+                                             margin-bottom: 1vh;
 
                                         }
 

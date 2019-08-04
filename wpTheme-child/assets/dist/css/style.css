@@ -77,10 +77,10 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #FFF; }
+  color: #F5F5F5; }
 
 .heading-primary {
-  color: #FFF;
+  color: #F5F5F5;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6.0rem; }
@@ -121,7 +121,7 @@ body {
   color: #181818; }
 
 .my-breadcrumbs a:hover {
-  color: orange; }
+  color: #FFBB00; }
 
 .breadcrumb {
   background-color: #DCDCDC;
@@ -129,7 +129,7 @@ body {
   margin-bottom: 0px; }
 
 .breadcrumb-item + .breadcrumb-item::before {
-  color: orange;
+  color: #FFBB00;
   font-weight: 600;
   font-size: 10px;
   content: ">>"; }
@@ -179,13 +179,13 @@ header {
   font-weight: bold;
   font-size: 12px;
   padding-right: 5px;
-  border-right: 1px solid orange; }
+  border-right: 1px solid #FFBB00; }
 
 .sub-cat-button::after {
-  color: orange; }
+  color: #FFBB00; }
 
 .sub-cat-button:hover {
-  color: orange; }
+  color: #FFBB00; }
 
 .sub-cat-button:focus {
   box-shadow: 0 0 0 0rem; }
@@ -218,7 +218,7 @@ header {
   margin: 0px; }
 
 .dropdown-item:hover, .dropdown-item:focus {
-  color: orange !important;
+  color: #FFBB00 !important;
   border-radius: 0px !important;
   background-color: #23282d !important;
   color: white; }
@@ -272,7 +272,7 @@ header {
   content: "\f158"; }
 
 .sub-cat-filters-close:hover {
-  color: orange; }
+  color: #FFBB00; }
 
 /*
 
@@ -287,12 +287,32 @@ header {
 * Set the styles for the top navigation bar
 *
 */
-#theme_location_top_nav {
-  height: 50px;
-  background-color: transparent; }
-  #theme_location_top_nav button {
+.theme_location_top_nav {
+  height: 40px;
+  background-color: transparent;
+  /* always on top? */ }
+  .theme_location_top_nav.theme_location_top {
+    /* admin bar showing? */ }
+    .theme_location_top_nav.theme_location_top.admin_bar_not_showing {
+      position: fixed;
+      top: 0px;
+      right: 0;
+      left: 0;
+      z-index: 1030; }
+    .theme_location_top_nav.theme_location_top.admin_bar_showing {
+      position: fixed;
+      top: 32px;
+      right: 0;
+      left: 0;
+      z-index: 1030; }
+  .theme_location_top_nav .navbar-brand.navbar-logo {
+    color: #F5F5F5;
+    font-size: 1.25em; }
+    .theme_location_top_nav .navbar-brand.navbar-logo:hover {
+      color: #FFBB00; }
+  .theme_location_top_nav button {
     margin-left: 10px; }
-  #theme_location_top_nav a {
+  .theme_location_top_nav a {
     color: #808080; }
 
 /* The part of the navigation bar that contains the elements */
@@ -312,7 +332,7 @@ header {
   font-size: 14px; }
 
 #theme_location_top_target a:hover {
-  color: orange;
+  color: #FFBB00;
   text-shadow: 1px 1px 1px #000000; }
 
 #theme_location_top_target h1 {
@@ -329,7 +349,7 @@ header {
 /* The id of the tag that contains the main navigation bar */
 /* Change the color of the Togler button */
 .navbar-toggler {
-  border-color: orange;
+  border-color: #FFBB00;
   background-color: black; }
 
 .navbar-toggler-icon {
@@ -337,11 +357,11 @@ header {
 
 /* change the color of the burger */
 .hamburger {
-  border-top: 0.2em solid orange;
-  border-bottom: 0.2em solid orange; }
+  border-top: 0.2em solid #FFBB00;
+  border-bottom: 0.2em solid #FFBB00; }
 
 .hamburger:before {
-  border-top: 0.2em solid orange; }
+  border-top: 0.2em solid #FFBB00; }
 
 /* We add the class that will change the color when the bar crossed the header image */
 .topNav_afterHeaderImage {
@@ -390,7 +410,7 @@ HEADER
 .header__description {
   letter-spacing: 5px;
   text-align: center;
-  color: orange;
+  color: #FFBB00;
   font-family: 'Rock Salt', cursive;
   font-weight: bold;
   word-wrap: break-word; }
@@ -988,7 +1008,7 @@ We create the clases for the fixed height of the header image div
             height: 100%;
             width: auto;
             display: inline-block; }
-          .fixed-height-40 .header__content .header__logo--div .header__logo--has-description {
+          .fixed-height-40 .header__content .header__logo--div .header__logo--has_description {
             height: 100%;
             width: auto;
             display: inline-block; }
@@ -1056,19 +1076,20 @@ We create the clases for the fixed height of the header image div
               width: auto;
               display: block;
               position: absolute;
-              top: 5vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
-            .fixed-height-50 .header__content .header__logo--div .header__logo--has-description {
+              transform: translate(-50%, -50%); }
+            .fixed-height-50 .header__content .header__logo--div .header__logo--has_description {
               /* Image Class */
               height: auto;
               max-height: 35vh;
               width: auto;
               display: block;
               position: absolute;
-              top: 5vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
+              transform: translate(-50%, -50%);
+              margin-bottom: 1vh; }
             .fixed-height-50 .header__content .header__logo--div .header__logo--has-name-description {
               /* Image Class */
               height: auto;
@@ -1125,19 +1146,20 @@ We create the clases for the fixed height of the header image div
               width: auto;
               display: block;
               position: absolute;
-              top: 6vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
-            .fixed-height-60 .header__content .header__logo--div .header__logo--has-description {
+              transform: translate(-50%, -50%); }
+            .fixed-height-60 .header__content .header__logo--div .header__logo--has_description {
               /* Image Class */
               height: auto;
               max-height: 42vh;
               width: auto;
               display: block;
               position: absolute;
-              top: 6vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
+              transform: translate(-50%, -50%);
+              margin-bottom: 1vh; }
             .fixed-height-60 .header__content .header__logo--div .header__logo--has-name-description {
               /* Image Class */
               height: auto;
@@ -1194,19 +1216,20 @@ We create the clases for the fixed height of the header image div
               width: auto;
               display: block;
               position: absolute;
-              top: 7vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
-            .fixed-height-70 .header__content .header__logo--div .header__logo--has-description {
+              transform: translate(-50%, -50%); }
+            .fixed-height-70 .header__content .header__logo--div .header__logo--has_description {
               /* Image Class */
               height: auto;
               max-height: 49vh;
               width: auto;
               display: block;
               position: absolute;
-              top: 7vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
+              transform: translate(-50%, -50%);
+              margin-bottom: 1vh; }
             .fixed-height-70 .header__content .header__logo--div .header__logo--has-name-description {
               /* Image Class */
               height: auto;
@@ -1263,19 +1286,20 @@ We create the clases for the fixed height of the header image div
               width: auto;
               display: block;
               position: absolute;
-              top: 8vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
-            .fixed-height-80 .header__content .header__logo--div .header__logo--has-description {
+              transform: translate(-50%, -50%); }
+            .fixed-height-80 .header__content .header__logo--div .header__logo--has_description {
               /* Image Class */
               height: auto;
               max-height: 56vh;
               width: auto;
               display: block;
               position: absolute;
-              top: 8vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
+              transform: translate(-50%, -50%);
+              margin-bottom: 1vh; }
             .fixed-height-80 .header__content .header__logo--div .header__logo--has-name-description {
               /* Image Class */
               height: auto;
@@ -1332,19 +1356,20 @@ We create the clases for the fixed height of the header image div
               width: auto;
               display: block;
               position: absolute;
-              top: 9vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
-            .fixed-height-90 .header__content .header__logo--div .header__logo--has-description {
+              transform: translate(-50%, -50%); }
+            .fixed-height-90 .header__content .header__logo--div .header__logo--has_description {
               /* Image Class */
               height: auto;
               max-height: 63vh;
               width: auto;
               display: block;
               position: absolute;
-              top: 9vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
+              transform: translate(-50%, -50%);
+              margin-bottom: 1vh; }
             .fixed-height-90 .header__content .header__logo--div .header__logo--has-name-description {
               /* Image Class */
               height: auto;
@@ -1401,19 +1426,20 @@ We create the clases for the fixed height of the header image div
               width: auto;
               display: block;
               position: absolute;
-              top: 10vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
-            .fixed-height-100 .header__content .header__logo--div .header__logo--has-description {
+              transform: translate(-50%, -50%); }
+            .fixed-height-100 .header__content .header__logo--div .header__logo--has_description {
               /* Image Class */
               height: auto;
               max-height: 70vh;
               width: auto;
               display: block;
               position: absolute;
-              top: 10vh;
+              top: 50%;
               left: 50%;
-              transform: translate(-50%, 0%); }
+              transform: translate(-50%, -50%);
+              margin-bottom: 1vh; }
             .fixed-height-100 .header__content .header__logo--div .header__logo--has-name-description {
               /* Image Class */
               height: auto;

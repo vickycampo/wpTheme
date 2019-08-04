@@ -11,12 +11,42 @@
 * Set the styles for the top navigation bar
 *
 */
-#theme_location
+.theme_location
 {
      &_top_nav
      {
-          height: 50px;
+          height: 40px;
           background-color: transparent;
+          /* always on top? */
+          &.theme_location_top
+          {
+               /* admin bar showing? */
+               &.admin_bar_not_showing
+               {
+                    position: fixed;
+                    top: 0px;
+                    right: 0;
+                    left: 0;
+                    z-index: 1030;
+               }
+               &.admin_bar_showing
+               {
+                    position: fixed;
+                    top: 32px;
+                    right: 0;
+                    left: 0;
+                    z-index: 1030;
+               }
+          }
+          .navbar-brand.navbar-logo
+          {
+               color: $color-white;
+               font-size: 1.25em;
+               &:hover
+               {
+                    color: $color-orange;
+               }
+          }
 
           button
           {
@@ -57,7 +87,7 @@
      }
      #theme_location_top_target a:hover
      {
-          color: orange;
+          color: $color-orange;
           text-shadow: 1px 1px 1px #000000;
 
      }
@@ -102,7 +132,7 @@
      /* Change the color of the Togler button */
      .navbar-toggler
      {
-          border-color: orange;
+          border-color: $color-orange;
           background-color: black;
      }
      .navbar-toggler-icon
@@ -112,14 +142,14 @@
      /* change the color of the burger */
      .hamburger
      {
-          border-top: 0.2em solid orange;
-          border-bottom: 0.2em solid orange;
+          border-top: 0.2em solid $color-orange;
+          border-bottom: 0.2em solid $color-orange;
      }
 
      .hamburger:before
      {
 
-          border-top: 0.2em solid orange;
+          border-top: 0.2em solid $color-orange;
      }
 /* We add the class that will change the color when the bar crossed the header image */
 .topNav_afterHeaderImage

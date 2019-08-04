@@ -129,6 +129,7 @@ class BaseCustomizer
 		}
 
 
+
 	}
 	public function add_sections( $wp_customize )
 	{
@@ -233,8 +234,8 @@ class BaseCustomizer
 		}
 		foreach ( $currentControls as $i => $control)
 		{
-			error_log (__FILE__ . ' - ' . __LINE__);
-			error_log ( print_r ( $this->SectionDetails , true) );
+			// error_log (__FILE__ . ' - ' . __LINE__);
+			// error_log ( print_r ( $this->SectionDetails , true) );
 			/* Add the control */
 			if ( $sub_index =='' )
 			{
