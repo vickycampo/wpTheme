@@ -16,35 +16,22 @@
      /* Do we have to display the site title in the header image? */
      /* add site logo */
      ?>
+
      <div class="header header__content">
+          <div class="header header__spacerDiv">
+
+          </div>
      <?php
      if ( ( $show_site_logo ) && ( function_exists( 'the_custom_logo' ) ) )
      {
-          $custom_logo_id = get_theme_mod( 'custom_logo' );
-          $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-
           /* we check if there is a logo file */
           if ( $logo )
           {
-               /* check if we will aslo add name and description */
-               $ExtraClasses = '';
-               if ( $site_name )
-               {
-                    $ExtraClasses = '--has-name';
-               }
-               else if ( $site_description )
-               {
-                    $ExtraClasses = '--has_description';
-               }
-               if ( $site_name && $site_description )
-               {
-                    $ExtraClasses = '--has-name-description';
-               }
                ?>
-                    <div class="header header__logo--div">
+                    <div class="header header__logo--div<?php echo ($ExtraClasses);?>">
                          <!-- Show Logo -->
                          <?php echo wp_kses_post( $wpTheme_headerimg_before ); ?>
-                         <img class=" header header__logo<?php echo ($ExtraClasses);?>" src="<?php echo esc_url( $logo[0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
+                         <img class=" header header__logo--image" src="<?php echo esc_url( $logo[0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
                          <?php echo wp_kses_post( $wpTheme_headerimg_after ); ?>
                     </div>
                <?php

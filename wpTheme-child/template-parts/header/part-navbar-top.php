@@ -100,7 +100,11 @@ if ( has_nav_menu( $location ) )
           }
           ?>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target" aria-controls="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'wpTheme' ); ?>">
-               <span class="hamburger"></span>
+               <span class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+               </span>
           </button>
 
 

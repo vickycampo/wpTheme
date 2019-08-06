@@ -13,28 +13,53 @@
 .my-breadcrumbs
 {
      margin-top: 15px;
-     color: #181818;
+     color: $color-dark-grey;
+     font-size: 1.5rem;
+
+     a
+     {
+          color: $color-dark-grey;
+     }
+     a:hover
+     {
+          color: $color-orange;
+     }
+     .breadcrumb
+     {
+          border-radius: 10px;
+          margin-bottom: 0px;
+          margin-left: 10vw;
+          margin-right: 10vw;
+          .breadcrumb-item + .breadcrumb-item::before
+          {
+               color:$color-orange;
+               font-weight: 600;
+               font-size: 10px;
+               content: ">>";
+
+
+          }
+
+     }
 
 
 }
-.my-breadcrumbs a
+.breadcrumb-home
 {
-     color: #181818;
-}
-.my-breadcrumbs a:hover
-{
-     color: $color-orange;
-}
-.breadcrumb
-{
-     background-color: #DCDCDC;
-     border-radius: 10px;
-     margin-bottom: 0px;
-}
-.breadcrumb-item + .breadcrumb-item::before
-{
-     color:$color-orange;
-     font-weight: 600;
-     font-size: 10px;
-     content: ">>";
+     &::before
+     {
+          font-family: "dashicons";
+          content: "\f102";
+          color: $color-dark-grey;
+          display: inline-block;
+          -webkit-font-smoothing: antialiased;
+          font: normal 20px/1;
+          vertical-align: top;
+          margin-right: 5px;
+          margin-right: 0.5rem;
+     }
+     &:hover::before
+     {
+          color: $color-orange;
+     }
 }

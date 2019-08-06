@@ -14,13 +14,25 @@ HEADER STYLES CSS
 HEADER
 ===================================
 */
-
+/* Standard for all header heights */
 .header {
 
+     &__logo--image
+     {
+
+          width:auto;
+          max-height: 90%;
+          max-width: 75vw;
+
+          $top: 50%;
+          $left: 50%;
+          $x: -50%;
+          $y: -50%;
+          @include centerBlock ($top , $left , $x , $y);
+     }
      &__title
      {
           margin: 0px;
-
           &--div
           {
                /* Animation */
@@ -96,386 +108,113 @@ HEADER
 We create the clases for the fixed height of the header image div
 */
 /* 600 o menos*/
-@include respond(extra_small)
+
+@for $i from 4 through 10
 {
-     @for $i from 4 through 10
+     .fixed-height-#{$i*10}
      {
-          .fixed-height-#{$i*10}
+          height: #{$i*10}vh;
+          width: 100vw;
+          &.header
           {
-               /* Loop */
-               height: 40vh;
-               & .header
+               .header__content
                {
-                    width: 100vw;
-                    position: relative;
 
-                    &__content
+                    height: #{$i*10}vh;
+                    /* --- flex --- */
+                    display: -webkit-flex; /* Safari */
+                    -webkit-align-items: center; /* Safari 7.0+ */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @if ( $i == 4 )
                     {
-                         /* We place logo next to the title */
-                         height: 40vh;
-                         width: 100vw;
-                         padding: 5vh;
-                         top:auto;
-                         $top: 50%;
-                         $left: 50%;
-                         $x: -50%;
-                         $y: -50%;
-                         @include centerBlock ($top , $left , $x , $y);
-
-
-                         display: -webkit-flex; /* Safari */
-                         -webkit-align-items: center; /* Safari 7.0+ */
-                         display: flex;
-                         align-items: center;
-                         justify-content: center;
-                         flex-direction: column;
-
-                         .header__logo--div
-                         {
-                              height: 65%;
-                              top:auto;
-
-                              .header__logo
-                              {
-                                   top:auto;
-                                   max-height: 40vh;
-                                   max-width: 50vw;
-                                   width: auto;
-                                   height: auto;
-                                   display: inline-block;
-
-                                   &--has-name
-                                   {
-                                        top:auto;
-                                        max-height: 100%;
-                                        height: 100%;
-                                        width: auto;
-                                        display: inline-block;
-
-                                   }
-                                   &--has-description
-                                   {
-                                        top:auto;
-                                        max-height: 100%;
-                                        height: 100%;
-                                        width: auto;
-                                        display: inline-block;
-
-                                   }
-                                   &--has-name-description
-                                   {
-                                        top:auto;
-                                        height: 100%;
-                                        width: auto;
-                                        display: inline-block;
-
-                                   }
-                              }
-
-                         }
-
-
-                    }
-                    &__info--div
-                    {
-                         display: flex;
-                         flex-direction: column;
-                         justify-content: center;
-                         top:auto;
-
-
-                    }
-                    &__title--div
-                    {
-                         text-align: left;
-                         padding-left: 1.5vw;
-                         height: auto;
-                         & h1
-                         {
-                              font-size: 3rem;
-                              line-height:normal;
-                              display: inline;
-                              vertical-align: bottom;
-
-                              & a
-                              {
-                                   text-align:center;
-
-                              }
-                         }
-                    }
-                    &__description--div
-                    {
-                         text-align:center;
-                         padding-left: 1.5vw;
-                         width: 100%;
-                         & h2
-                         {
-                              font-size: 1.5rem;
-                              display: inline;
-                              vertical-align: top;
-                         }
-
-
-                    }
-               }
-
-
-
-
-          }
-
-
-
-     }
-}
-@include respond(small)
-{
-     @for $i from 4 through 10
-     {
-          .fixed-height-#{$i*10}
-          {
-               /* Loop */
-               height: #{$i*10}vh;
-               & .header
-               {
-                    @if ($i == 4)
-                    {
-
+                         flex-direction: row;
                     }
                     @else
                     {
-                         width: 100vw;
+                         flex-direction: column;
                     }
-                    &__content
+                    .header__spacerDiv
                     {
-                         @if ($i == 4)
+                         height: 40px;
+                    }
+                    .header__logo--div
+                    {
+                         position: relative;
+                         height: #{$i*10}vh;
+                         width: 100vw;
+                         &--has-name
                          {
-                              /* We place logo next to the title */
-                              height: #{$i*10}vh;
-                              width: 100vw;
-                              position: relative;
-                              $top: 50%;
-                              $left: 50%;
-                              $x: -50%;
-                              $y: -50%;
-                              @include centerBlock ($top , $left , $x , $y);
-
-
-                              display: -webkit-flex; /* Safari */
-                              -webkit-align-items: center; /* Safari 7.0+ */
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              flex-direction: row;
-
-
-                         }
-                         @else
-                         {
-                              position: relative;
-                              height: #{$i*10}vh;
-
-                              display: -webkit-flex; /* Safari */
-                              -webkit-align-items: center; /* Safari 7.0+ */
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              flex-direction: column;
-                         }
-                         .header__logo--div
-                         {
-                              @if ($i == 4)
+                              @if ( $i == 4 )
                               {
-                                   height: 65%;
+                                   position: relative;
+                                   height: #{$i*10 - 10}vh;
+                                   width: #{$i*10 - 10}vh;
                               }
                               @else
                               {
-                                   height: 80%;
                                    position: relative;
+                                   height: #{$i*10 - $i*3}vh;
+                                   width: 100vw;
                               }
-
-                              .header__logo
-                              {
-                                   @if ($i == 4)
-                                   {
-                                        /* We place logo next to the title */
-                                        max-height: 100%;
-                                        width: auto;
-                                        height: auto;
-                                        display: inline-block;
-                                   }
-                                   @else
-                                   {
-                                        height: auto;
-                                        max-height: #{($i*10)-($i*2.5)}vh;
-                                        width: auto;
-                                        $top: 50%;
-                                        $left: 50%;
-                                        $x: -50%;
-                                        $y: -50%;
-                                        @include centerBlock ($top , $left , $x , $y);
-                                   }
-                                   &--has-name
-                                   {
-                                        @if ($i == 4)
-                                        {
-                                             height: 100%;
-                                             width: auto;
-                                             display: inline-block;
-                                        }
-                                        @else
-                                        {
-                                             /* Image Class */
-                                             height: auto;
-                                             max-height: #{($i*10)-($i*3)}vh;
-                                             width: auto;
-                                             $top:  50%;
-                                             $left: 50%;
-                                             $x: -50%;
-                                             $y: -50%;
-                                             @include centerBlock ($top , $left , $x , $y);
-
-                                        }
-
-                                   }
-                                   &--has_description
-                                   {
-                                        @if ($i == 4)
-                                        {
-                                             height: 100%;
-                                             width: auto;
-                                             display: inline-block;
-                                        }
-                                        @else
-                                        {
-                                             /* Image Class */
-                                             height: auto;
-                                             max-height: #{($i*10)-($i*3)}vh;
-                                             width: auto;
-                                             $top:  50%;
-                                             $left: 50%;
-                                             $x: -50%;
-                                             $y: -50%;
-                                             @include centerBlock ($top , $left , $x , $y);
-                                             margin-bottom: 1vh;
-
-                                        }
-
-                                   }
-                                   &--has-name-description
-                                   {
-                                        @if ($i == 4)
-                                        {
-                                             height: 100%;
-                                             width: auto;
-                                             display: inline-block;
-                                        }
-                                        @else
-                                        {
-                                             /* Image Class */
-                                             height: auto;
-                                             max-height: #{($i*10)-($i*3.5)}vh;
-                                             width: auto;
-                                             $top:  50%;
-                                             $left: 50%;
-                                             $x: -50%;
-                                             $y: -50%;
-                                             @include centerBlock ($top , $left , $x , $y);
-                                        }
-
-                                   }
-                              }
-
                          }
-
+                         &--has-description
+                         {
+                              @if ( $i == 4 )
+                              {
+                                   position: relative;
+                                   height: #{$i*10 - 10}vh;
+                                   width: #{$i*10 - 10}vh;
+                              }
+                              @else
+                              {
+                                   position: relative;
+                                   height: #{$i*10 - $i*2}vh;
+                                   width: 100vw;
+                              }
+                         }
+                         &--has-name-description
+                         {
+                              @if ( $i == 4 )
+                              {
+                                   position: relative;
+                                   height: #{$i*10 - 10}vh;
+                                   width: #{$i*10 - 10}vh;
+                              }
+                              @else
+                              {
+                                   position: relative;
+                                   height: #{$i*10 - 20 }vh;
+                                   width: 100vw;
+                              }
+                         }
 
                     }
-                    &__info--div
+
+                    .header__info--div
                     {
-                         @if ($i == 4)
+                         display: flex;
+                         flex-direction: column;
+                         justify-content: center;
+                         .header__title--div
                          {
-                              /* We place logo next to the title */
-                              float:right;
-                              display: flex;
-                              flex-direction: column;
-                              justify-content: center;
-                         }
-                         @else
-                         {
-                              display: flex;
-                              flex-direction: column;
-                              justify-content: center;
-                         }
-
-
-                    }
-                    &__title--div
-                    {
-                         @if ($i == 4)
-                         {
-                              text-align: left;
-                              padding-left: 1.5vw;
-                              height: auto;
-                              & h1
+                              .header__title
                               {
-                                   font-size: #{($i/2)}rem;
-                                   line-height:normal;
-                                   display: inline;
-                                   vertical-align: bottom;
 
-                                   & a
-                                   {
-                                        text-align: left;
-
-                                   }
-                              }
-
-                         }
-                         @else
-                         {
-                              & h1
-                              {
-                                   text-align: center;
-                                   font-size: #{($i/2)}rem;
-                                   line-height: #{($i/2)}rem;
-
+                                   font-size: #{ 2.5 + $i/10}rem;
                               }
                          }
-                    }
-                    &__description--div
-                    {
-                         @if ($i == 4)
+                         .header__description--div
                          {
-                              text-align: left;
-                              padding-left: 1.5vw;
-                              width: 100%;
-                              & h2
+                              .header__description
                               {
-                                   font-size: #{($i/4)}vw;
-                                   display: inline;
-                                   vertical-align: top;
+                                   font-size: #{ 1.5 + $i/10}rem;
                               }
                          }
-                         @else
-                         {
-                              & h2
-                              {
-                                   font-size: #{($i/4)}rem;
-                                   line-height: #{($i/4)}rem;
-                              }
-                         }
-
-
                     }
                }
 
-
-
-
           }
-
-
-
      }
 }

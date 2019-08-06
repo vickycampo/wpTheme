@@ -55,7 +55,7 @@
                     $my_query = new WP_Query( $args );
 
                }
-               else
+               else if ( is_single () )
                {
                     $args = array(
                          'post_type' => get_post_type(),
@@ -64,30 +64,37 @@
                     );
                     $my_query = new WP_Query( $args );
                }
-
-
-               if( $my_query->have_posts() ) :
+               if( $my_query->have_posts() )
+               {
                     ?>
-                    <div class="read-more-results">
-                    <?php
-                         while ( $my_query->have_posts() ) : $my_query->the_post();
-
-                         //get template part depending on the template format we are displaying
-
-                         if ( ( get_post_format() ) && ( locate_template( array( 'template-parts/post-' . get_post_format() . '.php' ) ) != '') )
-                         {
-                              get_template_part('template-parts/post', get_post_format());
-                         }
-                         else
-                         {
-                              get_template_part('template-parts/post', 'post');
-                         }
-                    endwhile;
-                    ?>
-                    </div>
+                    <div class="grid-row">
+                         <div class="grid-column read-more-results">
+                         <?php
+                              while ( $my_query->have_posts() )
+                              {
+                                   ?>
+                                   <div class="grid-element">
+                                   <?php
+                                        $my_query->the_post();
+                                        //get template part depending on the template format we are displaying
+                                        if ( ( get_post_format() ) && ( locate_template( array( 'template-parts/post-' . get_post_format() . '.php' ) ) != '') )
+                                        {
+                                             get_template_part('template-parts/post', get_post_format());
+                                        }
+                                        else
+                                        {
+                                             get_template_part('template-parts/post', 'post');
+                                        }
+                                   ?>
+                                   </div>
+                                   <?php
+                              }
+                         ?>
+                         </div> <!-- $containerClass-->
+                    </div> <!-- containerRow -->
                     <?php get_template_part('template-parts/part', 'navigation' ); ?>
                <?php
-               endif;
+               }
                wp_reset_query();  // Restore global post data stomped by the_post().
                ?>
 

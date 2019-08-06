@@ -6,19 +6,20 @@
 *::before{
      margin: 0;
      padding: 0;
-     box-sizing: inherit;
+     box-sizing: border-box;
+
 }
 /* Set the font - Inherited */
 html {
      /* Default font size is 16px */
-     font-size: 62.5%; // 
+     font-size: 62.5%; //
      width: 100%;
      height: 100%;
 }
 body
 {
-
      width: 100%;
      height: 100%;
      box-sizing: border-box;
+
 }

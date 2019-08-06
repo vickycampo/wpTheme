@@ -68,7 +68,29 @@
           {
                $height = 'fixed-height-' . $options['big_header_image']['percentage'];
           }
+          if ( ( $show_site_logo ) && ( function_exists( 'the_custom_logo' ) ) )
+          {
+               $custom_logo_id = get_theme_mod( 'custom_logo' );
+               $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 
+               if ( $logo )
+               {
+                    /* check if we will aslo add name and description */
+                    $ExtraClasses = '';
+                    if ( $site_name )
+                    {
+                         $ExtraClasses = '--has-name';
+                    }
+                    else if ( $site_description )
+                    {
+                         $ExtraClasses = '--has-description';
+                    }
+                    if ( $site_name && $site_description )
+                    {
+                         $ExtraClasses = '--has-name-description';
+                    }
+               }
+          }
 
 
 
