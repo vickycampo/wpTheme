@@ -5,7 +5,7 @@
      ===============================
 * Create a special BREADCRUMBS function for the child theme
 */
-namespace wptchild;
+namespace wptchild\Core;
 
 /**
  * Settings API Callbacks Class

@@ -11,7 +11,8 @@
 * The main template file. It is required in all themes.
 */
 ?>
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+
+<article <?php post_class( array ( 'flex-item', 'background-grey', 'mr-2', 'ml-2', 'pr-2', 'pr-2' ) ); ?> id="post-<?php the_ID(); ?>">
 	<?php
 	get_template_part( 'template-parts/part', 'title' );
 	wptheme\Custom\Hooks::tha_entry_before(); ?>

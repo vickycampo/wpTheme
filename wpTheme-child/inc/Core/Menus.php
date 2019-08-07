@@ -1,6 +1,6 @@
 <?php
 
-namespace wptchild\Setup;
+namespace wptchild\Core;
 
 /**
 * Menus

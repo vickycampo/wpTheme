@@ -11,7 +11,7 @@
 * Contains the funcitons that will be needed for the ajax
 *
 */
-namespace wptchild;
+namespace wptchild\Custom;
 
 /**
  * Settings API Callbacks Class

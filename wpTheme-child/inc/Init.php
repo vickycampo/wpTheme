@@ -19,20 +19,24 @@ final class Init
 	public static function get_services()
 	{
 		return [
-			Setup\EnqueueChild::class,
-			Setup\Setup::class,
-			BreadCrumbs::class,
-			ChildAjax::class,
-
-               Setup\Menus::class,
-               Setup\SideBars::class,
-
 			/* My Customizations */
 			Api\ExtraCustomizer\AdvancedOptions::class,
 			Api\ExtraCustomizer\Colors::class,
 			Api\ExtraCustomizer\HeaderImage::class,
 			Api\ExtraCustomizer\LayoutOptions::class,
-			Api\ExtraCustomizer\NavigationBarOptions::class
+			Api\ExtraCustomizer\NavigationBarOptions::class,
+
+               Core\Menus::class,
+               Core\SideBars::class,
+               Core\BreadCrumbs::class,
+
+               Custom\ChildAjax::class,
+
+               Setup\EnqueueChild::class,
+               Setup\Functions::class,
+			Setup\Setup::class,
+
+
 		];
 
 	}
