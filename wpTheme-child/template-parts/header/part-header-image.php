@@ -30,8 +30,18 @@
                ?>
                     <div class="header header__logo--div<?php echo ($ExtraClasses);?>">
                          <!-- Show Logo -->
-                         <?php echo wp_kses_post( $wpTheme_headerimg_before ); ?>
-                         <img class=" header header__logo--image" src="<?php echo esc_url( $logo[0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
+                         <?php
+                         echo wp_kses_post( $wpTheme_headerimg_before );
+
+                         // echo (__FILE__ . ' - ' . __LINE__ . '<br><pre>');
+                         // print_r ( $logo );
+                         // echo ('--------------------------------------------</pre>');
+                         ?>
+                         <picture>
+                              <source class="header header__logo--image" srcset="<?php echo esc_url( $logo['medium'][0] );?> 1x, <?php echo esc_url( $logo['large'][0] );?> 2x" media="(max-width: 37.5em)"> <!-- 600 px -->
+                              <img class="header header__logo--image" src="<?php echo esc_url( $logo['large'][0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
+                         </picture>
+
                          <?php echo wp_kses_post( $wpTheme_headerimg_after ); ?>
                     </div>
                <?php
