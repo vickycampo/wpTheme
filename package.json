@@ -28,6 +28,7 @@
           "npm": "^6.10.1"
      },
      "devDependencies": {
+          "cross-env": "^5.2.0",
           "node-sass": "^4.12.0"
      }
 }

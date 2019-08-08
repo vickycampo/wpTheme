@@ -21,12 +21,13 @@ const mix = require('laravel-mix');
      Run
       - npm run dev
 */
- var srcRootFolder = 'wpTheme-child/assets/src/scripts/';
+ var srcRootFolder =  'wpTheme-child/assets/src/scripts/';
  var distRootFolder = 'wpTheme-child/assets/dist/js';
  mix.js( srcRootFolder + 'app.js', distRootFolder )
     .js( srcRootFolder + 'bootstrap.js', distRootFolder )
     .js( srcRootFolder + 'catNavBar.js', distRootFolder )
     .js( srcRootFolder + 'child_ajax.js', distRootFolder )
+    .js( srcRootFolder + 'load_more.js', distRootFolder )
     .js( srcRootFolder + 'topNavBar.js', distRootFolder )
     .js( srcRootFolder + 'wpChildTheme.js', distRootFolder )
     .js( srcRootFolder + 'popper.js', distRootFolder )

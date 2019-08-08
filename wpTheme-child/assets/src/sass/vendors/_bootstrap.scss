@@ -1,2 +1,11 @@
 // Bootstrap and its default variables
-@import "node_modules/bootstrap/scss/bootstrap";
+
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+
+@import "node_modules/bootstrap/scss/breadcrumb";
+@import "node_modules/bootstrap/scss/dropdown";
+@import "node_modules/bootstrap/scss/navbar";

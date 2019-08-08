@@ -2,7 +2,7 @@
 Create a Base theme
 
 
-The purpose of this project is to start creating a stadard theme. So it can later be implemented and devoleped into a Premium Theme. Will be created using the Wordpress.org Theme Hand Book.
+The purpose of this project is to start creating a standard theme. So it can later be implemented into a Premium Theme. Will be created using the Wordpress.org Theme Hand Book.
 
 There are two folders in this project, one that contains the files for the Base theme (wpTheme) and the other that holds the files for a  child theme that we will be implementing as long as the parent theme.
 
@@ -20,4 +20,8 @@ Instructions:
 5. Install composer - composer install		
 6. Create package.json file - cd /path/to/package - npm init
 7. Install - npm install
-8.
+
+Clean Laravel Installation ( composer create-project laravel/laravel webinterface)
+1. run: composer install
+2. run: npm install
+3. run: npm run dev

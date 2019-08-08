@@ -21,8 +21,7 @@
           //Add hook
           wptheme\Custom\Hooks::tha_content_before();
           ?>
-
-          <div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
+          <div class="row"><div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
                <!-- Add hook -->
                <?php wptheme\Custom\Hooks::tha_content_top(); ?>
                <!-- The loop -->
@@ -66,31 +65,29 @@
                if( $my_query->have_posts() )
                {
                     ?>
-                    <div class="grid-row">
-                         <div class="grid-column read-more-results">
-                         <?php
-                              while ( $my_query->have_posts() )
-                              {
-                                   ?>
-                                   <div class="grid-element">
-                                   <?php
-                                        $my_query->the_post();
-                                        //get template part depending on the template format we are displaying
-                                        if ( ( get_post_format() ) && ( locate_template( array( 'template-parts/post-' . get_post_format() . '.php' ) ) != '') )
-                                        {
-                                             get_template_part('template-parts/post', get_post_format());
-                                        }
-                                        else
-                                        {
-                                             get_template_part('template-parts/post', 'post');
-                                        }
-                                   ?>
-                                   </div>
-                                   <?php
-                              }
-                         ?>
-                         </div> <!-- $containerClass-->
-                    </div> <!-- containerRow -->
+                    <div class="grid-content grid-row read-more-results">
+                    <?php
+                         while ( $my_query->have_posts() )
+                         {
+                              ?>
+                              <div class="grid-element">
+                              <?php
+                                   $my_query->the_post();
+                                   //get template part depending on the template format we are displaying
+                                   if ( ( get_post_format() ) && ( locate_template( array( 'template-parts/post-' . get_post_format() . '.php' ) ) != '') )
+                                   {
+                                        get_template_part('template-parts/post', get_post_format());
+                                   }
+                                   else
+                                   {
+                                        get_template_part('template-parts/post', 'post');
+                                   }
+                              ?>
+                              </div>
+                              <?php
+                         }
+                    ?>
+                    </div> <!-- $containerClass-->
                     <?php get_template_part('template-parts/part', 'navigation' ); ?>
                <?php
                }
@@ -98,7 +95,7 @@
                ?>
 
                <?php wptheme\Custom\Hooks::tha_content_bottom(); ?>
-          </div>
+          </div> <!-- the_content  --></div> <!-- row  -->
 
           <?php wptheme\Custom\Hooks::tha_content_after(); ?>
           <?php get_sidebar('left'); ?>
