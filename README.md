@@ -32,3 +32,10 @@ The latest webpack release is:
 installing Laravel Mix
 1. npm install laravel-mix --save-dev
 2. https://laravel-mix.com/docs/4.1/installation
+
+Try doing a full reset:
+
+rm -rf node_modules
+rm package-lock.json yarn.lock
+npm cache clear --force
+npm install
