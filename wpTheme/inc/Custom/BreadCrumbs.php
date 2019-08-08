@@ -20,7 +20,7 @@ class BreadCrumbs
           if ( isset( $options['breadcrumbs'] )  && ( true == $options['breadcrumbs'] ) )
           {
                add_action( 'wp_enqueue_scripts', array( $this , 'load_dashicons_front_end' ) );
-               add_action( 'tha_content_top', array ( $this , 'breadcrumbs') );
+               add_action( 'tha_content_before', array ( $this , 'breadcrumbs') );
           }
      }
      function load_dashicons_front_end()
@@ -31,6 +31,7 @@ class BreadCrumbs
      {
           global $post, $paged;
           ?>
+          <div class="row" >
           <nav class="my-breadcrumbs" aria-label="breadcrumb">
                <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -126,6 +127,7 @@ class BreadCrumbs
           ?>
                </ol>
           </nav>
+          </div>
           <?php
      }
 }
