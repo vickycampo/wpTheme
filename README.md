@@ -25,3 +25,9 @@ Clean Laravel Installation ( composer create-project laravel/laravel webinterfac
 1. run: composer install
 2. run: npm install
 3. run: npm run dev
+
+The latest webpack release is:
+1. npm install --save-dev webpack
+
+installing Laravel Mix
+1. npm install laravel-mix --save-dev
