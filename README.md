@@ -31,3 +31,4 @@ The latest webpack release is:
 
 installing Laravel Mix
 1. npm install laravel-mix --save-dev
+2. https://laravel-mix.com/docs/4.1/installation
