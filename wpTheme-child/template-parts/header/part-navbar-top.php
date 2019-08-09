@@ -110,7 +110,7 @@ if ( has_nav_menu( $location ) )
 
           <!-- /Toggler -->
           <!-- grouping and hiding navbar contents by a parent breakpoint -->
-          <div class="collapse navbar-collapse" id="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target">
+          <div class="collapse navbar-collapse " id="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target">
                <?php
                //Displays a navigation menu.
                wp_nav_menu( $navbar );

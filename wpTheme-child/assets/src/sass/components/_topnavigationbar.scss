@@ -37,6 +37,7 @@
                     left: 0;
                     z-index: 1030;
                }
+
                .navbar-brand.navbar-logo
                {
                     color: $color-white;
@@ -88,11 +89,27 @@
                font-size: 14px;
                ul
                {
+               
+                    &.align-left
+                    {
+                         text-align: left;
+                    }
+                    &.align-center
+                    {
+                         margin-left: auto!important;
+                         margin-right: auto!important;
+                    }
+                    &.align-right
+                    {
+                         text-align: right;
+                    }
                     li
                     {
                          display: inline-block;
                          margin-left: 10px;
                          margin-right: 10px;
+                         font-family: 'Lato', sans-serif;
+                         font-weight: 700;
                          a
                          {
                               color: #F5F5F5;

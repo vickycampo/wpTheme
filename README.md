@@ -34,8 +34,12 @@ installing Laravel Mix
 2. https://laravel-mix.com/docs/4.1/installation
 
 Try doing a full reset:
-
-rm -rf node_modules
-rm package-lock.json yarn.lock
-npm cache clear --force
-npm install
+windows:
+1. cd node_modules
+2. DEL /F/Q/S *.* > NUL
+3. cd ..
+4. RMDIR /Q/S node_modules
+5. run: composer install
+6. run: npm install
+7. npm install --save jquery popper.js
+8. run: npm run dev

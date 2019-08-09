@@ -124,9 +124,9 @@ class CallBacks
      {
           $color = array (
                '' => __( "Don't Push Items", 'wpTheme' ),
-               'mr-auto' => __( 'To the Left', 'wpTheme' ),
-               'mx-auto' =>  __( 'Center', 'wpTheme' ),
-               'ml-auto' => __( 'To the Rigth', 'wpTheme' )
+               'align-left' => __( 'To the Left', 'wpTheme' ),
+               'align-center' =>  __( 'Center', 'wpTheme' ),
+               'align-right' => __( 'To the Rigth', 'wpTheme' )
 
           );
           return ($color);

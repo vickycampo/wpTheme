@@ -127,9 +127,14 @@ We create the clases for the fixed height of the header image div
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    text-align: center;
                     @if ( $i == 4 )
                     {
                          flex-direction: row;
+                         .header__spacerDiv
+                         {
+                              display: none;
+                         }
                     }
                     @else
                     {
