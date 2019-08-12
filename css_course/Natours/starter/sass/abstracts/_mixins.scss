@@ -1,4 +1,8 @@
 @mixin clearfix {
+     /*
+          When all the elements are float the div gets a hight cero.
+          to fix that we use this function.
+     */
     &::after {
         content: "";
         display: table;
