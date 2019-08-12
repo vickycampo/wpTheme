@@ -584,40 +584,28 @@ body {
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
   .row .col-1-of-2 {
-    background-color: red;
     width: calc( 1 * ((100% - 6rem) / 2)  + 0rem); }
   .row .col-2-of-2 {
-    background-color: red;
     width: calc( 2 * ((100% - 6rem) / 2)  + 6rem); }
   .row .col-3-of-2 {
-    background-color: red;
     width: calc( 3 * ((100% - 6rem) / 2)  + 12rem); }
   .row .col-4-of-2 {
-    background-color: red;
     width: calc( 4 * ((100% - 6rem) / 2)  + 18rem); }
   .row .col-1-of-3 {
-    background-color: red;
     width: calc( 1 * ((100% - 12rem) / 3)  + 0rem); }
   .row .col-2-of-3 {
-    background-color: red;
     width: calc( 2 * ((100% - 12rem) / 3)  + 6rem); }
   .row .col-3-of-3 {
-    background-color: red;
     width: calc( 3 * ((100% - 12rem) / 3)  + 12rem); }
   .row .col-4-of-3 {
-    background-color: red;
     width: calc( 4 * ((100% - 12rem) / 3)  + 18rem); }
   .row .col-1-of-4 {
-    background-color: red;
     width: calc( 1 * ((100% - 18rem) / 4)  + 0rem); }
   .row .col-2-of-4 {
-    background-color: red;
     width: calc( 2 * ((100% - 18rem) / 4)  + 6rem); }
   .row .col-3-of-4 {
-    background-color: red;
     width: calc( 3 * ((100% - 18rem) / 4)  + 12rem); }
   .row .col-4-of-4 {
-    background-color: red;
     width: calc( 4 * ((100% - 18rem) / 4)  + 18rem); }
 
 .header {

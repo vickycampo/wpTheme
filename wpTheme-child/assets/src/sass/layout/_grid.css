@@ -25,6 +25,7 @@
                {
                     .col-#{$j}-of-#{$i}
                     {
+                         background-color: red;
                          width: calc( #{$j} * ((100% - #{($i - 1 ) * $gutter-horizontal}) / #{$i})  + #{($j - 1) * $gutter-horizontal});
                     }
 
