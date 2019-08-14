@@ -1,0 +1,39 @@
+<?php
+
+namespace wptchild\Core;
+
+/**
+* Menus
+*/
+class Menus
+{
+     /**
+     * register default hooks and actions for WordPress
+     * @return
+     */
+     public $menu_location = [];
+     public function register()
+     {
+          $this -> setMenuLoctaion ();
+          add_action( 'after_setup_theme', array( $this, 'menus' ) );
+     }
+     public function setMenuLoctaion ()
+     {
+          $this->menu_location[] = array(
+          'top' => esc_html__( 'Top Header Navigation', 'wpTheme' ),
+         	'main' => esc_html__( 'Main Navigation', 'wpTheme' ),
+         	'footer' => esc_html__( 'Footer Navigation', 'wpTheme' )
+          );
+     }
+     public function menus()
+     {
+          /*
+          Register all your menus here
+          */
+          foreach ( $this->menu_location as $i => $menu )
+          {
+               register_nav_menus($menu);
+          }
+
+     }
+}

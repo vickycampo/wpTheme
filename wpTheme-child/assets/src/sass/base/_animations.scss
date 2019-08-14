@@ -1,0 +1,39 @@
+/* animations */
+@keyframes moveInLeft {
+     /* Start fo the animation */
+     0%{
+          opacity: 0;
+          transform: translateX(-100px);
+     }
+     /* Middle steps */
+     80%{
+          transform: translateX(10px);
+     }
+     /* End of the animation */
+     100%{
+          opacity: 1;
+          transform: translateX(0);
+     }
+}
+@keyframes moveInRight {
+     /* Start fo the animation */
+     0%{
+          opacity: 0;
+          transform: translateX(100px);
+     }
+     /* Middle steps */
+     80%{
+          transform: translateX(-10px);
+     }
+     /* End of the animation */
+     100%{
+          opacity: 1;
+          transform: translateX(0);
+     }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 766px) {
+  .header-food-image-div {
+    text-align: center;
+  }
+}

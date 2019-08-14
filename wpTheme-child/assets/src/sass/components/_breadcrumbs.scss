@@ -1,0 +1,66 @@
+/*
+
+@package WordPress
+@subpackage wpChildTheme
+@since wpTheme
+
+	===================================
+		BREADCRUMBS STYLES CSS
+	===================================
+*
+*/
+/* contentainer */
+.my-breadcrumbs
+{
+     margin-top: 15px;
+     color: $color-dark-grey;
+     font-size: 1.5rem;
+
+     a
+     {
+          color: $color-dark-grey;
+     }
+     a:hover
+     {
+          color: $color-orange;
+     }
+     .breadcrumb
+     {
+          border-radius: 10px;
+          margin-bottom: 0px;
+          margin-left: 10vw;
+          margin-right: 10vw;
+          width: 80vw;
+          .breadcrumb-item + .breadcrumb-item::before
+          {
+               color:$color-orange;
+               font-weight: 600;
+               font-size: 10px;
+               content: ">>";
+
+
+          }
+
+     }
+
+
+}
+.breadcrumb-home
+{
+     &::before
+     {
+          font-family: "dashicons";
+          content: "\f102";
+          color: $color-dark-grey;
+          display: inline-block;
+          -webkit-font-smoothing: antialiased;
+          font: normal 20px/1;
+          vertical-align: top;
+          margin-right: 5px;
+          margin-right: 0.5rem;
+     }
+     &:hover::before
+     {
+          color: $color-orange;
+     }
+}

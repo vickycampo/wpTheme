@@ -1,0 +1,49 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand+SC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lacquer&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Beth+Ellen&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:700&display=swap');
+
+html body
+{
+     font-family: "Lato", sans-serif;
+     font-weight: 400;
+     font-size: 1rem;
+     line-height: 1.7;
+     color: $color-dark-grey;
+}
+.heading-primary
+{
+     color: $color-white;
+     text-transform: uppercase;
+
+     backface-visibility: hidden;
+     margin-bottom: 6.0rem;
+     &--main
+     {
+          display: block;
+          font-size: 6.0rem;
+          font-weight: 400;
+          letter-spacing: 3.5rem;
+          animation-name: moveInLeft;
+          animation-duration: 1s;
+          animation-timing-function: ease-out;
+
+     }
+     &--sub
+     {
+          display: block;
+          font-size: 2.0rem;
+          font-weight: 400;
+          letter-spacing: 1.74rem;
+          animation-name: moveInRight;
+          animation-duration: 1s;
+          animation-timing-function: ease-out;
+     }
+}
+.header.header__description
+{
+     font-family: 'Lacquer', sans-serif;
+     letter-spacing: 2px;
+}

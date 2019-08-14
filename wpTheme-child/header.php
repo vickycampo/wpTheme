@@ -39,7 +39,7 @@
           bloginfo('description');
      } ?>" />
      <?php
-     //get the theme options
+     /* get the theme options */
           $options = get_option( 'wpTheme_options' );
      /* We get the defaults */
           $defaults = wptchild\Setup\Functions::get_theme_defaults();
@@ -61,10 +61,7 @@
 <body <?php body_class( $fixed_nav ); ?>>
 
      <?php wptheme\Custom\Hooks::tha_body_top(); ?>
-     <!-- Create a div that is going to wrap all the content -->
-     <!-- Add the head part-->
      <?php wptheme\Custom\Hooks::tha_header_before(); ?>
-     <header class="header">
           <?php
           wptheme\Custom\Hooks::tha_header_top();
           /* Do we have a fixed hight */
@@ -74,16 +71,12 @@
                $height = 'fixed-height-' . $options['big_header_image']['percentage'];
           }
           /* do we have a file for the background */
-
           $as_background = '';
           $class = '';
           if ( isset ($options['big_header_image']['as_background']) )
           {
-               error_log (__FILE__ . ' - ' . __LINE__);
-               error_log ( print_r ( $options['big_header_image'] , true) );
-
                $as_background = 'style="background-image:url('.$options['big_header_image']['as_background'].');"';
-               $class = ' as_background';
+               $class = ' as-background';
           }
           else if ( get_custom_header() )
           {
@@ -94,11 +87,11 @@
                /*we check the size of the image */
                if ( $width < 900)
                {
-                    $class = ' as_background_tile';
+                    $class = ' as-background-tile';
                }
                else
                {
-                    $class = ' as_background';
+                    $class = ' as-background';
                }
 
 
@@ -106,16 +99,17 @@
 
           ?>
 
-          <div id="header-img" class="header-img <?php echo esc_attr( $class ); ?> <?php echo esc_attr( $height ); ?> parallax_effect" <?php echo ( $as_background ); ?> "> <!-- Header-img -->
-               <!-- Top Navitagion bar part -->
-               <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
-               <!-- Header Image part -->
-               <?php get_template_part( 'template-parts/header/part', 'header-image' ); ?>
+     <header id="header" class="header <?php echo esc_attr( $class ); ?> <?php echo esc_attr( $height ); ?>" <?php echo ( $as_background ); ?> >
+          <!-- Top Navitagion bar part -->
+          <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
+          <!-- Header Image part -->
+          <?php get_template_part( 'template-parts/header/part', 'header-image' ); ?>
+          <!-- Main Navitagion bar part -->
+          <?php get_template_part( 'template-parts/header/part', 'navbar-main' ); ?>
 
-          </div> <!-- Header-img -->
-          <!-- Main Navigation bar part -->
-          <?php get_template_part( 'template-parts/header/part', 'subcategory-bar' ); ?>
+     </header> <!-- Header-img -->
+     <!-- Main Navigation bar part -->
+     <?php get_template_part( 'template-parts/header/part', 'subcategory-bar' ); ?>
           <?php wptheme\Custom\Hooks::tha_header_bottom(); ?>
-     </header>
      <?php wptheme\Custom\Hooks::tha_header_after(); ?>
-     <main class="container" id="wrap"> <!-- wrap div-->
+     <main class="container" id="wrap"> 

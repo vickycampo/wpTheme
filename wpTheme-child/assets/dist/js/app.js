@@ -17790,87 +17790,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./wpTheme-child/assets/src/sass/body.scss":
-/*!*************************************************!*\
-  !*** ./wpTheme-child/assets/src/sass/body.scss ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./wpTheme-child/assets/src/sass/bootstrap.scss":
-/*!******************************************************!*\
-  !*** ./wpTheme-child/assets/src/sass/bootstrap.scss ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./wpTheme-child/assets/src/sass/breadcrumbs.scss":
-/*!********************************************************!*\
-  !*** ./wpTheme-child/assets/src/sass/breadcrumbs.scss ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./wpTheme-child/assets/src/sass/child-style.scss":
-/*!********************************************************!*\
-  !*** ./wpTheme-child/assets/src/sass/child-style.scss ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./wpTheme-child/assets/src/sass/header.scss":
-/*!***************************************************!*\
-  !*** ./wpTheme-child/assets/src/sass/header.scss ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./wpTheme-child/assets/src/sass/style.scss":
 /*!**************************************************!*\
   !*** ./wpTheme-child/assets/src/sass/style.scss ***!
   \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./wpTheme-child/assets/src/sass/subCat_nav.scss":
-/*!*******************************************************!*\
-  !*** ./wpTheme-child/assets/src/sass/subCat_nav.scss ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./wpTheme-child/assets/src/sass/top-nav.scss":
-/*!****************************************************!*\
-  !*** ./wpTheme-child/assets/src/sass/top-nav.scss ***!
-  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -17894,21 +17817,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./wpTheme-child/assets/src/scripts/app.js ./wpTheme-child/assets/src/sass/body.scss ./wpTheme-child/assets/src/sass/bootstrap.scss ./wpTheme-child/assets/src/sass/breadcrumbs.scss ./wpTheme-child/assets/src/sass/child-style.scss ./wpTheme-child/assets/src/sass/style.scss ./wpTheme-child/assets/src/sass/header.scss ./wpTheme-child/assets/src/sass/subCat_nav.scss ./wpTheme-child/assets/src/sass/top-nav.scss ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** multi ./wpTheme-child/assets/src/scripts/app.js ./wpTheme-child/assets/src/sass/style.scss ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\scripts\app.js */"./wpTheme-child/assets/src/scripts/app.js");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\body.scss */"./wpTheme-child/assets/src/sass/body.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\bootstrap.scss */"./wpTheme-child/assets/src/sass/bootstrap.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\breadcrumbs.scss */"./wpTheme-child/assets/src/sass/breadcrumbs.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\child-style.scss */"./wpTheme-child/assets/src/sass/child-style.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\style.scss */"./wpTheme-child/assets/src/sass/style.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\header.scss */"./wpTheme-child/assets/src/sass/header.scss");
-__webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\subCat_nav.scss */"./wpTheme-child/assets/src/sass/subCat_nav.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\top-nav.scss */"./wpTheme-child/assets/src/sass/top-nav.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\wpTheme-child\assets\src\sass\style.scss */"./wpTheme-child/assets/src/sass/style.scss");
 
 
 /***/ })

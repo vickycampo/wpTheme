@@ -1,0 +1,36 @@
+.row {
+    max-width: $grid-width;
+    background-color: #EEE;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;
+
+    [class^="col-"] {
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+
+    @for $i from 2 through 4
+     {
+          @for $j from 1 through 4
+          {
+               @if ( #{$j} < #{$i} )
+               {
+                    .col-#{$j}-of-#{$i}
+                    {
+                         width: calc( #{$j} * ((100% - #{($i - 1 ) * $gutter-horizontal}) / #{$i})  + #{($j - 1) * $gutter-horizontal});
+                    }
+
+               }
+          }
+     }
+
+
+}

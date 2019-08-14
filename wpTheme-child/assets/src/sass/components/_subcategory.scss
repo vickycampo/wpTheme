@@ -1,0 +1,177 @@
+/*
+
+@package WordPress
+@subpackage wpChildTheme
+@since wpTheme
+
+	=============================
+		SUB CAT NAVIGATION BAR
+	=============================
+*
+* Set the styles for the top navigation bar
+*
+*/
+
+/* The content of the menu */
+     .sub-cat
+     {
+          &-div
+          {
+               display: inline-block;
+               max-width: 80vw;
+               margin-left: 10vw;
+               margin-right: 10vw;
+
+               color: white;
+
+               display: flex;
+               flex-direction: row;
+               flex-wrap: wrap;
+               justify-content: center;
+               margin-top: 15px;
+          }
+          &-button
+          {
+               background-color: #101010;
+               color: #F5F5F5;
+               margin:3px;
+               text-transform: capitalize;
+               border-radius: 10px;
+               padding:5px;
+               border: none;
+               border-radius: 0px;
+
+               &::after
+               {
+                    color:$color-orange;
+               }
+               &:hover
+               {
+                    color:$color-orange;
+               }
+               &:focus
+               {
+                    box-shadow: 0 0 0 0rem;
+               }
+               span
+               {
+                    font-weight: bold;
+                    font-size: 12px;
+                    padding-right: 5px;
+                    border-right: 1px solid $color-orange;
+               }
+          }
+          &-menu
+          {
+               &.dropdown-menu
+               {
+                    padding: 0px;
+                    margin: 0px;
+                    border: none;
+                    color: $color-white;
+                    background-color: transparent;
+                    padding-right: 6px;
+                    width: 100%;
+
+                    .dropdown-item
+                    {
+                         font-size: 12px;
+                         font-weight: lighter;
+
+                         padding-left: 10px;
+                         padding-top: 0px;
+                         padding-bottom: 3px;
+
+                         background-color: $color-black;
+                         color: $color-middle-grey;
+                         cursor: pointer;
+                         width: 100%;
+
+                         border-bottom: 1px;
+                         border-color: $color-middle-grey;
+                         border-style: solid;
+
+                         &:hover
+                         {
+                              color: $color-orange;
+                              background-color: $color-dark-grey;
+
+                         }
+                    }
+                    .dropdown-subitem
+                    {
+                         padding-left: 15px;
+                    }
+                    .dropdown-divider
+                    {
+                         margin: 0px;
+                         line-height:auto;
+                    }
+               }
+
+          }
+
+          &-filters
+          {
+
+               display: flex;
+               flex-direction: row;
+               flex-wrap: wrap;
+               justify-content: center;
+
+               height: auto;
+               /* visibility: hidden; */
+
+               div
+               {
+
+               }
+               &-element
+               {
+                    border: 1px solid #A9A9A9;
+                    color: #505050;
+                    background-color: #DCDCDC;
+                    vertical-align: middle;
+
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 0px;
+                    /* min-width: 100px; */
+
+                    margin: 3px;
+               }
+               &-name
+               {
+                    text-align: center;
+                    vertical-align: middle;
+                    padding:7px;
+                    padding-left: 3px;
+                    border-left: 1px solid #A9A9A9;
+                    min-width: 100px;
+                    margin: 0px;
+                    display: inline-block;
+               }
+               &-close
+               {
+                    display: inline-block;
+                    vertical-align: middle;
+                    background-color: #BEBEBE;
+                    text-align: center;
+                    padding:7px;
+                    cursor: pointer;
+                    min-height: 100%;
+                    max-height: 100%;
+
+
+                    &::before
+                    {
+                         content: "X";
+                    }
+                    &:hover::before
+                    {
+                         color: $color-orange;
+                    }
+               }
+
+          }
+     }

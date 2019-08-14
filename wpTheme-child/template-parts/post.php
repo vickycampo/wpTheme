@@ -11,8 +11,8 @@
 * The main template file. It is required in all themes.
 */
 ?>
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
+<article <?php post_class( array ( 'flex-item', 'background-grey', 'mr-2', 'ml-2', 'pr-2', 'pr-2' ) ); ?> id="post-<?php the_ID(); ?>">
 	<?php
 	get_template_part( 'template-parts/part', 'title' );
 	wptheme\Custom\Hooks::tha_entry_before(); ?>
@@ -35,7 +35,7 @@
 		}
 		else
 		{
-			if(has_post_thumbnail())
+			if ( has_post_thumbnail () )
 			{
 			?>
 				<div class="pull-left"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'thumbnail', array( 'class' => 'img-thumbnail media-object' ) ); ?></a></div>

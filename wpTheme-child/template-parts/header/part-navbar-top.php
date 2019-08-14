@@ -13,12 +13,12 @@
 /* Check if the top navigation bar is active */
 /* This nav Bar Location  */
 $location = 'top';
-// error_log (__FILE__.' - '.__FILE__.' - '.'options');
-// error_log (print_r ( has_nav_menu( $location ) , true ));
-// error_log ('------------------------------------------------');
 if ( has_nav_menu( $location ) )
 {
      include('part-nav-options.php' );
+     // echo ('<pre style="color:white; text-align:"right">' . __LINE__ .' - ');
+     // print_r ( $options['nav_menu_css']);
+     // echo ('------------------------------------------------</pre>');
 
      //Collapse target name
      $data_target = 'theme_location_top';
@@ -47,7 +47,7 @@ if ( has_nav_menu( $location ) )
      <!--navbar - Defines that is a navbar -->
      <!--navbar-expand-lg - The breakpoint for collapsing -->
      <!--navbar-light - Without it the button won't show -->
-     <nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="navbar <?php echo ( $adminbarClass ); ?> <?php echo ( $fixed_nav ); ?> navbar-expand-<?php echo ( $screen_size ); ?> <?php esc_html_e( $bar_background_color , 'wpTheme' ); ?> <?php esc_html_e( $data_target , 'wpTheme' ); ?> <?php esc_html_e( $inverse_class , 'wpTheme' ); ?>" >
+     <nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav navbar <?php echo ( $adminbarClass ); ?> <?php echo ( $fixed_nav ); ?> navbar-expand-<?php echo ( $screen_size ); ?> <?php esc_html_e( $bar_background_color , 'wpTheme' ); ?> <?php esc_html_e( $data_target , 'wpTheme' ); ?> <?php esc_html_e( $inverse_class , 'wpTheme' ); ?>" >
           <!-- Toggler -->
           <?php
           /* DISPLAY A CUSTOM LOGO */
@@ -100,13 +100,17 @@ if ( has_nav_menu( $location ) )
           }
           ?>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target" aria-controls="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'wpTheme' ); ?>">
-               <span class="hamburger"></span>
+               <span class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+               </span>
           </button>
 
 
           <!-- /Toggler -->
           <!-- grouping and hiding navbar contents by a parent breakpoint -->
-          <div class="collapse navbar-collapse" id="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target">
+          <div class="collapse navbar-collapse " id="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_target">
                <?php
                //Displays a navigation menu.
                wp_nav_menu( $navbar );

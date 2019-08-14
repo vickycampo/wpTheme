@@ -16,36 +16,32 @@
      /* Do we have to display the site title in the header image? */
      /* add site logo */
      ?>
-     <div class="header-content">
-     <?php
 
+     <div class="header header__content">
+          <div class="header header__spacerDiv">
+
+          </div>
+     <?php
      if ( ( $show_site_logo ) && ( function_exists( 'the_custom_logo' ) ) )
      {
-          $custom_logo_id = get_theme_mod( 'custom_logo' );
-          $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-
           /* we check if there is a logo file */
           if ( $logo )
           {
-               /* check if we will aslo add name and description */
-               $ExtraClasses = '';
-               if ( $site_name )
-               {
-                    $ExtraClasses = ' has_site_name';
-               }
-               else if ( $site_description )
-               {
-                    $ExtraClasses = ' has_site_description';
-               }
-               if ( $site_name && $site_description )
-               {
-                    $ExtraClasses = 'has_site_name_description';
-               }
                ?>
-                    <div class="header-site-logo-div">
+                    <div class="header header__logo--div<?php echo ($ExtraClasses);?>">
                          <!-- Show Logo -->
-                         <?php echo wp_kses_post( $wpTheme_headerimg_before ); ?>
-                         <img class="header-site-logo <?php echo ($ExtraClasses);?>" src="<?php echo esc_url( $logo[0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
+                         <?php
+                         echo wp_kses_post( $wpTheme_headerimg_before );
+
+                         // echo (__FILE__ . ' - ' . __LINE__ . '<br><pre>');
+                         // print_r ( $logo );
+                         // echo ('--------------------------------------------</pre>');
+                         ?>
+                         <picture>
+                              <source class="header header__logo--image" srcset="<?php echo esc_url( $logo['medium'][0] );?> 1x, <?php echo esc_url( $logo['large'][0] );?> 2x" media="(max-width: 37.5em)"> <!-- 600 px -->
+                              <img class="header header__logo--image" src="<?php echo esc_url( $logo['large'][0] );?>" alt="<?php bloginfo('title'); ?>-logo" >
+                         </picture>
+
                          <?php echo wp_kses_post( $wpTheme_headerimg_after ); ?>
                     </div>
                <?php
@@ -56,7 +52,7 @@
      if ( $site_name || $site_description )
      {
           ?>
-          <div class="header-site-info-div">
+          <div class="header header__info--div">
           <?php
           /* Display the site name and description */
           if ( isset( $options['alth1'] ) && $options['alth1'] == true)
@@ -65,8 +61,8 @@
                if ( $site_name )
                {
                     ?>
-                    <div class="header-site-title-div">
-                         <h1 class="alt header-site-title">
+                    <div class="header header__title--div">
+                         <h1 class="alt header__title">
                          <a href="<?php echo esc_url( home_url() ) ?>" title="<?php bloginfo('title'); ?>">
                               <?php bloginfo('title'); ?>
                          </a>
@@ -78,8 +74,8 @@
                if ( $site_description )
                {
                     ?>
-                    <div class="header-site-description-div">
-                         <h2 class="alt header-site-description">
+                    <div class="header header__description--div">
+                         <h2 class="alt header__description">
                               <?php bloginfo('description'); ?>
                          </h2>
                     </div>
@@ -92,8 +88,8 @@
                if ( $site_name )
                {
                     ?>
-                    <div class="header-site-title-div">
-                         <h1 class="header-site-title">
+                    <div class="header header__title--div">
+                         <h1 class="header header__title">
                               <a href="<?php echo esc_url( home_url() ) ?>" title="<?php bloginfo('title'); ?>">
                                    <?php bloginfo('title'); ?>
                               </a>
@@ -108,8 +104,8 @@
                if ( $site_description )
                {
                     ?>
-                    <div class="header-site-description-div">
-                         <h2 class="header-site-description">
+                    <div class="header header__description--div">
+                         <h2 class="header header__description">
                               <?php bloginfo('description'); ?>
                          </h2>
                     </div>
