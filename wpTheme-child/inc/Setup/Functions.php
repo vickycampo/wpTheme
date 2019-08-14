@@ -19,10 +19,10 @@ class Functions
           $menu_opt = array
           (
                'show_hide_brand' => 1,
-               'background_color' => '',
-               'inverse' => 0,
-               'margin' => '',
-               'custom_logo' => ''
+               'margin' => 'align-center',
+               // 'background_color' => '',
+               // 'inverse' => 0,
+               // 'custom_logo' => ''
           );
           $nav_menus = array
           (

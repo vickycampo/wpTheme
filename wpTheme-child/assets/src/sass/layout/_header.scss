@@ -1,0 +1,225 @@
+/*
+
+@package WordPress
+@subpackage wpChildTheme
+@since wpTheme
+
+===================================
+HEADER STYLES CSS
+===================================
+*
+*/
+/*
+===================================
+HEADER
+===================================
+*/
+/* Standard for all header heights */
+.header {
+
+     &__logo--image
+     {
+
+          width:auto;
+          max-height: 90%;
+          max-width: 75vw;
+
+          $top: 50%;
+          $left: 50%;
+          $x: -50%;
+          $y: -50%;
+          @include centerBlock ($top , $left , $x , $y);
+     }
+     &__title
+     {
+          margin: 0px;
+          &--div
+          {
+               /* Animation */
+               animation-name: moveInLeft;
+               animation-duration: 1s;
+               animation-timing-function: ease-out;
+               color: white;
+          }
+          a
+          {
+               display: block;
+               font-weight:500;
+               letter-spacing: 5px;
+               text-align: center;
+               color: #FFF;
+               margin: 0px;
+          }
+          a:hover
+          {
+               display: block;
+               font-weight:500;
+               letter-spacing: 5px;
+               text-align: center;
+               color: #F8F9F9;
+               margin: 0px;
+          }
+     }
+     &__description
+     {
+          letter-spacing: 5px;
+          text-align: center;
+
+          color: $color-orange;
+          font-family: 'Rock Salt', cursive;
+          font-weight: bold;
+          word-wrap: break-word;
+          &--div
+          {
+               animation-name: moveInRight;
+               animation-duration: 1s;
+               animation-timing-function: ease-out;
+          }
+     }
+
+
+}
+
+/* Define how we are going to put the background image */
+.as-background
+{
+     background-position: center;
+     background-size: cover;
+     justify-content: center;
+     background-color: black;
+     padding: 0px;
+     margin: 0px;
+
+     &-tile
+     {
+          background-color: black;
+          padding: 0px;
+          margin: 0px;
+     }
+}
+
+
+
+/*
+===================================
+HEADER
+===================================
+
+We create the clases for the fixed height of the header image div
+*/
+/* 600 o menos*/
+
+@for $i from 4 through 10
+{
+     .fixed-height-#{$i*10}
+     {
+          height: #{$i*10}vh;
+          width: 100vw;
+          &.header
+          {
+               .header__content
+               {
+
+                    height: #{$i*10}vh;
+                    /* --- flex --- */
+                    display: -webkit-flex; /* Safari */
+                    -webkit-align-items: center; /* Safari 7.0+ */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    @if ( $i == 4 )
+                    {
+                         flex-direction: row;
+                         .header__spacerDiv
+                         {
+                              display: none;
+                         }
+                    }
+                    @else
+                    {
+                         flex-direction: column;
+                    }
+                    .header__spacerDiv
+                    {
+                         height: 40px;
+                    }
+                    .header__logo--div
+                    {
+                         position: relative;
+                         height: #{$i*10}vh;
+                         width: 100vw;
+                         &--has-name
+                         {
+                              @if ( $i == 4 )
+                              {
+                                   position: relative;
+                                   height: #{$i*10 - 10}vh;
+                                   width: #{$i*10 - 10}vh;
+                              }
+                              @else
+                              {
+                                   position: relative;
+                                   height: #{$i*10 - $i*3}vh;
+                                   width: 100vw;
+                              }
+                         }
+                         &--has-description
+                         {
+                              @if ( $i == 4 )
+                              {
+                                   position: relative;
+                                   height: #{$i*10 - 10}vh;
+                                   width: #{$i*10 - 10}vh;
+                              }
+                              @else
+                              {
+                                   position: relative;
+                                   height: #{$i*10 - $i*2}vh;
+                                   width: 100vw;
+                              }
+                         }
+                         &--has-name-description
+                         {
+                              @if ( $i == 4 )
+                              {
+                                   position: relative;
+                                   height: #{$i*10 - 10}vh;
+                                   width: #{$i*10 - 10}vh;
+                              }
+                              @else
+                              {
+                                   position: relative;
+                                   height: #{$i*10 - 20 }vh;
+                                   width: 100vw;
+                              }
+                         }
+
+                    }
+
+                    .header__info--div
+                    {
+                         display: flex;
+                         flex-direction: column;
+                         justify-content: center;
+                         .header__title--div
+                         {
+                              .header__title
+                              {
+
+                                   font-size: #{ 2.5 + $i/10}rem;
+                              }
+                         }
+                         .header__description--div
+                         {
+                              .header__description
+                              {
+                                   font-size: #{ 1.5 + $i/10}rem;
+                              }
+                         }
+                    }
+               }
+
+          }
+     }
+}

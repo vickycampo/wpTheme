@@ -19,23 +19,34 @@ class BreadCrumbs
           $options = get_option( 'wpTheme_options' );
           if ( isset( $options['breadcrumbs'] )  && ( true == $options['breadcrumbs'] ) )
           {
-               add_action( 'tha_content_top', array ( $this , 'breadcrumbs') );
+               add_action( 'wp_enqueue_scripts', array( $this , 'load_dashicons_front_end' ) );
+               add_action( 'tha_content_before', array ( $this , 'breadcrumbs') );
           }
+     }
+     function load_dashicons_front_end()
+     {
+          wp_enqueue_style( 'dashicons' );
      }
      public function breadcrumbs()
      {
           global $post, $paged;
           ?>
+          <div class="row" >
           <nav class="my-breadcrumbs" aria-label="breadcrumb">
                <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                          <a href="<?php echo (home_url()); ?>">
-                              <i class="fa fa-home"></i>
+                              <span class="breadcrumb-home"></span>
                          </a>
                     </li>
 
           <?php
-          /**/
+          /*
+          error_log (__FILE__ . ' - ' . __LINE__);
+          error_log (print_r ( $categories , true) );
+          error_log ('-------------------------------------------------------------');
+          */
+
           /* if is a category of a single page we put the category */
           if ( is_category() || is_single() )
           {
@@ -43,9 +54,6 @@ class BreadCrumbs
                {
                     /* Get the current Category */
                     $categories = get_queried_object();
-                    // echo ('<pre>');
-                    // var_dump ($categories);
-                    // echo ('</pre>');
                }
                else
                {
@@ -115,9 +123,11 @@ class BreadCrumbs
                </li>
                <?php
           }
+
           ?>
                </ol>
           </nav>
+          </div>
           <?php
      }
 }

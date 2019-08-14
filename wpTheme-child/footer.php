@@ -14,7 +14,7 @@ FOOTER
 ?>
 
 
-</main> <!-- /wrap div-->
+</main> <!-- wrap div-->
 
 
 <?php wptheme\Custom\Hooks::tha_footer_before(); ?>

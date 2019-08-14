@@ -2591,6 +2591,7 @@ module.exports = g;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var popper_js_dist_popper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! popper.js/dist/popper */ "./node_modules/popper.js/dist/popper.js");
+// Bootstrap and its default variables
 
 
 /***/ }),

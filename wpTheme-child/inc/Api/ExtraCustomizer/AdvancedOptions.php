@@ -78,6 +78,26 @@ class AdvancedOptions extends BaseCustomizer
 			$settingsId = $Setings['index'];
 			$this->setControlDetails ( $settingsId , $ControlsList[$settingsId] );
 		}
+		/*---------------------------------------------------------------------------*/
+		$i ++ ;
+		$SettingsList[$i]['index'] = 'bs-screen-size';
+		$SettingsList[$i]['type'] = 'option';
+		$SettingsList[$i]['sanitize_callback'] = 'wpTheme_validate_screen_size';
+		$j = 0;
+		$settingsId = $SettingsList[$i]['index'];
+		$ControlsList[$settingsId][$j]['label'] = 'Select the screen size?';
+		$ControlsList[$settingsId][$j]['type'] = 'select';
+		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_screen_size';
+		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_screen_size';
+
+		/* Section Details */
+		$this->SetSectionDetails( 'Advanced Options' ,  160 );
+		$this->SetSettingDetails( $SettingsList );
+		foreach ($SettingsList as $i => $Setings)
+		{
+			$settingsId = $Setings['index'];
+			$this->setControlDetails ( $settingsId , $ControlsList[$settingsId] );
+		}
 
 	}
 }

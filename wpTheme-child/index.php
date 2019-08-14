@@ -17,13 +17,11 @@
 
      //we determine how many columns the content will ocuppy
      $wpTheme_content_columns = wptchild\Setup\Functions::get_content_columns('body'); ?>
-     <!-- add the class to the content div-->
-     <div class="row" >
-          <?php
+     <?php
           //Add hook
           wptheme\Custom\Hooks::tha_content_before();
           ?>
-          <div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
+          <div class="row"><div class="content <?php echo esc_attr( $wpTheme_content_columns ) ?> order-2 the_content">
                <!-- Add hook -->
                <?php wptheme\Custom\Hooks::tha_content_top(); ?>
                <!-- The loop -->
@@ -55,7 +53,7 @@
                     $my_query = new WP_Query( $args );
 
                }
-               else
+               else if ( is_single () )
                {
                     $args = array(
                          'post_type' => get_post_type(),
@@ -64,39 +62,43 @@
                     );
                     $my_query = new WP_Query( $args );
                }
-
-
-               if( $my_query->have_posts() ) :
+               if( $my_query->have_posts() )
+               {
                     ?>
-                    <div class="read-more-results">
+                    <div class="grid-content grid-row read-more-results">
                     <?php
-                         while ( $my_query->have_posts() ) : $my_query->the_post();
-
-                         //get template part depending on the template format we are displaying
-
-                         if ( ( get_post_format() ) && ( locate_template( array( 'template-parts/post-' . get_post_format() . '.php' ) ) != '') )
+                         while ( $my_query->have_posts() )
                          {
-                              get_template_part('template-parts/post', get_post_format());
+                              ?>
+                              <div class="grid-element">
+                              <?php
+                                   $my_query->the_post();
+                                   //get template part depending on the template format we are displaying
+                                   if ( ( get_post_format() ) && ( locate_template( array( 'template-parts/post-' . get_post_format() . '.php' ) ) != '') )
+                                   {
+                                        get_template_part('template-parts/post', get_post_format());
+                                   }
+                                   else
+                                   {
+                                        get_template_part('template-parts/post', 'post');
+                                   }
+                              ?>
+                              </div>
+                              <?php
                          }
-                         else
-                         {
-                              get_template_part('template-parts/post', 'post');
-                         }
-                    endwhile;
                     ?>
-                    </div>
+                    </div> <!-- $containerClass-->
                     <?php get_template_part('template-parts/part', 'navigation' ); ?>
                <?php
-               endif;
+               }
                wp_reset_query();  // Restore global post data stomped by the_post().
                ?>
 
                <?php wptheme\Custom\Hooks::tha_content_bottom(); ?>
-          </div>
+          </div> <!-- the_content  --></div> <!-- row  -->
 
           <?php wptheme\Custom\Hooks::tha_content_after(); ?>
           <?php get_sidebar('left'); ?>
           <?php get_sidebar('right'); ?>
-     </div><!-- /Row -->
 
      <?php get_footer(); ?>

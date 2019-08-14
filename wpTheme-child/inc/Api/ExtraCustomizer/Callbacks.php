@@ -124,9 +124,9 @@ class CallBacks
      {
           $color = array (
                '' => __( "Don't Push Items", 'wpTheme' ),
-               'mr-auto' => __( 'To the Left', 'wpTheme' ),
-               'mx-auto' =>  __( 'Center', 'wpTheme' ),
-               'ml-auto' => __( 'To the Rigth', 'wpTheme' )
+               'align-left' => __( 'To the Left', 'wpTheme' ),
+               'align-center' =>  __( 'Center', 'wpTheme' ),
+               'align-right' => __( 'To the Rigth', 'wpTheme' )
 
           );
           return ($color);
@@ -134,7 +134,6 @@ class CallBacks
      public static function wpTheme_percentages()
      {
           $percentage = array (
-               'auto' => __( "auto", 'wpTheme' ),
                '40' => __( '40%', 'wpTheme' ),
                '50' => __( '50%', 'wpTheme' ),
                '60' => __( '60%', 'wpTheme' ),
@@ -149,9 +148,6 @@ class CallBacks
      {
           return ('wpTheme_esc_textarea');
      }
-
-
-
      public static function wpTheme_validate_true_false( $value )
 	{
 		if ($value == false)
@@ -205,7 +201,6 @@ class CallBacks
 	{
 		return wp_kses_post( $value ); //Sanitize content for allowed HTML tags for post content.
 	}
-
      public static function wpTheme_validate_favicon( $value )
 	{
           error_log ( __FILE__ . ' - ' . __LINE__);
@@ -262,7 +257,7 @@ class CallBacks
 	}
      public static function wpTheme_validate_nav_menu_color( $value )
 	{
-		if ( !array_key_exists( $value, wpTheme_nav_menu_color() ) )
+		if ( !array_key_exists( $value, $this->wpTheme_nav_menu_color() ) )
 		{
 			//FALSE - NOT VALID
 			$value = null;
@@ -272,10 +267,12 @@ class CallBacks
 	}
      public static function wpTheme_validate_nav_menu_auto_margins( $value )
 	{
-		if ( !array_key_exists( $value, $this->wpTheme_nav_menu_auto_margins() ) )
+          //error_log ( print_r ( array_key_exists( $value, $this->wpTheme_nav_menu_auto_margins()) , true ) );
+		if ( ! array_key_exists( $value, $this->wpTheme_nav_menu_auto_margins() ) )
 		{
 			//FALSE - NOT VALID
 			$value = null;
+               return $value;
 		}
 		//TRUE - VALID
 		return $value;
@@ -316,4 +313,5 @@ class CallBacks
 
          return $value;
      }
+
 }

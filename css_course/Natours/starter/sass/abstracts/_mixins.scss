@@ -1,0 +1,18 @@
+@mixin clearfix {
+     /*
+          When all the elements are float the div gets a hight cero.
+          to fix that we use this function.
+     */
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

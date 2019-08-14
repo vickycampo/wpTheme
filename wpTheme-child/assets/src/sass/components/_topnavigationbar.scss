@@ -1,0 +1,146 @@
+/*
+
+@package WordPress
+@subpackage wpChildTheme
+@since wpTheme
+
+	==========================
+		TOP NAVIGATION BAR
+	==========================
+*
+* Set the styles for the top navigation bar
+*
+*/
+#theme_location
+{
+     &_top
+     {
+          &_nav
+          {
+               height: 40px;
+               background-color: transparent;
+               /* always on top? */
+               /* admin bar showing? */
+               &.admin_bar_not_showing
+               {
+                    position: fixed;
+                    top: 0px;
+                    right: 0;
+                    left: 0;
+                    z-index: 1030;
+               }
+               &.admin_bar_showing
+               {
+                    position: fixed;
+                    top: 32px;
+                    right: 0;
+                    left: 0;
+                    z-index: 1030;
+               }
+
+               .navbar-brand.navbar-logo
+               {
+                    color: $color-white;
+                    font-size: 1.25em;
+                    margin-left: 14px;
+                    &:hover
+                    {
+                         color: $color-orange;
+                    }
+
+                    .top_navbar_logo
+                    {
+                         object-fit: cover;
+                         width: 35px;
+                         height: auto;
+                    }
+               }
+               button
+               {
+                    margin-left: 10px;
+                    /* change the color of the burger */
+                    .hamburger
+                    {
+                         div
+                         {
+                              width: 35px;
+                              height: 5px;
+                              background-color: $color-orange;
+                              margin: 6px 0;
+                         }
+                    }
+               }
+               a
+               {
+                    color: $color-white;
+                    font-size: 1.5rem;
+               }
+               a:hover
+               {
+                    color: $color-orange;
+               }
+          }
+          &_target
+          {
+               margin: 0px;
+               padding: 0px;
+               border: 0px;
+               background-color: transparent;
+               font-size: 14px;
+               ul
+               {
+               
+                    &.align-left
+                    {
+                         text-align: left;
+                    }
+                    &.align-center
+                    {
+                         margin-left: auto!important;
+                         margin-right: auto!important;
+                    }
+                    &.align-right
+                    {
+                         text-align: right;
+                    }
+                    li
+                    {
+                         display: inline-block;
+                         margin-left: 10px;
+                         margin-right: 10px;
+                         font-family: 'Lato', sans-serif;
+                         font-weight: 700;
+                         a
+                         {
+                              color: #F5F5F5;
+                              width: 100px;
+                              text-align: center;
+                              font-weight: 500;
+                              text-shadow: 2px 2px 4px #000000;
+                              font-size: 14px;
+                         }
+                    }
+                    li:hover
+                    {
+                    }
+
+               }
+               a:hover
+               {
+                    color: $color-orange;
+                    text-shadow: 1px 1px 1px #000000;
+
+               }
+               h1
+               {
+                    font-size: 25px;
+               }
+          }
+     }
+}
+
+/* We add the class that will change the color when the bar crossed the header image */
+.topNav_afterHeaderImage
+{
+     background-color: black !important;
+}

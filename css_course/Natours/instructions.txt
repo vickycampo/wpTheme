@@ -1,0 +1,13 @@
+<!-- http://localhost/wordpress/wp-content/themes/wpTheme/css_course/ -->
+<!-- npm install node-sass --save-dev -->
+<!-- npm install live-server -g (installs globally to be able to use this in all our projects )
+     npm run compile:sass
+     live-server
+-->
+<!--
+Casa:
+cd C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\css_course\Natours\starter
+
+https://stackoverflow.com/questions/22509402/apply-css-to-a-group-of-css-classes-containing-col-substring
+
+https://codingheroes.io/

@@ -58,6 +58,7 @@ class BaseCustomizer
 		$this->SectionDetails['id'] = str_replace(" " , "_", $this->SectionDetails['id'] );
 		$this->priority = $priority;
 
+
 	}
 	public function var_error_log( $object=null )
 	{
@@ -75,16 +76,23 @@ class BaseCustomizer
 			$this->SettingsDetails[$i]['index'] = __( $section['index'], 'wpTheme' );
 			$this->SettingsDetails[$i]['type'] = __( $section['type'], 'wpTheme' );
 			$this->SettingsDetails[$i]['sanitize_callback'] = __( $section['sanitize_callback'], 'wpTheme' );
-			// echo ($section['index']);
-			// var_dump ($this->theme_defaults[$section['index']]);
-			// echo ('----------------------------------<br>');
+
+			$Index = $section['index'];
 			if ( is_array ( $this->theme_defaults[$section['index']] ) )
 			{
+
 				$this->SettingsDetails[$i]['sub-index'] = __( $section['sub-index'], 'wpTheme' );
+				$sub_index = $this->SettingsDetails[$i]['sub-index'];
+				if ( ( is_array ( $this-> theme_defaults[$Index][$sub_index] ) ) )
+				{
+					$this->SettingsDetails[$i]['SecondSub-index'] = __( $section['SecondSub-index'], 'wpTheme' );
+					$SecondSub_index = $this->SettingsDetails[$i]['SecondSub-index'];
+				}
+
 			}
 		}
 	}
-	public function setControlDetails ( $settingsId , $controlInfo , $settingsSubId ='' )
+	public function setControlDetails ( $settingsId , $controlInfo , $settingsSubId ='' , $SecondSubIndex ='')
 	{
 		/*we need to link it with the */
 		if ( $settingsSubId == '' )
@@ -95,20 +103,31 @@ class BaseCustomizer
 				$this->ControlDetails[$settingsId][$i]['type'] = $control['type'];
 				$this->ControlDetails[$settingsId][$i]['choices'] = $control['choices'];
 				$this->ControlDetails[$settingsId][$i]['sanitize_callback'] = $control['sanitize_callback'];
-
 			}
 		}
 		else
 		{
 			foreach  ( $controlInfo as $i => $control)
 			{
-				$this->ControlDetails[$settingsId][$settingsSubId][$i]['label'] = $control['label'];
-				$this->ControlDetails[$settingsId][$settingsSubId][$i]['type'] = $control['type'];
-				$this->ControlDetails[$settingsId][$settingsSubId][$i]['choices'] = $control['choices'];
-				$this->ControlDetails[$settingsId][$settingsSubId][$i]['sanitize_callback'] = $control['sanitize_callback'];
+				if ( $SecondSubIndex == '' )
+				{
+					$this->ControlDetails[$settingsId][$settingsSubId][$i]['label'] = $control['label'];
+					$this->ControlDetails[$settingsId][$settingsSubId][$i]['type'] = $control['type'];
+					$this->ControlDetails[$settingsId][$settingsSubId][$i]['choices'] = $control['choices'];
+					$this->ControlDetails[$settingsId][$settingsSubId][$i]['sanitize_callback'] = $control['sanitize_callback'];
+				}
+				else
+				{
+					$this->ControlDetails[$settingsId][$settingsSubId][$SecondSubIndex][$i]['label'] = $control['label'];
+					$this->ControlDetails[$settingsId][$settingsSubId][$SecondSubIndex][$i]['type'] = $control['type'];
+					$this->ControlDetails[$settingsId][$settingsSubId][$SecondSubIndex][$i]['choices'] = $control['choices'];
+					$this->ControlDetails[$settingsId][$settingsSubId][$SecondSubIndex][$i]['sanitize_callback'] = $control['sanitize_callback'];
+				}
+
 
 			}
 		}
+
 
 
 	}
@@ -131,8 +150,6 @@ class BaseCustomizer
 		$wp_customize -> add_section( $this->SectionDetails['id'] , $args );
 
 
-
-
 	}
 	public function add_settings( $wp_customize )
 	{
@@ -146,11 +163,23 @@ class BaseCustomizer
 			$type = $setting['type'];
 			$sanitize_callback = $setting['sanitize_callback'];
 			$sub_index = '';
+			$SecondSubIndex = '';
 			if ( is_array ( $this->theme_defaults[$setting['index']] ) )
 			{
 				$sub_index = $setting['sub-index'];
-				$id = 'wpTheme_options['.$index.']['.$sub_index.']';
-				$defaultValue = $this->theme_defaults[$index][$sub_index];
+				if ( is_array ( $this->theme_defaults[$setting['index']][$sub_index] ) )
+				{
+					$SecondSubIndex = $setting['SecondSub-index'];
+					$id = 'wpTheme_options['.$index.']['.$sub_index.']['.$SecondSubIndex.']';
+					$defaultValue = $this->theme_defaults[$index][$sub_index][$SecondSubIndex];
+				}
+				else
+				{
+					$id = 'wpTheme_options['.$index.']['.$sub_index.']';
+					$defaultValue = $this->theme_defaults[$index][$sub_index];
+
+				}
+
 			}
 			else
 			{
@@ -168,12 +197,16 @@ class BaseCustomizer
 				//'sanitize_callback' => $this->callbacks->{$sanitize_callback}()
 
 			);
+			// echo ( __FILE__ . ' - ' . __LINE__.'<pre>');
+			// var_dump ($id);
+			// var_dump ($args);
+			// echo ( __FILE__ . ' - ' . __LINE__.'</pre>');
 	          $wp_customize->add_setting( $id , $args );
-			$this->add_control ( $index , $wp_customize, $sub_index );
+			$this->add_control ( $index , $wp_customize, $sub_index , $SecondSubIndex);
 		}
 
 	}
-	public function add_control ( $index , $wp_customize , $sub_index='' )
+	public function add_control ( $index , $wp_customize , $sub_index='' , $SecondSubIndex='')
 	{
 
 		if ( $sub_index == '' )
@@ -182,19 +215,39 @@ class BaseCustomizer
 		}
 		else
 		{
-			$currentControls = $this->ControlDetails[$index][$sub_index];
+
+			if ( $SecondSubIndex == '')
+			{
+				/* set the index */
+				$currentControls = $this->ControlDetails[$index][$sub_index];
+
+			}
+			else
+			{
+				// echo ( __FILE__ . ' - ' . __LINE__.'<pre>');
+				// echo ($index . ' - ' . $sub_index);
+				// print_r ($this->ControlDetails[$index][$sub_index]);
+				// echo ('</pre>');
+				$currentControls = $this->ControlDetails[$index][$sub_index][$SecondSubIndex];
+			}
+
 		}
 		foreach ( $currentControls as $i => $control)
 		{
+			// error_log (__FILE__ . ' - ' . __LINE__);
+			// error_log ( print_r ( $this->SectionDetails , true) );
 			/* Add the control */
-			if ( ( $sub_index !='' ) && ( is_array ( $this->theme_defaults[$index] ) ) )
+			if ( $sub_index =='' )
 			{
-
+				$id = 'wpTheme_options['.$index.']';
+			}
+			else if ( $SecondSubIndex =='' )
+			{
 				$id = 'wpTheme_options['.$index.']['.$sub_index.']';
 			}
 			else
 			{
-				$id = 'wpTheme_options['.$index.']';
+				$id = 'wpTheme_options['.$index.']['.$sub_index.']['.$SecondSubIndex.']';
 			}
 
 			$label = $control['label'];
