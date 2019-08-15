@@ -64,8 +64,6 @@ HEADER
                animation-timing-function: ease-out;
           }
      }
-
-
 }
 
 /* Define how we are going to put the background image */
@@ -253,7 +251,7 @@ We create the clases for the fixed height of the header image div
                               }
 
                          }
-                         &__logo--image
+                         .header__logo--image
                          {
 
                               width:auto;
