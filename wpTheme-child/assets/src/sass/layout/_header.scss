@@ -17,19 +17,7 @@ HEADER
 /* Standard for all header heights */
 .header {
 
-     &__logo--image
-     {
 
-          width:auto;
-          max-height: 90%;
-          max-width: 75vw;
-
-          $top: 50%;
-          $left: 50%;
-          $x: -50%;
-          $y: -50%;
-          @include centerBlock ($top , $left , $x , $y);
-     }
      &__title
      {
           margin: 0px;
@@ -113,111 +101,194 @@ We create the clases for the fixed height of the header image div
 {
      .fixed-height-#{$i*10}
      {
-          height: #{$i*10}vh;
-          width: 100vw;
+
           &.header
           {
+               height: calc(#{$i*10}vh - (100vh - 100%));
+               width: calc(100vw - (100vw - 100%));
                .header__content
                {
-
-                    height: #{$i*10}vh;
-                    /* --- flex --- */
-                    display: -webkit-flex; /* Safari */
-                    -webkit-align-items: center; /* Safari 7.0+ */
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    @if ( $i == 4 )
+                    &--row
                     {
-                         flex-direction: row;
+                         height: 100%;
+                         /* --- flex --- */
+                         -webkit-display: flex; /* Safari */
+                         display: flex;
+                         justify-content: center;
+                         align-items: center;
+
                          .header__spacerDiv
                          {
                               display: none;
                          }
-                    }
-                    @else
-                    {
-                         flex-direction: column;
-                    }
-                    .header__spacerDiv
-                    {
-                         height: 40px;
-                    }
-                    .header__logo--div
-                    {
-                         position: relative;
-                         height: #{$i*10}vh;
-                         width: 100vw;
-                         &--has-name
+                         .header__logo--div
                          {
-                              @if ( $i == 4 )
-                              {
-                                   position: relative;
-                                   height: #{$i*10 - 10}vh;
-                                   width: #{$i*10 - 10}vh;
-                              }
-                              @else
-                              {
-                                   position: relative;
-                                   height: #{$i*10 - $i*3}vh;
-                                   width: 100vw;
-                              }
-                         }
-                         &--has-description
-                         {
-                              @if ( $i == 4 )
-                              {
-                                   position: relative;
-                                   height: #{$i*10 - 10}vh;
-                                   width: #{$i*10 - 10}vh;
-                              }
-                              @else
-                              {
-                                   position: relative;
-                                   height: #{$i*10 - $i*2}vh;
-                                   width: 100vw;
-                              }
-                         }
-                         &--has-name-description
-                         {
-                              @if ( $i == 4 )
-                              {
-                                   position: relative;
-                                   height: #{$i*10 - 10}vh;
-                                   width: #{$i*10 - 10}vh;
-                              }
-                              @else
-                              {
-                                   position: relative;
-                                   height: #{$i*10 - 20 }vh;
-                                   width: 100vw;
-                              }
-                         }
+                              height: 100%;
+                              width: 100%;
 
-                    }
+                              &--has-name
+                              {
+                                   // position: relative;
+                                   // height: calc(#{$i*10}vh - (100vh - 100%));
+                                   // width: calc(50vw - (500vw - 50%));
+                              }
+                              &--has-description
+                              {
 
-                    .header__info--div
+                              }
+                              &--has-name-description
+                              {
+                                   height: 80%;
+                                   width:  auto;
+                                   align-self: center;
+                                   padding: 2rem;
+                                   text-align: right;
+                              }
+
+                         }
+                         .header__logo--image
+                         {
+                              max-height: 100%;
+                              max-width: 100%;
+                         }
+                         .header__info--div
+                         {
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: center;
+
+                              .header__title--div
+                              {
+                                   .header__title
+                                   {
+
+                                        font-size: #{ 2.5 + $i/10}rem;
+                                   }
+                              }
+                              .header__description--div
+                              {
+                                   .header__description
+                                   {
+                                        font-size: #{ 1.5 + $i/10}rem;
+                                   }
+                              }
+                         }
+                    }
+                    &--column
                     {
+                         height: calc(#{$i*10}vh - (100vh - 100%));
+                         /* --- flex --- */
+                         display: -webkit-flex; /* Safari */
+                         -webkit-align-items: center; /* Safari 7.0+ */
                          display: flex;
-                         flex-direction: column;
+                         align-items: center;
                          justify-content: center;
-                         .header__title--div
+                         text-align: center;
+                         @if ( $i == 4 )
                          {
-                              .header__title
+                              flex-direction: row;
+                              .header__spacerDiv
                               {
-
-                                   font-size: #{ 2.5 + $i/10}rem;
+                                   display: none;
                               }
                          }
-                         .header__description--div
+                         @else
                          {
-                              .header__description
+                              flex-direction: column;
+                         }
+                         .header__spacerDiv
+                         {
+                              height: #{$i * 2}px;
+                         }
+                         .header__logo--div
+                         {
+                              position: relative;
+                              height: calc(#{$i*10}vh - (100vh - 100%));
+                              width: calc(100vw - (100vw - 100%));
+                              &--has-name
                               {
-                                   font-size: #{ 1.5 + $i/10}rem;
+                                   @if ( $i == 4 )
+                                   {
+                                        position: relative;
+                                        height: #{$i*10 - 10}vh;
+                                        width: #{$i*10 - 10}vh;
+                                   }
+                                   @else
+                                   {
+                                        position: relative;
+                                        height: calc(#{$i*10 - $i*3}vh - (100vh - 100%));
+                                        width: calc(100vw - (100vw - 100%));
+                                   }
+                              }
+                              &--has-description
+                              {
+                                   @if ( $i == 4 )
+                                   {
+                                        position: relative;
+                                        height: #{$i*10 - 10}vh;
+                                        width: #{$i*10 - 10}vh;
+                                   }
+                                   @else
+                                   {
+                                        position: relative;
+                                        height: calc(#{$i*10 - $i*3}vh - (100vh - 100%));
+                                        width: calc(100vw - (100vw - 100%));
+                                   }
+                              }
+                              &--has-name-description
+                              {
+                                   @if ( $i == 4 )
+                                   {
+                                        position: relative;
+                                        height: #{$i*10 - 10}vh;
+                                        width: #{$i*10 - 10}vh;
+                                   }
+                                   @else
+                                   {
+                                        position: relative;
+                                        height: #{$i*10 - 20 }vh;
+                                        height: calc(#{$i*10 - $i*3}vh - (100vh - 100%));
+                                        width: calc(100vw - (100vw - 100%));
+                                   }
+                              }
+
+                         }
+                         &__logo--image
+                         {
+
+                              width:auto;
+                              max-height: 90%;
+                              max-width: 75vw;
+
+                              $top: 50%;
+                              $left: 50%;
+                              $x: -50%;
+                              $y: -50%;
+                              @include centerBlock ($top , $left , $x , $y);
+                         }
+                         .header__info--div
+                         {
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: center;
+                              .header__title--div
+                              {
+                                   .header__title
+                                   {
+
+                                        font-size: #{ 2.5 + $i/10}rem;
+                                   }
+                              }
+                              .header__description--div
+                              {
+                                   .header__description
+                                   {
+                                        font-size: #{ 1.5 + $i/10}rem;
+                                   }
                               }
                          }
                     }
+
                }
 
           }

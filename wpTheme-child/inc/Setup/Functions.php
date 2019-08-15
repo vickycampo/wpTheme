@@ -38,7 +38,8 @@ class Functions
                'show_site_logo' => 0,
                'site_name' => 0,
                'site_description' => 0,
-               'percentage' => '100'
+               'percentage' => '100',
+               'show_rowORcolumn' => 'column'
           );
           // default options settings
           $defaults = array

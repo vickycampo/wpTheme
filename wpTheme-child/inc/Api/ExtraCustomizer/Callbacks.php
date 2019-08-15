@@ -148,6 +148,14 @@ class CallBacks
      {
           return ('wpTheme_esc_textarea');
      }
+     public static function wpTheme_rowORcolumn()
+     {
+          $percentage = array (
+               'row' => __( 'row', 'wpTheme' ),
+               'column' => __( 'column', 'wpTheme' )
+          );
+          return ($percentage);
+     }
      public static function wpTheme_validate_true_false( $value )
 	{
 		if ($value == false)
@@ -287,6 +295,17 @@ class CallBacks
 		//TRUE - VALID
 		return $value;
 	}
+     public static function wpTheme_validate_rowORcolumn( $value )
+	{
+		if ( !array_key_exists( $value, $this->wpTheme_rowORcolumn() ) )
+		{
+			//FALSE - NOT VALID
+			$value = null;
+		}
+		//TRUE - VALID
+		return $value;
+	}
+
      public static function wpTheme_validate_image ( $value )
      {
           // error_log (__FILE__ . ' - ' . __LINE__);

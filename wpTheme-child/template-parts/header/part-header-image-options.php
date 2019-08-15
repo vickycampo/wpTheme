@@ -97,6 +97,16 @@
                     }
                }
           }
+     //Row or Column?
+     $show_rowORcolumn = '';
+     if ( isset ($options['big_header_image']['show_rowORcolumn']) )
+     {
+          $show_rowORcolumn = '--' . $options['big_header_image']['show_rowORcolumn'];
+     }
+     else if ( isset ($defaults['big_header_image']['show_rowORcolumn']) )
+     {
+          $show_rowORcolumn = '--' . $defaults['big_header_image']['show_rowORcolumn'];
+     }
 
 
 
