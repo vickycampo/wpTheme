@@ -1,0 +1,25 @@
+<!--
+cd C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\css_course\Natours\starter
+localhost/wordpress/wp-content/themes/wpTheme/html_course
+
+
+install:
+emmet
+
+
+
+wpTheme:
+ - Add the hgroup on the header div
+ - Follow the article structure:
+<article class="">
+     <header>
+          <hgroup>
+               <h1>Title of the Article 2 </h1>
+               <h2>The subtitle for the article 2 </h2>
+          </hgroup>
+     </header>
+     <p>This is the second best article ever!</p>
+     <footer>
+          <p>Writen by Vicky Campo</p>
+     </footer>
+</article>
