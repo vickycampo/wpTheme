@@ -28,6 +28,7 @@
                     right: 0;
                     left: 0;
                     z-index: 1030;
+                    width: calc(100vw - (100vw - 100%));
                }
                &.admin_bar_showing
                {
@@ -89,7 +90,7 @@
                font-size: 14px;
                ul
                {
-               
+
                     &.align-left
                     {
                          text-align: left;

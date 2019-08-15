@@ -17,7 +17,7 @@
      /* add site logo */
      ?>
 
-     <div class="header header__content">
+     <div class="header header__content<?php echo($show_rowORcolumn); ?>">
           <div class="header header__spacerDiv">
 
           </div>

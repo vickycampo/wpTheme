@@ -95,6 +95,18 @@ class HeaderImage extends BaseCustomizer
 		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_percentages';
 		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_percentages';
 		/*-----------------------------------------------------------------*/
+		$i++;
+		$SettingsList[$i]['index'] = 'big_header_image';
+		$SettingsList[$i]['sub-index'] = 'show_rowORcolumn';
+		$SettingsList[$i]['type'] = 'option';
+		$SettingsList[$i]['sanitize_callback'] = 'wpTheme_validate_rowORcolumn';
+		$j = 0;
+		$settingsId = $SettingsList[$i]['sub-index'];
+		$ControlsList[$settingsId][$j]['label'] = 'Show the header elements in a row or a Columng?';
+		$ControlsList[$settingsId][$j]['type'] = 'select';
+		$ControlsList[$settingsId][$j]['choices'] = 'wpTheme_rowORcolumn';
+		$ControlsList[$settingsId][$j]['sanitize_callback'] = 'wpTheme_validate_rowORcolumn';
+		/*-----------------------------------------------------------------*/
 
           /* Section Details */
 		$this->SetSectionDetails( 'wptheme_header_section' ,  36 );
