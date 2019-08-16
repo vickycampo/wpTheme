@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body
+{
+     text-align: center;
+}
+#box
+{
+     display: block;
+     width: 500px;
+     margin: 50px auto;
+     padding: 15px;
+     text-align: center;
+     border: 1px solid blue;
+     background: orange; /* gradient */
+
+}
+#text
+{
+     font: bold 30px Cetury Gothic;
+}

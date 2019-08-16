@@ -1,0 +1,56 @@
+#mommy
+{
+     border: 2px solid blue;
+     width: 700px; /* important for centering - horizontal*/
+     height: 300px; /* important for centering - vertical */
+
+     display: -webkit-box; /* Musht have to say the object contains boxes */
+     -webkit-box-orient: horizontal; /* Places the objects horizontal */
+     -webkit-box-pack: center; /* Center the boxex - horizontal */
+     -webkit-box-align: center; /* Center the boxex - vertical */
+
+
+     /* -webkit-box-direction:reverse; */ /* Reverse the order of the boxes */
+}
+#kid1
+{
+     border: 2px solid red;
+     background: green;
+     padding: 20px;
+     margin: 10px;
+     height: 100px;
+     
+     -webkit-box-ordinal-group: 3; /* Customize the position */
+     -webkit-box-flex: 1; /* Make flexible, expand to occupy the extra space */
+
+}
+#kid2
+{
+     border: 2px solid red;
+     background: yellow;
+     padding: 20px;
+     margin: 10px;
+     height: 100px;
+     -webkit-box-ordinal-group: 1;
+     -webkit-box-flex: 2; /* Make flexible, expand to occupy the extra space */
+}
+#kid3
+{
+     border: 2px solid red;
+     background: red;
+     padding: 20px;
+     margin: 10px;
+     height: 100px;
+     -webkit-box-ordinal-group: 4;
+     -webkit-box-flex: 1; /* Make flexible, expand to occupy the extra space */
+}
+#kid4
+{
+     border: 2px solid red;
+     background: orange;
+     padding: 20px;
+     margin: 10px;
+     height: 100px;
+     -webkit-box-ordinal-group: 2;
+     -webkit-box-flex: 1; /* Make flexible, expand to occupy the extra space */
+}

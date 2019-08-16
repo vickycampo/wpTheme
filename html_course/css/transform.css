@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body
+{
+     text-align: center;
+}
+#box
+{
+     display: block;
+     width: 500px;
+     margin: 50px auto;
+     padding: 15px;
+     text-align: center;
+     border: 1px solid blue;
+     background: orange; /* gradient */
+     /* -webkit-border-radius: 25px; */ /* rounded corners */
+     /* -webkit-box-shadow:rgba(110, 110, 110, 0.6) 8px 8px 24px; */ /* Shadow */
+     /* -webkit-transform:scale(1,3);
+     -webkit-transform:rotate(45deg); */
+     -webkit-transform:translate(100px,100px)rotate(45deg)scale(1,3);
+}
+#box:hover
+{
+     /* -webkit-box-shadow:rgb(110, 110, 110) 8px 8px 24px inset; */
+}
+#text
+{
+     font: bold 30px Cetury Gothic;
+     /* text-shadow: rgb(110, 110, 110) 3px 3px 1px; */
+}

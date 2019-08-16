@@ -19,26 +19,29 @@ header, nav, section, article, hgroup, aside, footer
 }
 body
 {
-     text-align: center;
+     width: 100%;
+     display: -webkit-box;
+     -webkit-box-pack:center;
 }
 #big_wrapper
 {
-     border: 1px solid black;
-     width: 1000px;
-     margin: 20px auto;
-     text-align: left;
+     max-width: 1000px;
+     margin: 20px 0px;
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     -webkit-box-flex: 1;
 }
 #top_header
 {
      background-color: yellow;
-     border: 1px solid blue;
+     border: 3px solid black;
      padding: 20px;
 }
 #top_menu
 {
+     border: red;
      background-color: blue;
-     color: white;
-
+     color:white;
 }
 #top_menu li
 {
@@ -46,29 +49,33 @@ body
      list-style: none;
      padding: 5px;
      font: bold 14px Tahoma;
+
+}
+#new_div
+{
+     display: -webkit-box;
+     -webkit-box-orient:horizontal;
 }
 #main_section
 {
-     float: left;
-     width: 660px;
-     margin: 30px;
+     border: 1px solid blue;
+     -webkit-box-flex: 1; /* Flexible */
+     margin:20px;
+     padding:20px;
 }
 #side_news
 {
-     float: left;
-     width: 220px;
-     margin: 20px 0px;
-     padding:30px;
-     background-color: #66CCCC;
+     border:1px solid red;
+     width: 220px; /* Not Flexible */
+     margin: 20px;
+     padding: 30px;
+     background: #66CCCC;
 }
 #the_footer
 {
-     clear: both;
      text-align: center;
      padding: 20px;
      border-top: 2px solid green;
-     margin-left: 10px;
-     margin-right: 10px;
 }
 article
 {
@@ -80,5 +87,5 @@ article
 article > footer
 {
      text-align: right;
-     
+
 }
