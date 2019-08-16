@@ -100,16 +100,19 @@
           ?>
 
      <header id="header" class="header <?php echo esc_attr( $class ); ?> <?php echo esc_attr( $height ); ?>" <?php echo ( $as_background ); ?> >
-          <!-- Top Navitagion bar part -->
-          <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
+
           <!-- Header Image part -->
           <?php get_template_part( 'template-parts/header/part', 'header-image' ); ?>
-          <!-- Main Navitagion bar part -->
-          <?php get_template_part( 'template-parts/header/part', 'navbar-main' ); ?>
+
 
      </header> <!-- Header-img -->
-     <!-- Main Navigation bar part -->
+     <!-- NAvigaion -->
+     <!-- Top Navitagion bar part -->
+     <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
+     <!-- Main Navitagion bar part -->
+     <?php get_template_part( 'template-parts/header/part', 'navbar-main' ); ?>
+     
      <?php get_template_part( 'template-parts/header/part', 'subcategory-bar' ); ?>
           <?php wptheme\Custom\Hooks::tha_header_bottom(); ?>
      <?php wptheme\Custom\Hooks::tha_header_after(); ?>
-     <main class="container" id="wrap"> 
+     <main class="container" id="wrap">

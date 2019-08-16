@@ -537,6 +537,18 @@ We create the clases for the fixed height of the header image div
     .fixed-height-40.header .header__content--row .header__logo--div {
       height: 100%;
       width: 100%; }
+      .fixed-height-40.header .header__content--row .header__logo--div--has-name {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
+      .fixed-height-40.header .header__content--row .header__logo--div--has-description {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
       .fixed-height-40.header .header__content--row .header__logo--div--has-name-description {
         height: 80%;
         width: auto;
@@ -551,58 +563,55 @@ We create the clases for the fixed height of the header image div
       flex-direction: column;
       justify-content: center; }
       .fixed-height-40.header .header__content--row .header__info--div .header__title--div .header__title {
-        font-size: 2.9rem; }
+        font-size: 2.9rem;
+        line-height: 2.9rem; }
       .fixed-height-40.header .header__content--row .header__info--div .header__description--div .header__description {
-        font-size: 1.9rem; }
+        font-size: 1.9rem;
+        line-height: 1.9rem; }
   .fixed-height-40.header .header__content--column {
-    height: calc(40vh - (100vh - 100%));
+    height: 100%;
     /* --- flex --- */
-    display: -webkit-flex;
+    -webkit-display: flex;
     /* Safari */
-    -webkit-align-items: center;
-    /* Safari 7.0+ */
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    flex-direction: row; }
+    align-items: center; }
     .fixed-height-40.header .header__content--column .header__spacerDiv {
       display: none; }
-    .fixed-height-40.header .header__content--column .header__spacerDiv {
-      height: 8px; }
     .fixed-height-40.header .header__content--column .header__logo--div {
-      position: relative;
-      height: calc(40vh - (100vh - 100%));
-      width: calc(100vw - (100vw - 100%)); }
+      height: 100%;
+      width: 100%; }
       .fixed-height-40.header .header__content--column .header__logo--div--has-name {
-        position: relative;
-        height: 30vh;
-        width: 30vh; }
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
       .fixed-height-40.header .header__content--column .header__logo--div--has-description {
-        position: relative;
-        height: 30vh;
-        width: 30vh; }
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
       .fixed-height-40.header .header__content--column .header__logo--div--has-name-description {
-        position: relative;
-        height: 30vh;
-        width: 30vh; }
-    .fixed-height-40.header .header__content--column__logo--image {
-      width: auto;
-      max-height: 90%;
-      max-width: 75vw;
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
+    .fixed-height-40.header .header__content--column .header__logo--image {
+      max-height: 100%;
+      max-width: 100%; }
     .fixed-height-40.header .header__content--column .header__info--div {
       display: flex;
       flex-direction: column;
       justify-content: center; }
       .fixed-height-40.header .header__content--column .header__info--div .header__title--div .header__title {
-        font-size: 2.9rem; }
+        font-size: 2.9rem;
+        line-height: 2.9rem; }
       .fixed-height-40.header .header__content--column .header__info--div .header__description--div .header__description {
-        font-size: 1.9rem; }
+        font-size: 1.9rem;
+        line-height: 1.9rem; }
 
 .fixed-height-50.header {
   height: calc(50vh - (100vh - 100%));
@@ -620,6 +629,18 @@ We create the clases for the fixed height of the header image div
     .fixed-height-50.header .header__content--row .header__logo--div {
       height: 100%;
       width: 100%; }
+      .fixed-height-50.header .header__content--row .header__logo--div--has-name {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
+      .fixed-height-50.header .header__content--row .header__logo--div--has-description {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
       .fixed-height-50.header .header__content--row .header__logo--div--has-name-description {
         height: 80%;
         width: auto;
@@ -634,57 +655,56 @@ We create the clases for the fixed height of the header image div
       flex-direction: column;
       justify-content: center; }
       .fixed-height-50.header .header__content--row .header__info--div .header__title--div .header__title {
-        font-size: 3rem; }
+        font-size: 3rem;
+        line-height: 3rem; }
       .fixed-height-50.header .header__content--row .header__info--div .header__description--div .header__description {
-        font-size: 2rem; }
+        font-size: 2rem;
+        line-height: 2rem; }
   .fixed-height-50.header .header__content--column {
-    height: calc(50vh - (100vh - 100%));
+    height: 100%;
     /* --- flex --- */
-    display: -webkit-flex;
+    -webkit-display: flex;
     /* Safari */
-    -webkit-align-items: center;
-    /* Safari 7.0+ */
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     flex-direction: column; }
     .fixed-height-50.header .header__content--column .header__spacerDiv {
-      height: 10px; }
+      display: none; }
     .fixed-height-50.header .header__content--column .header__logo--div {
-      position: relative;
-      height: calc(50vh - (100vh - 100%));
-      width: calc(100vw - (100vw - 100%)); }
+      height: 100%;
+      width: 100%; }
       .fixed-height-50.header .header__content--column .header__logo--div--has-name {
-        position: relative;
-        height: calc(35vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-50.header .header__content--column .header__logo--div--has-description {
-        position: relative;
-        height: calc(35vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-50.header .header__content--column .header__logo--div--has-name-description {
-        position: relative;
-        height: 30vh;
-        height: calc(35vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
-    .fixed-height-50.header .header__content--column__logo--image {
-      width: auto;
-      max-height: 90%;
-      max-width: 75vw;
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
+    .fixed-height-50.header .header__content--column .header__logo--image {
+      max-height: 100%;
+      max-width: 100%; }
     .fixed-height-50.header .header__content--column .header__info--div {
       display: flex;
       flex-direction: column;
       justify-content: center; }
       .fixed-height-50.header .header__content--column .header__info--div .header__title--div .header__title {
-        font-size: 3rem; }
+        font-size: 3rem;
+        line-height: 3rem; }
       .fixed-height-50.header .header__content--column .header__info--div .header__description--div .header__description {
-        font-size: 2rem; }
+        font-size: 2rem;
+        line-height: 2rem; }
 
 .fixed-height-60.header {
   height: calc(60vh - (100vh - 100%));
@@ -702,6 +722,18 @@ We create the clases for the fixed height of the header image div
     .fixed-height-60.header .header__content--row .header__logo--div {
       height: 100%;
       width: 100%; }
+      .fixed-height-60.header .header__content--row .header__logo--div--has-name {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
+      .fixed-height-60.header .header__content--row .header__logo--div--has-description {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
       .fixed-height-60.header .header__content--row .header__logo--div--has-name-description {
         height: 80%;
         width: auto;
@@ -716,57 +748,56 @@ We create the clases for the fixed height of the header image div
       flex-direction: column;
       justify-content: center; }
       .fixed-height-60.header .header__content--row .header__info--div .header__title--div .header__title {
-        font-size: 3.1rem; }
+        font-size: 3.1rem;
+        line-height: 3.1rem; }
       .fixed-height-60.header .header__content--row .header__info--div .header__description--div .header__description {
-        font-size: 2.1rem; }
+        font-size: 2.1rem;
+        line-height: 2.1rem; }
   .fixed-height-60.header .header__content--column {
-    height: calc(60vh - (100vh - 100%));
+    height: 100%;
     /* --- flex --- */
-    display: -webkit-flex;
+    -webkit-display: flex;
     /* Safari */
-    -webkit-align-items: center;
-    /* Safari 7.0+ */
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     flex-direction: column; }
     .fixed-height-60.header .header__content--column .header__spacerDiv {
-      height: 12px; }
+      display: none; }
     .fixed-height-60.header .header__content--column .header__logo--div {
-      position: relative;
-      height: calc(60vh - (100vh - 100%));
-      width: calc(100vw - (100vw - 100%)); }
+      height: 100%;
+      width: 100%; }
       .fixed-height-60.header .header__content--column .header__logo--div--has-name {
-        position: relative;
-        height: calc(42vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-60.header .header__content--column .header__logo--div--has-description {
-        position: relative;
-        height: calc(42vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-60.header .header__content--column .header__logo--div--has-name-description {
-        position: relative;
-        height: 40vh;
-        height: calc(42vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
-    .fixed-height-60.header .header__content--column__logo--image {
-      width: auto;
-      max-height: 90%;
-      max-width: 75vw;
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
+    .fixed-height-60.header .header__content--column .header__logo--image {
+      max-height: 100%;
+      max-width: 100%; }
     .fixed-height-60.header .header__content--column .header__info--div {
       display: flex;
       flex-direction: column;
       justify-content: center; }
       .fixed-height-60.header .header__content--column .header__info--div .header__title--div .header__title {
-        font-size: 3.1rem; }
+        font-size: 3.1rem;
+        line-height: 3.1rem; }
       .fixed-height-60.header .header__content--column .header__info--div .header__description--div .header__description {
-        font-size: 2.1rem; }
+        font-size: 2.1rem;
+        line-height: 2.1rem; }
 
 .fixed-height-70.header {
   height: calc(70vh - (100vh - 100%));
@@ -784,6 +815,18 @@ We create the clases for the fixed height of the header image div
     .fixed-height-70.header .header__content--row .header__logo--div {
       height: 100%;
       width: 100%; }
+      .fixed-height-70.header .header__content--row .header__logo--div--has-name {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
+      .fixed-height-70.header .header__content--row .header__logo--div--has-description {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
       .fixed-height-70.header .header__content--row .header__logo--div--has-name-description {
         height: 80%;
         width: auto;
@@ -798,57 +841,56 @@ We create the clases for the fixed height of the header image div
       flex-direction: column;
       justify-content: center; }
       .fixed-height-70.header .header__content--row .header__info--div .header__title--div .header__title {
-        font-size: 3.2rem; }
+        font-size: 3.2rem;
+        line-height: 3.2rem; }
       .fixed-height-70.header .header__content--row .header__info--div .header__description--div .header__description {
-        font-size: 2.2rem; }
+        font-size: 2.2rem;
+        line-height: 2.2rem; }
   .fixed-height-70.header .header__content--column {
-    height: calc(70vh - (100vh - 100%));
+    height: 100%;
     /* --- flex --- */
-    display: -webkit-flex;
+    -webkit-display: flex;
     /* Safari */
-    -webkit-align-items: center;
-    /* Safari 7.0+ */
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     flex-direction: column; }
     .fixed-height-70.header .header__content--column .header__spacerDiv {
-      height: 14px; }
+      display: none; }
     .fixed-height-70.header .header__content--column .header__logo--div {
-      position: relative;
-      height: calc(70vh - (100vh - 100%));
-      width: calc(100vw - (100vw - 100%)); }
+      height: 100%;
+      width: 100%; }
       .fixed-height-70.header .header__content--column .header__logo--div--has-name {
-        position: relative;
-        height: calc(49vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-70.header .header__content--column .header__logo--div--has-description {
-        position: relative;
-        height: calc(49vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-70.header .header__content--column .header__logo--div--has-name-description {
-        position: relative;
-        height: 50vh;
-        height: calc(49vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
-    .fixed-height-70.header .header__content--column__logo--image {
-      width: auto;
-      max-height: 90%;
-      max-width: 75vw;
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
+    .fixed-height-70.header .header__content--column .header__logo--image {
+      max-height: 100%;
+      max-width: 100%; }
     .fixed-height-70.header .header__content--column .header__info--div {
       display: flex;
       flex-direction: column;
       justify-content: center; }
       .fixed-height-70.header .header__content--column .header__info--div .header__title--div .header__title {
-        font-size: 3.2rem; }
+        font-size: 3.2rem;
+        line-height: 3.2rem; }
       .fixed-height-70.header .header__content--column .header__info--div .header__description--div .header__description {
-        font-size: 2.2rem; }
+        font-size: 2.2rem;
+        line-height: 2.2rem; }
 
 .fixed-height-80.header {
   height: calc(80vh - (100vh - 100%));
@@ -866,6 +908,18 @@ We create the clases for the fixed height of the header image div
     .fixed-height-80.header .header__content--row .header__logo--div {
       height: 100%;
       width: 100%; }
+      .fixed-height-80.header .header__content--row .header__logo--div--has-name {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
+      .fixed-height-80.header .header__content--row .header__logo--div--has-description {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
       .fixed-height-80.header .header__content--row .header__logo--div--has-name-description {
         height: 80%;
         width: auto;
@@ -880,57 +934,56 @@ We create the clases for the fixed height of the header image div
       flex-direction: column;
       justify-content: center; }
       .fixed-height-80.header .header__content--row .header__info--div .header__title--div .header__title {
-        font-size: 3.3rem; }
+        font-size: 3.3rem;
+        line-height: 3.3rem; }
       .fixed-height-80.header .header__content--row .header__info--div .header__description--div .header__description {
-        font-size: 2.3rem; }
+        font-size: 2.3rem;
+        line-height: 2.3rem; }
   .fixed-height-80.header .header__content--column {
-    height: calc(80vh - (100vh - 100%));
+    height: 100%;
     /* --- flex --- */
-    display: -webkit-flex;
+    -webkit-display: flex;
     /* Safari */
-    -webkit-align-items: center;
-    /* Safari 7.0+ */
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     flex-direction: column; }
     .fixed-height-80.header .header__content--column .header__spacerDiv {
-      height: 16px; }
+      display: none; }
     .fixed-height-80.header .header__content--column .header__logo--div {
-      position: relative;
-      height: calc(80vh - (100vh - 100%));
-      width: calc(100vw - (100vw - 100%)); }
+      height: 100%;
+      width: 100%; }
       .fixed-height-80.header .header__content--column .header__logo--div--has-name {
-        position: relative;
-        height: calc(56vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-80.header .header__content--column .header__logo--div--has-description {
-        position: relative;
-        height: calc(56vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-80.header .header__content--column .header__logo--div--has-name-description {
-        position: relative;
-        height: 60vh;
-        height: calc(56vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
-    .fixed-height-80.header .header__content--column__logo--image {
-      width: auto;
-      max-height: 90%;
-      max-width: 75vw;
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
+    .fixed-height-80.header .header__content--column .header__logo--image {
+      max-height: 100%;
+      max-width: 100%; }
     .fixed-height-80.header .header__content--column .header__info--div {
       display: flex;
       flex-direction: column;
       justify-content: center; }
       .fixed-height-80.header .header__content--column .header__info--div .header__title--div .header__title {
-        font-size: 3.3rem; }
+        font-size: 3.3rem;
+        line-height: 3.3rem; }
       .fixed-height-80.header .header__content--column .header__info--div .header__description--div .header__description {
-        font-size: 2.3rem; }
+        font-size: 2.3rem;
+        line-height: 2.3rem; }
 
 .fixed-height-90.header {
   height: calc(90vh - (100vh - 100%));
@@ -948,6 +1001,18 @@ We create the clases for the fixed height of the header image div
     .fixed-height-90.header .header__content--row .header__logo--div {
       height: 100%;
       width: 100%; }
+      .fixed-height-90.header .header__content--row .header__logo--div--has-name {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
+      .fixed-height-90.header .header__content--row .header__logo--div--has-description {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
       .fixed-height-90.header .header__content--row .header__logo--div--has-name-description {
         height: 80%;
         width: auto;
@@ -962,57 +1027,56 @@ We create the clases for the fixed height of the header image div
       flex-direction: column;
       justify-content: center; }
       .fixed-height-90.header .header__content--row .header__info--div .header__title--div .header__title {
-        font-size: 3.4rem; }
+        font-size: 3.4rem;
+        line-height: 3.4rem; }
       .fixed-height-90.header .header__content--row .header__info--div .header__description--div .header__description {
-        font-size: 2.4rem; }
+        font-size: 2.4rem;
+        line-height: 2.4rem; }
   .fixed-height-90.header .header__content--column {
-    height: calc(90vh - (100vh - 100%));
+    height: 100%;
     /* --- flex --- */
-    display: -webkit-flex;
+    -webkit-display: flex;
     /* Safari */
-    -webkit-align-items: center;
-    /* Safari 7.0+ */
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     flex-direction: column; }
     .fixed-height-90.header .header__content--column .header__spacerDiv {
-      height: 18px; }
+      display: none; }
     .fixed-height-90.header .header__content--column .header__logo--div {
-      position: relative;
-      height: calc(90vh - (100vh - 100%));
-      width: calc(100vw - (100vw - 100%)); }
+      height: 100%;
+      width: 100%; }
       .fixed-height-90.header .header__content--column .header__logo--div--has-name {
-        position: relative;
-        height: calc(63vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-90.header .header__content--column .header__logo--div--has-description {
-        position: relative;
-        height: calc(63vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-90.header .header__content--column .header__logo--div--has-name-description {
-        position: relative;
-        height: 70vh;
-        height: calc(63vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
-    .fixed-height-90.header .header__content--column__logo--image {
-      width: auto;
-      max-height: 90%;
-      max-width: 75vw;
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
+    .fixed-height-90.header .header__content--column .header__logo--image {
+      max-height: 100%;
+      max-width: 100%; }
     .fixed-height-90.header .header__content--column .header__info--div {
       display: flex;
       flex-direction: column;
       justify-content: center; }
       .fixed-height-90.header .header__content--column .header__info--div .header__title--div .header__title {
-        font-size: 3.4rem; }
+        font-size: 3.4rem;
+        line-height: 3.4rem; }
       .fixed-height-90.header .header__content--column .header__info--div .header__description--div .header__description {
-        font-size: 2.4rem; }
+        font-size: 2.4rem;
+        line-height: 2.4rem; }
 
 .fixed-height-100.header {
   height: calc(100vh - (100vh - 100%));
@@ -1030,6 +1094,18 @@ We create the clases for the fixed height of the header image div
     .fixed-height-100.header .header__content--row .header__logo--div {
       height: 100%;
       width: 100%; }
+      .fixed-height-100.header .header__content--row .header__logo--div--has-name {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
+      .fixed-height-100.header .header__content--row .header__logo--div--has-description {
+        height: 80%;
+        width: auto;
+        align-self: center;
+        padding: 2rem;
+        text-align: right; }
       .fixed-height-100.header .header__content--row .header__logo--div--has-name-description {
         height: 80%;
         width: auto;
@@ -1044,57 +1120,56 @@ We create the clases for the fixed height of the header image div
       flex-direction: column;
       justify-content: center; }
       .fixed-height-100.header .header__content--row .header__info--div .header__title--div .header__title {
-        font-size: 3.5rem; }
+        font-size: 3.5rem;
+        line-height: 3.5rem; }
       .fixed-height-100.header .header__content--row .header__info--div .header__description--div .header__description {
-        font-size: 2.5rem; }
+        font-size: 2.5rem;
+        line-height: 2.5rem; }
   .fixed-height-100.header .header__content--column {
-    height: calc(100vh - (100vh - 100%));
+    height: 100%;
     /* --- flex --- */
-    display: -webkit-flex;
+    -webkit-display: flex;
     /* Safari */
-    -webkit-align-items: center;
-    /* Safari 7.0+ */
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
     flex-direction: column; }
     .fixed-height-100.header .header__content--column .header__spacerDiv {
-      height: 20px; }
+      display: none; }
     .fixed-height-100.header .header__content--column .header__logo--div {
-      position: relative;
-      height: calc(100vh - (100vh - 100%));
-      width: calc(100vw - (100vw - 100%)); }
+      height: 100%;
+      width: 100%; }
       .fixed-height-100.header .header__content--column .header__logo--div--has-name {
-        position: relative;
-        height: calc(70vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-100.header .header__content--column .header__logo--div--has-description {
-        position: relative;
-        height: calc(70vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
       .fixed-height-100.header .header__content--column .header__logo--div--has-name-description {
-        position: relative;
-        height: 80vh;
-        height: calc(70vh - (100vh - 100%));
-        width: calc(100vw - (100vw - 100%)); }
-    .fixed-height-100.header .header__content--column__logo--image {
-      width: auto;
-      max-height: 90%;
-      max-width: 75vw;
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
+        height: 75%;
+        width: auto;
+        align-self: center;
+        padding-top: 3rem;
+        text-align: right; }
+    .fixed-height-100.header .header__content--column .header__logo--image {
+      max-height: 100%;
+      max-width: 100%; }
     .fixed-height-100.header .header__content--column .header__info--div {
       display: flex;
       flex-direction: column;
       justify-content: center; }
       .fixed-height-100.header .header__content--column .header__info--div .header__title--div .header__title {
-        font-size: 3.5rem; }
+        font-size: 3.5rem;
+        line-height: 3.5rem; }
       .fixed-height-100.header .header__content--column .header__info--div .header__description--div .header__description {
-        font-size: 2.5rem; }
+        font-size: 2.5rem;
+        line-height: 2.5rem; }
 
 /* read-more-results */
 .read-more-results {
