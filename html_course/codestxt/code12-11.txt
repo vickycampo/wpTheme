@@ -1,0 +1,28 @@
+var mijuego = {
+  renderer: "",
+  escena: "",
+  camara: "",
+  luz: "",
+  coche: {
+    malla: "",
+    velocidad: 0,
+    incrementar: false,
+    izquierda: false,
+    derecha: false,
+    angulorueda: 0
+  },
+  muros: [{x: 0, y: 100, z: -1000},
+          {x: -1000, y: 100, z: 0},
+          {x: 0, y: 100, z: 1000},
+          {x: 1000, y: 100, z:0}],
+  texturas: {
+    coche: "",
+    piso: "",
+    muros: ""
+  },
+  objetivos: {
+    malla: "",
+    limites: [],
+  },
+  entrada: []
+};

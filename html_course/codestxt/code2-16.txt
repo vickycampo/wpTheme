@@ -1,0 +1,12 @@
+<main>
+  <section>
+    <div class="libros">Libro: IT, Stephen King</div>
+    <div class="libros">Libro: Carrie, Stephen King</div>
+    <div class="libros">Libro: El resplandor, Stephen King</div>
+    <div class="libros">Libro: Misery, Stephen King</div>
+  </section>
+  <aside>
+    Cita del artículo uno
+    Cita del artículo dos
+  </aside>
+</main>

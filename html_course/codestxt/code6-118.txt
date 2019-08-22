@@ -1,0 +1,3 @@
+var lista = [12, 5, 80, 34];
+lista.sort();
+alert(lista);  // 12,34,5,80

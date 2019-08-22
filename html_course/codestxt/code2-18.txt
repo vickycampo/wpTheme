@@ -1,0 +1,4 @@
+<aside>
+  <p>Cita del artículo uno</p>
+  <p>Cita del artículo dos</p>
+</aside>

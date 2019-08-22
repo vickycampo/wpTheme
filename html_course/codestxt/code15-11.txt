@@ -1,0 +1,16 @@
+function mostrarlista(evento) {
+  var puntero = evento.target.result;
+  if (puntero) {
+    cajadatos.innerHTML += "<div>" + puntero.value.id + " - " + puntero.value.nombre + " - ";
+    cajadatos.innerHTML += puntero.value.fecha + ' <input type="button" onclick="removerobjeto(\'' + puntero.value.id + '\')" value="Remover"></div>';
+    puntero.continue();
+  }
+}
+function removerobjeto(clave) {
+  if (confirm("Está seguro?")) {
+    var transaccion = bd.transaction(["peliculas"], "readwrite");
+    var almacen = transaccion.objectStore("peliculas");
+    transaccion.addEventListener("complete", mostrar);
+    var solicitud = almacen.delete(clave);
+  }
+}

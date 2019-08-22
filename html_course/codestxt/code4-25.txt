@@ -1,0 +1,9 @@
+main {
+  width: 96%;
+  padding: 2%;
+  background-image: url("fondo.png");
+}
+main > div {
+  width: 960px;
+  margin: 0px auto;
+}

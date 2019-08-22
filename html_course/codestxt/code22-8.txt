@@ -1,0 +1,13 @@
+function iniciar() {
+  window.addEventListener("message", recibir);
+}
+function recibir(evento) {
+  var cajadatos = document.getElementById("cajadatos");
+  if (evento.origin == "http://www.dominio1.com") {
+    cajadatos.innerHTML = "Mensaje válido: " + evento.data;
+    evento.source.postMessage("Mensaje recibido", evento.origin);
+  } else {
+    cajadatos.innerHTML = "Origen Invalido";
+  }
+}
+window.addEventListener("load", iniciar);

@@ -1,0 +1,19 @@
+var worker, cajadatos;
+function iniciar() {
+  cajadatos = document.getElementById("cajadatos");
+  var boton = document.getElementById("boton");
+  boton.addEventListener("click", enviar);
+
+  worker = new Worker("worker.js");
+  worker.addEventListener("error", mostrarerror);
+}
+function enviar() {
+  var nombre = document.getElementById("nombre").value;
+  worker.postMessage(nombre);
+}
+function mostrarerror(evento) {
+  cajadatos.innerHTML = "ERROR: " + evento.message + "<br>";
+  cajadatos.innerHTML += "Archivo: " + evento.filename + "<br>";
+  cajadatos.innerHTML += "Línea: " + evento.lineno;
+}
+window.addEventListener("load", iniciar);

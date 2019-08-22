@@ -1,0 +1,44 @@
+var canvas, video, renderer, escena, camara, malla;
+function iniciar() {
+  canvas = document.getElementById("canvas");
+  video = document.createElement("video");
+  video.src = "trailer.ogg";
+  video.addEventListener("canplaythrough", crearmundo);
+}
+function crearmundo() {
+  var ancho = canvas.width;
+  var altura = canvas.height;
+
+  renderer = new THREE.WebGLRenderer({canvas: canvas, antialias:true});
+  renderer.setClearColor(0xFFFFFF);
+  escena = new THREE.Scene();
+  camara = new THREE.PerspectiveCamera( 45, ancho / altura, 0.1, 1000);
+  camara.position.set(0, 0, 250);
+
+  textura = new THREE.Texture(video);
+  textura.minFilter = THREE.LinearFilter;
+  textura.magFilter = THREE.LinearFilter;
+  textura.generateMipmaps = false;
+
+  var material = new THREE.MeshPhongMaterial({map: textura, side: THREE.DoubleSide});
+  var geometria = new THREE.PlaneGeometry(240, 135);
+  malla = new THREE.Mesh(geometria, material);
+  escena.add(malla);
+
+  var luz = new THREE.PointLight(0xffffff);
+  luz.position.set(0, 100, 250);
+  escena.add(luz);
+
+  canvas.addEventListener("mousemove", mover);
+  video.play();
+  graficar();
+}
+function mover(evento) {
+  malla.rotation.y = event.pageX * 0.02;
+}
+function graficar() {
+  textura.needsUpdate = true;
+  renderer.render(escena, camara);
+  requestAnimationFrame(graficar);
+}
+window.addEventListener("load", iniciar);

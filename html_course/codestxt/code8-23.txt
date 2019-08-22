@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Trabajando con Pistas</title>
+  <style>
+    #reproductor, #info {
+      float: left;
+    }
+  </style>
+  <script>
+    function iniciar() {
+      var info = document.getElementById("info");
+      var pista = document.getElementById("pista");
+      var obj = pista.track;
+
+      var lista = "";
+      lista += "<br>Tipo: " + obj.kind;
+      lista += "<br>Etiqueta: " + obj.label;
+      lista += "<br>Idioma: " + obj.language;
+      info.innerHTML = lista;
+    }
+    window.addEventListener("load", iniciar);
+  </script>
+</head>
+<body>
+  <section id="reproductor">
+    <video id="medio" width="720" height="400" controls>
+      <source src="trailer.mp4">
+      <source src="trailer.ogg">
+      <track id="pista" label="Subtítulos en Español" src="subtitulos.vtt" srclang="es" default>
+    </video>
+  </section>
+  <aside id="info"></aside>
+</body>
+</html>

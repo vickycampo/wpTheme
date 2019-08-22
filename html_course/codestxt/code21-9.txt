@@ -1,0 +1,46 @@
+var cajadatos;
+function iniciar() {
+  cajadatos = document.getElementById("cajadatos");
+  var archivos = document.getElementById("archivos");
+  archivos.addEventListener("change", subir);
+}
+function subir(evento) {
+  var archivos = evento.target.files;
+  var archivo = archivos[0];
+
+  var datos = new FormData();
+  datos.append("archivo", archivo);
+
+  var url = "procesar.php";
+  var solicitud = new XMLHttpRequest();
+  solicitud.addEventListener("loadstart", comenzar);
+  solicitud.addEventListener("load", mostrar);
+  var xmlupload = solicitud.upload;
+  xmlupload.addEventListener("progress", estado);
+  solicitud.open("POST", url, true);
+  solicitud.send(datos);
+}
+function comenzar() {
+  var progreso = document.createElement("progress");
+  progreso.value = 0;
+  progreso.max = 100;
+  progreso.innerHTML = "0%";
+  cajadatos.appendChild(progreso);
+}
+function estado(evento) {
+  if (evento.lengthComputable) {
+    var porcentaje = parseInt(evento.loaded / evento.total * 100);
+    var progreso = cajadatos.querySelector("progress");
+    progreso.value = porcentaje;
+    progreso.innerHTML = porcentaje + '%';
+  } else {
+    console.log("El tamaño no puede ser calculado");
+  }
+}
+function mostrar(evento) {
+  var datos = evento.target;
+  if (datos.status == 200) {
+    cajadatos.innerHTML = "Terminado";
+  }
+}
+window.addEventListener("load", iniciar);

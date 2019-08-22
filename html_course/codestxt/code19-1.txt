@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>API History</title>
+  <script>
+    function volver() {
+      window.history.back();
+    }
+  </script>
+</head>
+<body>
+  <section>
+    <button type="button" onclick="volver()">Volver a la página anterior</button>
+  </section>
+</body>
+</html>

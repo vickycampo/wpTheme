@@ -1,0 +1,3 @@
+<article>
+  <p>La muerte es una <em>quimera</em>: porque mientras yo existo, no existe la <i>muerte</i>;<br>y cuando existe la <i>muerte</i>, <strong>ya no existo yo</strong>.<br>Epicuro de Samos</p>
+</article>

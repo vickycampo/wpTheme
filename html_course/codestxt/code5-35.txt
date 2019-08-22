@@ -1,0 +1,26 @@
+@media (max-width: 1120px) {
+  article time {
+    position: static;
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 10px;
+
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 0px;
+    border-radius: 0px;
+  }
+  .numerodia {
+    display: inline-block;
+    font: bold 14px Verdana, sans-serif;
+    color: #999999;
+    padding-right: 5px;
+  }
+  .nombredia {
+    display: inline-block;
+    font: bold 14px Verdana, sans-serif;
+    color: #999999;
+  }
+  article h1 {
+    margin-bottom: 0px;
+  }
+}

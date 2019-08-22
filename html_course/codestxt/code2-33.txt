@@ -1,0 +1,7 @@
+<article>
+  <p>La muerte es una quimera: porque mientras yo existo, no existe la muerte;<br>y cuando existe la muerte, ya no existo yo.<br>Epicuro de Samos</p>
+  <figure>
+    <img src="miimagen.jpg" width="150" alt="Arboles en mi patio">
+    <figcaption>Arboles en mi patio<figcaption>
+  </figure>
+</article>

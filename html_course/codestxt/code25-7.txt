@@ -1,0 +1,12 @@
+function reproducir(mibuffer) {
+  var nodofuente = contexto.createBufferSource();
+  nodofuente.buffer = mibuffer;
+
+  var nodofiltro = contexto.createBiquadFilter();
+  nodofiltro.type = "highpass";
+  nodofiltro.frequency.value = 1000;
+
+  nodofuente.connect(nodofiltro);
+  nodofiltro.connect(contexto.destination);
+  nodofuente.start(0);
+}

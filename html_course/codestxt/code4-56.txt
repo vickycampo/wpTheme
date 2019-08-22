@@ -1,0 +1,41 @@
+article {
+  position: relative;
+  padding: 0px 40px 20px 40px;
+}
+article time {
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -70px;
+  width: 80px;
+  padding: 15px 5px;
+
+  background-color: #094660;
+  box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.7);
+  border-radius: 5px;
+}
+.numerodia {
+  font: bold 36px Verdana, sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+}
+.nombredia {
+  font: 12px Verdana, sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+}
+article h1 {
+  margin-bottom: 5px;
+  font: bold 30px Georgia, sans-serif;
+}
+article p {
+  font: 18px Georgia, sans-serif;
+}
+figure {
+  margin: 10px 0px;
+}
+figure img {
+  max-width: 98%;
+  padding: 1%;
+  border: 1px solid;
+}

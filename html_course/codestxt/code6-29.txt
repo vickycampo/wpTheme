@@ -1,0 +1,2 @@
+var miarray = ["rojo", undefined, 32];
+alert(miarray[1]);

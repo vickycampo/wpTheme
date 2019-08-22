@@ -1,0 +1,11 @@
+var cajadatos, bd;
+function iniciar() {
+  cajadatos = document.getElementById("cajadatos");
+  var boton = document.getElementById("grabar");
+  boton.addEventListener("click", agregarobjeto);
+
+  var solicitud = indexedDB.open("basededatos");
+  solicitud.addEventListener("error", mostrarerror);
+  solicitud.addEventListener("success", comenzar);
+  solicitud.addEventListener("upgradeneeded", crearbd);
+}

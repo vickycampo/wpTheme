@@ -1,0 +1,12 @@
+#menuprincipal {
+  width: 96%;
+  height: 50px;
+  padding: 0% 2%;
+  background-color: #9FC8D9;
+  border-top: 1px solid #094660;
+  border-bottom: 1px solid #094660;
+}
+#menuprincipal > div {
+  width: 960px;
+  margin: 0px auto;
+}

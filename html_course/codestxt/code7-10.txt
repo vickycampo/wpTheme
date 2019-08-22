@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Formularios</title>
+  <style>
+    input:in-range{
+      background: #EEEEFF;
+    }
+    input:out-of-range{
+      background: #FFEEEE;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <form name="formulario" method="get" action="procesar.php">
+      <input type="number" name="numero" min="0" max="10">
+      <input type="submit" value="Enviar">
+    </form>
+  </section>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Formularios</title>
+</head>
+<body>
+  <section>
+    <form name="formulario" method="get" action="procesar.php">
+      <p><label>Correo: <input type="email" name="correo" required></label></p>
+      <p>
+        <input type="submit" value="Enviar">
+        <input type="submit" value="Grabar" formnovalidate>
+      </p>
+    </form>
+  </section>
+</body>
+</html>

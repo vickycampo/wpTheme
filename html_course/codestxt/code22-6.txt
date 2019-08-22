@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Cross Document Messaging</title>
+  <link rel="stylesheet" href="messaging.css">
+  <script src="messaging.js"></script>
+</head>
+<body>
+  <section id="cajaformulario">
+    <form name="formulario">
+      <label for="nombre">Su nombre: </label>
+      <input type="text" name="nombre" id="nombre" required>
+      <button type="button" id="boton">Enviar</button>
+    </form>
+  </section>
+  <section id="cajadatos">
+    <iframe id="iframe" src="http://www.dominio2.com/iframe.html" width="500" height="350"></iframe>
+  </section>
+</body>
+</html>

@@ -1,0 +1,3 @@
+var mitexto = "Mi nombre es ";
+mitexto = mitexto + "Juan";
+alert(mitexto);

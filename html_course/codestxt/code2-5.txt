@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Este texto es el título del documento</title>
+</head>
+<body>
+
+</body>
+</html>

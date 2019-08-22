@@ -1,0 +1,14 @@
+var canvas, imagen;
+function iniciar() {
+  var elemento = document.getElementById("canvas");
+  canvas = elemento.getContext("2d");
+  imagen = document.createElement("img");
+  imagen.src = "ladrillos.jpg";
+  imagen.addEventListener("load", agregarpatron);
+}
+function agregarpatron() {
+  var patron = canvas.createPattern(imagen, "repeat");
+  canvas.fillStyle = patron;
+  canvas.fillRect(0, 0, 500, 300);
+}
+window.addEventListener("load", iniciar);

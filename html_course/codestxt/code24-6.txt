@@ -1,0 +1,5 @@
+function preparardescripcion(descripcion) {
+  usuario.setLocalDescription(descripcion, function() {
+    enviarmensaje(descripcion);
+  });
+}

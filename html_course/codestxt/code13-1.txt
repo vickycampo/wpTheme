@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>API Pointer Lock</title>
+  <script>
+    function iniciar() {
+      var elemento = document.getElementById("control");
+      elemento.addEventListener("click", bloquearraton);
+    }
+    function bloquearraton(evento) {
+      var elemento = evento.target;
+      elemento.requestPointerLock();
+    }
+    window.addEventListener("load", iniciar);
+  </script>
+</head>
+<body>
+  <section>
+    <p id="control">Clic aquí para bloquear el ratón</p>
+  </section>
+</body>
+</html>

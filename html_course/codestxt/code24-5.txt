@@ -1,0 +1,3 @@
+function hacerllamada() {
+  usuario.createOffer(preparardescripcion, mostrarerror);
+}

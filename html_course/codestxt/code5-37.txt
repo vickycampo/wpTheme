@@ -1,0 +1,29 @@
+@media (max-width: 480px) {
+  #cabeceralogo > div {
+    text-align: center;
+  }
+  #cabeceralogo h1 {
+    font: bold 46px Arial, sans-serif;
+  }
+  #menuprincipal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+  }
+  #menuprincipal li {
+    display: block;
+    margin-right: 0px;
+    text-align: center;
+  }
+  #menuicono {
+    display: block;
+  }
+  #pielogo > div {
+    display: block;
+  }
+  .seccionpie {
+    width: 94%;
+    text-align: center;
+  }
+}

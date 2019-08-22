@@ -1,0 +1,6 @@
+article {
+  font: bold 1.5em Georgia, sans-serif;
+}
+article h1 {
+  font: bold 2em Georgia, sans-serif;
+}

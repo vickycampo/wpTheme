@@ -1,0 +1,21 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+#cabeceralogo {
+  display: flex;
+  justify-content: center;
+  width: 96%;
+  height: 150px;
+  padding: 0% 2%;
+  background-color: #0F76A0;
+}
+#cabeceralogo > div {
+  flex: 1;
+  max-width: 960px;
+  padding-top: 45px;
+}
+#cabeceralogo h1 {
+  font: bold 54px Arial, sans-serif;
+  color: #FFFFFF;
+}

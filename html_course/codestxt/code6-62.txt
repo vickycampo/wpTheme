@@ -1,0 +1,6 @@
+var mivalor = "Hola";
+if (isNaN(mivalor)) {
+  alert(mivalor + " no es un número");
+} else {
+  alert(mivalor + " es un número");
+}

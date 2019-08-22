@@ -1,0 +1,16 @@
+var worker;
+function iniciar() {
+  var boton = document.getElementById("boton");
+  boton.addEventListener("click", enviar);
+  worker = new SharedWorker("worker.js");
+  worker.port.addEventListener("message", recibido);
+  worker.port.start();
+}
+function recibido(evento) {
+  alert(evento.data);
+}
+function enviar() {
+  var nombre = document.getElementById("nombre").value;
+  worker.port.postMessage(nombre);
+}
+window.addEventListener("load", iniciar);

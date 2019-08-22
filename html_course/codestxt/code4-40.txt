@@ -1,0 +1,21 @@
+#cajapadre {
+  display: flex;
+}
+#cajapadre > div {
+  height: 145px;
+  margin: 5px;
+  background-color: #CCCCCC;
+}
+#caja-1 {
+  max-width: 50px;
+  flex: 1;
+}
+#caja-2 {
+  flex: 1;
+}
+#caja-3 {
+  flex: 1;
+}
+#caja-4 {
+  flex: 1;
+}

@@ -1,0 +1,11 @@
+mijuego.detectar = function() {
+  var posx = mijuego.coche.malla.position.x;
+  var posz = mijuego.coche.malla.position.z;
+  if (posx < -980 || posx > 980 || posz < -980 || posz > 980) {
+    mijuego.coche.velocidad = -7;
+  }
+  if (posx > mijuego.objetivos.limites[0] && posx < mijuego.objetivos.limites[1] && posz > mijuego.objetivos.limites[2] && posz < mijuego.objetivos.limites[3]) {
+    mijuego.escena.remove(mijuego.objetivos.malla);
+    mijuego.objetivos.malla = "";
+  }
+};

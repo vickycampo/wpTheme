@@ -1,0 +1,16 @@
+function agregarobjeto() {
+  var clave = document.getElementById("clave").value;
+  var titulo = document.getElementById("texto").value;
+  var fecha = document.getElementById("fecha").value;
+
+  var transaccion = bd.transaction(["peliculas"], "readwrite");
+  var almacen = transaccion.objectStore("peliculas");
+  transaccion.addEventListener("complete", function() {
+    mostrar(clave);
+  });
+  var solicitud = almacen.add({id: clave, nombre: titulo, fecha: fecha});
+
+  document.getElementById("clave").value = "";
+  document.getElementById("texto").value = "";
+  document.getElementById("fecha").value = "";
+}

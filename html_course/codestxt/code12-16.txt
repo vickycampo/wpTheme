@@ -1,0 +1,38 @@
+mijuego.procesar = function() {
+  if (mijuego.coche.incrementar) {
+    if (mijuego.coche.velocidad < 8) {
+      mijuego.coche.velocidad += 0.1;
+    }
+  } else {
+    if (mijuego.coche.velocidad > 0) {
+      mijuego.coche.velocidad -= 0.1;
+    } else {
+      mijuego.coche.velocidad += 0.1;
+    }
+  }
+  if (mijuego.coche.izquierda && mijuego.coche.angulorueda > - 0.5) {
+    mijuego.coche.angulorueda -= 0.01;
+  }
+  if (!mijuego.coche.izquierda && mijuego.coche.angulorueda < 0) {
+    mijuego.coche.angulorueda += 0.02;
+  }
+  if (mijuego.coche.derecha && mijuego.coche.angulorueda < 0.5) {
+    mijuego.coche.angulorueda += 0.01;
+  }
+  if (!mijuego.coche.derecha && mijuego.coche.angulorueda > 0) {
+    mijuego.coche.angulorueda -= 0.02;
+  }
+  var angulo = mijuego.coche.malla.rotation.z;
+  angulo -= mijuego.coche.angulorueda * mijuego.coche.velocidad / 100;
+  mijuego.coche.malla.rotation.z = angulo;
+
+  mijuego.coche.malla.position.x += Math.sin(angulo) * mijuego.coche.velocidad;
+  mijuego.coche.malla.position.z += Math.cos(angulo) * mijuego.coche.velocidad;
+
+  var desviacion = mijuego.coche.angulorueda / 3;
+  posx = mijuego.coche.malla.position.x - (Math.sin(mijuego.coche.malla.rotation.z + desviacion) * 150);
+  posz = mijuego.coche.malla.position.z - (Math.cos(mijuego.coche.malla.rotation.z + desviacion) * 150);
+  mijuego.camara.position.set(posx, 50, posz);
+  mijuego.camara.lookAt(mijuego.coche.malla.position);
+  mijuego.luz.position.set(posx, 50, posz);
+};

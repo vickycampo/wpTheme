@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>API Page Visibility</title>
+  <script>
+    var estado;
+    function iniciar() {
+      window.addEventListener("blur", function() {
+        cambiarestado("hidden");
+      });
+      window.addEventListener("focus", function() {
+        cambiarestado("visible");
+      });
+      document.addEventListener("visibilitychange", function() {
+        cambiarestado(document.visibilityState);
+      });
+    }
+    function cambiarestado(nuevoestado) {
+      if (estado != nuevoestado) {
+        estado = nuevoestado;
+        mostrarestado();
+      }
+    }
+    function mostrarestado() {
+      var elemento = document.getElementById("aplicacion");
+      elemento.innerHTML += "<br>" + estado;
+    }
+    window.addEventListener("load", iniciar);
+  </script>
+</head>
+<body>
+  <section id="aplicacion">
+    <p>Abra otra ventana para cambiar el estado de visibilidad</p>
+  </section>
+</body>
+</html>

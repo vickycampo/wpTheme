@@ -1,0 +1,24 @@
+var renderer, escena, camara, malla;
+function iniciar() {
+  var canvas = document.getElementById("canvas");
+  var ancho = canvas.width;
+  var altura = canvas.height;
+  renderer = new THREE.WebGLRenderer({canvas: canvas});
+  renderer.setClearColor(0xFFFFFF);
+  escena = new THREE.Scene();
+  camara = new THREE.PerspectiveCamera(45, ancho / altura, 0.1, 1000);
+  camara.position.set(0, 0, 150);
+  var geometria = new THREE.BoxGeometry(50, 50, 50);
+  var material = new THREE.MeshBasicMaterial({color: 0x000000, wireframe: true});
+  malla = new THREE.Mesh(geometria, material);
+  escena.add(malla);
+  renderer.render(escena, camara);
+
+  canvas.addEventListener("mousemove", mover);
+}
+function mover(evento) {
+  malla.rotation.x = evento.pageY * 0.01;
+  malla.rotation.z = -evento.pageX * 0.01;
+  renderer.render(escena, camara);
+}
+window.addEventListener("load", iniciar);

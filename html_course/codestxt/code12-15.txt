@@ -1,0 +1,34 @@
+mijuego.control = function(evento) {
+  var accion;
+  while (mijuego.entrada.length) {
+    accion = mijuego.entrada.shift();
+    switch (accion.type) {
+      case "keydown":
+        switch(accion.key){
+          case "ArrowUp":
+            mijuego.coche.incrementar = true;
+            break;
+          case "ArrowLeft":
+            mijuego.coche.izquierda = true;
+            break;
+          case "ArrowRight":
+            mijuego.coche.derecha = true;
+            break;
+        }
+        break;
+      case "keyup":
+        switch(accion.key){
+          case "ArrowUp":
+            mijuego.coche.incrementar = false;
+            break;
+          case "ArrowLeft":
+            mijuego.coche.izquierda = false;
+            break;
+          case "ArrowRight":
+            mijuego.coche.derecha = false;
+            break;
+        }
+        break;
+    }
+  }
+};

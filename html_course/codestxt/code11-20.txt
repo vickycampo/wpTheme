@@ -1,0 +1,12 @@
+function iniciar() {
+  var elemento = document.getElementById("canvas");
+  var canvas = elemento.getContext("2d");
+
+  canvas.save();
+  canvas.translate(50, 70);
+  canvas.font = "bold 20px verdana, sans-serif";
+  canvas.fillText("PRUEBA1", 0, 30);
+  canvas.restore();
+  canvas.fillText("PRUEBA2", 0, 30);
+}
+window.addEventListener("load", iniciar);

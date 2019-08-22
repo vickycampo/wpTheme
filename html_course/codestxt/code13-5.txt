@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>API Pointer Lock</title>
+  <script>
+    var canvas, posx, posy;
+    function iniciar() {
+      var elemento = document.getElementById("canvas");
+      canvas = elemento.getContext("2d");
+      elemento.addEventListener("click", bloquearraton);
+      iniciomensaje();
+    }
+    function dibujar(evento) {
+      canvas.clearRect(0, 0, 500, 400);
+
+      var control1, control2;
+      control1 = posx + event.movementX;
+      control2 = posy + event.movementY;
+      if(control1 > 0 && control1 < 500){
+        posx = control1;
+      }
+      if(control2 > 0 && control2 < 400){
+        posy = control2;
+      }
+      canvas.beginPath();
+      canvas.moveTo(posx, posy - 20);
+      canvas.lineTo(posx, posy + 20);
+      canvas.moveTo(posx - 20, posy);
+      canvas.lineTo(posx + 20, posy);
+      canvas.moveTo(posx + 20, posy);
+      canvas.arc(posx, posy, 20, 0, Math.PI * 2);
+      canvas.stroke();
+    }
+    function bloquearraton(evento) {
+      var elemento = evento.target;
+      if (!document.pointerLockElement) {
+        elemento.requestPointerLock();
+        posx = evento.clientX;
+        posy = evento.clientY;
+        elemento.addEventListener("mousemove", dibujar);
+      } else {
+        document.exitPointerLock();
+        elemento.removeEventListener("mousemove", dibujar);
+        iniciomensaje();
+      }
+    }
+    function iniciomensaje() {
+      canvas.clearRect(0, 0, 500, 400);
+      canvas.font = "bold 36px verdana, sans-serif";
+      canvas.fillText("Clic para Jugar", 100, 180);
+    }
+    window.addEventListener("load", iniciar);
+  </script>
+</head>
+<body>
+  <section>
+    <canvas id="canvas" width="500" height="400"></canvas>
+  </section>
+</body>
+</html>

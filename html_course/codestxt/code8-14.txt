@@ -1,0 +1,9 @@
+function sonido() {
+  if (silenciar.value == "Silencio") {
+    medio.muted = true;
+    silenciar.value = "Sonido";
+  } else {
+    medio.muted = false;
+    silenciar.value = "Silencio";
+  }
+}

@@ -1,0 +1,15 @@
+<script>
+  function iniciar() {
+    var info = document.getElementById("info");
+    var pista = document.getElementById("pista");
+    var obj = pista.track;
+    var lineas = obj.cues;
+
+    var lista = "";
+    for (var f = 0; f < lineas.length; f++) {
+      lista += lineas[f].text + "<br>";
+    }
+    info.innerHTML = lista;
+  }
+  window.addEventListener("load", iniciar);
+</script>

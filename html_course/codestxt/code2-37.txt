@@ -1,0 +1,12 @@
+<aside>
+  <dl>
+    <dt>IT</dt>
+    <dd>Tras lustros de tranquilidad y lejania una antigua promesa infantil les hace volver al lugar en el que vivieron su infancia y juventud como una terrible pesadilla.</dd>
+    <dt>Carrie</dt>
+    <dd>Sus compañeros se burlan de ella, pero Carrie tiene un don. Puede mover cosas con su mente. Este es su poder y su gran problema.</dd>
+    <dt>El Resplandor</dt>
+    <dd>Al escritor Jack Torrance le es ofrecido un empleo como cuidador del hotel Overlook durante el invierno junto a su familia.</dd>
+    <dt>Misery</dt>
+    <dd>Paul Sheldon es un famoso escritor de novelas románticas ambientadas en la época victoriana, cuyo personaje principal se llama Misery Chastain.</dd>
+  </dl>
+</aside>

@@ -1,0 +1,25 @@
+var cajadatos;
+function iniciar() {
+  cajadatos = document.getElementById("cajadatos");
+
+  var boton = document.getElementById("boton");
+  boton.addEventListener("click", enviar);
+}
+function enviar() {
+  var datos = new FormData();
+  datos.append("nombre", "Juan");
+  datos.append("apellido", "Perez");
+
+  var url = "procesar.php";
+  var solicitud = new XMLHttpRequest();
+  solicitud.addEventListener("load", mostrar);
+  solicitud.open("POST", url, true);
+  solicitud.send(datos);
+}
+function mostrar(evento) {
+  var datos = evento.target;
+  if (datos.status == 200) {
+    cajadatos.innerHTML = datos.responseText;
+  }
+}
+window.addEventListener("load", iniciar);

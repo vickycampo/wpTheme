@@ -1,0 +1,1 @@
+<input type="color" name="micolor" value="#99BB00">

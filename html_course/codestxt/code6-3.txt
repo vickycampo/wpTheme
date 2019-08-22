@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+</head>
+<body onload="alert('Bienvenido!')">
+  <section>
+    <h1>Mi Sitio Web</h1>
+    <p>Bienvenido a mi sitio web</p>
+  </section>
+</body>
+</html>

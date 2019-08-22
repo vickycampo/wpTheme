@@ -1,0 +1,9 @@
+function mostrar() {
+  cajadatos.innerHTML = "";
+  var transaccion = bd.transaction(["peliculas"]);
+  var almacen = transaccion.objectStore("peliculas");
+  var indice = almacen.index("BuscarFecha");
+
+  var puntero = indice.openCursor(null, "prev");
+  puntero.addEventListener("success", mostrarlista);
+}

@@ -1,0 +1,10 @@
+function iniciar() {
+  var worker = new SharedWorker("worker.js");
+  worker.port.addEventListener("message", recibido);
+  worker.port.start();
+}
+function recibido(evento) {
+  var cajadatos = document.getElementById("cajadatos");
+  cajadatos.innerHTML = evento.data;
+}
+window.addEventListener("load", iniciar);

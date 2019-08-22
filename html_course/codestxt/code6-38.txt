@@ -1,0 +1,5 @@
+var inteligente = "SI";
+var edad = 19;
+if (edad < 21 && inteligente == "SI") {
+   alert("Juan está autorizado");
+}

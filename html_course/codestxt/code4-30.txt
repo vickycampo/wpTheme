@@ -1,0 +1,5 @@
+.seccionpie {
+  float: left;
+  width: 27.33%;
+  padding: 3%;
+}

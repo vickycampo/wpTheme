@@ -1,0 +1,3 @@
+var texto = "Hola Mundo";
+var indice = texto.indexOf("Mundo");
+alert("La palabra comienza en el índice " + indice);  // 5

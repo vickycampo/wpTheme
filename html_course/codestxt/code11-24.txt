@@ -1,0 +1,11 @@
+function iniciar() {
+  var elemento = document.getElementById("canvas");
+  var canvas = elemento.getContext("2d");
+
+  var imagen = document.createElement("img");
+  imagen.src = "nieve.jpg";
+  imagen.addEventListener("load", function() {
+    canvas.drawImage(imagen, 135, 30, 50, 50, 0, 0, 300, 300);
+  });
+}
+window.addEventListener("load", iniciar);

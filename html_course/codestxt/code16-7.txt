@@ -1,0 +1,32 @@
+var cajadatos;
+function iniciar() {
+  cajadatos = document.getElementById("cajadatos");
+  var archivos = document.getElementById("archivos");
+  archivos.addEventListener("change", procesar);
+}
+function procesar(evento) {
+  cajadatos.innerHTML = "";
+  var archivos = evento.target.files;
+  var archivo = archivos[0];
+
+  var lector = new FileReader();
+  lector.addEventListener("loadstart", comenzar);
+  lector.addEventListener("progress", estado);
+  lector.addEventListener("loadend", function() {
+    mostrar(archivo);
+  });
+  lector.readAsBinaryString(archivo);
+}
+function comenzar(evento) {
+  cajadatos.innerHTML = '<progress value="0" max="100">0%</progress>';
+}
+function estado(evento) {
+  var porcentaje = parseInt(evento.loaded / evento.total * 100);
+  cajadatos.innerHTML = '<progress value="' + porcentaje + '" max="100">' + porcentaje + '%</progress>';
+}
+function mostrar(archivo) {
+  cajadatos.innerHTML = "Nombre: " + archivo.name + "<br>";
+  cajadatos.innerHTML += "Tipo: " + archivo.type + "<br>";
+  cajadatos.innerHTML += "Tamaño: " + archivo.size + " bytes<br>";
+}
+window.addEventListener("load", iniciar);

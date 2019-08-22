@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>API Page Visibility</title>
+  <script>
+    var video;
+    function iniciar() {
+      video = document.getElementById("medio");
+      document.addEventListener("visibilitychange", mostrarestado);
+      video.play();
+    }
+    function mostrarestado() {
+      var estado = document.visibilityState;
+      switch(estado) {
+        case "visible":
+          video.play();
+          break;
+        case "hidden":
+          video.pause();
+          break;
+      }
+    }
+    window.addEventListener("load", iniciar);
+  </script>
+</head>
+<body>
+  <video id="medio" width="720" height="400">
+    <source src="trailer.mp4">
+    <source src="trailer.ogg">
+  </video>
+</body>
+</html>

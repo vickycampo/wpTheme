@@ -1,0 +1,9 @@
+function enviarformulario() {
+  var elemento = document.getElementById("apodo");
+  var valido = formulario.checkValidity();
+  if (valido) {
+    formulario.submit();
+  } else if (elemento.validity.patternMismatch || elemento.validity.valueMissing) {
+    alert('El apodo debe tener un mínimo de 3 caracteres');
+  }
+}

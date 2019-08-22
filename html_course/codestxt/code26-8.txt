@@ -1,0 +1,11 @@
+addEventListener("message", recibido);
+
+function recibido(evento) {
+  if (evento.data == "cerrar2") {
+    postMessage("Worker Terminado");
+    close();
+  } else {
+    var respuesta = "Su nombre es " + evento.data;
+    postMessage(respuesta);
+  }
+}

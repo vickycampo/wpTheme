@@ -1,0 +1,26 @@
+mijuego.iniciar = function() {
+  var ancho = window.innerWidth;
+  var altura = window.innerHeight;
+  var canvas = document.createElement("canvas");
+  canvas.width = ancho;
+  canvas.height = altura;
+  document.body.appendChild(canvas);
+
+  mijuego.renderer = new THREE.WebGLRenderer({canvas: canvas, antialias:true});
+  mijuego.escena = new THREE.Scene();
+  mijuego.camara = new THREE.PerspectiveCamera(45, ancho / altura, 0.1, 10000);
+  mijuego.camara.position.set(0, 50, 150);
+
+  mijuego.luz = new THREE.PointLight(0x999999, 1);
+  mijuego.luz.position.set(0, 50, 150);
+  mijuego.escena.add(mijuego.luz);
+
+  window.addEventListener("keydown", function(evento) {
+    mijuego.entrada.push({type: "keydown", key: evento.key});
+  });
+  window.addEventListener("keyup", function(evento) {
+    mijuego.entrada.push({type: "keyup", key: evento.key});
+  });
+  mijuego.cargar();
+  mijuego.crear();
+};

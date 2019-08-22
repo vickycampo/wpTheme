@@ -1,0 +1,14 @@
+function prepararremoto(evento) {
+  var video = document.getElementById("remotomedio");
+  video.srcObject = evento.stream;
+  video.play();
+}
+function prepararice(evento) {
+  if (evento.candidate) {
+    var mensaje = {
+      type: "candidate",
+      candidate: evento.candidate,
+    };
+    enviarmensaje(mensaje);
+  }
+}

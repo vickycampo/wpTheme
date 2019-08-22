@@ -1,0 +1,34 @@
+mijuego.crear = function() {
+  var geometria, material, textura, malla;
+  malla = mijuego.texturas.coche.scene;
+  malla.scale.set(20, 20, 20);
+  malla.rotation.set(-Math.PI / 2, 0, Math.PI);
+  malla.position.y += 14;
+  mijuego.escena.add(malla);
+  mijuego.coche.malla = malla;
+
+  geometria = new THREE.PlaneGeometry(2000, 2000, 10, 10);
+  textura = new THREE.Texture(mijuego.texturas.piso, THREE.UVMapping, THREE.RepeatWrapping, THREE.RepeatWrapping);
+  textura.repeat.set(20, 20);
+
+  textura.needsUpdate = true;
+
+  material = new THREE.MeshPhongMaterial({map: textura});
+  malla = new THREE.Mesh(geometria, material);
+  malla.rotation.x = Math.PI * 1.5;
+  mijuego.escena.add(malla);
+
+  for (var f = 0; f < 4; f++) {
+    geometria = new THREE.PlaneGeometry(2000, 200, 10, 10);
+    textura = new THREE.Texture(mijuego.texturas.muros, THREE.UVMapping, THREE.RepeatWrapping, THREE.RepeatWrapping);
+    textura.repeat.set(10, 1);
+    textura.needsUpdate = true;
+
+    material = new THREE.MeshPhongMaterial({map: textura});
+    malla = new THREE.Mesh(geometria, material);
+    malla.position.set(mijuego.muros[f].x, mijuego.muros[f].y, mijuego.muros[f].z);
+    malla.rotation.y = Math.PI / 2 * f;
+    mijuego.escena.add(malla);
+  }
+  mijuego.bucle();
+};

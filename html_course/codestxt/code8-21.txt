@@ -1,0 +1,5 @@
+WEBVTT
+
+00:02.000 --> 00:07.000 align:start position:5%
+<i>Bienvenido</i>
+al elemento &lt;track&gt;!

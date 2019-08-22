@@ -1,0 +1,10 @@
+function estado() {
+  if (!medio.ended) {
+    var largo = parseInt(medio.currentTime * maximo / medio.duration);
+    progreso.style.width = largo + "px";
+  } else {
+    progreso.style.width = "0px";
+    reproducir.value = ">";
+    clearInterval(bucle);
+  }
+}

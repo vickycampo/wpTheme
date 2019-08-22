@@ -1,0 +1,2 @@
+var minumero = 11 % 3;  // 2
+alert(minumero);

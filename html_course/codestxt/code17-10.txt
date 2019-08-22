@@ -1,0 +1,21 @@
+var deposito;
+function iniciar() {
+  deposito = document.getElementById("deposito");
+  deposito.addEventListener("dragenter", function(evento) {
+    evento.preventDefault();
+  });
+  deposito.addEventListener("dragover", function(evento) {
+    evento.preventDefault();
+  });
+  deposito.addEventListener("drop", soltar);
+}
+function soltar(evento) {
+  evento.preventDefault();
+  var archivos = evento.dataTransfer.files;
+  var lista = "";
+  for (var f = 0; f < archivos.length; f++) {
+    lista += "Archivo: " + archivos[f].name + " " + archivos[f].size + "<br>";
+  }
+  deposito.innerHTML = lista;
+}
+window.addEventListener("load", iniciar);

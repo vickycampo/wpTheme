@@ -1,0 +1,3 @@
+var miarray = [2, 45, 31];
+miarray = []
+alert(miarray[1]);  // undefined

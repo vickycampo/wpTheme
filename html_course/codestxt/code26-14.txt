@@ -1,0 +1,12 @@
+var puertos = new Array();
+addEventListener("connect", conectar);
+
+function conectar(evento) {
+  puertos.push(evento.ports[0]);
+  evento.ports[0].onmessage = enviar;
+}
+function enviar(evento) {
+  for (var f = 0; f < puertos.length; f++) {
+    puertos[f].postMessage("Su nombre es " + evento.data);
+  }
+}

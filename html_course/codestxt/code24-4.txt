@@ -1,0 +1,14 @@
+function prepararcamara(transmision) {
+  var video = document.getElementById("localmedio");
+  video.srcObject = transmision;
+  video.play();
+
+  var servidores = {"iceServers": [{"urls": "stun: stun.l.google.com:19302"}]};
+  usuario = new RTCPeerConnection(servidores);
+  usuario.addStream(transmision);
+  usuario.addEventListener("addstream", prepararremoto);
+  usuario.addEventListener("icecandidate", prepararice);
+}
+function mostrarerror() {
+  console.log("Error");
+}

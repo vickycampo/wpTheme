@@ -1,0 +1,10 @@
+function iniciar() {
+  cajadatos = document.getElementById("cajadatos");
+  url = document.getElementById("url");
+  url.addEventListener("click", cambiarpagina);
+}
+function cambiarpagina() {
+  cajadatos.innerHTML = "La url es página2";
+  history.pushState(null, null, "pagina2.html");
+}
+window.addEventListener("load", iniciar);

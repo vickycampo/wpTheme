@@ -1,0 +1,98 @@
+var usuario, socket, canal, canalabierto;
+function iniciar() {
+  var botonllamar = document.getElementById("botonllamar");
+  botonllamar.addEventListener("click", hacerllamada);
+  var botonenviar = document.getElementById("botonenviar");
+  botonenviar.addEventListener("click", enviardatos);
+
+  socket = new WebSocket("ws://SU_DIRECCION_IP:12345/ws/demo.php");
+  socket.addEventListener("message", recibido);
+
+  var promesa = navigator.mediaDevices.getUserMedia({video: true});
+  promesa.then(prepararcamara);
+  promesa.catch(mostrarerror);
+}
+function mostrarerror(evento) {
+  console.error(evento);
+}
+function prepararcamara(transmision) {
+  var servidores = {"iceServers": [{"urls": "stun:stun.l.google.com:19302"}]};
+  usuario = new RTCPeerConnection(servidores);
+  usuario.addEventListener("addstream", prepararremoto);
+  usuario.addEventListener("icecandidate", prepararice);
+  usuario.ondatachannel = function(evento) {
+    canal = evento.channel;
+    canal.onmessage = recibirdatos;
+    canalabierto = true;
+  };
+  usuario.addStream(transmision);
+  var video = document.getElementById("localmedio");
+  video.srcObject = transmision;
+  video.play();
+}
+function recibido(evento) {
+  var mns = JSON.parse(evento.data);
+  switch (mns.type) {
+    case "offer":
+      usuario.setRemoteDescription(new RTCSessionDescription(mns), function() {
+          usuario.createAnswer(preparardescripcion, mostrarerror);
+        });
+      break;
+    case "answer":
+      usuario.setRemoteDescription(new RTCSessionDescription(mns));
+      break;
+    case "candidate":
+      var candidato = new RTCIceCandidate(mns.candidate);
+      usuario.addIceCandidate(candidato);
+  }
+}
+function enviarmensaje(mensaje) {
+  var mns = JSON.stringify(mensaje);
+  socket.send(mns);
+}
+function hacerllamada() {
+  canal = usuario.createDataChannel("datos");
+  canal.onopen = function() {
+    canalabierto = true;
+  };
+  canal.onmessage = recibirdatos;
+  usuario.createOffer(preparardescripcion, mostrarerror);
+}
+function preparardescripcion(descripcion) {
+  usuario.setLocalDescription(descripcion, function() {
+    enviarmensaje(descripcion);
+  });
+}
+function prepararremoto(evento) {
+  var video = document.getElementById("remotomedio");
+  video.srcObject = evento.stream;
+  video.play();
+}
+function prepararice(evento) {
+  if (evento.candidate) {
+    var mensaje = {
+      type: "candidate",
+      candidate: evento.candidate,
+    };
+    enviarmensaje(mensaje);
+  }
+}
+function enviardatos() {
+  var cajadatos = document.getElementById("cajadatos");
+  if (!canalabierto) {
+    cajadatos.innerHTML = "DataChannel no está disponible, intente más adelante";
+  } else {
+    var mensaje = document.getElementById("mensaje").value;
+    var chat = cajadatos.innerHTML;
+    cajadatos.innerHTML = "Local dice: " + mensaje + "<br>";
+    cajadatos.innerHTML += chat;
+    canal.send(mensaje);
+  }
+}
+function recibirdatos(evento) {
+  var cajadatos = document.getElementById("cajadatos");
+  var chat = cajadatos.innerHTML;
+  cajadatos.innerHTML = "Remoto dice: " + evento.data + "<br>";
+  cajadatos.innerHTML += chat;
+}
+window.addEventListener("load", iniciar);

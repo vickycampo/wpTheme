@@ -1,0 +1,30 @@
+var canvas, contexto, nodoanalizador;
+function iniciar() {
+  var video = document.getElementById("medio");
+  var elemento = document.getElementById("canvas");
+  canvas = elemento.getContext("2d");
+  contexto = new AudioContext();
+
+  var nodofuente = contexto.createMediaElementSource(video);
+  nodoanalizador = contexto.createAnalyser();
+  nodoanalizador.fftSize = 512;
+  nodoanalizador.smoothingTimeConstant = 0.9;
+
+  nodofuente.connect(nodoanalizador);
+  nodoanalizador.connect(contexto.destination);
+
+  mostrargraficos();
+}
+function mostrargraficos() {
+  var datos = new Uint8Array(nodoanalizador.frequencyBinCount);
+  nodoanalizador.getByteFrequencyData(datos);
+
+  canvas.clearRect(0, 0, 500, 400);
+  canvas.beginPath();
+  for (var f = 0; f < nodoanalizador.frequencyBinCount; f++) {
+    canvas.fillRect(f * 5, 272 - datos[f], 3, datos[f]);
+  }
+  canvas.stroke();
+  requestAnimationFrame(mostrargraficos);
+}
+window.addEventListener("load", iniciar);

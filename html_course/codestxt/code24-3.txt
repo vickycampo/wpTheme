@@ -1,0 +1,12 @@
+var usuario, socket;
+function iniciar() {
+  var botonllamar = document.getElementById("botonllamar");
+  botonllamar.addEventListener("click", hacerllamada);
+
+  socket = new WebSocket("ws://SU_DIRECCION_IP:12345/ws/demo.php");
+  socket.addEventListener("message", recibido);
+
+  var promesa = navigator.mediaDevices.getUserMedia({video: true});
+  promesa.then(prepararcamara);
+  promesa.catch(mostrarerror);
+}

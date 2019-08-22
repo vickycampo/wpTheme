@@ -1,0 +1,11 @@
+public function onMessage(IWebSocketConnection $user, IWebSocketMessage $msg){
+  $thisuser = $user->getId();
+  $msg = trim($msg->getData());
+  $msgback = WebSocketMessage::create($msg);
+
+  foreach($this->server->getConnections() as $user){
+    if($user->getId() != $thisuser){
+      $user->sendMessage($msgback);
+    }
+  }
+}

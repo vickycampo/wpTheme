@@ -1,0 +1,6 @@
+function mostrarerror(evento) {
+  alert("Error: " + evento.code + " " + evento.message);
+}
+function comenzar(evento) {
+  bd = evento.target.result;
+}

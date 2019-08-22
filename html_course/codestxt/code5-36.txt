@@ -1,0 +1,15 @@
+@media (max-width: 720px) {
+  main > div {
+    display: block;
+  }
+  #articulosprincipales {
+    width: 100%;
+    margin-right: 0px;
+  }
+  #infoadicional {
+    width: 90%;
+    max-width: 100%;
+    padding: 5%;
+    margin-top: 20px;
+  }
+}

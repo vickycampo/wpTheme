@@ -1,0 +1,40 @@
+var renderer, escena, camara, malla;
+function iniciar() {
+  canvas = document.getElementById("canvas");
+  var ancho = canvas.width;
+  var altura = canvas.height;
+
+  renderer = new THREE.WebGLRenderer({canvas: canvas, antialias:true});
+  renderer.setClearColor(0xCCFFFF);
+
+  escena = new THREE.Scene();
+  camara = new THREE.PerspectiveCamera(45, ancho / altura, 0.1, 1000);
+  camara.position.set(0, 0, 150);
+
+  var textocanvas = document.createElement("canvas");
+  textocanvas.width = 512;
+  textocanvas.height = 256;
+  var contexto = textocanvas.getContext("2d");
+  contexto.fillStyle = "rgba(255,0,0,0.95)";
+  contexto.font = "bold 70px verdana, sans-serif";
+  contexto.fillText("Texto en 3D", 0, 60);
+
+  var geometria = new THREE.PlaneGeometry(100, 40);
+  var textura = new THREE.Texture(textocanvas);
+  textura.needsUpdate = true;
+  var material = new THREE.MeshPhongMaterial({map: textura, transparent: true, side: THREE.DoubleSide});
+  malla = new THREE.Mesh(geometria, material);
+  escena.add(malla);
+
+  var luz = new THREE.PointLight(0xffffff);
+  luz.position.set(0, 100, 250);
+  escena.add(luz);
+  renderer.render(escena, camara);
+
+  canvas.addEventListener("mousemove", mover);
+}
+function mover(evento){
+  malla.rotation.y = evento.pageX * 0.02;
+  renderer.render(escena, camara);
+}
+window.addEventListener("load", iniciar);

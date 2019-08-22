@@ -1,0 +1,27 @@
+#pielogo {
+  width: 96%;
+  padding: 2%;
+  background-color: #0F76A0;
+}
+#pielogo > div {
+  width: 960px;
+  margin: 0px auto;
+  background-color: #9FC8D9;
+  border-radius: 10px;
+}
+.seccionpie {
+  float: left;
+  width: 270px;
+  padding: 25px;
+}
+.seccionpie h1 {
+  font: bold 20px Arial, sans-serif;
+}
+.seccionpie p {
+  margin-top: 5px;
+}
+.seccionpie a {
+  font: bold 16px Arial, sans-serif;
+  color: #666666;
+  text-decoration: none;
+}

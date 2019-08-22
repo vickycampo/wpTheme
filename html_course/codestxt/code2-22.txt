@@ -1,0 +1,7 @@
+<article>
+  <header>
+    <h1>Título del artículo</h1>
+    <time datetime="2016-10-12" pubdate>publicado 12-10-2016</time>
+  </header>
+  <p>La muerte es una quimera: porque mientras yo <mark>existo</mark>, no existe la muerte;<br>y cuando existe la muerte, ya no existo yo.<br><cite>Epicuro de Samos</cite></p>
+</article>

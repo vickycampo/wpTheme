@@ -1,0 +1,13 @@
+mijuego.bucle = function() {
+  mijuego.control();
+  mijuego.procesar();
+  mijuego.detectar();
+  mijuego.dibujar();
+
+  requestAnimationFrame(function() {
+    mijuego.bucle();
+  });
+};
+window.addEventListener("load", function() {
+  mijuego.iniciar();
+});

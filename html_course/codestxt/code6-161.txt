@@ -1,0 +1,19 @@
+<script>
+  function agregareventos() {
+    var lista = document.querySelectorAll("section > p");
+    for (var f = 0; f < lista.length; f++) {
+      var elemento = lista[f];
+      elemento.addEventListener("click", function(x) {
+          return function(evento) {
+            var mivalor = x;
+            cambiarcolor(evento, mivalor);
+          };
+      }(f));
+    }
+  }
+  function cambiarcolor(evento, mivalor) {
+    var elemento = evento.target;
+    elemento.innerHTML = "Valor " + mivalor;
+  }
+  window.addEventListener("load", agregareventos);
+</script>

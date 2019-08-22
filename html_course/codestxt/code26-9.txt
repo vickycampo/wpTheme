@@ -1,0 +1,6 @@
+importScripts("mascodigos.js");
+
+addEventListener("message", recibido);
+function recibido(evento) {
+  prueba();
+}

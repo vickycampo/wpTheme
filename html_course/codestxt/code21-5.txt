@@ -1,0 +1,39 @@
+var cajadatos;
+function iniciar() {
+  cajadatos = document.getElementById("cajadatos");
+  var boton = document.getElementById("boton");
+  boton.addEventListener("click", leer);
+}
+function leer() {
+  var url = "trailer.ogg";
+  var solicitud = new XMLHttpRequest();
+  solicitud.addEventListener("loadstart", comenzar);
+  solicitud.addEventListener("progress", estado);
+  solicitud.addEventListener("load", mostrar);
+  solicitud.open("GET", url, true);
+  solicitud.send(null);
+}
+function comenzar() {
+  var progreso = document.createElement("progreso");
+  progreso.value = 0;
+  progreso.max = 100;
+  progreso.innerHTML = "0%";
+  cajadatos.appendChild(progreso);
+}
+function estado(evento) {
+  if (evento.lengthComputable) {
+    var porcentaje = Math.ceil(evento.loaded / evento.total * 100);
+    var progreso = cajadatos.querySelector("progreso");
+    progreso.value = porcentaje;
+    progreso.innerHTML = porcentaje + '%';
+  } else {
+    console.log("El tamaño no puede ser calculado");
+  }
+}
+function mostrar(evento) {
+  var datos = evento.target;
+  if (datos.status == 200) {
+    cajadatos.innerHTML = "Terminado";
+  }
+}
+window.addEventListener("load", iniciar);

@@ -1,0 +1,4 @@
+<footer>
+  <address>Toronto, Canada</address>
+  <small>&copy; 2016 <a href="mailto:info@jdgauchat.com">J.D Gauchat</a></small>
+</footer>

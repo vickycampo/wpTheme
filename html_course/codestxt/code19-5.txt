@@ -1,0 +1,18 @@
+function iniciar() {
+  cajadatos = document.getElementById("cajadatos");
+  url = document.getElementById("url");
+  url.addEventListener("click", cambiarpagina);
+  window.addEventListener("popstate", nuevaurl);
+  history.replaceState(1, null);
+}
+function cambiarpagina() {
+  mostrarpagina(2);
+  history.pushState(2, null, "pagina2.html");
+}
+function nuevaurl(evento) {
+  mostrarpagina(evento.state);
+}
+function mostrarpagina(actual) {
+  cajadatos.innerHTML = "La url es página " + actual;
+}
+window.addEventListener("load", iniciar);

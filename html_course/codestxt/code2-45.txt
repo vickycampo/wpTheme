@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Formularios</title>
+</head>
+<body>
+  <section>
+    <form name="formulario" method="get" action="procesar.php">
+ 
+    </form>
+  </section>
+</body>
+</html>

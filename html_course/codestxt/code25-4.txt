@@ -1,0 +1,10 @@
+function reproducir(mibuffer) {
+  var nodofuente = contexto.createBufferSource();
+  nodofuente.buffer = mibuffer;
+
+  var nodovolumen = contexto.createGain();
+  nodovolumen.gain.value = 0.2;
+  nodofuente.connect(nodovolumen);
+  nodovolumen.connect(contexto.destination);
+  nodofuente.start(0);
+}

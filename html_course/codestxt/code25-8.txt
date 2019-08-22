@@ -1,0 +1,12 @@
+function reproducir(mibuffer) {
+  var nodofuente = contexto.createBufferSource();
+  nodofuente.buffer = mibuffer;
+
+  var nodocompresor = contexto.createDynamicsCompressor();
+  nodocompresor.threshold.value = -60;
+  nodocompresor.ratio.value = 10;
+
+  nodofuente.connect(nodocompresor);
+  nodocompresor.connect(contexto.destination);
+  nodofuente.start(0);
+}

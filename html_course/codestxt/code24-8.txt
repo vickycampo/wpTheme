@@ -1,0 +1,16 @@
+function recibido(evento) {
+  var mns = JSON.parse(evento.data);
+  switch (mns.type) {
+    case "offer":
+      usuario.setRemoteDescription(new RTCSessionDescription(mns), function() {
+          usuario.createAnswer(preparardescripcion, mostrarerror);
+        });
+      break;
+    case "answer":
+      usuario.setRemoteDescription(new RTCSessionDescription(mns));
+      break;
+    case "candidate":
+      var candidato = new RTCIceCandidate(mns.candidate);
+      usuario.addIceCandidate(candidato);
+  }
+}

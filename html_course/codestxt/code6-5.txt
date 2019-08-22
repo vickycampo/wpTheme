@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+  <script src="micodigo.js"></script>
+</head>
+<body>
+  <section>
+    <p>Hola</p>
+  </section>
+</body>
+</html>

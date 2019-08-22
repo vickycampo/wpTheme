@@ -1,0 +1,37 @@
+var renderer, escena, camara, malla;
+function iniciar() {
+  canvas = document.getElementById("canvas");
+  var ancho = canvas.width;
+  var altura = canvas.height;
+
+  renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true});
+  renderer.setClearColor(0xFFFFFF);
+  escena = new THREE.Scene();
+  camara = new THREE.PerspectiveCamera(45, ancho / altura, 0.1, 1000);
+  camara.position.set(0, 0, 150);
+
+  var materiales = [
+    new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture("dado3.jpg")}),
+    new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture("dado4.jpg")}),
+    new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture("dado5.jpg")}),
+    new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture("dado2.jpg")}),
+    new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture("dado1.jpg")}),
+    new THREE.MeshPhongMaterial({map: THREE.ImageUtils.loadTexture("dado6.jpg")})
+  ];
+  var geometria = new THREE.BoxGeometry(50, 50, 50, 1, 1, 1);
+  malla = new THREE.Mesh(geometria, new THREE.MeshFaceMaterial(materiales));
+  escena.add(malla);
+
+  var luz = new THREE.SpotLight(0xFFFFFF, 2);
+  luz.position.set(0, 100, 250);
+  escena.add(luz);
+  renderer.render(escena, camara);
+
+  canvas.addEventListener("mousemove", mover);
+}
+function mover(evento){
+  malla.rotation.x = evento.pageY * 0.01;
+  malla.rotation.z = -evento.pageX * 0.01;
+  renderer.render(escena, camara);
+}
+window.addEventListener("load", iniciar);

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Reproductor de Video</title>
+</head>
+<body>
+  <section>
+    <video src="trailer.mp4" width="720" height="400" preload controls loop poster="poster.jpg">
+    </video>
+  </section>
+</body>
+</html>

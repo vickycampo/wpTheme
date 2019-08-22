@@ -1,0 +1,12 @@
+<main>
+  <section id="noticias">
+    Artículos largos
+  </section>
+  <section id="noticiaslocales">
+    Artículos cortos
+  </section>
+  <aside>
+    Quote from article one
+    Quote from article two
+  </aside>
+</main>

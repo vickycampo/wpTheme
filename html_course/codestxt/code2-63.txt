@@ -1,0 +1,8 @@
+<form name="formulario" method="get" action="procesar.php">
+  <datalist id="datos">
+    <option value="123123123" label="Teléfono 1">
+    <option value="456456456" label="Teléfono 2">
+  </datalist>
+  <p><label>Teléfono: <input type="tel" name="telefono" list="datos"></label></p>
+  <p><input type="submit" value="Enviar"></p>
+</form>

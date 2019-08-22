@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Three.js</title>
+  <style>
+    body {
+      margin: 0px;
+      overflow: hidden;
+    }
+  </style>
+  <script src="three.min.js"></script>
+  <script src="ColladaLoader.js"></script>
+  <script src="webgl.js"></script>
+</head>
+<body></body>
+</html>

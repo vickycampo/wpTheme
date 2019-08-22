@@ -1,0 +1,3 @@
+var lista = [12, 5, 80, 34];
+lista.reverse();
+alert(lista);  // 34,80,5,12

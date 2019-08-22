@@ -1,0 +1,17 @@
+<script>
+  function iniciar() {
+    var info = document.getElementById("info");
+    var pista = document.getElementById("pista");
+    var obj = pista.track;
+    var lineas = obj.cues;
+
+    var lista = "";
+    for (var f = 0; f < lineas.length; f++) {
+      var linea = lineas[f];
+      lista += linea.startTime + " - ";
+      lista += linea.text + "<br>";
+    }
+    info.innerHTML = lista;
+  }
+  window.addEventListener("load", iniciar);
+</script>

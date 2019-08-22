@@ -1,0 +1,10 @@
+function reproducir(mibuffer) {
+  var nodofuente = contexto.createBufferSource();
+  nodofuente.buffer = mibuffer;
+
+  nodoretardo = contexto.createDelay();
+  nodoretardo.delayTime.value = 1;
+  nodofuente.connect(nodoretardo);
+  nodoretardo.connect(contexto.destination);
+  nodofuente.start(0);
+}

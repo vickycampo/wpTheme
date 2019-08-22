@@ -1,0 +1,15 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+#logo {
+  width: 275px;
+  height: 60px;
+  background: url("logo.jpg") no-repeat;
+}
+@media (max-width: 480px) {
+  #logo {
+    width: 60px;
+    background: url("logoreducido.jpg") no-repeat;
+  }
+}

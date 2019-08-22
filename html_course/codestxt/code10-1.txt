@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Pantalla Completa</title>
+  <script>
+    var video;
+    function iniciar() {
+      video = document.getElementById("medio");
+      video.addEventListener("click", expandir);
+    }
+    function expandir() {
+      if (!document.webkitFullscreenElement) {
+        video.webkitRequestFullscreen();
+        video.play();
+      }
+    }
+    window.addEventListener("load", iniciar);
+  </script>
+</head>
+<body>
+  <section>
+    <video id="medio" width="720" height="400" poster="poster.jpg">
+      <source src="trailer.mp4">
+      <source src="trailer.ogg">
+    </video>
+  </section>
+</body>
+</html>

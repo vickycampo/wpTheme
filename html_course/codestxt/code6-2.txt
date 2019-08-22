@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript</title>
+</head>
+<body>
+  <section>
+    <p onclick="alert('Hizo clic!')" onmouseout="alert('No me abandone!')">Clic aquí</p>
+  </section>
+</body>
+</html>

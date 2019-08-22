@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>API Stream</title>
+  <script>
+    function iniciar() {
+      var promesa = navigator.mediaDevices.getUserMedia({video: true});
+      promesa.then(exito);
+      promesa.catch(mostrarerror);
+    }
+    function exito(transmision) {
+      var boton = document.getElementById("boton");
+      boton.addEventListener("click", function() { detenertransmision(transmision) });
+      var video = document.getElementById("video");
+      video.srcObject = transmision;
+      video.play();
+    }
+    function mostrarerror(evento) {
+      console.log("Error: " + error.name);
+    }
+    function detenertransmision(transmision) {
+      var pistasvideo = transmision.getVideoTracks();
+      var pista = pistasvideo[0];
+      pista.stop();
+      alert("Transmisión Cancelada");
+    }
+    window.addEventListener("load", iniciar);
+  </script>
+</head>
+<body>
+  <section>
+    <video id="video"></video>
+  </section>
+  <nav>
+    <button type="boton" id="boton">Apagar</button>
+  </nav>
+</body>
+</html>

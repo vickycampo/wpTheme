@@ -1,0 +1,20 @@
+mijuego.dibujar = function() {
+  if (!mijuego.objetivos.malla) {
+    var geometria = new THREE.SphereGeometry(20, 10, 10);
+    var material = new THREE.MeshBasicMaterial({color: 0x00FF00, wireframe: true});
+    var malla = new THREE.Mesh(geometria, material);
+    var posx = (Math.random() * 1800) - 900;
+    var posz = (Math.random() * 1800) - 900;
+    malla.position.set(posx, 30, posz);
+    mijuego.escena.add(malla);
+
+    mijuego.objetivos.malla = malla;
+    mijuego.objetivos.limites[0] = posx - 30;
+    mijuego.objetivos.limites[1] = posx + 30;
+    mijuego.objetivos.limites[2] = posz - 30;
+    mijuego.objetivos.limites[3] = posz + 30;
+  } else {
+    mijuego.objetivos.malla.rotation.y += 0.02;
+  }
+  mijuego.renderer.render(mijuego.escena, mijuego.camara);
+};

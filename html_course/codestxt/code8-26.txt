@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Trabajando con Pistas</title>
+  <script>
+    function iniciar(){
+      var linea;
+      var lineas = [
+        { start: 2.000, end: 7.000, text: "Bienvenido"},
+        { start: 10.000, end: 15.000, text: "Este es un ejemplo"},
+        { start: 15.001, end: 20.000, text: "de como agregar"},
+        { start: 20.001, end: 25.000, text: "una nueva pista."},
+        { start: 27.000, end: 30.000, text: "Hasta Luego!"},
+      ];
+      var video = document.getElementById("medio");
+
+      var nuevapista = video.addTextTrack("subtitles");
+      nuevapista.mode = "showing";
+      for (var f = 0; f < lineas.length; f++) {
+        linea = new VTTCue(lineas[f].start, lineas[f].end, lineas[f].text);
+        nuevapista.addCue(linea);
+      }
+      video.play();
+    }
+    window.addEventListener("load", iniciar);
+  </script>
+</head>
+<body>
+  <section>
+    <video id="medio" width="720" height="400" controls>
+      <source src="trailer.mp4">
+      <source src="trailer.ogg">
+    </video>
+  </section>
+</body>
+</html>

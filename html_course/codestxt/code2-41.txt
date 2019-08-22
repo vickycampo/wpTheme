@@ -1,0 +1,24 @@
+<article>
+  <table>
+    <tr>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Año</th>
+    </tr>
+    <tr>
+      <td>IT</td>
+      <td>Stephen King</td>
+      <td>1986</td>
+    </tr>
+    <tr>
+      <td>Carrie</td>
+      <td>Stephen King</td>
+      <td>1974</td>
+    </tr>
+    <tr>
+      <td>El Resplandor</td>
+      <td>Stephen King</td>
+      <td>1977</td>
+    </tr>
+  </table>
+</article>

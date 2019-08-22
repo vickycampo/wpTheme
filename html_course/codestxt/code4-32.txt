@@ -1,0 +1,37 @@
+#listamenu > li {
+  position: relative;
+  display: inline-block;
+  height: 35px;
+  padding: 15px 10px 0px 10px;
+  margin-right: 5px;
+}
+#listamenu li > ul {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+
+  background-color: #9FC8D9;
+  box-shadow: 3px 3px 5px rgba(100, 100, 100, 0.7);
+  border-radius: 0px 0px 5px 5px;
+
+  list-style: none;
+  z-index: 1000;
+}
+#listamenu li > ul > li {
+  width: 120px;
+  height: 35px;
+  padding-top: 15px;
+  padding-left: 10px;
+}
+#listamenu li:hover ul {
+  display: block;
+}
+#listamenu a {
+  font: bold 18px Arial, sans-serif;
+  color: #333333;
+  text-decoration: none;
+}
+#menuprincipal li:hover {
+  background-color: #6FACC6;
+}

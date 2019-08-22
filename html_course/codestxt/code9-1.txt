@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>API Stream</title>
+  <script>
+    function iniciar() {
+      var promesa = navigator.mediaDevices.getUserMedia({video: true});
+      promesa.then(exito);
+      promesa.catch(mostrarerror);
+
+      function exito(transmision) {
+        var video = document.getElementById("medio");
+        video.srcObject = transmision;
+        video.play();
+      }
+      function mostrarerror(error) {
+        console.log("Error: " + error.name);
+      }
+    }
+    window.addEventListener("load", iniciar);
+  </script>
+</head>
+<body>
+  <section>
+    <video id="medio"></video>
+  </section>
+</body>
+</html>

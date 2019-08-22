@@ -1,0 +1,8 @@
+<form name="formulario" method="get" action="procesar.php">
+  <p><label>Nombre: <input type="text" name="nombre" maxlength="15"></label></p>
+  <p><label><input type="radio" name="edad" value="15" checked> 15 Años</label></p>
+  <p><label><input type="radio" name="edad" value="30"> 30 Años</label></p>
+  <p><label><input type="radio" name="edad" value="45"> 45 Años</label></p>
+  <p><label><input type="radio" name="edad" value="60"> 60 Años</label></p>
+  <p><input type="submit" value="Enviar"></p>
+</form>

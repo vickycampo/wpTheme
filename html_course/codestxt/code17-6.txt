@@ -1,0 +1,30 @@
+var deposito;
+function iniciar() {
+  var imagenes = document.querySelectorAll("#cajaimagenes > img");
+  for (var i = 0; i < imagenes.length; i++) {
+    imagenes[i].addEventListener("dragstart", arrastrar);
+  }
+  deposito = document.getElementById("deposito");
+  deposito.addEventListener("dragenter", function(evento) {
+    evento.preventDefault();
+  });
+  deposito.addEventListener("dragover", function(evento) {
+    evento.preventDefault();
+  });
+  deposito.addEventListener("drop", soltar);
+}
+function arrastrar(evento) {
+  elemento = evento.target;
+  evento.dataTransfer.setData("Text", elemento.id);
+}
+function soltar(evento) {
+  evento.preventDefault();
+  var id = evento.dataTransfer.getData("Text");
+  if (id != "imagen4") {
+    var url = document.getElementById(id).src;
+    deposito.innerHTML = '<img src="' + url + '">';
+  } else {
+    deposito.innerHTML = "No Admitido";
+  }
+}
+window.addEventListener("load", iniciar);

@@ -1,0 +1,13 @@
+function mover(evento) {
+  if (!medio.paused && !medio.ended) {
+    var ratonX = evento.offsetX - 2;
+    if (ratonX < 0) {
+      ratonX = 0;
+    } else if (ratonX > maximo) {
+      ratonX = maximo;
+    }
+    var tiempo = ratonX * medio.duration / maximo;
+    medio.currentTime = tiempo;
+    progreso.style.width = ratonX + "px";
+  }
+}

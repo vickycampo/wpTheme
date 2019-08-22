@@ -1,0 +1,25 @@
+function iniciar() {
+  var elemento = document.getElementById("canvas");
+  var ancho = elemento.width;
+  var altura = elemento.height;
+  elemento.addEventListener("click", copiarimagen);
+
+  var canvas = elemento.getContext("2d");
+  canvas.beginPath();
+  canvas.arc(ancho / 2, altura / 2, 150, 0, Math.PI * 2, false);
+  canvas.clip();
+
+  var imagen = document.createElement("img");
+  imagen.src = "nieve.jpg";
+  imagen.addEventListener("load", function() {
+    canvas.drawImage(imagen, 0, 0, ancho, altura);
+  });
+}
+function copiarimagen() {
+  var elemento = document.getElementById("canvas");
+  var datos = elemento.toDataURL();
+
+  var cajadatos = document.getElementById("cajadatos");
+  cajadatos.innerHTML = '<img src="' + datos + '">';
+}
+window.addEventListener("load", iniciar);

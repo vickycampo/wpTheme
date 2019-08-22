@@ -1,0 +1,5 @@
+function iniciar() {
+  var elemento = document.getElementById("canvas");
+  var canvas = elemento.getContext("2d");
+}
+window.addEventListener("load", iniciar);

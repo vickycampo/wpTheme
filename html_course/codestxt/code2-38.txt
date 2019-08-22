@@ -1,0 +1,6 @@
+<aside>
+  <blockquote>IT</blockquote>
+  <blockquote>Carrie</blockquote>
+  <blockquote>El Resplandor</blockquote>
+  <blockquote>Misery</blockquote>
+</aside>

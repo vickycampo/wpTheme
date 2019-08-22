@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>API History</title>
+  <link rel="stylesheet" href="history.css">
+  <script src="history.js"></script>
+</head>
+<body>
+  <section id="contenidoprincipal">
+    <p>Este contenido nunca es actualizado</p>
+    <p><span id="url1">imagen 1</span></p>
+    <p><span id="url2">imagen 2</span></p>
+    <p><span id="url3">imagen 3</span></p>
+    <p><span id="url4">imagen 4</span></p>
+  </section>
+  <aside id="cajadatos">
+    <img id="imagen" src="monstruo1.gif">
+  </aside>
+</body>
+</html>

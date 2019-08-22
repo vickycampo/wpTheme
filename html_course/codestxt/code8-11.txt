@@ -1,0 +1,11 @@
+function presionar() {
+  if (!medio.paused && !medio.ended) {
+    medio.pause();
+    reproducir.value = ">";
+    clearInterval(bucle);
+  } else {
+    medio.play();
+    reproducir.value = "||";
+    bucle = setInterval(estado, 1000);
+  }
+}

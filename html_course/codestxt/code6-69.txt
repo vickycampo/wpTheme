@@ -1,0 +1,7 @@
+var miobjeto = {
+  nombre: "Juan",
+  edad: 30
+};
+miobjeto.nombre = "Martín";
+miobjeto.trabajo = "Programador";
+alert(miobjeto.nombre + " " + miobjeto.edad + " " + miobjeto.trabajo);

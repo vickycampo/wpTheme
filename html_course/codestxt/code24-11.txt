@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>API WebRTC</title>
+  <style>
+    #local, #remoto {
+      float: left;
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid #000000;
+    }
+    #botones {
+      clear: both;
+      width: 528px;
+      text-align: center;
+    }
+    #cajadatos {
+      width: 526px;
+      height: 300px;
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid #000000;
+    }
+  </style>
+  <script src="webrtc.js"></script>
+</head>
+<body>
+  <section id="local">
+    <video id="localmedio" width="250" height="200"></video>
+  </section>
+  <section id="remoto">
+    <video id="remotomedio" width="250" height="200"></video>
+  </section>
+  <nav id="botones">
+    <input type="button" id="botonllamar" value="Llamar">
+    <input type="text" id="mensaje" size="50" required>
+    <input type="button" id="botonenviar" value="Enviar">
+  </nav>
+  <section id="cajadatos"></section>
+</body>
+</html>

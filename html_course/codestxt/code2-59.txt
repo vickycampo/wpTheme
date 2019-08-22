@@ -1,0 +1,5 @@
+<form name="formulario" method="get" action="procesar.php">
+  <p><label>Name: <input type="text" name="nombre"></label></p>
+  <p><label>Age: <input type="text" name="edad"></label></p>
+  <p><input type="image" src="botonenviar.png" width="100"></p>
+</form>

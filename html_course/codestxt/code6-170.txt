@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Modernizr</title>
+  <script src="modernizr-custom.js"></script>
+  <script>
+    function iniciar(){
+      var elemento = document.getElementById("subtitulo");
+      if (Modernizr.boxshadow) {
+        elemento.innerHTML = 'Box Shadow está disponible';
+      } else {
+        elemento.innerHTML = 'Box Shadow no está disponible';
+      }
+    }
+    window.addEventListener('load', iniciar);
+  </script>
+</head>
+<body>
+  <section>
+    <h1>Sitio Web</h1>
+    <p id="subtitulo"></p>
+  </section>
+</body>
+</html>

@@ -1,0 +1,26 @@
+function iniciar() {
+  for (var f = 1; f < 5; f++) {
+    url = document.getElementById("url" + f);
+    url.addEventListener("click", function(x){
+      return function() {
+        cambiarpagina(x);
+      };
+    }(f));
+  }
+  window.addEventListener("popstate", nuevaurl);
+  history.replaceState(1, null, "pagina1.html");
+}
+function cambiarpagina(pagina) {
+  mostrarpagina(pagina);
+  history.pushState(pagina, null, "pagina" + pagina + ".html");
+}
+function nuevaurl(evento) {
+  mostrarpagina(evento.state);
+}
+function mostrarpagina(actual) {
+  if (actual != null) {
+    var imagen = document.getElementById("imagen");
+    imagen.src = "monstruo" + actual + ".gif";
+  }
+}
+window.addEventListener("load", iniciar);

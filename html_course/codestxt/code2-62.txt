@@ -1,0 +1,12 @@
+<form name="formulario" method="get" action="procesar.php">
+  <p>
+    <label for="listado">Libros: </label>
+    <select name="libro" id="listado">
+      <option value="1">IT</option>
+      <option value="2">Carrie</option>
+      <option value="3">El Resplandor</option>
+      <option value="4">Misery</option>
+    </select>
+  </p>
+  <p><input type="submit" value="Enviar"></p>
+</form>

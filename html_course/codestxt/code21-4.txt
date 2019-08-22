@@ -1,0 +1,22 @@
+var cajadatos;
+function iniciar() {
+  cajadatos = document.getElementById("cajadatos");
+  var boton = document.getElementById("boton");
+  boton.addEventListener("click", leer);
+}
+function leer() {
+  var url = "miimagen.jpg";
+  var solicitud = new XMLHttpRequest();
+  solicitud.responseType = "blob";
+  solicitud.addEventListener("load", mostrar);
+  solicitud.open("GET", url, true);
+  solicitud.send(null);
+}
+function mostrar(evento) {
+  var datos = evento.target;
+  if (datos.status == 200) {
+    var imagen = URL.createObjectURL(datos.response);
+    cajadatos.innerHTML = '<img src="' + imagen + '">';
+  }
+}
+window.addEventListener("load", iniciar);

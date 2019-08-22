@@ -1,0 +1,28 @@
+#menuprincipal {
+  display: flex;
+  justify-content: center;
+  width: 96%;
+  height: 50px;
+  padding: 0% 2%;
+  background-color: #9FC8D9;
+  border-top: 1px solid #094660;
+  border-bottom: 1px solid #094660;
+}
+#menuprincipal > div {
+  flex: 1;
+  max-width: 960px;
+}
+#menuprincipal li {
+  display: inline-block;
+  height: 35px;
+  padding: 15px 10px 0px 10px;
+  margin-right: 5px;
+}
+#menuprincipal li:hover {
+  background-color: #6FACC6;
+}
+#menuprincipal a {
+  font: bold 18px Arial, sans-serif;
+  color: #333333;
+  text-decoration: none;
+}

@@ -1,0 +1,24 @@
+mijuego.cargar = function() {
+  var cargador = new THREE.ColladaLoader();
+  cargador.load("police.dae", function(collada) {
+    mijuego.texturas.coche = collada;
+  });
+  var imagen1 = document.createElement("img");
+  imagen1.src = "asfalto.jpg";
+  imagen1.addEventListener("load", function(evento) {
+    mijuego.texturas.piso = evento.target;
+  });
+  var imagen2 = document.createElement("img");
+  imagen2.src = "muro.jpg";
+  imagen2.addEventListener("load", function(evento) {
+    mijuego.texturas.muros = evento.target;
+  });
+  var controlbucle = function() {
+    if (mijuego.texturas.coche && mijuego.texturas.piso && mijuego.texturas.muros) {
+      mijuego.crear();
+    } else {
+      setTimeout(controlbucle, 200);
+    }
+  };
+  controlbucle();
+};

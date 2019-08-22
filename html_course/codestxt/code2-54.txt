@@ -1,0 +1,1 @@
+<input type="range" name="edad" min="13" max="100" value="35">

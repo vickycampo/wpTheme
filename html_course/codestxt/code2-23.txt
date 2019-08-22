@@ -1,0 +1,4 @@
+<footer>
+  <address>Toronto, Canada</address>
+  <small>&copy; Derechos Reservados 2016</small>
+</footer>

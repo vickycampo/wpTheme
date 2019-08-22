@@ -1,0 +1,39 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+#contenedor {
+  float: left;
+  width: 100%;
+  padding-right: 260px;
+  margin-right: -240px;
+  box-sizing: border-box;
+}
+aside {
+  float: left;
+  width: 240px;
+  padding: 20px;
+  background-color: #CCCCCC;
+  box-sizing: border-box;
+}
+#columnacentral {
+  float: right;
+  width: 100%;
+  padding-left: 220px;
+  margin-left: -200px;
+  box-sizing: border-box;
+}
+#columnacentral > div {
+  padding: 20px;
+  background-color: #999999;
+}
+#columnaizquierda {
+  float: left;
+  width: 200px;
+  padding: 20px;
+  background-color: #CCCCCC;
+  box-sizing: border-box;
+}
+.recuperar {
+  clear: both;
+}

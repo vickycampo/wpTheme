@@ -1,0 +1,2 @@
+var fecha = new Date();
+alert(fecha);  // "Wed Jan 04 2017 20:51:17 GMT-0500 (EST)"

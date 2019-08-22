@@ -1,0 +1,25 @@
+var canvas, imagen;
+function iniciar() {
+  var elemento = document.getElementById("canvas");
+  canvas = elemento.getContext("2d");
+
+  imagen = document.createElement("img");
+  imagen.crossOrigin = "anonymous";
+  imagen.src = "http://www.formasterminds.com/content/nieve.jpg";
+  imagen.addEventListener("load", modimagen);
+}
+function modimagen() {
+  canvas.drawImage(imagen, 0, 0);
+  var info = canvas.getImageData(0, 0, 175, 262);
+  var pos;
+  for (var x = 0; x < 175; x++) {
+    for (var y = 0; y < 262; y++) {
+      pos = (info.width * 4 * y) + (x * 4);
+      info.data[pos] = 255 - info.data[pos];
+      info.data[pos+1] = 255 - info.data[pos+1];
+      info.data[pos+2] = 255 - info.data[pos+2];
+    }
+  }
+  canvas.putImageData(info, 0, 0);
+}
+window.addEventListener("load", iniciar);

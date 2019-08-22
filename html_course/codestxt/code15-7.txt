@@ -1,0 +1,10 @@
+function mostrar(clave) {
+  var transaccion = bd.transaction(["peliculas"]);
+  var almacen = transaccion.objectStore("peliculas");
+  var solicitud = almacen.get(clave);
+  solicitud.addEventListener("success", mostrarlista);
+}
+function mostrarlista(evento) {
+  var resultado = evento.target.result;
+  cajadatos.innerHTML = "<div>" + resultado.id + " - " + resultado.nombre + " - " + resultado.fecha + "</div>";
+}

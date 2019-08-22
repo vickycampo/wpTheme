@@ -1,0 +1,12 @@
+function MiObjeto(nombreinicial, edadinicial){
+  this.nombre = nombreinicial;
+  this.edad = edadinicial;
+  this.mostrarnombre = function(){
+    alert(this.nombre);
+  };
+  this.cambiarnombre = function(nombrenuevo){
+    this.nombre = nombrenuevo;
+  };
+}
+var empleado = new MiObjeto("Roberto", 55);
+empleado.mostrarnombre();  // "Roberto"

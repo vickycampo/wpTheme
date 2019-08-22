@@ -1,0 +1,13 @@
+function iniciar() {
+  var elemento = document.getElementById("canvas");
+  var canvas = elemento.getContext("2d");
+
+  canvas.font = "bold 24px verdana, sans-serif";
+  canvas.textAlign = "start";
+  canvas.textBaseline = "bottom";
+  canvas.fillText("Mi Mensaje", 100, 124);
+
+  var tamano = canvas.measureText("Mi Mensaje");
+  canvas.strokeRect(100, 100, tamano.width, 24);
+}
+window.addEventListener("load", iniciar);

@@ -1,0 +1,5 @@
+function crearbd(evento) {
+  var basededatos = evento.target.result;
+  var almacen = basededatos.createObjectStore("peliculas", {keyPath: "id"});
+  almacen.createIndex("BuscarFecha", "fecha", {unique: false});
+}

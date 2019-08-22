@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>API Web Audio</title>
+  <script src="audio.js"></script>
+</head>
+<body>
+  <section>
+    <button type="button" id="boton" disabled="true">Reproducir</button>
+  </section>
+</body>
+</html>

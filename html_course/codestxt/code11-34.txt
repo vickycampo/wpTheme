@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Aplicación Instantáneas</title>
+  <style>
+    section {
+      float: left;
+      width: 320px;
+      height: 240px;
+      border: 1px solid #000000;
+    }
+  </style>
+  <script>
+    var video, canvas;
+    function iniciar() {
+      var promesa = navigator.mediaDevices.getUserMedia({video: true});
+      promesa.then(exito);
+      promesa.catch(mostrarerror);
+    }
+    function exito(transmision) {
+      var elemento = document.getElementById("canvas");
+      canvas = elemento.getContext("2d");
+      var reproductor = document.getElementById("reproductor");
+      reproductor.addEventListener("click", instantanea);
+
+      video = document.getElementById("medio");
+      video.srcObject = transmision;
+      video.play();
+    }
+    function mostrarerror(evento) {
+      console.log("Error: " + evento.name);
+    }
+    function instantanea() {
+      canvas.drawImage(video, 0, 0, 320, 240);
+    }
+    window.addEventListener("load", iniciar);
+  </script>
+</head>
+<body>
+  <section id="reproductor">
+    <video id="medio" width="320" height="240"></video>
+  </section>
+  <section>
+    <canvas id="canvas" width="320" height="240"></canvas>
+  </section>
+</body>
+</html>

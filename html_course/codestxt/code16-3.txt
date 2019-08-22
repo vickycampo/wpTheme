@@ -1,0 +1,18 @@
+var cajadatos;
+function iniciar() {
+  cajadatos = document.getElementById("cajadatos");
+  var archivos = document.getElementById("archivos");
+  archivos.addEventListener("change", procesar);
+}
+function procesar(evento) {
+  var archivos = evento.target.files;
+  var archivo = archivos[0];
+  var lector = new FileReader();
+  lector.addEventListener("load", mostrar);
+  lector.readAsText(archivo);
+}
+function mostrar(evento) {
+  var resultado = evento.target.result;
+  cajadatos.innerHTML = resultado;
+}
+window.addEventListener("load", iniciar);

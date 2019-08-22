@@ -1,0 +1,45 @@
+var contexto;
+var misbuffers = [];
+function iniciar() {
+  var boton = document.getElementById("boton");
+  boton.addEventListener("click", function() {
+    reproducir();
+  });
+  contexto = new AudioContext();
+  cargarbuffers("disparo.wav", 0);
+  cargarbuffers("garaje.wav", 1);
+
+  var control = function() {
+    if (misbuffers.length >= 2) {
+      boton.disabled = false;
+    } else {
+      setTimeout(control, 200);
+    }
+  };
+  control();
+}
+function cargarbuffers(url, id) {
+  var solicitud = new XMLHttpRequest();
+  solicitud.responseType = "arraybuffer";
+  solicitud.addEventListener("load", function(){
+    if (solicitud.status == 200) {
+      contexto.decodeAudioData(solicitud.response, function(buffer) {
+        misbuffers[id] = buffer;
+      });
+    }
+  });
+  solicitud.open("GET", url, true);
+  solicitud.send();
+}
+function reproducir() {
+  var nodofuente = contexto.createBufferSource();
+  nodofuente.buffer = misbuffers[0];
+
+  var nodoconvolver = contexto.createConvolver();
+  nodoconvolver.buffer = misbuffers[1];
+
+  nodofuente.connect(nodoconvolver);
+  nodoconvolver.connect(contexto.destination);
+  nodofuente.start(0);
+}
+window.addEventListener("load", iniciar);
