@@ -110,6 +110,7 @@ We create the clases for the fixed height of the header image div
                     &--row
                     {
                          height: 100%;
+                         padding: 1rem;
                          /* --- flex --- */
                          -webkit-display: flex; /* Safari */
                          display: flex;
@@ -124,30 +125,37 @@ We create the clases for the fixed height of the header image div
                          {
                               height: 100%;
                               width: 100%;
-
+                              position: relative;
+                              flex: 1;
                               &--has-name
                               {
                                    height: 80%;
                                    width:  auto;
                                    align-self: center;
-                                   padding: 2rem;
+                                   /* padding: 2rem; */
                                    text-align: right;
+                                   position: relative;
+                                   flex: 1;
                               }
                               &--has-description
                               {
                                    height: 80%;
                                    width:  auto;
                                    align-self: center;
-                                   padding: 2rem;
+                                   /* padding: 2rem; */
                                    text-align: right;
+                                   position: relative;
+                                   flex: 1;
                               }
                               &--has-name-description
                               {
                                    height: 80%;
                                    width:  auto;
                                    align-self: center;
-                                   padding: 2rem;
+                                   /* padding: 2rem; */
                                    text-align: right;
+                                   position: relative;
+                                   flex: 1;
                               }
 
                          }
@@ -155,6 +163,10 @@ We create the clases for the fixed height of the header image div
                          {
                               max-height: 100%;
                               max-width: 100%;
+                              position: absolute;
+                              top: 50%;
+                              left: 50%;
+                              transform: translate(-50%, -50%);
                          }
                          .header__info--div
                          {
@@ -186,6 +198,7 @@ We create the clases for the fixed height of the header image div
                          &--column
                          {
                               height: 100%;
+                              padding: 1rem;
                               /* --- flex --- */
                               -webkit-display: flex; /* Safari */
                               display: flex;
@@ -200,31 +213,37 @@ We create the clases for the fixed height of the header image div
                               {
                                    height: 100%;
                                    width: 100%;
-                                   display: table;
-
+                                   position: relative;
+                                   flex: 1;
                                    &--has-name
                                    {
                                         height: 80%;
                                         width:  auto;
                                         align-self: center;
-                                        padding: 2rem;
+                                        /* padding: 2rem; */
                                         text-align: right;
+                                        position: relative;
+                                        flex: 1;
                                    }
                                    &--has-description
                                    {
                                         height: 80%;
                                         width:  auto;
                                         align-self: center;
-                                        padding: 2rem;
+                                        /* padding: 2rem; */
                                         text-align: right;
+                                        position: relative;
+                                        flex: 1;
                                    }
                                    &--has-name-description
                                    {
                                         height: 80%;
                                         width:  auto;
                                         align-self: center;
-                                        padding: 2rem;
+                                        /* padding: 2rem; */
                                         text-align: right;
+                                        position: relative;
+                                        flex: 1;
                                    }
 
                               }
@@ -232,8 +251,10 @@ We create the clases for the fixed height of the header image div
                               {
                                    max-height: 100%;
                                    max-width: 100%;
-                                   display: table-cell;
-                                   vertical-align: middle;
+                                   position: absolute;
+                                   top: 50%;
+                                   left: 50%;
+                                   transform: translate(-50%, -50%);
                               }
                               .header__info--div
                               {
