@@ -1,6 +1,7 @@
 <!--
 cd C:\xampp\htdocs\wordpress\wp-content\themes\wpTheme\css_course\Natours\starter
 localhost/wordpress/wp-content/themes/wpTheme/html_course
+npm run compile:sass
 
 
 install:
