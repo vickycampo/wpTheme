@@ -200,6 +200,7 @@ We create the clases for the fixed height of the header image div
                               {
                                    height: 100%;
                                    width: 100%;
+                                   display: table;
 
                                    &--has-name
                                    {
@@ -231,6 +232,8 @@ We create the clases for the fixed height of the header image div
                               {
                                    max-height: 100%;
                                    max-width: 100%;
+                                   display: table-cell;
+                                   vertical-align: middle;
                               }
                               .header__info--div
                               {
