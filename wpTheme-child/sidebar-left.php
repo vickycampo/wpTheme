@@ -30,7 +30,7 @@ else
 if ( is_active_sidebar( 'body-left-sidebar' ) )
 {
 ?>
-     <aside class="sidebar body-left-sidebar col<?php echo ( $screen_size );?>3 order-1">
+     <aside class="sidebar body-left-sidebar">
       	<?php wptheme\Custom\Hooks::tha_sidebar_top(); ?>
           <?php
 

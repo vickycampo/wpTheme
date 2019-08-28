@@ -31,10 +31,6 @@ else
 <?php
 }
 ?>
-<h2 class="the_date alt">
-     <small>
-          <time datetime="<?php the_time('Y-m-d'); ?>">
-               <?php the_time(get_option('date_format')) ?>
-          </time>
-     </small>
-</h2>
+<time datetime="<?php the_time('Y-m-d'); ?>">
+	<?php the_time(get_option('date_format')) ?>
+</time>

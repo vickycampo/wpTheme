@@ -105,14 +105,13 @@
           <?php get_template_part( 'template-parts/header/part', 'header-image' ); ?>
 
 
-     </header> <!-- Header-img -->
-     <!-- NAvigaion -->
-     <!-- Top Navitagion bar part -->
+     </header>
      <?php get_template_part( 'template-parts/header/part', 'navbar-top' ); ?>
-     <!-- Main Navitagion bar part -->
      <?php get_template_part( 'template-parts/header/part', 'navbar-main' ); ?>
-     
+
      <?php get_template_part( 'template-parts/header/part', 'subcategory-bar' ); ?>
           <?php wptheme\Custom\Hooks::tha_header_bottom(); ?>
      <?php wptheme\Custom\Hooks::tha_header_after(); ?>
-     <main class="container" id="wrap">
+     <?php
+     $body_columns = wptchild\Setup\Functions::get_content_columns('Body');  ?>
+     <main class="main_div <?php echo esc_attr( $body_columns ) ?>" id="wrap">

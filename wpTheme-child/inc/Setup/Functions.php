@@ -94,33 +94,52 @@ class Functions
      * Which sidebards are active and returnd the columns for the body part
      * Return the content class
      */
-     public static function get_content_columns ($location)
+     public static function get_content_columns ( $location )
      {
           //The first specific theme helper, load the theme options and defaults
           $defaults = self::get_theme_defaults();
           //Fetch options from the database table
           $options = get_option ('wpTheme_options');
-
-          $columns = 12;
-          foreach ( $GLOBALS['wp_registered_sidebars'] as $sidebar )
+          /* get the number of columns for body part and footer */
+          if ( $location == 'Body')
           {
-               if (strpos ( $sidebar['id'] , $location ) > -1)
+               $columns = 'main_div__sidebar';
+               foreach ( $GLOBALS['wp_registered_sidebars'] as $sidebar )
                {
-                    if ( is_active_sidebar( $sidebar['id'] ) )
+                    if ( strpos( $sidebar['name'] , $location ) > -1)
                     {
-                         $columns = $columns -3;
+                         // echo (__LINE__ . '<pre>');
+                         // print_r ( $sidebar['name'] );
+                         // var_dump ( strpos( $sidebar['name'] , $location ) );
+                         // echo ('</pre>');
+                         if ( strpos( $sidebar['name'] , 'Left' ) > -1)
+                         {
+                              $columns .= '--left';
+                         }
+                         else if ( strpos( $sidebar['name'] , 'Right' ) > -1)
+                         {
+                              $columns .= '--right';
+                         }
+                    }
+                    if (strpos ( $sidebar['id'] , $location ) > -1)
+                    {
+                         if ( is_active_sidebar( $sidebar['id'] ) )
+                         {
+
+                         }
                     }
                }
+               if ($columns === 'main_div__sidebar')
+               {
+                    return ( '' );
+               }
+               else
+               {
+                    return ( $columns );
+               }
           }
-          /* We determine which screen size we are using*/
-          if ( isset ( $options['bs-screen-size'] ) )
-          {
-               return ('col'. $options['bs-screen-size'] . $columns);
-          }
-          else
-          {
-               return ('col'. $defaults['bs-screen-size'] . $columns);
-          }
+
+
 
      }
 }

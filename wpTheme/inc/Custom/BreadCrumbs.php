@@ -31,7 +31,6 @@ class BreadCrumbs
      {
           global $post, $paged;
           ?>
-          <div class="row" >
           <nav class="my-breadcrumbs" aria-label="breadcrumb">
                <ol class="breadcrumb">
                     <li class="breadcrumb-item">
@@ -127,7 +126,6 @@ class BreadCrumbs
           ?>
                </ol>
           </nav>
-          </div>
           <?php
      }
 }

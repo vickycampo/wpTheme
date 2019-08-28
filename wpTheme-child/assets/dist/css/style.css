@@ -129,28 +129,24 @@ html body {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
-.single_class article {
-  margin-left: 10vw;
-  margin-right: 10vw; }
-  .single_class article .the_title {
-    color: #242323;
-    font-weight: 500;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    line-height: normal;
-    font-size: 2.5rem; }
-    .single_class article .the_title a {
-      color: inherit; }
-    .single_class article .the_title a:hover {
-      color: #808080; }
-  .single_class article .the_date {
-    color: #808080;
-    font-weight: 400;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    line-height: normal; }
-  .single_class article section {
-    font-size: 1.25rem; }
+.section--list {
+  background-color: red; }
+  .section--list article {
+    padding: 2rem;
+    margin: 2rem;
+    background-color: green;
+    position: relative; }
+  .section--list time {
+    background-color: orange;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -70px;
+    width: 80px;
+    padding: 15px 5px;
+    background-color: #094660;
+    box-shadow: 3px 3px 5px rbga(100, 100, 100, 0.7);
+    border-radius: 5px; }
 
 /*
 
@@ -239,6 +235,50 @@ html body {
 
 .grid-element article section {
   font-size: 1rem; }
+
+.grid-content {
+  display: -webkit-flex;
+  /* Safari */
+  -webkit-flex-flow: row-reverse wrap;
+  /* Safari 6.1+ */
+  display: flex; }
+  .grid-content .grid-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: DodgerBlue; }
+  .grid-content .grid-column {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: DodgerBlue; }
+  .grid-content .grid-element {
+    background-color: #f1f1f1;
+    width: 23%;
+    margin: 1%;
+    padding: 1%; }
+
+.grid-element article .the_title {
+  line-height: 2rem;
+  font-size: 2rem;
+  margin: 0px; }
+  .grid-element article .the_title a {
+    color: #242323;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px; }
+  .grid-element article .the_title a:hover {
+    color: #FFBB00; }
+
+.grid-element article .the_date {
+  line-height: 1rem;
+  font-size: 1rem; }
+
+.grid-element article section {
+  font-size: 1rem; }
+
+.body-left-sidebar {
+  padding-left: 1rem; }
 
 /*
 
@@ -418,26 +458,28 @@ html body {
   border: 0px;
   background-color: transparent;
   font-size: 14px; }
-  #theme_location_top_target ul.align-left {
-    text-align: left; }
-  #theme_location_top_target ul.align-center {
-    margin-left: auto !important;
-    margin-right: auto !important; }
-  #theme_location_top_target ul.align-right {
-    text-align: right; }
-  #theme_location_top_target ul li {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700; }
-    #theme_location_top_target ul li a {
-      color: #F5F5F5;
-      width: 100px;
-      text-align: center;
-      font-weight: 500;
-      text-shadow: 2px 2px 4px #000000;
-      font-size: 14px; }
+  #theme_location_top_target ul {
+    background-color: #000000; }
+    #theme_location_top_target ul.align-left {
+      text-align: left; }
+    #theme_location_top_target ul.align-center {
+      margin-left: auto !important;
+      margin-right: auto !important; }
+    #theme_location_top_target ul.align-right {
+      text-align: right; }
+    #theme_location_top_target ul li {
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700; }
+      #theme_location_top_target ul li a {
+        color: #F5F5F5;
+        width: 100px;
+        text-align: center;
+        font-weight: 500;
+        text-shadow: 2px 2px 4px #000000;
+        font-size: 14px; }
   #theme_location_top_target a:hover {
     color: #FFBB00;
     text-shadow: 1px 1px 1px #000000; }
@@ -523,9 +565,14 @@ We create the clases for the fixed height of the header image div
 /* 600 o menos*/
 .fixed-height-40.header {
   height: calc(40vh - (100vh - 100%));
-  width: calc(100vw - (100vw - 100%)); }
+  width: calc(100vw - (100vw - 100%));
+  display: flex;
+  align-items: center; }
   .fixed-height-40.header .header__content--row {
+    flex: 1;
+    max-width: 75%;
     height: 100%;
+    padding: 1rem;
     /* --- flex --- */
     -webkit-display: flex;
     /* Safari */
@@ -536,29 +583,45 @@ We create the clases for the fixed height of the header image div
       display: none; }
     .fixed-height-40.header .header__content--row .header__logo--div {
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      flex: 1; }
       .fixed-height-40.header .header__content--row .header__logo--div--has-name {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-40.header .header__content--row .header__logo--div--has-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-40.header .header__content--row .header__logo--div--has-name-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
     .fixed-height-40.header .header__content--row .header__logo--image {
       max-height: 100%;
-      max-width: 100%; }
+      max-width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     .fixed-height-40.header .header__content--row .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -570,6 +633,7 @@ We create the clases for the fixed height of the header image div
         line-height: 1.9rem; }
   .fixed-height-40.header .header__content--column {
     height: 100%;
+    padding: 1rem;
     /* --- flex --- */
     -webkit-display: flex;
     /* Safari */
@@ -581,31 +645,44 @@ We create the clases for the fixed height of the header image div
     .fixed-height-40.header .header__content--column .header__logo--div {
       height: 100%;
       width: 100%;
-      display: table; }
+      position: relative;
+      flex: 1; }
       .fixed-height-40.header .header__content--column .header__logo--div--has-name {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-40.header .header__content--column .header__logo--div--has-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-40.header .header__content--column .header__logo--div--has-name-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
     .fixed-height-40.header .header__content--column .header__logo--image {
       max-height: 100%;
       max-width: 100%;
-      display: table-cell;
-      vertical-align: middle; }
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     .fixed-height-40.header .header__content--column .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -618,9 +695,14 @@ We create the clases for the fixed height of the header image div
 
 .fixed-height-50.header {
   height: calc(50vh - (100vh - 100%));
-  width: calc(100vw - (100vw - 100%)); }
+  width: calc(100vw - (100vw - 100%));
+  display: flex;
+  align-items: center; }
   .fixed-height-50.header .header__content--row {
+    flex: 1;
+    max-width: 75%;
     height: 100%;
+    padding: 1rem;
     /* --- flex --- */
     -webkit-display: flex;
     /* Safari */
@@ -631,29 +713,45 @@ We create the clases for the fixed height of the header image div
       display: none; }
     .fixed-height-50.header .header__content--row .header__logo--div {
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      flex: 1; }
       .fixed-height-50.header .header__content--row .header__logo--div--has-name {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-50.header .header__content--row .header__logo--div--has-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-50.header .header__content--row .header__logo--div--has-name-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
     .fixed-height-50.header .header__content--row .header__logo--image {
       max-height: 100%;
-      max-width: 100%; }
+      max-width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     .fixed-height-50.header .header__content--row .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -699,6 +797,7 @@ We create the clases for the fixed height of the header image div
       max-height: 100%;
       max-width: 100%; }
     .fixed-height-50.header .header__content--column .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -711,9 +810,14 @@ We create the clases for the fixed height of the header image div
 
 .fixed-height-60.header {
   height: calc(60vh - (100vh - 100%));
-  width: calc(100vw - (100vw - 100%)); }
+  width: calc(100vw - (100vw - 100%));
+  display: flex;
+  align-items: center; }
   .fixed-height-60.header .header__content--row {
+    flex: 1;
+    max-width: 75%;
     height: 100%;
+    padding: 1rem;
     /* --- flex --- */
     -webkit-display: flex;
     /* Safari */
@@ -724,29 +828,45 @@ We create the clases for the fixed height of the header image div
       display: none; }
     .fixed-height-60.header .header__content--row .header__logo--div {
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      flex: 1; }
       .fixed-height-60.header .header__content--row .header__logo--div--has-name {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-60.header .header__content--row .header__logo--div--has-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-60.header .header__content--row .header__logo--div--has-name-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
     .fixed-height-60.header .header__content--row .header__logo--image {
       max-height: 100%;
-      max-width: 100%; }
+      max-width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     .fixed-height-60.header .header__content--row .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -792,6 +912,7 @@ We create the clases for the fixed height of the header image div
       max-height: 100%;
       max-width: 100%; }
     .fixed-height-60.header .header__content--column .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -804,9 +925,14 @@ We create the clases for the fixed height of the header image div
 
 .fixed-height-70.header {
   height: calc(70vh - (100vh - 100%));
-  width: calc(100vw - (100vw - 100%)); }
+  width: calc(100vw - (100vw - 100%));
+  display: flex;
+  align-items: center; }
   .fixed-height-70.header .header__content--row {
+    flex: 1;
+    max-width: 75%;
     height: 100%;
+    padding: 1rem;
     /* --- flex --- */
     -webkit-display: flex;
     /* Safari */
@@ -817,29 +943,45 @@ We create the clases for the fixed height of the header image div
       display: none; }
     .fixed-height-70.header .header__content--row .header__logo--div {
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      flex: 1; }
       .fixed-height-70.header .header__content--row .header__logo--div--has-name {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-70.header .header__content--row .header__logo--div--has-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-70.header .header__content--row .header__logo--div--has-name-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
     .fixed-height-70.header .header__content--row .header__logo--image {
       max-height: 100%;
-      max-width: 100%; }
+      max-width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     .fixed-height-70.header .header__content--row .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -885,6 +1027,7 @@ We create the clases for the fixed height of the header image div
       max-height: 100%;
       max-width: 100%; }
     .fixed-height-70.header .header__content--column .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -897,9 +1040,14 @@ We create the clases for the fixed height of the header image div
 
 .fixed-height-80.header {
   height: calc(80vh - (100vh - 100%));
-  width: calc(100vw - (100vw - 100%)); }
+  width: calc(100vw - (100vw - 100%));
+  display: flex;
+  align-items: center; }
   .fixed-height-80.header .header__content--row {
+    flex: 1;
+    max-width: 75%;
     height: 100%;
+    padding: 1rem;
     /* --- flex --- */
     -webkit-display: flex;
     /* Safari */
@@ -910,29 +1058,45 @@ We create the clases for the fixed height of the header image div
       display: none; }
     .fixed-height-80.header .header__content--row .header__logo--div {
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      flex: 1; }
       .fixed-height-80.header .header__content--row .header__logo--div--has-name {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-80.header .header__content--row .header__logo--div--has-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-80.header .header__content--row .header__logo--div--has-name-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
     .fixed-height-80.header .header__content--row .header__logo--image {
       max-height: 100%;
-      max-width: 100%; }
+      max-width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     .fixed-height-80.header .header__content--row .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -978,6 +1142,7 @@ We create the clases for the fixed height of the header image div
       max-height: 100%;
       max-width: 100%; }
     .fixed-height-80.header .header__content--column .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -990,9 +1155,14 @@ We create the clases for the fixed height of the header image div
 
 .fixed-height-90.header {
   height: calc(90vh - (100vh - 100%));
-  width: calc(100vw - (100vw - 100%)); }
+  width: calc(100vw - (100vw - 100%));
+  display: flex;
+  align-items: center; }
   .fixed-height-90.header .header__content--row {
+    flex: 1;
+    max-width: 75%;
     height: 100%;
+    padding: 1rem;
     /* --- flex --- */
     -webkit-display: flex;
     /* Safari */
@@ -1003,29 +1173,45 @@ We create the clases for the fixed height of the header image div
       display: none; }
     .fixed-height-90.header .header__content--row .header__logo--div {
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      flex: 1; }
       .fixed-height-90.header .header__content--row .header__logo--div--has-name {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-90.header .header__content--row .header__logo--div--has-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-90.header .header__content--row .header__logo--div--has-name-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
     .fixed-height-90.header .header__content--row .header__logo--image {
       max-height: 100%;
-      max-width: 100%; }
+      max-width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     .fixed-height-90.header .header__content--row .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -1071,6 +1257,7 @@ We create the clases for the fixed height of the header image div
       max-height: 100%;
       max-width: 100%; }
     .fixed-height-90.header .header__content--column .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -1083,9 +1270,14 @@ We create the clases for the fixed height of the header image div
 
 .fixed-height-100.header {
   height: calc(100vh - (100vh - 100%));
-  width: calc(100vw - (100vw - 100%)); }
+  width: calc(100vw - (100vw - 100%));
+  display: flex;
+  align-items: center; }
   .fixed-height-100.header .header__content--row {
+    flex: 1;
+    max-width: 75%;
     height: 100%;
+    padding: 1rem;
     /* --- flex --- */
     -webkit-display: flex;
     /* Safari */
@@ -1096,29 +1288,45 @@ We create the clases for the fixed height of the header image div
       display: none; }
     .fixed-height-100.header .header__content--row .header__logo--div {
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      flex: 1; }
       .fixed-height-100.header .header__content--row .header__logo--div--has-name {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-100.header .header__content--row .header__logo--div--has-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
       .fixed-height-100.header .header__content--row .header__logo--div--has-name-description {
+        margin-top: 10%;
+        margin-bottom: 10%;
         height: 80%;
         width: auto;
         align-self: center;
-        padding: 2rem;
-        text-align: right; }
+        text-align: right;
+        position: relative;
+        flex: 1; }
     .fixed-height-100.header .header__content--row .header__logo--image {
       max-height: 100%;
-      max-width: 100%; }
+      max-width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     .fixed-height-100.header .header__content--row .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -1164,6 +1372,7 @@ We create the clases for the fixed height of the header image div
       max-height: 100%;
       max-width: 100%; }
     .fixed-height-100.header .header__content--column .header__info--div {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center; }
@@ -1177,6 +1386,42 @@ We create the clases for the fixed height of the header image div
 /* read-more-results */
 .read-more-results {
   margin-top: 15px; }
+
+/* MAIN SECTION */
+.main_div {
+  display: flex;
+  flex-direction: row;
+  width: calc(100vw - (100vw - 100%));
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  /* Breadcrumbs element */ }
+  .main_div .my-breadcrumbs {
+    width: 100%; }
+  .main_div__sidebar--left--right .body-left-sidebar {
+    flex: 1;
+    order: 1; }
+  .main_div__sidebar--left--right .the_content {
+    flex: 5;
+    order: 2; }
+  .main_div__sidebar--left--right .body-right-sidebar {
+    flex: 1;
+    order: 3; }
+  .main_div__sidebar--right .the_content {
+    flex: 5;
+    order: 1; }
+  .main_div__sidebar--right .body-right-sidebar {
+    flex: 1;
+    order: 2; }
+  .main_div__sidebar--left .body-left-sidebar {
+    flex: 1;
+    order: 1; }
+  .main_div__sidebar--left .the_content {
+    flex: 5;
+    order: 2; }
 
 .breadcrumb {
   display: flex;

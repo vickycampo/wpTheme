@@ -2,5 +2,69 @@
 .read-more-results
 {
      margin-top: 15px;
-     
+
+}
+
+/* MAIN SECTION */
+.main_div
+{
+     display: flex;
+     flex-direction: row;
+     width: calc(100vw - (100vw - 100%));
+     box-sizing: border-box;
+     justify-content: center;
+     align-items: flex-start;
+     flex-wrap: wrap;
+     padding-left: 2rem;
+     padding-right: 2rem;
+
+     /* Breadcrumbs element */
+     .my-breadcrumbs
+     {
+          width: 100%;
+     }
+     &__sidebar--left--right
+     {
+          .body-left-sidebar
+          {
+               flex: 1;
+               order: 1;
+          }
+          .the_content
+          {
+               flex: 5;
+               order: 2;
+          }
+          .body-right-sidebar
+          {
+               flex: 1;
+               order: 3;
+          }
+     }
+     &__sidebar--right
+     {
+          .the_content
+          {
+               flex: 5;
+               order: 1;
+          }
+          .body-right-sidebar
+          {
+               flex: 1;
+               order: 2;
+          }
+     }
+     &__sidebar--left
+     {
+          .body-left-sidebar
+          {
+               flex: 1;
+               order: 1;
+          }
+          .the_content
+          {
+               flex: 5;
+               order: 2;
+          }
+     }
 }

@@ -42,11 +42,6 @@ if ( has_nav_menu( $location ) )
      }
      //<li class="nav-item active">
      ?>
-     <!-- prepare the bootstrap nav-menu -->
-     <!-- wrapping .navbar / .navbar-expand{-sm|-md|-lg|-xl} / Color Scheme -->
-     <!--navbar - Defines that is a navbar -->
-     <!--navbar-expand-lg - The breakpoint for collapsing -->
-     <!--navbar-light - Without it the button won't show -->
      <nav id ="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav" class="<?php esc_html_e( $data_target , 'wpTheme' ); ?>_nav navbar <?php echo ( $adminbarClass ); ?> <?php echo ( $fixed_nav ); ?> navbar-expand-<?php echo ( $screen_size ); ?> <?php esc_html_e( $bar_background_color , 'wpTheme' ); ?> <?php esc_html_e( $data_target , 'wpTheme' ); ?> <?php esc_html_e( $inverse_class , 'wpTheme' ); ?>" >
           <!-- Toggler -->
           <?php
