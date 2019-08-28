@@ -32,5 +32,18 @@ else
 }
 ?>
 <time datetime="<?php the_time('Y-m-d'); ?>">
-	<?php the_time(get_option('date_format')) ?>
+	<?php
+	if ( is_single() )
+	{
+		the_time(get_option('date_format'));
+	}
+	else if ( is_home() )
+	{
+		?>
+		<div class="time--date"><?php echo (get_the_date( 'd' )); ?></div>
+		<div class="time--day"><?php the_weekday(); ?></div>
+		<?php
+	}
+	?>
+
 </time>

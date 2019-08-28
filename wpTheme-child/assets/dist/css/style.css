@@ -129,24 +129,41 @@ html body {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
-.section--list {
-  background-color: red; }
-  .section--list article {
-    padding: 2rem;
-    margin: 2rem;
-    background-color: green;
-    position: relative; }
-  .section--list time {
-    background-color: orange;
-    display: block;
-    position: absolute;
-    top: -5px;
-    left: -70px;
-    width: 80px;
-    padding: 15px 5px;
-    background-color: #094660;
-    box-shadow: 3px 3px 5px rbga(100, 100, 100, 0.7);
-    border-radius: 5px; }
+.section--list article {
+  padding: 2rem;
+  margin: 4rem;
+  background-color: green;
+  position: relative;
+  border-radius: 5px;
+  background-color: #20242a;
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.44);
+  color: #F5F5F5; }
+
+.section--list .the_title {
+  padding-left: 40px;
+  margin: 0px;
+  line-height: 80px; }
+  .section--list .the_title a {
+    color: #F5F5F5; }
+
+.section--list time {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: -40px;
+  width: 80px;
+  padding: 15px 5px;
+  background-color: orange;
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.44);
+  border-radius: 5px; }
+  .section--list time .time--date {
+    font: bold 36px Verdana, sans-serif;
+    color: #FFFFFF;
+    text-align: center; }
+  .section--list time .time--day {
+    font: 12px Verdana, sans-serif;
+    color: #FFFFFF;
+    text-align: center; }
 
 /*
 
