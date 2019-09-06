@@ -35,7 +35,7 @@ HEADER
                display: block;
                font-weight:500;
                letter-spacing: 5px;
-               text-align: center;
+               text-align: left;
                color: #FFF;
                margin: 0px;
           }
@@ -44,7 +44,7 @@ HEADER
                display: block;
                font-weight:500;
                letter-spacing: 5px;
-               text-align: center;
+               text-align: left;
                color: #F8F9F9;
                margin: 0px;
           }
@@ -52,7 +52,7 @@ HEADER
      &__description
      {
           letter-spacing: 5px;
-          text-align: center;
+          text-align: left;
 
           color: $color-orange;
           font-family: 'Rock Salt', cursive;
@@ -133,8 +133,9 @@ We create the clases for the fixed height of the header image div
                               flex: 1;
                               &--has-name
                               {
-                                   margin-top: 10%;
-                                   margin-bottom: 10%;
+                                   margin-top: 1.5rem;
+                                   margin-bottom: 1.5rem;
+                                   margin-right: : 1.5rem;
                                    height: 80%;
                                    width:  auto;
                                    align-self: center;
@@ -144,8 +145,9 @@ We create the clases for the fixed height of the header image div
                               }
                               &--has-description
                               {
-                                   margin-top: 10%;
-                                   margin-bottom: 10%;
+                                   margin-top: 1.5rem;
+                                   margin-bottom: 1.5rem;
+                                   margin-right: 1.5rem;
                                    height: 80%;
                                    width:  auto;
                                    align-self: center;
@@ -155,8 +157,9 @@ We create the clases for the fixed height of the header image div
                               }
                               &--has-name-description
                               {
-                                   margin-top: 10%;
-                                   margin-bottom: 10%;
+                                   margin-top: 1.5rem;
+                                   margin-bottom:1.5rem;
+                                   margin-right: 1.5rem;
                                    height: 80%;
                                    width:  auto;
                                    align-self: center;
@@ -172,8 +175,8 @@ We create the clases for the fixed height of the header image div
                               max-width: 100%;
                               position: absolute;
                               top: 50%;
-                              left: 50%;
-                              transform: translate(-50%, -50%);
+                              right: 0%;
+                              transform: translate(0%, -50%);
                          }
                          .header__info--div
                          {
@@ -225,8 +228,9 @@ We create the clases for the fixed height of the header image div
                                    flex: 1;
                                    &--has-name
                                    {
-                                        margin-top: 10%;
-                                        margin-bottom: 10%;
+                                        margin-top: 1.5rem;
+                                        margin-bottom: 1.5rem;
+                                        margin-right: 1.5rem;
                                         height: 80%;
                                         width:  auto;
                                         align-self: center;
@@ -236,8 +240,9 @@ We create the clases for the fixed height of the header image div
                                    }
                                    &--has-description
                                    {
-                                        margin-top: 10%;
-                                        margin-bottom: 10%;
+                                        margin-top: 1.5rem;
+                                        margin-bottom: 1.5rem;
+                                        margin-right: 1.5rem;
                                         height: 80%;
                                         width:  auto;
                                         align-self: center;
@@ -247,8 +252,9 @@ We create the clases for the fixed height of the header image div
                                    }
                                    &--has-name-description
                                    {
-                                        margin-top: 10%;
-                                        margin-bottom: 10%;
+                                        margin-top: 1.5rem;
+                                        margin-bottom: 1.5rem;
+                                        margin-right: 1.5rem;
                                         height: 80%;
                                         width:  auto;
                                         align-self: center;
@@ -264,8 +270,8 @@ We create the clases for the fixed height of the header image div
                                    max-width: 100%;
                                    position: absolute;
                                    top: 50%;
-                                   left: 50%;
-                                   transform: translate(-50%, -50%);
+                                   right: 0%;
+                                   transform: translate(0%, -50%);
                               }
                               .header__info--div
                               {
